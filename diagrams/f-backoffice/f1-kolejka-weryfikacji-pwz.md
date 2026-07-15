@@ -58,3 +58,26 @@ flowchart TD
 - Każda decyzja zapisywana w audycie F10 (kto, kiedy, jaki powód).
 - Założenie minimalne: mapa nie przewiduje ścieżki „poproś o uzupełnienie dowodów" — nie dodano (byłby to krok spoza mapy); jeśli potrzebna, to decyzja do S3/#5.
 - Powiązania: D1, D3, F10, G1, prompt #5 (research weryfikacji).
+
+## Co opisuje ten diagram
+Diagram pokazuje, jak admin obsługuje kolejkę ręcznej weryfikacji uprawnień zawodowych (PWZ) specjalistów. Trafiają tu wyłącznie zgłoszenia, których nie rozstrzygnął automat sprawdzający rejestry zawodowe (D1). Admin ogląda dane i dowody, zagląda do rejestru i podejmuje decyzję approve/reject, pilnując limitu 24 h roboczych (SLA). Pozytywna decyzja odblokowuje specjaliście publikację profilu (go-live), a negatywna wraca do niego z powodem odrzucenia.
+
+## Powiązane diagramy
+| ID | Diagram | Jak się łączy |
+|---|---|---|
+| D1 | [d1-weryfikacja-pwz.md](../cd-specjalista-onboarding/d1-weryfikacja-pwz.md) | automat D1 zasila kolejkę fallbackiem, a specjalista widzi tam status na żywo |
+| D3 | [d3-go-live.md](../cd-specjalista-onboarding/d3-go-live.md) | approve odblokowuje go-live profilu specjalisty |
+| F10 | [f10-audit-log.md](f10-audit-log.md) | każda decyzja admina zapisywana w audycie |
+| G1 | [00-katalog-eventow.md](../00-core/00-katalog-eventow.md) | powiadomienie specjalisty o decyzji przez notification engine |
+
+## Słownik
+| Pojęcie | Wyjaśnienie |
+|---|---|
+| PWZ | Prawo wykonywania zawodu — numer potwierdzający uprawnienia specjalisty do pracy w zawodzie. |
+| SLA | Obiecany maksymalny czas obsługi zgłoszenia — tutaj 24 godziny robocze. |
+| Kolejka weryfikacji | Lista zgłoszeń czekających na ręczną decyzję admina. |
+| Rejestr KRL/KIF | Publiczny rejestr zawodowy, w którym można sprawdzić, czy specjalista ma ważne uprawnienia. |
+| Fallback | Ścieżka awaryjna: gdy automat nie potrafi rozstrzygnąć sprawy, przejmuje ją człowiek. |
+| Approve / Reject | Decyzja admina: zatwierdzenie zgłoszenia albo odrzucenie z podanym powodem. |
+| Go-live | Moment, w którym profil specjalisty staje się publicznie widoczny i przyjmuje rezerwacje. |
+| Audyt (audit log) | Trwały zapis tego, kto podjął jaką decyzję, kiedy i z jakim powodem. |

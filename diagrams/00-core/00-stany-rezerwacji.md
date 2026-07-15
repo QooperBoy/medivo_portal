@@ -75,3 +75,50 @@ stateDiagram-v2
 **Flaga 2 (OTWARTA, decyzja z 2026-07-15 — dokumentujemy oba warianty):** gałąź `pending_payment` (przedpłata online, A6 + G9) i gałąź `pending_approval` ("rezerwacja za akceptacją specjalisty") współistnieją na diagramie; jeśli POC ruszy bez płatności online, gałąź `pending_payment` jest nieaktywna, a sankcją scoringu pozostaje wyłącznie akceptacja specjalisty.
 
 **Odwołania:** [[a5-checkout]] (A5), A6, A7, [[b3-odwolanie-tokenem]] (B3), B5, B6, E4, E5, E6, E7, E8, G2, G3, G4, G5, G6, G7, G9.
+
+## Co opisuje ten diagram
+
+Ten diagram pokazuje pełny cykl życia pojedynczej rezerwacji wizyty — od momentu, gdy pacjent wchodzi w proces rezerwacji, aż po jej zakończenie. Uczestniczą w nim pacjent (rezerwuje, płaci, odwołuje, może otworzyć spór), specjalista (akceptuje, odwołuje, zatwierdza wizytę, oznacza nieobecność), admin (rozstrzyga spory) oraz system (pilnuje limitów czasowych i automatycznych przejść). Flow uruchamia się przy wejściu w checkout, a kończy w jednym ze stanów końcowych: wizyta odbyta, odwołana przez którąś ze stron albo nieobecność pacjenta. To diagram-fundament — wszystkie pozostałe flowy rezerwacyjne używają dokładnie tych nazw stanów.
+
+## Powiązane diagramy
+
+| ID | Diagram | Jak się łączy |
+|---|---|---|
+| A5 | [a5-checkout.md](../a-pacjent-public/a5-checkout.md) | wejście w checkout tworzy stan draft i uruchamia lock slotu |
+| A6 | [a5-checkout-wariant-przedplata.md](../a-pacjent-public/a5-checkout-wariant-przedplata.md) | płatność online domyka pending_payment; timeout ~30 min = auto-anulacja |
+| A7 | [a7-potwierdzenie.md](../a-pacjent-public/a7-potwierdzenie.md) | po wejściu w confirmed pacjent dostaje potwierdzenie i tokeny samoobsługi |
+| A3 | [a3-lista-wynikow.md](../a-pacjent-public/a3-lista-wynikow.md) | slot po wygaśnięciu locka lub anulacji wraca do puli widocznej na liście wyników |
+| A4 | [a4-profil-specjalisty.md](../a-pacjent-public/a4-profil-specjalisty.md) | zwolniony slot jest znów widoczny na profilu specjalisty |
+| B3 | [b3-odwolanie-tokenem.md](../b-pacjent-konto/b3-odwolanie-tokenem.md) | odwołanie pacjenta (w terminie lub po) prowadzi do cancelled_by_patient |
+| B5 | [b5-wystawienie-opinii.md](../b-pacjent-konto/b5-wystawienie-opinii.md) | stan completed odblokowuje wystawienie opinii |
+| B6 | [b6-spor-no-show.md](../b-pacjent-konto/b6-spor-no-show.md) | spór pacjenta "byłem" przenosi no_show w disputed |
+| E4 | [e4-rezerwacje.md](../e-panel/e4-rezerwacje.md) | akceptacja lub odrzucenie przez specjalistę rozstrzyga pending_approval |
+| E5 | [e5-odwolanie-pojedyncze.md](../e-panel/e5-odwolanie-pojedyncze.md) | odwołanie pojedynczej wizyty przez specjalistę daje cancelled_by_specialist |
+| E6 | [e6-tryb-urlop.md](../e-panel/e6-tryb-urlop.md) | hurtowe odwołania (urlop/choroba) również prowadzą do cancelled_by_specialist |
+| E7 | [e7-no-show.md](../e-panel/e7-no-show.md) | oznaczenie nieobecności przenosi wizytę w no_show |
+| E8 | [e8-approval-opinie.md](../e-panel/e8-approval-opinie.md) | ręczny approval wizyty zamyka ją jako completed |
+| F3 | [f3-spory.md](../f-backoffice/f3-spory.md) | rozstrzygnięcie sporu decyduje: completed albo powrót do no_show |
+| G1 | [00-katalog-eventow.md](00-katalog-eventow.md) | powiadomienia SMS/email wysyłane przy przejściach stanów |
+| G2 | [00-katalog-eventow.md](00-katalog-eventow.md) | przypomnienie T−24 h działa tylko w stanie confirmed |
+| G3 | [00-katalog-eventow.md](00-katalog-eventow.md) | prośba o opinię T+2 h wysyłana dopiero po completed |
+| G4 | [g4-auto-approval.md](../g-silniki/g4-auto-approval.md) | auto-approval T+48 h przenosi confirmed w completed (blokowany Flagą 3) |
+| G5 | [g5-slot-lock.md](../g-silniki/g5-slot-lock.md) | lock slotu z TTL 10 min tworzy stan locked |
+| G6 | [g6-waitlist-engine.md](../g-silniki/g6-waitlist-engine.md) | zwolniony slot po anulacji trafia do kaskady waitlisty |
+| G7 | [g7-scoring-engine.md](../g-silniki/g7-scoring-engine.md) | późne odwołania i no-show zasilają scoring i sankcje |
+| G9 | [00-katalog-eventow.md](00-katalog-eventow.md) | webhook płatności potwierdza rezerwację czekającą w pending_payment |
+
+## Słownik
+
+| Pojęcie | Wyjaśnienie |
+|---|---|
+| Stan kanoniczny | Ustalona, wspólna dla całego projektu nazwa etapu życia rezerwacji (np. confirmed, no_show), używana we wszystkich diagramach. |
+| Slot | Konkretny termin wizyty w kalendarzu specjalisty, który pacjent może zarezerwować. |
+| Lock | Tymczasowa blokada slotu na czas checkoutu, żeby dwie osoby nie zarezerwowały tego samego terminu. |
+| TTL | Czas życia blokady — po 10 minutach bez dokończenia rezerwacji slot automatycznie wraca do puli. |
+| Scoring gate | Dodatkowy warunek w checkoucie (przedpłata albo akceptacja specjalisty) nakładany na pacjentów z historią nieobecności. |
+| Webhook | Automatyczne powiadomienie od procesora płatności, że wpłata doszła — potwierdza rezerwację bez udziału człowieka. |
+| No-show | Sytuacja, w której pacjent nie pojawia się na umówionej wizycie bez odwołania. |
+| Auto-approval | Automatyczne uznanie wizyty za odbytą 48 godzin po jej terminie, jeśli specjalista nie zrobił tego ręcznie. |
+| Waitlista | Lista oczekujących pacjentów, którym system proponuje zwolniony termin. |
+| Spór (disputed) | Zgłoszenie pacjenta kwestionujące oznaczenie nieobecności, rozstrzygane przez admina. |
+| Event | Zdarzenie domenowe (np. booking.cancelled_late) emitowane przy przejściu między stanami, uruchamiające automatyczne silniki systemu. |

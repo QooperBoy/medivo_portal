@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="core-stany-rezerwacji" name="CORE-STANY — cykl życia rezerwacji">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;CORE-STANY — Cykl życia rezerwacji (stany kanoniczne)&lt;/b&gt;&lt;br&gt;źródło: diagrams/00-core/00-stany-rezerwacji.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="475" y="70" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="draft" value="&lt;b&gt;draft&lt;/b&gt;&lt;br&gt;koszyk rezerwacji, bez locka" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="140" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="endAbandon" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="150" y="205" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="locked" value="&lt;b&gt;locked&lt;/b&gt;&lt;br&gt;slot zablokowany, TTL 10 min (G5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="260" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pendingPayment" value="&lt;b&gt;pending_payment&lt;/b&gt;&lt;br&gt;czeka na płatność online (A6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pendingApproval" value="&lt;b&gt;pending_approval&lt;/b&gt;&lt;br&gt;czeka na decyzję specjalisty (E4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="690" y="400" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="confirmed" value="&lt;b&gt;confirmed&lt;/b&gt;&lt;br&gt;wizyta umówiona (A7, G2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="540" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="flaga3" value="Flaga 3: auto-approval G4 (T+48 h) ZABLOKOWANY, gdy wizyta ma no_show lub otwarty spór (disputed)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="690" y="530" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cancelledByPatient" value="&lt;b&gt;cancelled_by_patient&lt;/b&gt;&lt;br&gt;odwołana przez pacjenta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="700" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cancelledBySpecialist" value="&lt;b&gt;cancelled_by_specialist&lt;/b&gt;&lt;br&gt;odwołana przez specjalistę" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="690" y="700" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="completed" value="&lt;b&gt;completed&lt;/b&gt;&lt;br&gt;odblokowuje opinię (G3, B5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="840" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="noShow" value="&lt;b&gt;no_show&lt;/b&gt;&lt;br&gt;sankcje scoringu (G7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="530" y="840" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="disputed" value="&lt;b&gt;disputed&lt;/b&gt;&lt;br&gt;otwarty ticket sporu (F3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="530" y="960" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="endFinal" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="345" y="1060" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="wejście w checkout (A5)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="start" target="draft">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="wybór slotu — lock (G5)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="draft" target="locked">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="porzucenie checkoutu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="draft" target="endAbandon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="TTL wygasł — slot do puli" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="locked" target="endAbandon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="scoring gate: wymagana przedpłata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="locked" target="pendingPayment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="scoring gate: wymagana akceptacja" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="locked" target="pendingApproval">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="płatność na miejscu, bez gate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="locked" target="confirmed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="webhook payment OK (G9)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="pendingPayment" target="confirmed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="timeout ~30 min — auto-anulacja (A6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="pendingPayment" target="cancelledByPatient">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="specjalista akceptuje (E4)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="pendingApproval" target="confirmed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="specjalista odrzuca (E4)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="pendingApproval" target="cancelledBySpecialist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="odwołanie pacjenta (B3): booking.cancelled / booking.cancelled_late" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="confirmed" target="cancelledByPatient">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="odwołanie specjalisty (E5/E6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="confirmed" target="cancelledBySpecialist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="approval wizyty (E8) / auto-approval T+48 h (G4)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="confirmed" target="completed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="nieobecność (E7): visit.no_show" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="confirmed" target="noShow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="spór pacjenta (B6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="noShow" target="disputed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="spór uznany (F3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="disputed" target="completed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="spór odrzucony (F3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.75;" edge="1" parent="1" source="disputed" target="noShow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="completed" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="slot do puli / waitlista (G6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="cancelledByPatient" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="slot do puli / waitlista (G6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="cancelledBySpecialist" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="bez sporu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="noShow" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legenda:&lt;/b&gt; niebieski = stan aktywny · pomarańczowy = oczekiwanie · czerwony = anulacja/no-show · zielony = zakończona · podwójne kółko = stan końcowy" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="880" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

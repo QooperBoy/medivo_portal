@@ -50,3 +50,24 @@ flowchart TD
 - Rate limiting: dotyczy wysyłki OTP/magic linków; limit błędnych kodów przyjęty jako część tego samego mechanizmu (mapa nie rozdziela) — po przekroczeniu ten sam komunikat "za dużo prób".
 - TTL magic linku i czas życia sesji — mapa nie rozstrzyga; założenie minimalne: link jednorazowy z TTL, sesja standardowa.
 - Powiązania: A5 (OTP przy 1. rezerwacji tworzy lekkie konto), B2 (cel po zalogowaniu), B3 (fallback przy nieważnym tokenie), G8 (limity per numer/IP/device).
+
+## Co opisuje ten diagram
+Diagram pokazuje, jak pacjent loguje się do swojego konta — bez hasła. Pacjent wybiera metodę: numer telefonu (dostaje jednorazowy kod SMS) albo email (dostaje link logujący). System po cichu sprawdza limity prób oraz poprawność kodu lub ważność linku, a po sukcesie tworzy sesję i przenosi pacjenta na ekran "Moje wizyty". Uczestniczą tu tylko pacjent i system.
+
+## Powiązane diagramy
+| ID | Diagram | Jak się łączy |
+|---|---|---|
+| A5 | [a5-checkout.md](../a-pacjent-public/a5-checkout.md) | ten sam OTP przy 1. rezerwacji tworzy lekkie konto |
+| B2 | [b2-moje-wizyty.md](b2-moje-wizyty.md) | ekran docelowy po udanym logowaniu |
+| B3 | [b3-odwolanie-tokenem.md](b3-odwolanie-tokenem.md) | logowanie jako awaryjna ścieżka przy nieważnym tokenie |
+| G8 | [00-katalog-eventow.md](../00-core/00-katalog-eventow.md) | fraud detection pilnuje limitów prób per numer/IP/urządzenie |
+
+## Słownik
+| Pojęcie | Wyjaśnienie |
+|---|---|
+| Logowanie bez haseł | Pacjent nie ma hasła — tożsamość potwierdza jednorazowym kodem SMS lub linkiem z emaila. |
+| OTP | Jednorazowy kod (np. z SMS-a), który działa tylko raz i przez krótki czas. |
+| Magic link | Link logujący wysyłany na email — jedno kliknięcie zastępuje wpisywanie hasła. |
+| Rate limiting | Ograniczenie liczby prób (wysyłek kodów, błędnych wpisań), chroniące przed nadużyciami. |
+| TTL | Czas ważności — po jego upływie kod lub link przestaje działać. |
+| Sesja | Zapamiętane przez system zalogowanie, dzięki któremu pacjent nie musi potwierdzać tożsamości przy każdym kroku. |

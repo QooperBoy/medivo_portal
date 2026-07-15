@@ -152,3 +152,56 @@ flowchart LR
 **Flaga 3:** `visit.no_show` i `dispute.opened` blokują G4 (auto-approval) — szczegóły [[g4-auto-approval]].
 
 **Powiązania:** [[00-stany-rezerwacji]] (CORE-STANY — eventy przy przejściach stanów), [[g4-auto-approval]], [[g5-slot-lock]], [[g6-waitlist-engine]], [[g7-scoring-engine]], A5, A6, A7, B3, B4, B5, B6, B9, D3, E5, E6, E7, E8, F2, F3, F4, F5, F10.
+
+## Co opisuje ten diagram
+
+To zbiorcza mapa "układu nerwowego" systemu: pokazuje, jakie zdarzenia (eventy) powstają w wyniku działań pacjentów, specjalistów i adminów oraz które automatyczne silniki na nie reagują — wysyłką powiadomień, naliczaniem sankcji, obsługą płatności, jobami RODO czy odświeżaniem danych dla wyszukiwarek. Diagram nie ma jednego początku ani końca — działa jak katalog: każde zdarzenie (np. utworzenie lub odwołanie rezerwacji) uruchamia własną kaskadę automatycznych skutków. Dokumentuje też silniki G1–G3 i G8–G13, które nie mają osobnych diagramów.
+
+## Powiązane diagramy
+
+| ID | Diagram | Jak się łączy |
+|---|---|---|
+| CORE-STANY | [00-stany-rezerwacji.md](00-stany-rezerwacji.md) | eventy z katalogu odpowiadają przejściom między stanami rezerwacji |
+| A5 | [a5-checkout.md](../a-pacjent-public/a5-checkout.md) | ukończony checkout publikuje booking.created; zgody RODO zapisuje consent.recorded |
+| A6 | [a5-checkout-wariant-przedplata.md](../a-pacjent-public/a5-checkout-wariant-przedplata.md) | timeout płatności publikuje booking.cancelled; pełny flow płatności i webhooków |
+| A5 (wariant akceptacji) | [a5-checkout-wariant-akceptacja.md](../a-pacjent-public/a5-checkout-wariant-akceptacja.md) | fallback sankcji scoringu, gdy płatności online są wyłączone (Flaga 2) |
+| A7 | [a7-potwierdzenie.md](../a-pacjent-public/a7-potwierdzenie.md) | booking.created zasila wysyłkę potwierdzenia przez G1 |
+| A4 | [a4-profil-specjalisty.md](../a-pacjent-public/a4-profil-specjalisty.md) | zatwierdzona opinia (review.approved) jest publikowana na profilu |
+| B3 | [b3-odwolanie-tokenem.md](../b-pacjent-konto/b3-odwolanie-tokenem.md) | odwołanie pacjenta publikuje booking.cancelled lub booking.cancelled_late |
+| B4 | [b4-waitlista.md](../b-pacjent-konto/b4-waitlista.md) | auto-book z waitlisty (G6) tworzy nowy booking.created |
+| B5 | [b5-wystawienie-opinii.md](../b-pacjent-konto/b5-wystawienie-opinii.md) | G3 wysyła prośbę o opinię z jednorazowym tokenem |
+| B6 | [b6-spor-no-show.md](../b-pacjent-konto/b6-spor-no-show.md) | otwarcie sporu publikuje dispute.opened i blokuje G4 |
+| B9 | [b9-rodo-self-service.md](../b-pacjent-konto/b9-rodo-self-service.md) | wniosek o usunięcie konta/eksport publikuje rodo.erasure_requested |
+| B10 | [b10-preferencje-powiadomien.md](../b-pacjent-konto/b10-preferencje-powiadomien.md) | opt-out z preferencji respektowany przez notification engine (G1) |
+| D3 | [d3-go-live.md](../cd-specjalista-onboarding/d3-go-live.md) | go-live profilu publikuje profile.published dla SEO jobów (G12) |
+| E4 | [e4-rezerwacje.md](../e-panel/e4-rezerwacje.md) | scoring (G7) zasila wskaźnik no-show pacjenta widoczny przy rezerwacjach |
+| E5 | [e5-odwolanie-pojedyncze.md](../e-panel/e5-odwolanie-pojedyncze.md) | odwołanie specjalisty publikuje booking.cancelled |
+| E6 | [e6-tryb-urlop.md](../e-panel/e6-tryb-urlop.md) | hurtowe odwołania (urlop) publikują booking.cancelled |
+| E7 | [e7-no-show.md](../e-panel/e7-no-show.md) | oznaczenie nieobecności publikuje visit.no_show |
+| E8 | [e8-approval-opinie.md](../e-panel/e8-approval-opinie.md) | ręczny approval wizyty publikuje visit.approved i startuje timer G3 |
+| F2 | [f2-moderacja-opinii.md](../f-backoffice/f2-moderacja-opinii.md) | moderacja publikuje review.approved → publikacja opinii |
+| F3 | [f3-spory.md](../f-backoffice/f3-spory.md) | dispute.opened tworzy ticket sporu do rozstrzygnięcia |
+| F4 | [f4-anty-abuse.md](../f-backoffice/f4-anty-abuse.md) | flagi fraud detection (G8) trafiają do kolejki przeglądu |
+| F5 | [f5-uzytkownicy.md](../f-backoffice/f5-uzytkownicy.md) | wnioski RODO obsługiwane przez admina publikują rodo.erasure_requested |
+| F10 | [f10-audit-log.md](../f-backoffice/f10-audit-log.md) | joby RODO (G11) zapisują operacje na danych w audit logu |
+| G4 | [g4-auto-approval.md](../g-silniki/g4-auto-approval.md) | auto-approval T+48 h publikuje visit.approved; blokowany przez no-show/spór (Flaga 3) |
+| G5 | [g5-slot-lock.md](../g-silniki/g5-slot-lock.md) | lock slotu jest timerowy i nie publikuje eventów domenowych (założenie) |
+| G6 | [g6-waitlist-engine.md](../g-silniki/g6-waitlist-engine.md) | slot.released uruchamia kaskadę waitlisty z oknem 2 h |
+| G7 | [g7-scoring-engine.md](../g-silniki/g7-scoring-engine.md) | booking.cancelled_late i visit.no_show zasilają scoring i gate w checkoucie |
+
+## Słownik
+
+| Pojęcie | Wyjaśnienie |
+|---|---|
+| Event (zdarzenie domenowe) | Sygnał "coś się stało" (np. booking.created), na który automatycznie reagują inne części systemu. |
+| Publisher | Flow lub system zewnętrzny, który emituje zdarzenie (np. checkout publikuje booking.created). |
+| Silnik (konsument) | Automatyczny proces backendowy reagujący na zdarzenie — np. wysyłka powiadomień czy naliczanie sankcji. |
+| Webhook | Sygnał od zewnętrznego procesora płatności o wyniku transakcji (wpłata, zwrot). |
+| Reconciliation | Uzgadnianie płatności — porównanie wpłat u procesora z rezerwacjami w systemie. |
+| Scoring | Punktowa ocena wiarygodności pacjenta budowana z nieobecności i późnych odwołań. |
+| Waitlista | Lista oczekujących, którym system automatycznie proponuje zwolnione terminy. |
+| Opt-out | Rezygnacja użytkownika z danego kanału powiadomień, respektowana przez silnik wysyłki. |
+| RODO | Przepisy o ochronie danych osobowych — stąd joby usuwania danych, rejestr zgód i retencja logów. |
+| Sitemap / schema.org | Dane dla wyszukiwarek odświeżane po publikacji profilu, żeby poprawić widoczność w Google. |
+| Audit log | Trwały zapis operacji na danych wrażliwych, prowadzony do celów kontroli. |
+| Nazwa robocza | Event, którego nazwy mapa projektu nie definiuje — zaproponowany tymczasowo i zgłoszony w rozbieżnościach. |

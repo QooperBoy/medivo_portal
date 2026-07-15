@@ -57,3 +57,32 @@ flowchart TD
 - Architektura z mapy: core repo-matka + forki per wertykal, Back Office wspólny — F8 to jedyne miejsce różnicujące forki parametrycznie.
 - Zmiany konfiguracji w audycie F10 (parametry wpływają na sankcje wobec użytkowników).
 - Powiązania: E3, D1, F1, G7, B3, E5, A5 (scoring gate), F10.
+
+## Co opisuje ten diagram
+Diagram pokazuje, jak admin konfiguruje pojedynczy fork serwisu, czyli jego wydanie dla konkretnego wertykalu (branży). Na starcie (etap P0) konfiguracja to plik w repozytorium; docelowo (etap P1) admin edytuje ją w interfejsie: słownik usług, brand (nazwa, logo, domena), źródło weryfikacji uprawnień oraz parametry, takie jak progi scoringu i okno X h polityki odwołań. Zapisane zmiany są walidowane, wersjonowane i propagowane do modułów, które z nich korzystają — od cennika specjalisty po silnik scoringu.
+
+## Powiązane diagramy
+| ID | Diagram | Jak się łączy |
+|---|---|---|
+| E3 | [e3-uslugi-ceny.md](../e-panel/e3-uslugi-ceny.md) | słownik usług wertykalu zasila usługi i ceny specjalisty |
+| D1 | [d1-weryfikacja-pwz.md](../cd-specjalista-onboarding/d1-weryfikacja-pwz.md) | konfiguracja wskazuje rejestr sprawdzany przez automat weryfikacji |
+| F1 | [f1-kolejka-weryfikacji-pwz.md](f1-kolejka-weryfikacji-pwz.md) | to samo źródło weryfikacji obowiązuje w ręcznej kolejce |
+| G7 | [g7-scoring-engine.md](../g-silniki/g7-scoring-engine.md) | progi scoringu pochodzą z konfiguracji forka |
+| B3 | [b3-odwolanie-tokenem.md](../b-pacjent-konto/b3-odwolanie-tokenem.md) | okno X h polityki odwołań ustawiane w konfiguracji |
+| E5 | [e5-odwolanie-pojedyncze.md](../e-panel/e5-odwolanie-pojedyncze.md) | ta sama polityka odwołań obowiązuje po stronie specjalisty |
+| A5 | [a5-checkout.md](../a-pacjent-public/a5-checkout.md) | progi scoringu sterują gate'em w checkoucie |
+| F10 | [f10-audit-log.md](f10-audit-log.md) | zmiany konfiguracji zapisywane w audycie |
+
+## Słownik
+| Pojęcie | Wyjaśnienie |
+|---|---|
+| Fork | Osobna kopia serwisu dla innej branży, zbudowana na wspólnym rdzeniu (repo-matce). |
+| Wertykal | Branża/specjalizacja obsługiwana przez dany fork (np. logopedzi, weterynarze). |
+| Konfiguracja (config) | Zestaw ustawień odróżniających fork od innych: usługi, brand, rejestry, parametry. |
+| Słownik usług | Lista usług dostępnych w danym wertykalu, z której specjaliści wybierają swoją ofertę. |
+| Brand | Nazwa, logo i domena, pod którymi działa dany fork. |
+| Źródło weryfikacji | Rejestr zawodowy (np. KRL/KIF), w którym automat sprawdza uprawnienia specjalistów. |
+| Próg scoringu | Granica oceny wiarygodności pacjenta, od której serwis wymaga np. przedpłaty. |
+| Polityka odwołań (X h) | Ile godzin przed wizytą pacjent może ją bezkarnie odwołać. |
+| Propagacja | Rozesłanie zapisanej konfiguracji do wszystkich modułów, które z niej korzystają. |
+| Wersjonowanie | Przechowywanie historii zmian konfiguracji z możliwością powrotu do wcześniejszej wersji. |
