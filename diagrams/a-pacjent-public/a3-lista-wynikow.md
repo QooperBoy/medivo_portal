@@ -1,0 +1,48 @@
+# A3 — Lista wyników
+
+```mermaid
+flowchart TD
+    subgraph FE["FE — widzi user"]
+        LISTA["Lista wyników"]
+        CZY{"Są wyniki?"}
+        KARTA["Karta: foto, badge PWZ, ocena"]
+        ADRES["Adres / dystans"]
+        SLOTY["Inline sloty (3–5 najbliższych)"]
+        PAGINACJA["Paginacja"]
+        PUSTY["Pusty stan"]
+        A4LINK["Profil specjalisty (A4)"]
+        A5LINK["Checkout (A5)"]
+        A8LINK["Brak slotów (A8)"]
+    end
+
+    subgraph BE["BE — pod spodem"]
+        AVAIL["Availability batch API"]
+        GRAFIKI["Live z grafików (E2)"]
+    end
+
+    LISTA --> CZY
+    CZY -->|"tak"| KARTA
+    CZY -->|"nie"| PUSTY
+    KARTA --> ADRES
+    KARTA --> SLOTY
+    GRAFIKI --> AVAIL
+    AVAIL --> SLOTY
+    KARTA -->|"klik w kartę"| A4LINK
+    SLOTY -->|"klik w slot"| A5LINK
+    SLOTY -->|"brak wolnych slotów"| A8LINK
+    PUSTY --> A8LINK
+    LISTA --> PAGINACJA
+    PAGINACJA -->|"kolejna strona"| LISTA
+
+    classDef fe fill:#e8f4fd
+    classDef be fill:#fdf2e8
+    class LISTA,CZY,KARTA,ADRES,SLOTY,PAGINACJA,PUSTY,A4LINK,A5LINK,A8LINK fe
+    class AVAIL,GRAFIKI be
+```
+
+## Notatki
+- Priorytet: P0.
+- Karta wyniku z mapy: foto, badge PWZ, ocena, adres/dystans, inline sloty (3–5 najbliższych) — klik w slot skraca lejek prosto do [[a5-checkout]] (A5), klik w kartę → [[a4-profil-specjalisty]] (A4).
+- Sloty inline liczone przez availability batch API (jedno zapytanie dla całej strony wyników), zawsze live z grafików specjalistów → E2.
+- Edge case'y: pusty stan (brak wyników) oraz karta bez wolnych slotów — oba prowadzą do [[a8-brak-slotow]] (A8: podobni + waitlista).
+- Cold start Kraków (mało wyników): jak nie wyglądać martwo — otwarty temat z S5.
