@@ -72,3 +72,9 @@ Spis: flow → plik → typ → status walidacji mmdc. Aktualizowany po każdej 
 | G11 | RODO joby | [00-katalog-eventow.md](00-core/00-katalog-eventow.md) | flowchart LR | OK |
 | G12 | SEO joby | [00-katalog-eventow.md](00-core/00-katalog-eventow.md) | flowchart LR | OK |
 | G13 | Ops (backupy, monitoring, alerting) | [00-katalog-eventow.md](00-core/00-katalog-eventow.md) | flowchart LR | OK |
+| E2E-1 | Pacjent nowy (happy path) | [e2e-1-pacjent-nowy.md](e2e/e2e-1-pacjent-nowy.md) | flowchart LR | OK |
+| E2E-2 | Pacjent zmienia termin | [e2e-2-zmiana-terminu.md](e2e/e2e-2-zmiana-terminu.md) | flowchart LR | OK |
+| E2E-3 | Specjalista: od landingu do 1. rezerwacji | [e2e-3-specjalista-do-rezerwacji.md](e2e/e2e-3-specjalista-do-rezerwacji.md) | flowchart LR | OK |
+| E2E-4 | No-show, sankcja i spór | [e2e-4-no-show-sankcja-spor.md](e2e/e2e-4-no-show-sankcja-spor.md) | flowchart LR | OK |
+| E2E-5 | Sabotaż slotów (blokowanie kalendarza) | [e2e-5-sabotaz-slotow.md](e2e/e2e-5-sabotaz-slotow.md) | flowchart LR | OK |
+| E2E-6 | Dzień admina (Back Office) | [e2e-6-dzien-admina.md](e2e/e2e-6-dzien-admina.md) | flowchart LR | OK |
