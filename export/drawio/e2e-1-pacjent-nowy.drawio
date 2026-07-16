@@ -1,0 +1,126 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e2e-1-pacjent-nowy" name="E2E-1 — Pacjent nowy (happy path)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E2E-1 — Pacjent nowy (happy path)&lt;/b&gt;&lt;br&gt;źródło: diagrams/e2e/e2e-1-pacjent-nowy.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="110" y="20" width="880" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nA1" value="&lt;b&gt;A1&lt;/b&gt;&lt;br&gt;wejście SEO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA2" value="&lt;b&gt;A2&lt;/b&gt;&lt;br&gt;wyszukiwanie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="270" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA3" value="&lt;b&gt;A3&lt;/b&gt;&lt;br&gt;lista wyników" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA4" value="&lt;b&gt;A4&lt;/b&gt;&lt;br&gt;profil specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA5" value="&lt;b&gt;A5&lt;/b&gt;&lt;br&gt;checkout rezerwacji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nB7" value="&lt;b&gt;B7&lt;/b&gt;&lt;br&gt;dla kogo: dziecko" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="185" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nD1" value="&lt;b&gt;płatność?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="255" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nA6" value="&lt;b&gt;A6&lt;/b&gt;&lt;br&gt;płatność online" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="280" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7" value="&lt;b&gt;A7&lt;/b&gt;&lt;br&gt;potwierdzenie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="280" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nG2" value="&lt;b&gt;G2&lt;/b&gt;&lt;br&gt;przypomnienie T-24h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="140" y="280" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nW" value="wizyta" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="495" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nE8" value="&lt;b&gt;E8&lt;/b&gt;&lt;br&gt;approval wizyty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nG3" value="&lt;b&gt;G3&lt;/b&gt;&lt;br&gt;review ask T+2h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="420" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nB5" value="&lt;b&gt;B5&lt;/b&gt;&lt;br&gt;wystawienie opinii" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="590" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nF2" value="&lt;b&gt;F2&lt;/b&gt;&lt;br&gt;moderacja opinii" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nPUB" value="publikacja opinii" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="930" y="495" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA1" target="nA2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA2" target="nA3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA3" target="nA4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA4" target="nA5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed5" value="krok wewnątrz A5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.25;entryY=1;" edge="1" parent="1" source="nB7" target="nA5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="nA5" target="nD1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed7" value="wariant przedpłaty&lt;br&gt;(Flaga 2)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="nD1" target="nA6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="nA6" target="nA7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="płatność na miejscu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="nD1" target="nA7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="400" />
+              <mxPoint x="430" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="nA7" target="nG2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="nG2" target="nW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nW" target="nE8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nE8" target="nG3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nG3" target="nB5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nB5" target="nF2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nF2" target="nPUB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legenda:&lt;/b&gt; niebieski = flow pacjenta · pomarańczowy = silniki/panel (BE) · szara elipsa = zdarzenie (nie flow) · przerywane = opcjonalny wariant przedpłaty (Flaga 2)" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="580" width="940" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="panel1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Najważniejsza ścieżka w serwisie: nowy pacjent trafia z wyszukiwarki Google, znajduje logopedę, rezerwuje wizytę (opcjonalnie płacąc online), przychodzi na wizytę, a po niej wystawia opinię, która po moderacji trafia na profil specjalisty. Uczestniczą pacjent, specjalista (zatwierdza odbytą wizytę), admin (moderuje opinię) i system (przypomnienie przed wizytą, prośba o opinię po niej). Flow zaczyna się od wejścia z wyszukiwarki, a kończy publikacją opinii. Każdy węzeł to osobny, szczegółowy diagram." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="640" width="880" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panel2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A1&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a1-wejscie-seo.md&lt;/td&gt;&lt;td&gt;start ścieżki z wyszukiwarki&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A2&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a2-wyszukiwanie.md&lt;/td&gt;&lt;td&gt;wyszukiwanie po mieście/usłudze&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;wybór specjalisty z listy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;przegląd profilu i terminów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;checkout — serce ścieżki&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A6&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;opcjonalna płatność online (Flaga 2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (wariant akceptacji)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md&lt;/td&gt;&lt;td&gt;alternatywa: akceptacja specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;potwierdzenie, tokeny samoobsługi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B7&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b7-pacjent-podopieczny.md&lt;/td&gt;&lt;td&gt;krok &quot;dla kogo&quot; wewnątrz A5&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G2&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;przypomnienie T−24 h przed wizytą&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;zatwierdzenie odbytej wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G3&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;prośba o opinię T+2 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G9&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;webhooki płatności (przedpłata)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B5&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b5-wystawienie-opinii.md&lt;/td&gt;&lt;td&gt;opinia tokenem z prośby&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F2&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f2-moderacja-opinii.md&lt;/td&gt;&lt;td&gt;moderacja przed publikacją&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;stany rezerwacji po drodze&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="810" width="880" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="panel3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SEO&lt;/td&gt;&lt;td&gt;Widoczność w bezpłatnych wynikach Google — główne źródło nowych pacjentów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Kilkukrokowy proces rezerwacji terminu (wybór slotu, dane, zgody, ewentualna płatność).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Przedpłata&lt;/td&gt;&lt;td&gt;Opcjonalna płatność online z góry za wizytę (wariant Flagi 2).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Płatność na miejscu&lt;/td&gt;&lt;td&gt;Ścieżka bez płatności online — pacjent płaci dopiero w gabinecie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga 2&lt;/td&gt;&lt;td&gt;Otwarta decyzja projektowa: przedpłata online albo rezerwacja za akceptacją specjalisty — dokumentowane są oba warianty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Reminder T−24 h&lt;/td&gt;&lt;td&gt;Automatyczne przypomnienie SMS/email wysyłane dobę przed wizytą.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Approval wizyty&lt;/td&gt;&lt;td&gt;Potwierdzenie przez specjalistę, że wizyta się odbyła — dopiero to odblokowuje opinię.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Review ask T+2 h&lt;/td&gt;&lt;td&gt;Automatyczna prośba o opinię wysyłana 2 godziny po zatwierdzeniu wizyty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Moderacja&lt;/td&gt;&lt;td&gt;Sprawdzenie treści opinii przez admina przed jej publikacją.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Podopieczny&lt;/td&gt;&lt;td&gt;Osoba, dla której robiona jest rezerwacja (u logopedów zwykle dziecko), inna niż osoba rezerwująca.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Stany kanoniczne&lt;/td&gt;&lt;td&gt;Kolejne etapy życia rezerwacji (draft → locked → confirmed → completed) wspólne dla całego systemu.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="1380" width="880" height="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

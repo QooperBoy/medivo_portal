@@ -1,0 +1,246 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="g6-waitlist-engine" name="G6 — Waitlist engine (FIFO, okno 2 h)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="2300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;G6 — Waitlist engine (FIFO, okno 2 h)&lt;/b&gt;&lt;br&gt;źródło: diagrams/g-silniki/g6-waitlist-engine.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="10" width="880" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actP" value="&lt;b&gt;Pacjent&lt;/b&gt;&lt;br&gt;(P)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actFE" value="&lt;b&gt;FE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actAPI" value="&lt;b&gt;Backend&lt;/b&gt;&lt;br&gt;(API)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actQ" value="&lt;b&gt;Joby/Kolejka&lt;/b&gt;&lt;br&gt;(Q)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="490" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actS" value="&lt;b&gt;Specjalista&lt;/b&gt;&lt;br&gt;(S)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actMSG" value="&lt;b&gt;SMS/Email&lt;/b&gt;&lt;br&gt;(MSG)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeP" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="110" as="sourcePoint" />
+            <mxPoint x="100" y="1140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeFE" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="110" as="sourcePoint" />
+            <mxPoint x="250" y="1140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeAPI" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="110" as="sourcePoint" />
+            <mxPoint x="400" y="1140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeQ" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="110" as="sourcePoint" />
+            <mxPoint x="550" y="1140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeS" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="110" as="sourcePoint" />
+            <mxPoint x="700" y="1140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeMSG" style="html=1;endArrow=none;dashed=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="110" as="sourcePoint" />
+            <mxPoint x="850" y="1140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="frameAlt1" value="alt [kolejka pusta]" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;fontSize=10;fontStyle=1;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="262" width="850" height="848" as="geometry" />
+        </mxCell>
+        <mxCell id="else1line" style="html=1;endArrow=none;dashed=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50" y="325" as="sourcePoint" />
+            <mxPoint x="900" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="else1lbl" value="else [jest oczekujący]" style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="328" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="frameAlt2" value="alt [potwierdzenie w oknie 2 h]" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;fontSize=10;fontStyle=1;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="65" y="490" width="820" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="else2line" style="html=1;endArrow=none;dashed=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="790" as="sourcePoint" />
+            <mxPoint x="885" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="else2lbl" value="else [brak reakcji w 2 h]" style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="793" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="frameLoop" value="loop [kaskada FIFO]" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;fontSize=10;fontStyle=1;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="820" width="380" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="wpisy na waitlistę: zapis z A8/B4" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="370" y="125" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="1. event slot.released (B3/E5/E6)" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="175" as="sourcePoint" />
+            <mxPoint x="550" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2lbl" value="2. kolejka FIFO per specjalista/usługa" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="555" y="195" width="140" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="222" as="sourcePoint" />
+            <mxPoint x="550" y="246" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="614" y="222" />
+              <mxPoint x="614" y="246" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3. slot wraca do puli (A3/A4)" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="295" as="sourcePoint" />
+            <mxPoint x="400" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4. powiadomienie pierwszego z kolejki" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="370" as="sourcePoint" />
+            <mxPoint x="850" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5. SMS/email z linkiem (B4)" style="html=1;endArrow=open;endFill=0;dashed=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="405" as="sourcePoint" />
+            <mxPoint x="100" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6lbl" value="6. start okna 2 h" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="555" y="425" width="140" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m6" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="445" as="sourcePoint" />
+            <mxPoint x="550" y="469" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="614" y="445" />
+              <mxPoint x="614" y="469" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7. klik &quot;potwierdź termin&quot; (B4)" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="530" as="sourcePoint" />
+            <mxPoint x="250" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8. POST auto-book slotu" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="565" as="sourcePoint" />
+            <mxPoint x="400" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9lbl" value="9. rezerwacja → confirmed" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="405" y="585" width="140" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m9" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="605" as="sourcePoint" />
+            <mxPoint x="400" y="629" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="464" y="605" />
+              <mxPoint x="464" y="629" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10. event booking.created + enqueue G1" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="660" as="sourcePoint" />
+            <mxPoint x="550" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" value="11. potwierdzenie pacjenta (A7)" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="695" as="sourcePoint" />
+            <mxPoint x="850" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="12. powiadomienie specjalisty" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="730" as="sourcePoint" />
+            <mxPoint x="850" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="13. nowa wizyta z waitlisty" style="html=1;endArrow=open;endFill=0;dashed=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="765" as="sourcePoint" />
+            <mxPoint x="700" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m14lbl" value="14. timeout okna 2 h" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="555" y="845" width="140" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m14" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="865" as="sourcePoint" />
+            <mxPoint x="550" y="889" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="614" y="865" />
+              <mxPoint x="614" y="889" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m15lbl" value="15. kaskada: następny z kolejki (FIFO)" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="555" y="900" width="140" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="m15" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="928" as="sourcePoint" />
+            <mxPoint x="550" y="952" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="614" y="928" />
+              <mxPoint x="614" y="952" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m16" value="16. powiadomienie następnego pacjenta" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="985" as="sourcePoint" />
+            <mxPoint x="850" y="985" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note2" value="pętla aż do wyczerpania FIFO" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1002" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="m17" value="17. kolejka wyczerpana - slot do puli" style="html=1;endArrow=block;endFill=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="1065" as="sourcePoint" />
+            <mxPoint x="400" y="1065" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="panel1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram opisuje silnik listy oczekujących: co robi system, gdy zwolni się termin, na który ktoś czekał. Pacjenci zapisują się na waitlistę, gdy brakuje wolnych slotów; kiedy jakiś slot się zwalnia (np. przez odwołanie wizyty), system powiadamia SMS-em lub e-mailem pierwszą osobę z kolejki i daje jej 2 godziny na potwierdzenie. Uczestniczą pacjent, specjalista (dostaje informację o nowej wizycie) oraz system działający w tle. Flow kończy się automatyczną rezerwacją dla pacjenta z kolejki albo — gdy nikt nie zareaguje — powrotem terminu do publicznej puli." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1170" width="880" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panel2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B4&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b4-waitlista.md&lt;/td&gt;&lt;td&gt;zapis i potwierdzanie terminu z linku&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A8&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a8-brak-slotow.md&lt;/td&gt;&lt;td&gt;drugie wejście: zapis przy braku terminów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;odwołanie pacjenta zwalnia slot&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E5&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e5-odwolanie-pojedyncze.md&lt;/td&gt;&lt;td&gt;odwołanie specjalisty zwalnia slot&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E6&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e6-tryb-urlop.md&lt;/td&gt;&lt;td&gt;urlop zwalnia sloty hurtowo&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;auto-book pomija pełny checkout&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md&lt;/td&gt;&lt;td&gt;odrzucenie/timeout akceptacji zwalnia slot&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;timeout płatności zwalnia slot&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;takie samo potwierdzenie rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;slot wraca na listę wyników&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;slot znów widoczny na profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienia wysyła notification engine&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-EVENTY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;eventy slot.released i booking.created&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2E-2&lt;/td&gt;&lt;td&gt;diagrams/e2e/e2e-2-zmiana-terminu.md&lt;/td&gt;&lt;td&gt;ogniwo ścieżki &quot;Pacjent zmienia termin&quot;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1350" width="880" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="panel3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista oczekujących pacjentów, którzy chcą dostać powiadomienie, gdy zwolni się termin.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FIFO&lt;/td&gt;&lt;td&gt;Kolejność obsługi &quot;kto pierwszy się zapisał, ten pierwszy dostaje propozycję&quot; (first in, first out).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Okno 2 h&lt;/td&gt;&lt;td&gt;Czas, jaki powiadomiony pacjent ma na potwierdzenie terminu, zanim propozycja przejdzie dalej.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kaskada&lt;/td&gt;&lt;td&gt;Automatyczne przechodzenie propozycji do kolejnej osoby z kolejki, gdy poprzednia nie zareaguje.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Auto-book&lt;/td&gt;&lt;td&gt;Rezerwacja tworzona automatycznie po kliknięciu &quot;potwierdź termin&quot;, bez przechodzenia pełnego checkoutu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Pojedynczy wolny termin wizyty w kalendarzu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Event slot.released&lt;/td&gt;&lt;td&gt;Komunikat systemowy &quot;zwolnił się termin&quot;, który uruchamia ten silnik.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Event booking.created&lt;/td&gt;&lt;td&gt;Komunikat systemowy &quot;powstała nowa rezerwacja&quot;, uruchamiający m.in. powiadomienia.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Timeout&lt;/td&gt;&lt;td&gt;Upłynięcie limitu czasu (tu: okna 2 h) bez reakcji pacjenta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Pula publiczna&lt;/td&gt;&lt;td&gt;Wolne terminy widoczne dla wszystkich w wyszukiwarce i na profilu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga 2&lt;/td&gt;&lt;td&gt;Otwarta decyzja projektowa o wariancie checkoutu (przedpłata vs akceptacja), pośrednio dotycząca auto-booku.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1840" width="880" height="400" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
