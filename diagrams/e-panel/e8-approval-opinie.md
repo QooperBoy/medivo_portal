@@ -10,44 +10,44 @@ sequenceDiagram
     participant MSG as SMS/Email
     actor P as Pacjent
 
-    Note over S,Q: część 1 — approval wizyt ("odbyła się")
-    S->>FE: otwiera listę wizyt do potwierdzenia
-    FE->>API: GET wizyty po terminie (confirmed)
-    API-->>FE: lista do potwierdzenia
-    alt specjalista potwierdza "odbyła się"
-        S->>FE: klik "odbyła się"
-        FE->>API: POST approval wizyty
-        API->>API: confirmed -> completed
-        API->>Q: start G3: review ask T+2 h
-        Q->>MSG: T+2 h: prośba o opinię + token (B5)
-        MSG-->>P: SMS/email z linkiem opinii
-    else specjalista oznacza no-show
-        S->>FE: klik "nie stawił się"
-        Note over FE,API: dalszy przebieg: [[e7-no-show]] (E7)
-    else brak reakcji specjalisty
-        Q->>Q: timer auto-approval T+48 h (G4)
-        alt wizyta bez no-show i bez sporu
-            Q->>API: auto-approval
-            API->>API: confirmed -> completed
-            API->>Q: start G3: review ask
-        else stan no_show lub disputed
-            Q->>Q: auto-approval ZABLOKOWANY (Flaga 3)
+    Note over S,Q: część 1 — potwierdzanie odbytych wizyt (approval wizyty, przycisk "odbyła się")
+    S->>FE: otwiera w panelu listę wizyt czekających na potwierdzenie
+    FE->>API: pobiera wizyty po terminie, wciąż w stanie confirmed (GET)
+    API-->>FE: zwraca listę wizyt do potwierdzenia
+    alt specjalista potwierdza, że wizyta faktycznie się odbyła
+        S->>FE: klika przycisk "odbyła się" przy wizycie
+        FE->>API: przekazuje potwierdzenie wizyty do systemu (POST approval)
+        API->>API: zmienia stan wizyty: confirmed -> completed (wizyta odbyta)
+        API->>Q: uruchamia timer G3 — prośba o opinię 2 h po wizycie (review ask)
+        Q->>MSG: po 2 h zleca wysyłkę prośby o opinię z tokenem-linkiem (B5)
+        MSG-->>P: pacjent dostaje SMS/e-mail z linkiem do wystawienia opinii
+    else specjalista oznacza, że pacjent się nie stawił (no-show)
+        S->>FE: klika przycisk "nie stawił się" przy wizycie
+        Note over FE,API: dalszy przebieg oznaczenia nieobecności: [[e7-no-show]] (E7)
+    else specjalista nie robi nic — po 48 h działa automat
+        Q->>Q: odlicza timer auto-approvalu: 48 h po terminie wizyty (G4)
+        alt wizyta bez zgłoszonego no-show i bez otwartego sporu
+            Q->>API: automatycznie potwierdza wizytę za specjalistę (auto-approval)
+            API->>API: zmienia stan wizyty: confirmed -> completed (wizyta odbyta)
+            API->>Q: uruchamia timer G3 — prośba o opinię (review ask)
+        else wizyta w stanie no_show lub disputed (spór)
+            Q->>Q: auto-approval ZABLOKOWANY — sporna wizyta nie potwierdza się sama (Flaga 3)
         end
     end
 
-    Note over S,Q: część 2 — opinie + odpowiedź
-    S->>FE: otwiera listę opinii
-    FE->>API: GET opinie (pipeline B5/F2)
-    API-->>FE: opinie + status moderacji
-    S->>FE: wybiera wzorzec odpowiedzi
-    FE-->>S: podgląd — bez danych zdrowotnych
-    S->>FE: wysyła odpowiedź
-    FE->>API: POST odpowiedź na opinię
-    API->>API: walidacja: brak danych zdrowotnych
-    alt walidacja OK
-        API-->>FE: odpowiedź opublikowana (A4)
-    else wykryto dane wrażliwe
-        API-->>FE: błąd — popraw odpowiedź
+    Note over S,Q: część 2 — przegląd opinii pacjentów i odpowiedź specjalisty
+    S->>FE: otwiera w panelu listę opinii o sobie
+    FE->>API: pobiera opinie z pipeline'u opinii B5/F2 (GET)
+    API-->>FE: zwraca opinie wraz ze statusem moderacji każdej z nich
+    S->>FE: wybiera gotowy wzorzec (szablon) odpowiedzi na opinię
+    FE-->>S: pokazuje podgląd odpowiedzi — szablon bez danych zdrowotnych pacjenta
+    S->>FE: zatwierdza i wysyła swoją odpowiedź
+    FE->>API: przekazuje odpowiedź na opinię do zapisania (POST)
+    API->>API: automatycznie sprawdza, czy odpowiedź nie zawiera danych zdrowotnych
+    alt walidacja przeszła — treść odpowiedzi jest bezpieczna
+        API-->>FE: publikuje odpowiedź specjalisty na profilu publicznym (A4)
+    else walidacja wykryła dane wrażliwe w odpowiedzi
+        API-->>FE: zwraca błąd — specjalista musi poprawić treść odpowiedzi
     end
 ```
 
@@ -62,6 +62,34 @@ sequenceDiagram
 ## Co opisuje ten diagram
 
 Dwuczęściowy flow w panelu specjalisty. Część 1: po terminie wizyty specjalista potwierdza, że wizyta się odbyła ("odbyła się" — wtedy po 2 godzinach pacjent dostaje prośbę o opinię), oznacza no-show albo nie robi nic — wtedy po 48 godzinach system potwierdza wizytę automatycznie, chyba że jest ona oznaczona jako no-show lub sporna. Część 2: specjalista przegląda opinie pacjentów i odpowiada na nie z gotowych wzorców, a system pilnuje, by odpowiedź nie zawierała danych zdrowotnych, zanim opublikuje ją na profilu.
+
+## Aktorzy w tym flow
+
+| Rola | Kto to jest | Co robi w tym flow |
+|---|---|---|
+| **Specjalista** (logopeda / lekarz) | usługodawca przyjmujący wizyty, główny użytkownik panelu | potwierdza odbyte wizyty ("odbyła się"), ewentualnie oznacza nieobecność pacjenta, a w części 2 przegląda opinie i odpowiada na nie z gotowych wzorców |
+| **Pacjent** (użytkownik strony; zwykle rodzic dziecka) | osoba, która była (lub miała być) na wizycie | w tym flow nic nie klika w panelu — jest odbiorcą: 2 h po potwierdzeniu wizyty dostaje SMS/e-mail z linkiem do wystawienia opinii (B5) |
+| **FE** (interfejs panelu) | ekrany panelu specjalisty widoczne w przeglądarce | pokazuje listę wizyt do potwierdzenia, listę opinii ze statusem moderacji i podgląd odpowiedzi przed wysłaniem |
+| **System/Backend** | serwery i logika platformy działające „pod spodem", bez udziału człowieka | zmienia stany wizyt (confirmed -> completed), uruchamia timery, waliduje odpowiedzi specjalisty pod kątem danych zdrowotnych i publikuje je na profilu (A4) |
+| **Joby/Kolejka** | automaty czasowe systemu — zadania wykonywane z opóźnieniem, bez udziału człowieka | odlicza 2 h do prośby o opinię (G3) i 48 h do auto-approvalu (G4); pilnuje blokady auto-approvalu przy no-show i sporze (Flaga 3) |
+| **SMS/Email** (bramka powiadomień) | usługa wysyłająca wiadomości SMS i e-mail | doręcza pacjentowi prośbę o opinię z tokenem-linkiem |
+
+## Objaśnienie kroków
+
+| Krok | Co to znaczy w praktyce | Kto tu działa |
+|---|---|---|
+| 1–3 | Specjalista otwiera w panelu listę wizyt, których termin już minął, a które wciąż mają stan confirmed („umówiona") — system czeka na informację, czy się odbyły. Panel pobiera tę listę z systemu i wyświetla. | Specjalista, FE, System/Backend |
+| 4–6 (ścieżka „odbyła się") | „Approval wizyty" — specjalista klika „odbyła się", panel przekazuje to do systemu, a system zmienia stan wizyty na completed („wizyta odbyta"). To potwierdzenie odblokowuje pacjentowi prawo do opinii. | Specjalista, FE, System/Backend |
+| 7–9 (prośba o opinię) | Start „pipeline'u opinii": system nastawia timer i po 2 godzinach od potwierdzenia wysyła pacjentowi SMS/e-mail z prośbą o opinię (G3, tzw. review ask). W wiadomości jest token — jednorazowy link, którym pacjent wystawi opinię bez logowania (B5). | System/Backend, Joby/Kolejka, SMS/Email (odbiorcą jest Pacjent) |
+| 10 (ścieżka no-show) | Zamiast potwierdzać, specjalista może z tej samej listy oznaczyć, że pacjent się nie stawił — kliknięcie przenosi do osobnego flow nieobecności (E7); tam wizyta przejdzie w stan no_show. | Specjalista, FE |
+| 11 (ścieżka „nic nie robię") | Jeśli specjalista nie zareaguje, w tle odlicza się timer: 48 godzin po terminie wizyty uruchamia się automat auto-approvalu (G4) — system nie chce, by wizyty wisiały bez rozstrzygnięcia w nieskończoność. | Joby/Kolejka |
+| 12–14 (auto-approval T+48 h) | Gdy przy wizycie nie ma zgłoszonego no-show ani otwartego sporu, automat sam potwierdza wizytę: stan zmienia się na completed dokładnie tak, jakby kliknął specjalista, i tak samo startuje prośba o opinię. | Joby/Kolejka, System/Backend |
+| 15 (blokada auto-approvalu) | Wyjątek (Flaga 3): wizyta w stanie no_show (pacjent nie przyszedł) albo disputed (trwa spór) NIE może być automatycznie potwierdzona — inaczej system uznałby za odbytą wizytę, która się nie odbyła, psując opinie i scoring. | Joby/Kolejka |
+| 16–18 (lista opinii) | Część 2: specjalista otwiera listę opinii o sobie. Panel pobiera je z pipeline'u opinii (pacjent wystawia w B5, moderacja sprawdza w F2) i pokazuje przy każdej status moderacji (np. czeka na sprawdzenie / opublikowana). | Specjalista, FE, System/Backend |
+| 19–20 (wzorzec odpowiedzi) | Specjalista nie pisze odpowiedzi od zera — wybiera gotowy wzorzec (szablon), ułożony tak, by nie zdradzać żadnych informacji o zdrowiu pacjenta. Panel pokazuje podgląd przed wysłaniem. | Specjalista, FE |
+| 21–23 (wysyłka i walidacja) | Specjalista zatwierdza odpowiedź, panel przekazuje ją do systemu, a system automatycznie sprawdza treść: czy nie ma w niej danych zdrowotnych pacjenta (takich informacji nie wolno publikować). | Specjalista, FE, System/Backend |
+| 24 (walidacja OK) | Treść jest bezpieczna — system publikuje odpowiedź specjalisty pod opinią na jego publicznym profilu (A4), gdzie zobaczą ją wszyscy odwiedzający. | System/Backend |
+| 25 (wykryte dane wrażliwe) | Walidacja znalazła w odpowiedzi dane zdrowotne — system zwraca błąd, odpowiedź nie zostaje opublikowana, a specjalista musi ją poprawić. | System/Backend, Specjalista |
 
 ## Powiązane diagramy
 
@@ -89,3 +117,10 @@ Dwuczęściowy flow w panelu specjalisty. Część 1: po terminie wizyty specjal
 | completed | stan wizyty potwierdzonej jako odbyta |
 | no_show / disputed | stany (niestawienie się / spór), które blokują automatyczne potwierdzenie wizyty |
 | token | link jednorazowy w SMS/emailu, którym pacjent wystawia opinię bez logowania |
+| confirmed | stan wizyty umówionej, która czeka na rozstrzygnięcie: odbyła się, no-show albo auto-approval |
+| pipeline opinii | pełna droga opinii przez system: prośba o opinię (G3) → wystawienie przez pacjenta (B5) → moderacja (F2) → publikacja na profilu (A4) |
+| T+2 h / T+48 h | zapis „ile czasu po terminie wizyty": prośba o opinię wychodzi 2 h po potwierdzeniu, auto-approval działa 48 h po wizycie |
+| Flaga 3 | otwarta decyzja projektowa: auto-approval musi być zablokowany przy no_show i sporze |
+| walidacja | automatyczne sprawdzenie treści odpowiedzi przez system przed publikacją |
+| GET / POST | techniczne typy zapytań panelu do systemu: GET pobiera dane, POST zapisuje zmianę |
+| status moderacji | etap, na którym jest opinia w pipeline: np. czeka na sprawdzenie, zaakceptowana, opublikowana |

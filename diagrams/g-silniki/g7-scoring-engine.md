@@ -3,25 +3,25 @@
 ```mermaid
 flowchart TD
     subgraph BE["BE — pod spodem"]
-        EV1(["booking.cancelled_late (B3)"])
-        EV2(["visit.no_show (E7)"])
-        EV3(["spór uznany (F3)"])
-        COR["korekta licznika w dół"]
-        CNT["licznik zdarzeń pacjenta"]
-        P0N["P0 min.: licznik no-show"]
-        TH{"próg przekroczony? (F8)"}
-        LV{"które przekroczenie?"}
-        SAN0["bez sankcji - tylko licznik"]
-        SAN1["poziom 1: ostrzeżenie"]
-        SAN2["poziom 2: gate w A5"]
-        SAN3["poziom 3: blokada konta"]
+        EV1(["event booking.cancelled_late - pacjent odwołał wizytę za późno (B3)"])
+        EV2(["event visit.no_show - pacjent nie pojawił się na wizycie (E7)"])
+        EV3(["admin uznał spór pacjenta - nieobecność cofnięta (F3)"])
+        COR["korekta: licznik przewinień pacjenta zmniejsza się"]
+        CNT["licznik przewinień pacjenta (no-show i późne odwołania)"]
+        P0N["wersja minimalna na start (P0): tylko prosty licznik no-show"]
+        TH{"czy licznik przekroczył próg ustawiony w konfiguracji? (F8)"}
+        LV{"które to z kolei przekroczenie progu?"}
+        SAN0["bez sankcji - system tylko zapamiętuje zdarzenie w liczniku"]
+        SAN1["sankcja poziom 1: ostrzeżenie dla pacjenta"]
+        SAN2["sankcja poziom 2: dodatkowa bariera (gate) przy kolejnej rezerwacji (A5)"]
+        SAN3["sankcja poziom 3: blokada konta pacjenta"]
     end
     subgraph FE["FE — widzi user"]
-        FE1["komunikat o sankcji"]
-        FE2["A5: wymagana przedpłata"]
-        FE3["A5: wymagana akceptacja"]
-        FE4["E4: wskaźnik no-show"]
-        FE5["B6: przycisk 'byłem'"]
+        FE1["pacjent widzi komunikat o nałożonej sankcji"]
+        FE2["checkout A5: wymagana przedpłata online"]
+        FE3["checkout A5: wymagana ręczna akceptacja specjalisty"]
+        FE4["panel specjalisty E4: wskaźnik no-show przy pacjencie"]
+        FE5["pacjent może kliknąć 'byłem na wizycie' (B6)"]
     end
 
     EV1 --> CNT
@@ -31,17 +31,17 @@ flowchart TD
     CNT -.- P0N
     CNT --> TH
     CNT --> FE4
-    TH -->|nie| SAN0
-    TH -->|tak| LV
-    LV -->|"1. raz"| SAN1
-    LV -->|"2. raz"| SAN2
-    LV -->|"kolejne (założenie)"| SAN3
+    TH -->|"nie - licznik poniżej progu"| SAN0
+    TH -->|"tak - próg przekroczony"| LV
+    LV -->|"pierwsze przekroczenie"| SAN1
+    LV -->|"drugie przekroczenie"| SAN2
+    LV -->|"trzecie i kolejne (założenie)"| SAN3
     SAN1 --> FE1
-    SAN3 -->|"odwołanie przez F3"| FE1
-    SAN2 -->|"Flaga 2: wariant przedpłaty"| FE2
-    SAN2 -->|"Flaga 2: wariant akceptacji"| FE3
+    SAN3 -->|"od blokady można się odwołać przez F3"| FE1
+    SAN2 -->|"Flaga 2: wariant z płatnością online"| FE2
+    SAN2 -->|"Flaga 2: wariant z akceptacją specjalisty"| FE3
     FE1 --> FE5
-    FE5 -->|"ticket F3"| EV3
+    FE5 -->|"otwiera zgłoszenie sporu do admina (F3)"| EV3
 
     classDef fe fill:#e8f4fd
     classDef be fill:#fdf2e8
@@ -63,6 +63,38 @@ flowchart TD
 ## Co opisuje ten diagram
 
 Diagram pokazuje silnik scoringu — mechanizm, który w tle zlicza "przewinienia" pacjenta: nieodbyte wizyty (no-show) i zbyt późne odwołania. Uruchamiają go zdarzenia z innych flow (późne odwołanie, oznaczenie no-show, rozstrzygnięcie sporu), a po przekroczeniu progów system nakłada rosnące sankcje: od ostrzeżenia, przez wymóg przedpłaty lub akceptacji przy kolejnej rezerwacji, po blokadę konta. Uczestniczą pacjent (odczuwa sankcje i może się od nich odwołać), specjalista (widzi wskaźnik no-show pacjenta) oraz admin (rozstrzyga spory i odwołania). Silnik działa w sposób ciągły — licznik rośnie i maleje wraz z kolejnymi zdarzeniami, więc flow nie ma jednego punktu końcowego.
+
+## Aktorzy w tym flow
+
+| Rola | Kto to jest | Co robi w tym flow |
+|---|---|---|
+| **System** (Backend) | serwer platformy — główny "aktor" tego silnika: scoring działa w pełni automatycznie, ludzie tylko wyzwalają zdarzenia swoim zachowaniem lub decyzjami | odbiera eventy o przewinieniach, prowadzi licznik per pacjent, porównuje go z progami z konfiguracji (F8) i nakłada rosnące sankcje |
+| **Pacjent** | użytkownik strony; u logopedów najczęściej rodzic rezerwujący wizytę dla dziecka | swoim zachowaniem (późne odwołanie, nieobecność) zasila licznik; odczuwa sankcje i może zakwestionować no-show przyciskiem "byłem na wizycie" (B6) |
+| **Specjalista** | logopeda/lekarz przyjmujący wizyty | wyzwala event `visit.no_show`, zgłaszając nieobecność pacjenta (E7); widzi w panelu wskaźnik no-show przy rezerwacjach (E4) |
+| **Admin** | operator platformy (back office) | rozstrzyga spory o no-show i odwołania od blokady konta (F3) — jego decyzja koryguje licznik w dół |
+| **FE** | to, co użytkownicy widzą w przeglądarce (strona pacjenta i panel specjalisty) | pokazuje komunikaty o sankcjach, wymóg przedpłaty/akceptacji w checkoucie oraz wskaźnik no-show |
+
+## Objaśnienie bloków
+
+| Blok | Co to znaczy w praktyce | Kto tu działa |
+|---|---|---|
+| event `booking.cancelled_late` (B3) | Wejście nr 1: pacjent odwołał wizytę już po dozwolonym czasie. Flow odwołania (B3) jest **publisherem** (nadawcą) tego eventu, a silnik scoringu jego **konsumentem** (odbiorcą) — dopisuje przewinienie do licznika. | Pacjent (wyzwala), System |
+| event `visit.no_show` (E7) | Wejście nr 2: specjalista zgłosił, że pacjent nie pojawił się na wizycie bez odwołania. Również dopisuje przewinienie do licznika. | Specjalista (wyzwala), System |
+| admin uznał spór (F3) | Wejście nr 3, działające w drugą stronę: admin przyznał pacjentowi rację w sporze ("byłem na wizycie"), więc wcześniej naliczone przewinienie trzeba wycofać. | Admin (wyzwala), System |
+| korekta: licznik zmniejsza się | Skutek uznanego sporu: licznik przewinień maleje, a nałożona już sankcja może zostać cofnięta. | System |
+| licznik przewinień pacjenta | Serce silnika: bieżąca suma no-show i późnych odwołań danego pacjenta. Rośnie z każdym przewinieniem, maleje po korekcie. | System |
+| wersja minimalna na start (P0) | Notatka wdrożeniowa, nie krok flow (stąd linia przerywana): w pierwszej wersji platformy (priorytet P0) wystarczy prosty licznik samych no-show; pełne progi i sankcje to kolejny etap (P1). | — |
+| czy licznik przekroczył próg? (F8) | Decyzja automatu: porównanie licznika z **progiem scoringu** — wartością graniczną, którą operator ustawia w konfiguracji platformy (F8), osobno dla każdego forka. | System |
+| bez sankcji | Licznik jest poniżej progu: nic się nie dzieje, system tylko zapamiętuje zdarzenie na przyszłość. | System |
+| które to z kolei przekroczenie progu? | Automat sprawdza, czy próg przekroczono po raz pierwszy, drugi czy kolejny — od tego zależy dotkliwość kary. To istota **sankcji progresywnych**: kary rosną z każdym kolejnym razem. | System |
+| sankcja poziom 1: ostrzeżenie | Pierwsze przekroczenie progu: pacjent dostaje tylko ostrzeżenie — informację, że jego zachowanie jest odnotowywane i kolejne przewinienia będą miały konsekwencje. | System |
+| sankcja poziom 2: gate w A5 | Drugie przekroczenie: przy następnej rezerwacji pacjent napotka **gate** — dodatkową barierę w checkoucie (A5). Zależnie od wariantu (Flaga 2) jest to przedpłata online albo wymóg ręcznej zgody specjalisty. | System |
+| sankcja poziom 3: blokada konta | Trzecie i kolejne przekroczenia (założenie projektowe): konto pacjenta zostaje zablokowane — nie może rezerwować wizyt; od blokady można się odwołać do admina (F3). | System |
+| pacjent widzi komunikat o sankcji | Widok pacjenta: strona informuje, jaka sankcja została nałożona i dlaczego; stąd też prowadzi droga do zakwestionowania no-show. | Pacjent |
+| checkout A5: wymagana przedpłata | Widok gate'u w wariancie z płatnościami online: rezerwacja dojdzie do skutku dopiero po wpłacie z góry. | Pacjent |
+| checkout A5: wymagana akceptacja | Widok gate'u w wariancie bez płatności online: rezerwację musi ręcznie zatwierdzić specjalista, zanim stanie się wiążąca. | Pacjent, Specjalista |
+| panel E4: wskaźnik no-show | Specjalista widzi przy rezerwacji, ile razy dany pacjent nie stawił się na wizycie — zasilane wprost licznikiem, niezależnie od progów i sankcji. | Specjalista |
+| przycisk "byłem na wizycie" (B6) | Z komunikatu o sankcji pacjent może zakwestionować oznaczoną nieobecność — kliknięcie otwiera zgłoszenie (ticket) do rozstrzygnięcia przez admina (F3). Tak domyka się pętla korekty widoczna na diagramie. | Pacjent, Admin |
 
 ## Powiązane diagramy
 
@@ -97,3 +129,9 @@ Diagram pokazuje silnik scoringu — mechanizm, który w tle zlicza "przewinieni
 | Korekta licznika | Obniżenie licznika (i ewentualne cofnięcie sankcji) po uznaniu sporu pacjenta w F3. |
 | Fork | Osobna kopia platformy dla innego wertykału lub rynku, z własną konfiguracją progów. |
 | Flaga 2 | Otwarta decyzja projektowa: gate to przedpłata czy akceptacja specjalisty (obecnie oba warianty). |
+| No-show | Nieobecność pacjenta na umówionej wizycie bez wcześniejszego odwołania. |
+| Publisher / konsument eventu | Publisher to flow, który ogłasza zdarzenie (np. odwołanie B3); konsument to silnik, który na nie reaguje (tu: scoring). |
+| P0 / P1 | Priorytety wdrożenia: P0 = minimalny zakres na start platformy, P1 = pełna wersja w kolejnym etapie. |
+| Ticket | Zgłoszenie sprawy do rozstrzygnięcia przez admina w back office (tu: spór o no-show trafiający do F3). |
+| Blokada konta | Najwyższa sankcja: pacjent traci możliwość rezerwowania wizyt do czasu decyzji admina po odwołaniu (F3). |
+| FE / BE | Podział diagramu: FE = to, co użytkownik widzi na stronie; BE = automatyka serwera działająca "pod spodem". |

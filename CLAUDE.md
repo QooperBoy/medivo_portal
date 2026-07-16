@@ -7,9 +7,15 @@ rozbieżności/braki wpisuj do `diagrams/_rozbieznosci.md`, nie naprawiaj po cic
 
 ## Konwencje plików
 - 1 flow = 1 plik `.md` w podfolderze grupy, nazwa: `{id}-{slug}.md` (np. `a5-checkout.md`)
-- Struktura pliku: nagłówek H1 z ID i nazwą → 1 blok ```mermaid → sekcja "Notatki"
-  (założenia, edge case'y, odwołania do innych ID)
-- Język diagramów: polski, zwięzłe etykiety (max ~5 słów w węźle)
+- Struktura pliku: nagłówek H1 z ID i nazwą → 1 blok ```mermaid → "Notatki"
+  (założenia, edge case'y) → "Co opisuje ten diagram" → "Aktorzy w tym flow"
+  (tabela: Rola | Kto to jest | Co robi w tym flow) → "Objaśnienie bloków"
+  (dla sequence: "Objaśnienie kroków" wg autonumeracji; tabela wyjaśniająca
+  KAŻDY blok/krok prostym językiem) → "Powiązane diagramy" → "Słownik"
+- Język diagramów: polski. Etykiety JEDNOZNACZNE — jasność ważniejsza niż
+  zwięzłość, bez skrótowców. Każde pojęcie/skrót z diagramu musi mieć
+  wyjaśnienie w "Objaśnieniu bloków" lub "Słowniku".
+  Wzorzec pełnej struktury: `diagrams/00-core/00-stany-rezerwacji.md`
 
 ## Typy diagramów (dobór wg charakteru flow)
 - Cykl życia stanów (rezerwacja, weryfikacja specjalisty): stateDiagram-v2

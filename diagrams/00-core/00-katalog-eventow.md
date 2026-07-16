@@ -3,74 +3,74 @@
 ```mermaid
 flowchart LR
     subgraph REZ["Domena: rezerwacje"]
-        PUB_A5["A5 checkout ukończony"]
-        PUB_B3["B3 odwołanie pacjenta"]
-        PUB_E56["E5/E6 odwołanie specjalisty"]
-        PUB_E7["E7 oznaczenie no-show"]
+        PUB_A5["A5: pacjent ukończył checkout - powstała rezerwacja"]
+        PUB_B3["B3: pacjent odwołuje wizytę linkiem z wiadomości"]
+        PUB_E56["E5/E6: specjalista odwołuje wizytę (pojedynczo lub hurtowo, np. urlop)"]
+        PUB_E7["E7: specjalista zgłasza nieobecność pacjenta (no-show)"]
         EV_CREATED(["booking.created"])
         EV_CANC(["booking.cancelled"])
         EV_LATE(["booking.cancelled_late"])
         EV_NOSHOW(["visit.no_show"])
         EV_SLOT(["slot.released — robocza"])
-        ENG_G1["G1 notification engine"]
-        ENG_G2["G2 reminder T-24 h"]
-        ENG_G6["G6 waitlist engine"]
-        ENG_G7["G7 scoring engine"]
-        ENG_G8["G8 fraud detection"]
-        ENG_G10["G10 calendar sync"]
-        EFF_MSG["SMS/email do stron"]
-        EFF_GATE["gate w checkout (A5)"]
-        EFF_E4["wskaźnik no-show (E4)"]
-        EFF_F4["flagi do przeglądu (F4)"]
+        ENG_G1["G1: silnik powiadomień - wysyłka SMS/e-mail (retry, dedup, opt-out)"]
+        ENG_G2["G2: przypomnienie o wizycie 24 h przed terminem"]
+        ENG_G6["G6: silnik waitlisty - kaskada propozycji zwolnionego terminu"]
+        ENG_G7["G7: silnik scoringu - zlicza no-show i późne odwołania"]
+        ENG_G8["G8: wykrywanie nadużyć (multikonta, podejrzane serie rezerwacji)"]
+        ENG_G10["G10: dwustronna synchronizacja z kalendarzem Google"]
+        EFF_MSG["skutek: SMS/e-mail do pacjenta i specjalisty"]
+        EFF_GATE["skutek: dodatkowa bariera (gate) w checkoucie (A5)"]
+        EFF_E4["skutek: wskaźnik no-show pacjenta w panelu specjalisty (E4)"]
+        EFF_F4["skutek: podejrzane konta trafiają do przeglądu admina (F4)"]
     end
 
     subgraph OPI["Domena: wizyty i opinie"]
-        PUB_E8["E8 approval ręczny"]
-        PUB_B6["B6 spór no-show"]
-        PUB_F2["F2 moderacja opinii"]
-        ENG_G4["G4 auto-approval T+48 h"]
+        PUB_E8["E8: specjalista ręcznie potwierdza, że wizyta się odbyła"]
+        PUB_B6["B6: pacjent otwiera spór o oznaczoną nieobecność ('byłem')"]
+        PUB_F2["F2: admin moderuje i zatwierdza opinię pacjenta"]
+        ENG_G4["G4: automat uznaje wizytę za odbytą 48 h po terminie"]
         EV_APPR(["visit.approved — robocza"])
         EV_DISP(["dispute.opened — robocza"])
         EV_REVOK(["review.approved"])
-        ENG_G3["G3 review ask T+2 h"]
-        EFF_OPUB["publikacja opinii (A4)"]
-        EFF_F3["ticket sporu (F3)"]
+        ENG_G3["G3: prośba o opinię 2 h po odbytej wizycie"]
+        EFF_OPUB["skutek: opinia pojawia się publicznie na profilu specjalisty (A4)"]
+        EFF_F3["skutek: zgłoszenie sporu trafia do rozstrzygnięcia przez admina (F3)"]
     end
 
     subgraph PAYD["Domena: płatności (Flaga 2)"]
-        PUB_PAY["Procesor płatności"]
-        PUB_A6T["A6 timeout płatności (job)"]
+        PUB_PAY["procesor płatności - zewnętrzny operator wysyłający webhooki"]
+        PUB_A6T["A6: job anuluje rezerwację po ok. 30 min bez wpłaty"]
         EV_PAYOK(["payment.succeeded — robocza"])
         EV_PAYRF(["payment.refunded — robocza"])
-        ENG_G9["G9 payment webhooks"]
-        EFF_RECON["reconciliation"]
+        ENG_G9["G9: obsługa webhooków płatności (potwierdzenia wpłat, zwroty)"]
+        EFF_RECON["skutek: reconciliation - uzgadnianie wpłat z rezerwacjami"]
     end
 
     subgraph ROPS["Domena: RODO / SEO"]
-        PUB_B9["B9 usunięcie konta/eksport"]
-        PUB_F5["F5 wnioski RODO"]
-        PUB_A5Z["A5 zgody RODO"]
-        PUB_D3["D3 go-live profilu"]
+        PUB_B9["B9: pacjent wnioskuje o usunięcie konta lub eksport danych"]
+        PUB_F5["F5: admin obsługuje wniosek RODO użytkownika"]
+        PUB_A5Z["A5: pacjent zaznacza zgody RODO w checkoucie"]
+        PUB_D3["D3: profil specjalisty startuje publicznie (go-live)"]
         EV_ERAS(["rodo.erasure_requested — robocza"])
         EV_CONS(["consent.recorded — robocza"])
         EV_PROF(["profile.published — robocza"])
-        ENG_G11["G11 RODO joby"]
-        ENG_G12["G12 SEO joby"]
-        EFF_SMAP["sitemap + schema.org refresh"]
-        EFF_AUD["audit log (F10)"]
+        ENG_G11["G11: joby RODO (usuwanie danych, rejestr zgód, retencja logów)"]
+        ENG_G12["G12: joby SEO (dane dla wyszukiwarek)"]
+        EFF_SMAP["skutek: odświeżenie sitemapy i danych schema.org dla Google"]
+        EFF_AUD["skutek: zapis operacji na danych w audit logu (F10)"]
     end
 
     PUB_A5 --> EV_CREATED
-    ENG_G6 -->|"auto-book (B4)"| EV_CREATED
-    ENG_G9 -->|"pending_payment -> confirmed"| EV_CREATED
+    ENG_G6 -->|"automatyczna rezerwacja z waitlisty (auto-book, B4)"| EV_CREATED
+    ENG_G9 -->|"wpłata potwierdza rezerwację: pending_payment -> confirmed"| EV_CREATED
     EV_CREATED --> ENG_G1
-    EV_CREATED -->|"scheduler T-24 h"| ENG_G2
-    EV_CREATED -->|"timer po wizycie"| ENG_G4
-    EV_CREATED -->|"wzorce, limity"| ENG_G8
+    EV_CREATED -->|"planuje przypomnienie na 24 h przed wizytą"| ENG_G2
+    EV_CREATED -->|"ustawia timer 48 h po terminie wizyty"| ENG_G4
+    EV_CREATED -->|"analiza wzorców i limitów rezerwacji"| ENG_G8
     EV_CREATED --> ENG_G10
 
-    PUB_B3 -->|"w terminie"| EV_CANC
-    PUB_B3 -->|"po terminie"| EV_LATE
+    PUB_B3 -->|"odwołanie w dozwolonym czasie"| EV_CANC
+    PUB_B3 -->|"odwołanie za późno (po dozwolonym czasie)"| EV_LATE
     PUB_E56 --> EV_CANC
     PUB_A6T --> EV_CANC
     EV_CANC --> ENG_G1
@@ -80,42 +80,42 @@ flowchart LR
     EV_LATE --> ENG_G1
     EV_LATE --> EV_SLOT
     EV_SLOT --> ENG_G6
-    ENG_G6 -->|"powiadomienie, okno 2 h"| ENG_G1
+    ENG_G6 -->|"powiadomienie oczekującego, okno 2 h na potwierdzenie"| ENG_G1
 
     PUB_E7 --> EV_NOSHOW
     EV_NOSHOW --> ENG_G7
-    EV_NOSHOW -->|"blokada (Flaga 3)"| ENG_G4
-    EV_NOSHOW -->|"komunikat o sankcji"| ENG_G1
+    EV_NOSHOW -->|"blokuje automatyczne uznanie wizyty (Flaga 3)"| ENG_G4
+    EV_NOSHOW -->|"komunikat o sankcji dla pacjenta"| ENG_G1
 
     ENG_G1 --> EFF_MSG
-    ENG_G2 -->|"T-24 h"| ENG_G1
+    ENG_G2 -->|"wysyłka przypomnienia 24 h przed wizytą"| ENG_G1
     ENG_G7 --> EFF_GATE
     ENG_G7 --> EFF_E4
     ENG_G8 --> EFF_F4
 
     PUB_E8 --> EV_APPR
-    ENG_G4 -->|"T+48 h bez blokady"| EV_APPR
+    ENG_G4 -->|"po 48 h, jeśli nic nie blokuje (Flaga 3)"| EV_APPR
     EV_APPR --> ENG_G3
-    ENG_G3 -->|"prośba o opinię (B5)"| ENG_G1
+    ENG_G3 -->|"wysyłka prośby o opinię z tokenem (B5)"| ENG_G1
     PUB_B6 --> EV_DISP
-    EV_DISP -->|"blokada (Flaga 3)"| ENG_G4
+    EV_DISP -->|"otwarty spór blokuje automatyczne uznanie (Flaga 3)"| ENG_G4
     EV_DISP --> EFF_F3
     PUB_F2 --> EV_REVOK
     EV_REVOK --> EFF_OPUB
-    EV_REVOK -->|"powiadomienie specjalisty"| ENG_G1
+    EV_REVOK -->|"powiadomienie specjalisty o nowej opinii"| ENG_G1
 
     PUB_PAY --> EV_PAYOK
     PUB_PAY --> EV_PAYRF
     EV_PAYOK --> ENG_G9
     EV_PAYRF --> ENG_G9
     ENG_G9 --> EFF_RECON
-    ENG_G9 -->|"powiadomienia"| ENG_G1
+    ENG_G9 -->|"powiadomienia o wpłacie lub zwrocie"| ENG_G1
 
     PUB_B9 --> EV_ERAS
     PUB_F5 --> EV_ERAS
     EV_ERAS --> ENG_G11
     PUB_A5Z --> EV_CONS
-    EV_CONS -->|"rejestr zgód"| ENG_G11
+    EV_CONS -->|"zapis do rejestru zgód"| ENG_G11
     ENG_G11 --> EFF_AUD
     PUB_D3 --> EV_PROF
     EV_PROF --> ENG_G12
@@ -156,6 +156,71 @@ flowchart LR
 ## Co opisuje ten diagram
 
 To zbiorcza mapa "układu nerwowego" systemu: pokazuje, jakie zdarzenia (eventy) powstają w wyniku działań pacjentów, specjalistów i adminów oraz które automatyczne silniki na nie reagują — wysyłką powiadomień, naliczaniem sankcji, obsługą płatności, jobami RODO czy odświeżaniem danych dla wyszukiwarek. Diagram nie ma jednego początku ani końca — działa jak katalog: każde zdarzenie (np. utworzenie lub odwołanie rezerwacji) uruchamia własną kaskadę automatycznych skutków. Dokumentuje też silniki G1–G3 i G8–G13, które nie mają osobnych diagramów.
+
+## Aktorzy w tym flow
+
+| Rola | Kto to jest | Co robi w tym flow |
+|---|---|---|
+| **System** (Backend + silniki G1–G13) | serwer platformy i jego automaty — główny "aktor" katalogu: eventy konsumują wyłącznie automaty, a ludzie jedynie wyzwalają zdarzenia swoimi działaniami | publikuje i konsumuje eventy: wysyła powiadomienia, nalicza scoring, prowadzi waitlistę, obsługuje płatności, joby RODO i SEO |
+| **Joby/Kolejka** | zadania działające w tle serwera: timery, harmonogramy, zadania cykliczne | odmierzają czasy: 24 h przed wizytą (przypomnienie), 2 h po wizycie (prośba o opinię), 48 h po terminie (automatyczne uznanie wizyty), ok. 30 min (timeout płatności) |
+| **Pacjent** | użytkownik strony; u logopedów najczęściej rodzic rezerwujący wizytę dla dziecka | wyzwala eventy: kończy checkout, odwołuje wizytę, otwiera spór o no-show, składa wnioski RODO, zaznacza zgody |
+| **Specjalista** | logopeda/lekarz przyjmujący wizyty, właściciel kalendarza | wyzwala eventy: odwołuje wizyty, zgłasza nieobecność pacjenta, potwierdza odbycie wizyty; jego profil przechodzi go-live |
+| **Admin** | operator platformy (back office) | wyzwala eventy: moderuje opinie, obsługuje wnioski RODO; odbiera skutki: spory i flagi nadużyć do rozstrzygnięcia |
+| **SMS/Email** | bramka powiadomień — system wysyłający wiadomości w imieniu platformy | jest końcowym skutkiem wielu eventów: dostarcza wiadomości pacjentom i specjalistom |
+| **Procesor płatności** | zewnętrzna firma obsługująca płatności online (domena aktywna wg Flagi 2) | publikuje webhooki — automatyczne sygnały o udanej wpłacie lub wykonanym zwrocie |
+
+## Objaśnienie bloków
+
+Jak czytać diagram: **publisherzy** (prostokąty, z lewej strony strzałek) to flowy i systemy, które ogłaszają zdarzenie; **eventy** (owalne "stadiony") to same zdarzenia — techniczne komunikaty "coś się stało"; **silniki** (G1–G12) to automaty-konsumenci, które na eventy reagują; **skutki** to widoczne efekty ich pracy.
+
+| Blok | Co to znaczy w praktyce | Kto tu działa |
+|---|---|---|
+| A5: pacjent ukończył checkout | Publisher: pacjent przeszedł cały formularz rezerwacji do końca — powstała nowa rezerwacja, o czym system ogłasza eventem `booking.created`. | Pacjent |
+| B3: pacjent odwołuje wizytę | Publisher: pacjent klika link "odwołaj" z wiadomości. Zależnie od tego, czy zrobił to w dozwolonym czasie, powstaje `booking.cancelled` (bez kary) albo `booking.cancelled_late` (z karą w scoringu). | Pacjent |
+| E5/E6: specjalista odwołuje wizytę | Publisher: specjalista odwołuje pojedynczą wizytę (E5) albo hurtowo wiele naraz, np. z powodu urlopu lub choroby (E6). | Specjalista |
+| E7: specjalista zgłasza no-show | Publisher: specjalista oznacza w panelu, że pacjent nie pojawił się na wizycie bez odwołania. | Specjalista |
+| E8: ręczne potwierdzenie wizyty | Publisher: specjalista potwierdza w panelu, że wizyta się odbyła. | Specjalista |
+| B6: pacjent otwiera spór | Publisher: pacjent kwestionuje oznaczoną nieobecność ("byłem na wizycie"). | Pacjent |
+| F2: admin moderuje opinię | Publisher: admin sprawdza treść opinii pacjenta i zatwierdza ją do publikacji. | Admin |
+| procesor płatności | Publisher zewnętrzny: firma obsługująca płatności wysyła webhooki — automatyczne sygnały o wpłacie lub zwrocie. | Procesor płatności |
+| A6: job anuluje po ok. 30 min | Publisher automatyczny: zadanie w tle anuluje rezerwację, za którą pacjent nie zapłacił w oknie ok. 30 minut. | Joby/Kolejka |
+| B9: usunięcie konta / eksport | Publisher: pacjent samodzielnie wnioskuje o usunięcie konta lub eksport swoich danych (samoobsługa RODO). | Pacjent |
+| F5: admin obsługuje wniosek RODO | Publisher: admin rejestruje wniosek RODO złożony innym kanałem (np. e-mailem). | Admin |
+| A5: zgody RODO w checkoucie | Publisher: pacjent zaznacza zgody podczas rezerwacji — każda udzielona zgoda musi zostać trwale odnotowana. | Pacjent |
+| D3: go-live profilu | Publisher: profil specjalisty przeszedł weryfikację i staje się publicznie widoczny. | Specjalista, System |
+| `booking.created` | Event "powstała nowa rezerwacja" — najważniejszy w katalogu: uruchamia potwierdzenia, planuje przypomnienie, ustawia timer automatycznego uznania wizyty, zasila analizę nadużyć i synchronizację kalendarza. | System |
+| `booking.cancelled` | Event "rezerwacja odwołana w dozwolonym czasie" — bez kary; uruchamia powiadomienia, aktualizuje kalendarz i zwalnia termin. | System |
+| `booking.cancelled_late` | Event "rezerwacja odwołana za późno" — jak wyżej, ale dodatkowo zasila scoring (przewinienie pacjenta). | System |
+| `visit.no_show` | Event "pacjent nie stawił się na wizycie" — zasila scoring, blokuje automatyczne uznanie wizyty (Flaga 3) i wysyła pacjentowi komunikat o sankcji. | System |
+| `slot.released` (robocza) | Event "zwolnił się termin" — sygnał startowy dla silnika waitlisty; nazwa robocza (mapa projektu jej nie definiuje). | System |
+| `visit.approved` (robocza) | Event "wizyta uznana za odbytą" — ręcznie przez specjalistę (E8) albo automatem po 48 h (G4); startuje prośbę o opinię. | System |
+| `dispute.opened` (robocza) | Event "pacjent otworzył spór o no-show" — tworzy zgłoszenie dla admina i blokuje automatyczne uznanie wizyty. | System |
+| `review.approved` | Event "opinia zatwierdzona przez moderację" — można ją opublikować na profilu i powiadomić specjalistę. | System |
+| `payment.succeeded` (robocza) | Event "wpłata doszła" — webhook od procesora płatności; potwierdza czekającą rezerwację. | Procesor płatności |
+| `payment.refunded` (robocza) | Event "zwrot wykonany" — webhook od procesora płatności o zwróconych pieniądzach. | Procesor płatności |
+| `rodo.erasure_requested` (robocza) | Event "ktoś zażądał usunięcia danych" — uruchamia joby usuwania danych osobowych. | System |
+| `consent.recorded` (robocza) | Event "zgoda została udzielona" — do trwałego zapisania w rejestrze zgód. | System |
+| `profile.published` (robocza) | Event "profil specjalisty wystartował publicznie" — sygnał dla jobów SEO. | System |
+| G1: silnik powiadomień | Konsument-rozdzielnia: wspólna "skrzynka nadawcza" platformy. Kolejkuje i wysyła SMS-y/e-maile, ponawia nieudane wysyłki (**retry**), pilnuje, by nie wysłać dwa razy tego samego (**dedup** — możliwy dzięki idempotencji), respektuje rezygnacje z powiadomień (opt-out). | System |
+| G2: przypomnienie 24 h przed | Konsument: na 24 godziny przed wizytą wysyła (przez G1) przypomnienie — tylko dla wizyt wciąż umówionych (`confirmed`). | Joby/Kolejka |
+| G3: prośba o opinię 2 h po | Konsument: 2 godziny po uznaniu wizyty za odbytą wysyła pacjentowi link do wystawienia opinii (B5). | Joby/Kolejka |
+| G4: automat uznaje wizytę po 48 h | Konsument: jeśli 48 h po terminie wizyty nikt nie zgłosił problemu, automat uznaje ją za odbytą; blokują go zgłoszony no-show i otwarty spór (Flaga 3). | Joby/Kolejka |
+| G6: silnik waitlisty | Konsument eventu `slot.released`: proponuje zwolniony termin kolejnym osobom z listy oczekujących (**kaskada** w porządku **FIFO** — kto pierwszy się zapisał, ten pierwszy dostaje propozycję), każdej dając **okno 2 h** na potwierdzenie. | System |
+| G7: silnik scoringu | Konsument: zlicza przewinienia pacjenta (no-show, późne odwołania) i po przekroczeniu progów nakłada **sankcje progresywne** — od ostrzeżenia, przez gate w checkoucie, po blokadę konta. | System |
+| G8: wykrywanie nadużyć | Konsument: analizuje wzorce rezerwacji (multikonta, serie, limity per numer telefonu/IP/urządzenie) i flaguje podejrzane przypadki do ręcznego przeglądu. | System |
+| G9: obsługa webhooków płatności | Konsument webhooków: udana wpłata potwierdza rezerwację (`pending_payment` → `confirmed`), zwrot jest księgowany; prowadzi też reconciliation. | System |
+| G10: synchronizacja kalendarza | Konsument: dwustronna wymiana z kalendarzem Google specjalisty — nowe i odwołane wizyty trafiają do jego prywatnego kalendarza i odwrotnie. | System |
+| G11: joby RODO | Konsument: realizuje żądania usunięcia danych, prowadzi rejestr zgód i pilnuje retencji (ograniczonego czasu przechowywania) logów. | Joby/Kolejka |
+| G12: joby SEO | Konsument: po publikacji profilu odświeża dane dla wyszukiwarek, żeby Google szybciej zaindeksował stronę specjalisty. | Joby/Kolejka |
+| skutek: SMS/e-mail do stron | Końcowy efekt większości eventów: wiadomości dostarczone pacjentowi i specjaliście. | SMS/Email |
+| skutek: gate w checkoucie (A5) | Dodatkowa bariera przy rezerwacji (przedpłata albo akceptacja specjalisty) nakładana przez scoring na pacjentów z przewinieniami. | System, Pacjent |
+| skutek: wskaźnik no-show (E4) | Specjalista widzi przy rezerwacji historię nieobecności danego pacjenta. | Specjalista |
+| skutek: flagi do przeglądu (F4) | Podejrzane konta i zachowania czekają w kolejce na ręczną decyzję admina. | Admin |
+| skutek: publikacja opinii (A4) | Zatwierdzona opinia pojawia się publicznie na profilu specjalisty. | System |
+| skutek: ticket sporu (F3) | Spór pacjenta trafia jako zgłoszenie do rozstrzygnięcia przez admina. | Admin |
+| skutek: reconciliation | Uzgadnianie płatności: porównanie wpłat zaksięgowanych u procesora z rezerwacjami w systemie, żeby nic nie zginęło. | System |
+| skutek: sitemap + schema.org | Odświeżone dane dla wyszukiwarek — lepsza widoczność profili specjalistów w Google. | System |
+| skutek: audit log (F10) | Trwały zapis operacji na danych osobowych, prowadzony do celów kontroli i zgodności z RODO. | System |
 
 ## Powiązane diagramy
 
@@ -205,3 +270,18 @@ To zbiorcza mapa "układu nerwowego" systemu: pokazuje, jakie zdarzenia (eventy)
 | Sitemap / schema.org | Dane dla wyszukiwarek odświeżane po publikacji profilu, żeby poprawić widoczność w Google. |
 | Audit log | Trwały zapis operacji na danych wrażliwych, prowadzony do celów kontroli. |
 | Nazwa robocza | Event, którego nazwy mapa projektu nie definiuje — zaproponowany tymczasowo i zgłoszony w rozbieżnościach. |
+| Retry | Automatyczne ponawianie nieudanej operacji (np. wysyłki SMS-a), aż się powiedzie albo wyczerpie się limit prób. |
+| Dedup (deduplikacja) | Ochrona przed podwójnym wykonaniem tej samej operacji — np. wysłaniem dwóch identycznych wiadomości, gdy event dotrze do silnika powtórnie. |
+| Idempotencja | Cecha operacji, którą można bezpiecznie powtórzyć bez podwójnego skutku — fundament mechanizmów retry i dedup przy przetwarzaniu eventów. |
+| FIFO | "First in, first out" — kolejka obsługiwana w kolejności zapisów: kto pierwszy się zapisał, ten pierwszy dostaje propozycję. |
+| Kaskada | Automatyczne przechodzenie propozycji terminu do kolejnych osób z kolejki, gdy poprzednia nie zareaguje (G6). |
+| Okno 2 h | Czas, jaki osoba z waitlisty ma na potwierdzenie zaproponowanego terminu, zanim propozycja przejdzie dalej (G6). |
+| Gate | Dodatkowa bariera w checkoucie (przedpłata albo akceptacja specjalisty) nakładana przez scoring (G7). |
+| Sankcje progresywne | Kary rosnące z kolejnymi przewinieniami pacjenta: ostrzeżenie → gate w checkoucie → blokada konta (G7). |
+| Próg scoringu | Wartość licznika przewinień, po której przekroczeniu włącza się sankcja; konfigurowana przez operatora (F8). |
+| No-show | Nieobecność pacjenta na umówionej wizycie bez wcześniejszego odwołania. |
+| Job / timer / scheduler | Zadanie wykonywane w tle serwera: timer odlicza czas od zdarzenia, scheduler planuje wykonanie na konkretny moment. |
+| T−24 h / T+2 h / T+48 h | Zapis czasu względem terminu wizyty (T): 24 godziny przed nią, 2 godziny po niej, 48 godzin po niej. |
+| P0 / P1 / P2 | Priorytety wdrożenia silników: P0 = niezbędne na start platformy, P1/P2 = kolejne etapy rozwoju. |
+| Flaga 2 / Flaga 3 | Otwarte decyzje projektowe: Flaga 2 — czy platforma startuje z płatnościami online; Flaga 3 — blokada automatycznego uznania wizyty przy no-show lub sporze. |
+| Retencja | Ograniczony czas przechowywania danych (np. logów z adresami IP), po którym system automatycznie je usuwa. |

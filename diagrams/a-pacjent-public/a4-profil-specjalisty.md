@@ -3,28 +3,28 @@
 ```mermaid
 flowchart TD
     subgraph FE["FE — widzi user"]
-        PROFIL["Profil specjalisty"]
-        BIO["Bio"]
-        BADGE["Badge: PWZ zweryfikowany"]
-        ADRESY["Adresy + mapa"]
-        USLUGI["Usługi + ceny"]
-        KALENDARZ["Pełny kalendarz"]
-        OPINIE["Opinie + badge wiarygodności"]
-        ODPOW["Odpowiedzi specjalisty"]
-        SLOT{"Wolny slot?"}
-        A5LINK["Checkout (A5)"]
-        A8LINK["Brak slotów (A8)"]
+        PROFIL["Publiczny profil specjalisty — jego wizytówka w serwisie"]
+        BIO["Bio: opis specjalisty, doświadczenie, specjalizacje"]
+        BADGE["Badge „PWZ zweryfikowany” — uprawnienia potwierdzone przez serwis"]
+        ADRESY["Adresy gabinetów z mapą dojazdu"]
+        USLUGI["Lista usług z cenami"]
+        KALENDARZ["Pełny kalendarz wolnych terminów specjalisty"]
+        OPINIE["Opinie pacjentów z badge'em wiarygodności"]
+        ODPOW["Odpowiedzi specjalisty na opinie pacjentów"]
+        SLOT{"Czy jest wolny termin?"}
+        A5LINK["Start rezerwacji wybranego terminu — checkout (A5)"]
+        A8LINK["Ścieżka „brak terminów”: podobni specjaliści + waitlista (A8)"]
     end
 
     subgraph BE["BE — pod spodem"]
-        PROFAPI["Profile API"]
-        REVAPI["Reviews API"]
-        AVAILAPI["Availability API (E2)"]
-        SCHEMA["Schema.org profilu"]
+        PROFAPI["Profile API: serwer dostarcza dane profilu"]
+        REVAPI["Reviews API: serwer dostarcza opublikowane opinie"]
+        AVAILAPI["Availability API: wolne terminy na żywo z grafiku specjalisty (E2)"]
+        SCHEMA["Znaczniki schema.org profilu — dane strukturalne dla Google"]
     end
 
     PROFAPI --> PROFIL
-    SCHEMA -.->|"SEO profilu"| PROFIL
+    SCHEMA -.->|"widoczność profilu w Google (SEO)"| PROFIL
     PROFIL --> BIO
     PROFIL --> BADGE
     PROFIL --> ADRESY
@@ -35,8 +35,8 @@ flowchart TD
     OPINIE --> ODPOW
     AVAILAPI --> KALENDARZ
     KALENDARZ --> SLOT
-    SLOT -->|"tak: wybór slotu"| A5LINK
-    SLOT -->|"nie"| A8LINK
+    SLOT -->|"tak — pacjent wybiera termin"| A5LINK
+    SLOT -->|"nie — kalendarz bez wolnych terminów"| A8LINK
 
     classDef fe fill:#e8f4fd
     classDef be fill:#fdf2e8
@@ -54,6 +54,35 @@ flowchart TD
 
 ## Co opisuje ten diagram
 Przedstawia publiczny profil specjalisty — wizytówkę z bio, potwierdzeniem uprawnień (badge PWZ), adresami na mapie, usługami z cenami, pełnym kalendarzem oraz opiniami pacjentów wraz z odpowiedziami specjalisty. Pacjent trafia tu z listy wyników albo bezpośrednio z Google. Flow kończy się wyborem wolnego terminu i przejściem do rezerwacji (A5) albo — gdy terminów brak — przejściem do ścieżki „podobni + waitlista" (A8).
+
+## Aktorzy w tym flow
+
+| Rola | Kto to jest | Co robi w tym flow |
+|---|---|---|
+| **Pacjent** | użytkownik strony; u logopedów zwykle rodzic rezerwujący wizytę dla dziecka | przegląda profil (opis, ceny, opinie, adresy), sprawdza kalendarz i wybiera wolny termin |
+| **Specjalista** (logopeda) | usługodawca przyjmujący wizyty, właściciel profilu | w tym flow nie klika niczego na żywo — profil pokazuje treści, które wcześniej przygotował: bio, usługi z cenami, grafik dostępności oraz jego odpowiedzi na opinie |
+| **FE** (interfejs) | to, co użytkownik widzi w przeglądarce — strona profilu | składa profil z sekcji (bio, badge, adresy, usługi, kalendarz, opinie) i prowadzi pacjenta do wyboru terminu |
+| **Backend** | serwer platformy — część systemu niewidoczna dla użytkownika | dostarcza dane profilu, opublikowane opinie i aktualne wolne terminy; utrzymuje znaczniki schema.org, dzięki którym profil jest dobrze widoczny w Google |
+
+## Objaśnienie bloków
+
+| Blok | Co to znaczy w praktyce | Kto tu działa |
+|---|---|---|
+| Publiczny profil specjalisty | Punkt startu: strona-wizytówka jednego specjalisty, dostępna bez logowania. Pacjent trafia tu z listy wyników (A3) albo prosto z Google (A1). | Pacjent, FE |
+| Bio | Sekcja z opisem specjalisty: kim jest, jakie ma doświadczenie i czym się zajmuje. Treść przygotowuje sam specjalista. | FE (treść od Specjalisty) |
+| Badge „PWZ zweryfikowany" | Znaczek przy nazwisku informujący, że serwis sprawdził numer prawa wykonywania zawodu specjalisty (proces D1, zatwierdzany przez admina w F1). Dla pacjenta to sygnał: „to prawdziwy, uprawniony specjalista". | FE |
+| Adresy gabinetów z mapą | Sekcja z miejscami przyjęć — specjalista może mieć kilka adresów; każdy pokazany na mapie. | FE (dane od Specjalisty) |
+| Lista usług z cenami | Cennik: jakie usługi specjalista oferuje (np. diagnoza, terapia) i ile kosztują. Ceny pochodzą z panelu specjalisty (E3) — bez ukrytych kosztów. | FE (dane od Specjalisty) |
+| Pełny kalendarz wolnych terminów | Kalendarz ze wszystkimi wolnymi terminami specjalisty (nie tylko 3–5 najbliższych jak na liście wyników). Terminy pobierane na żywo z grafiku, więc są zawsze aktualne. | Pacjent, FE |
+| Opinie pacjentów z badge'em wiarygodności | Sekcja opinii. Badge wiarygodności oznacza, że opinię napisał pacjent po faktycznie odbytej wizycie — opinie nie biorą się „z powietrza" (pipeline: B5 → moderacja F2). | FE |
+| Odpowiedzi specjalisty na opinie | Pod opinią może być widoczna publiczna odpowiedź specjalisty — np. podziękowanie albo odniesienie się do krytyki. | FE (treść od Specjalisty) |
+| Czy jest wolny termin? | Rozwidlenie: jeśli w kalendarzu jest wolny termin, pacjent może go wybrać i przejść do rezerwacji; jeśli nie ma żadnego — pacjent dostaje ścieżkę awaryjną. | Pacjent, FE |
+| Start rezerwacji — checkout (A5) | Wyjście z flow: pacjent wybrał termin i zaczyna proces rezerwacji — opisany w diagramie A5. | Pacjent |
+| Ścieżka „brak terminów" (A8) | Wyjście awaryjne: brak wolnych terminów kieruje pacjenta do propozycji podobnych specjalistów i zapisu na listę oczekujących (waitlistę) — diagram A8. | Pacjent, FE |
+| Profile API | Usługa serwera, która dostarcza na stronę wszystkie dane profilu (bio, adresy, usługi, badge). | Backend |
+| Reviews API | Usługa serwera, która dostarcza na profil opinie — wyłącznie te już opublikowane po moderacji. | Backend |
+| Availability API (E2) | Usługa serwera, która na bieżąco podaje wolne terminy z grafiku prowadzonego przez specjalistę w jego panelu (E2). | Backend |
+| Znaczniki schema.org | Specjalne oznaczenia w kodzie strony, niewidoczne dla pacjenta, które pomagają Google zrozumieć profil (np. pokazać ocenę w wynikach wyszukiwania). Odświeżane automatycznie (G12). | Backend |
 
 ## Powiązane diagramy
 | ID | Diagram | Jak się łączy |
@@ -85,3 +114,10 @@ Przedstawia publiczny profil specjalisty — wizytówkę z bio, potwierdzeniem u
 | Pipeline opinii | Droga opinii od wystawienia przez pacjenta, przez moderację, do publikacji i odpowiedzi specjalisty. |
 | Schema.org | Znaczniki w kodzie strony pomagające Google zrozumieć profil (np. pokazać ocenę w wynikach). |
 | SEO | Działania, dzięki którym profil jest widoczny w Google pod własnym adresem. |
+| Bio | Opis specjalisty na profilu: doświadczenie, specjalizacje, sposób pracy. |
+| Checkout | Proces rezerwacji od kliknięcia terminu do potwierdzenia — wieloetapowy formularz opisany w A5. |
+| Waitlista | Lista oczekujących pacjentów, którym system proponuje zwolniony termin. |
+| Profile API | Usługa serwerowa dostarczająca na stronę dane profilu specjalisty. |
+| FE (frontend) | Interfejs — to, co użytkownik widzi i klika w przeglądarce. |
+| BE (backend) | Serwer platformy — część systemu działająca „pod spodem", niewidoczna dla użytkownika. |
+| A1, A3, A5, A8, E2, G12 | Identyfikatory innych flowów z mapy projektu — każdy ma własny diagram (A1: wejście z SEO, A3: lista wyników, A5: checkout, A8: brak slotów, E2: grafik, G12: joby SEO). |

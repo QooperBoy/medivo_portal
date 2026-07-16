@@ -10,31 +10,31 @@ sequenceDiagram
     actor S as Specjalista
     participant MSG as SMS/Email
 
-    Note over P,API: kroki jak w [[a5-checkout]]<br/>aż do scoring gate (G7)
-    API->>API: scoring gate (G7): wymagana akceptacja
-    API-->>FE: info "rezerwacja wymaga akceptacji"
-    P->>FE: podsumowanie + klik "wyślij prośbę"
-    FE->>API: POST utworzenie rezerwacji
-    API->>API: locked -> pending_approval
-    API->>Q: enqueue G1 (powiadomienie specjalisty)
-    Q->>MSG: SMS/email do specjalisty
-    API-->>FE: ekran "czekamy na akceptację"
-    alt specjalista akceptuje
-        S->>API: akceptacja w panelu (E4)
-        API->>API: pending_approval -> confirmed
-        API->>API: generacja tokenów samoobsługi (A7)
-        API->>Q: enqueue G1 (powiadomienia)
-        Q->>MSG: pacjent: potwierdzenie + token + .ics
-    else specjalista odrzuca
-        S->>API: odrzucenie w panelu (E4)
-        API->>API: pending_approval -> cancelled_by_specialist
-        API->>Q: zwolniony slot -> waitlista (G6)
-        Q->>MSG: pacjent: powiadomienie o odrzuceniu
-    else brak reakcji — timeout (założenie: 24 h)
-        Q->>API: timeout akceptacji
-        API->>API: pending_approval -> cancelled_by_specialist
-        API->>Q: zwolniony slot -> waitlista (G6)
-        Q->>MSG: pacjent: anulacja z braku reakcji
+    Note over P,API: wcześniejsze kroki identyczne jak w [[a5-checkout]]<br/>(usługa, termin, dane, kod SMS, zgody) — aż do scoring gate (G7)
+    API->>API: bramka scoringowa (scoring gate, G7) decyduje: wymagana akceptacja specjalisty
+    API-->>FE: informuje pacjenta "rezerwacja wymaga akceptacji specjalisty"
+    P->>FE: sprawdza podsumowanie rezerwacji i klika "wyślij prośbę o wizytę"
+    FE->>API: zlecenie utworzenia rezerwacji
+    API->>API: rezerwacja czeka na decyzję, stan: locked -> pending_approval
+    API->>Q: zleca w tle powiadomienie specjalisty o nowej prośbie (G1)
+    Q->>MSG: wysyła specjaliście SMS/e-mail o prośbie do rozpatrzenia
+    API-->>FE: pokazuje pacjentowi ekran "czekamy na akceptację specjalisty"
+    alt specjalista akceptuje prośbę
+        S->>API: zatwierdza rezerwację w swoim panelu (E4)
+        API->>API: potwierdza wizytę, stan: pending_approval -> confirmed
+        API->>API: generuje tokeny samoobsługi — linki do zarządzania wizytą (A7)
+        API->>Q: zleca w tle wysyłkę powiadomień do pacjenta (G1)
+        Q->>MSG: wysyła pacjentowi potwierdzenie + link zarządzania + plik .ics
+    else specjalista odrzuca prośbę
+        S->>API: odrzuca rezerwację w swoim panelu (E4)
+        API->>API: anuluje rezerwację, stan: pending_approval -> cancelled_by_specialist
+        API->>Q: zwalnia termin i przekazuje go na waitlistę (G6)
+        Q->>MSG: wysyła pacjentowi powiadomienie o odrzuceniu prośby
+    else specjalista nie reaguje — mija limit czasu (założenie: 24 h)
+        Q->>API: zgłasza upływ limitu czasu na akceptację
+        API->>API: anuluje rezerwację, stan: pending_approval -> cancelled_by_specialist
+        API->>Q: zwalnia termin i przekazuje go na waitlistę (G6)
+        Q->>MSG: wysyła pacjentowi informację o anulacji z braku reakcji specjalisty
     end
 ```
 
@@ -51,6 +51,29 @@ sequenceDiagram
 
 ## Co opisuje ten diagram
 Wariant rezerwacji, w którym system — na podstawie scoringu pacjenta — wymaga, aby specjalista ręcznie zaakceptował prośbę o wizytę. Uczestniczą pacjent, specjalista (działający w swoim panelu) oraz system wysyłający powiadomienia. Flow zaczyna się od decyzji bramki scoringowej „wymagana akceptacja", a kończy potwierdzeniem wizyty po akceptacji albo anulacją i zwolnieniem terminu, gdy specjalista odrzuci prośbę lub nie zareaguje w ciągu 24 godzin.
+
+## Aktorzy w tym flow
+
+| Rola | Kto to jest | Co robi w tym flow |
+|---|---|---|
+| **Pacjent** | użytkownik strony; u logopedów najczęściej rodzic rezerwujący wizytę dla dziecka (B7) | sprawdza podsumowanie i wysyła prośbę o wizytę, potem czeka na decyzję specjalisty |
+| **Specjalista** | logopeda/lekarz — usługodawca, właściciel kalendarza wizyt | dostaje powiadomienie o prośbie i w swoim panelu (E4) akceptuje ją albo odrzuca |
+| **FE** (interfejs) | strona serwisu w przeglądarce pacjenta — to, co pacjent widzi na ekranie | pokazuje informację o wymaganej akceptacji, ekran „czekamy na akceptację" oraz wynik |
+| **Backend** (system) | serwer platformy — część działająca po stronie serwisu, niewidoczna dla pacjenta | podejmuje decyzję bramki scoringowej, tworzy rezerwację, zmienia jej stany, generuje tokeny samoobsługi |
+| **Joby/Kolejka** | zadania wykonywane w tle, poza główną „rozmową" pacjenta z systemem | wysyła powiadomienia, pilnuje limitu czasu na decyzję (24 h), przekazuje zwolniony termin na waitlistę |
+| **SMS/Email** | bramka powiadomień — usługa wysyłająca SMS-y i e-maile | zawiadamia specjalistę o prośbie, a pacjenta o potwierdzeniu, odrzuceniu lub anulacji |
+
+## Objaśnienie kroków
+
+| Kroki (nr) | Co to znaczy w praktyce | Kto tu działa |
+|---|---|---|
+| 1–2 | Bramka scoringowa (G7) uznała, że pacjent — z powodu historii nieobecności — może zarezerwować wizytę tylko za zgodą specjalisty. Pacjent widzi informację, że rezerwacja wymaga akceptacji. | Backend, FE |
+| 3–5 | Pacjent sprawdza podsumowanie i klika „wyślij prośbę o wizytę". System tworzy rezerwację w stanie oczekiwania na decyzję (pending_approval) — termin jest trzymany dla pacjenta, ale wizyta nie jest jeszcze potwierdzona. | Pacjent, FE, Backend |
+| 6–7 | System zleca w tle powiadomienie: specjalista dostaje SMS/e-mail, że w jego panelu czeka prośba o wizytę do rozpatrzenia. | Backend, Joby/Kolejka, SMS/Email |
+| 8 | Pacjent widzi ekran „czekamy na akceptację specjalisty" — na tym etapie może tylko czekać na decyzję. | Backend, FE |
+| 9–13 | Akceptacja: specjalista zatwierdza prośbę w swoim panelu (E4). Wizyta zostaje potwierdzona (stan confirmed), system generuje tokeny samoobsługi (linki, którymi pacjent później zmieni lub odwoła wizytę bez logowania) i wysyła pacjentowi potwierdzenie z linkiem zarządzania oraz plikiem .ics (termin do wgrania do kalendarza). | Specjalista, Backend, Joby/Kolejka, SMS/Email |
+| 14–17 | Odrzucenie: specjalista odrzuca prośbę w panelu (E4). Rezerwacja przechodzi w stan cancelled_by_specialist, zwolniony termin trafia na waitlistę (G6), a pacjent dostaje powiadomienie o odrzuceniu. | Specjalista, Backend, Joby/Kolejka, SMS/Email |
+| 18–21 | Brak reakcji: jeśli specjalista nie podejmie decyzji w założonym czasie (24 h), kolejka zgłasza upływ limitu i system sam anuluje rezerwację (również stan cancelled_by_specialist). Termin wraca na waitlistę (G6), a pacjent dostaje informację o anulacji. | Joby/Kolejka, Backend, SMS/Email |
 
 ## Powiązane diagramy
 | ID | Diagram | Jak się łączy |
@@ -81,3 +104,8 @@ Wariant rezerwacji, w którym system — na podstawie scoringu pacjenta — wyma
 | Token samoobsługi | Link dla pacjenta do zarządzania wizytą bez logowania, generowany po akceptacji. |
 | .ics | Plik z terminem wizyty do dodania do kalendarza pacjenta. |
 | Fallback | Rozwiązanie zapasowe — ten wariant zastępuje przedpłatę, gdyby serwis ruszył bez płatności online. |
+| Scoring | Wewnętrzna punktacja wiarygodności pacjenta (historia nieobecności i późnych odwołań) — źródło decyzji bramki. |
+| locked | Stan z wcześniejszej, wspólnej części checkoutu — termin zablokowany na 10 minut dla pacjenta (lock G5, TTL). |
+| confirmed | Kanoniczny stan „wizyta umówiona" — osiągany tu po akceptacji specjalisty. |
+| Panel specjalisty (E4) | Miejsce w serwisie, w którym specjalista zarządza rezerwacjami — tam akceptuje lub odrzuca prośby o wizytę. |
+| Kolejka (joby) | Zadania wykonywane w tle: powiadomienia, pilnowanie limitu czasu na decyzję, przekazanie terminu na waitlistę. |

@@ -9,58 +9,58 @@ sequenceDiagram
     participant Q as Joby/Kolejka
     participant MSG as SMS/Email
 
-    P->>FE: wybór usługi (cena)
-    P->>FE: wybór slotu (z A4)
-    FE->>API: POST lock slotu (G5)
-    alt slot wolny
-        API->>API: lock TTL 10 min, draft -> locked
-        API-->>FE: checkout otwarty
-    else slot zajęty w międzyczasie
-        API-->>FE: błąd "slot niedostępny"
-        FE-->>P: powrót do wyboru slotu (A4/A8)
+    P->>FE: wybiera usługę i widzi jej cenę
+    P->>FE: wybiera konkretny termin wizyty (slot z profilu A4)
+    FE->>API: prośba o zablokowanie wybranego terminu (lock slotu, G5)
+    alt termin nadal wolny — blokada się udaje
+        API->>API: blokuje termin na 10 minut (lock z TTL), stan: draft -> locked
+        API-->>FE: potwierdza blokadę — formularz rezerwacji (checkout) otwarty
+    else termin zajęty — ktoś inny właśnie go zarezerwował
+        API-->>FE: zwraca błąd "ten termin jest już niedostępny"
+        FE-->>P: pokazuje komunikat i cofa do wyboru innego terminu (A4/A8)
     end
-    P->>FE: dla kogo: ja / dziecko / inna osoba
-    opt dziecko lub inna osoba (B7)
-        P->>FE: mini-profil podopiecznego
-        P->>FE: zgoda opiekuna (RODO dane dziecka)
+    P->>FE: wskazuje, dla kogo jest wizyta: dla siebie / dziecka / innej osoby
+    opt wizyta dla dziecka lub innej osoby (B7)
+        P->>FE: wypełnia mini-profil podopiecznego (dane osoby, która przyjdzie na wizytę)
+        P->>FE: zaznacza zgodę opiekuna na przetwarzanie danych dziecka (RODO)
     end
-    P->>FE: dane rezerwującego (numer = tożsamość)
-    FE->>API: POST wysyłka OTP
-    API->>MSG: SMS z kodem OTP
-    alt kod dochodzi
-        P->>FE: wpisanie kodu OTP
-        FE->>API: POST weryfikacja OTP
-        API->>API: lekkie konto + osobna encja pacjenta
-    else OTP nie dochodzi
-        P->>FE: klik "wyślij ponownie"
-        FE->>API: retry OTP (limit prób, B1)
-        API->>MSG: ponowny SMS z kodem
+    P->>FE: podaje swoje dane kontaktowe — numer telefonu pełni rolę tożsamości
+    FE->>API: prośba o wysłanie jednorazowego kodu weryfikacyjnego (OTP)
+    API->>MSG: wysyła SMS z jednorazowym kodem (OTP) na podany numer
+    alt kod SMS dotarł do pacjenta
+        P->>FE: przepisuje kod z SMS-a do formularza
+        FE->>API: przekazuje wpisany kod do sprawdzenia
+        API->>API: kod poprawny — tworzy lekkie konto + osobną kartotekę pacjenta
+    else kod SMS nie dotarł
+        P->>FE: klika "wyślij kod ponownie"
+        FE->>API: prośba o ponowną wysyłkę kodu (z limitem prób, zasady jak w B1)
+        API->>MSG: wysyła ponowny SMS z kodem
     end
-    P->>FE: zgody RODO (checkboxy)
-    FE->>API: POST zapis zgód
-    API->>API: scoring gate (G7)
-    alt scoring OK — wariant normalny
-        P->>FE: wybór: płatność online / na miejscu
-        P->>FE: podsumowanie + klik "rezerwuję"
-        FE->>API: POST utworzenie rezerwacji
-        alt płatność na miejscu
-            API->>API: locked -> confirmed
-            API->>API: generacja tokenów samoobsługi (A7)
-            API->>Q: enqueue G1 (powiadomienia)
-            Q->>MSG: email + SMS (token zarządzania) + .ics
-            API-->>FE: ekran sukcesu (A7)
-        else płatność online (skrót A6)
-            API->>API: locked -> pending_payment
-            Note over FE,API: pełny flow płatności: [[a5-checkout-wariant-przedplata]]<br/>po webhooku G9: confirmed + A7
+    P->>FE: zaznacza wymagane zgody RODO (checkboxy)
+    FE->>API: zapisuje udzielone zgody
+    API->>API: sprawdza wiarygodność pacjenta (scoring gate, G7)
+    alt scoring w porządku — wariant normalny, bez dodatkowych warunków
+        P->>FE: wybiera sposób zapłaty: online albo na miejscu w gabinecie
+        P->>FE: sprawdza podsumowanie rezerwacji i klika "rezerwuję"
+        FE->>API: zlecenie utworzenia rezerwacji
+        alt wybrano płatność na miejscu (w gabinecie)
+            API->>API: potwierdza wizytę od razu, stan: locked -> confirmed
+            API->>API: generuje tokeny samoobsługi — linki do zarządzania wizytą (A7)
+            API->>Q: zleca w tle wysyłkę powiadomień (G1)
+            Q->>MSG: wysyła e-mail + SMS z linkiem zarządzania + plik .ics do kalendarza
+            API-->>FE: pokazuje ekran sukcesu "wizyta umówiona" (A7)
+        else wybrano płatność online (tu skrótowo — pełny przebieg to A6)
+            API->>API: rezerwacja czeka na wpłatę, stan: locked -> pending_payment
+            Note over FE,API: pełny przebieg płatności: [[a5-checkout-wariant-przedplata]]<br/>po potwierdzeniu wpłaty (webhook G9): confirmed + ekran A7
         end
-    else gate: wymagana przedpłata
-        Note over FE,API: dalszy flow: [[a5-checkout-wariant-przedplata]]
-    else gate: wymagana akceptacja specjalisty
-        Note over FE,API: dalszy flow: [[a5-checkout-wariant-akceptacja]]
+    else bramka scoringowa: wymagana przedpłata z góry
+        Note over FE,API: dalszy przebieg: [[a5-checkout-wariant-przedplata]]
+    else bramka scoringowa: wymagana akceptacja specjalisty
+        Note over FE,API: dalszy przebieg: [[a5-checkout-wariant-akceptacja]]
     end
-    opt lock wygasł w trakcie (TTL 10 min)
-        API-->>FE: komunikat "czas na rezerwację minął"
-        FE-->>P: powrót do wyboru slotu
+    opt blokada terminu wygasła w trakcie (minęło 10 minut — TTL)
+        API-->>FE: komunikat "czas na dokończenie rezerwacji minął"
+        FE-->>P: pokazuje komunikat i cofa do wyboru terminu
     end
 ```
 
@@ -78,6 +78,35 @@ sequenceDiagram
 
 ## Co opisuje ten diagram
 Główna ścieżka rezerwacji wizyty (checkout). Pacjent wybiera usługę i termin, system blokuje termin na 10 minut, pacjent podaje, dla kogo jest wizyta, potwierdza swój numer telefonu kodem SMS i akceptuje zgody. Następnie system automatycznie ocenia wiarygodność pacjenta (scoring) i — w wariancie normalnym — pozwala dokończyć rezerwację z płatnością na miejscu albo online. Flow kończy się ekranem potwierdzenia (A7) albo przejściem do jednego z wariantów sankcyjnych: przedpłaty lub akceptacji specjalisty.
+
+## Aktorzy w tym flow
+
+| Rola | Kto to jest | Co robi w tym flow |
+|---|---|---|
+| **Pacjent** | użytkownik strony; u logopedów najczęściej rodzic rezerwujący wizytę dla dziecka (B7) | wybiera usługę i termin, wskazuje dla kogo jest wizyta, potwierdza numer telefonu kodem SMS, akceptuje zgody i finalizuje rezerwację |
+| **FE** (interfejs) | strona serwisu w przeglądarce pacjenta — to, co pacjent widzi na ekranie | prowadzi przez kolejne kroki formularza, pokazuje komunikaty o błędach oraz ekran sukcesu |
+| **Backend** (system) | serwer platformy — część działająca po stronie serwisu, niewidoczna dla pacjenta | blokuje termin, wysyła i weryfikuje kod SMS, zakłada konto, sprawdza scoring, tworzy rezerwację i zmienia jej stany |
+| **Joby/Kolejka** | zadania wykonywane w tle, poza główną „rozmową" pacjenta z systemem | przyjmuje zlecenia wysyłki powiadomień, żeby pacjent nie czekał na ich wysłanie |
+| **SMS/Email** | bramka powiadomień — usługa wysyłająca SMS-y i e-maile | dostarcza kod OTP, potwierdzenie wizyty, link do zarządzania rezerwacją i plik .ics |
+
+## Objaśnienie kroków
+
+| Kroki (nr) | Co to znaczy w praktyce | Kto tu działa |
+|---|---|---|
+| 1–2 | Pacjent na profilu specjalisty (A4) wybiera konkretną usługę (widzi jej cenę) i wolny termin wizyty (slot). | Pacjent |
+| 3–5 | Interfejs prosi system o zablokowanie wybranego terminu. Jeśli termin jest nadal wolny, system blokuje go na 10 minut wyłącznie dla tego pacjenta (tzw. lock; TTL to czas życia blokady) i otwiera formularz rezerwacji. Rezerwacja przechodzi ze szkicu (draft) w stan zablokowany (locked). Blokada chroni przed tym, żeby dwie osoby nie zarezerwowały tego samego terminu. | Pacjent, FE, Backend |
+| 6–7 | Jeśli w międzyczasie ktoś inny zdążył zająć ten termin, pacjent widzi komunikat o niedostępności i wraca do wyboru innego terminu (A4) albo do widoku „brak terminów" (A8). | Backend, FE |
+| 8 | Pacjent wskazuje, dla kogo jest wizyta: dla niego samego, dla dziecka albo dla innej osoby. | Pacjent |
+| 9–10 | Jeśli wizyta jest dla dziecka lub innej osoby (B7): pacjent wypełnia mini-profil podopiecznego (dane osoby, która faktycznie przyjdzie na wizytę) i zaznacza zgodę opiekuna na przetwarzanie danych dziecka — wymóg RODO, czyli przepisów o ochronie danych osobowych. | Pacjent |
+| 11–13 | Pacjent podaje swoje dane kontaktowe. Numer telefonu pełni rolę tożsamości — w serwisie nie ma loginu ani hasła. System wysyła na podany numer SMS z jednorazowym kodem (OTP), żeby sprawdzić, że numer naprawdę należy do rezerwującego. | Pacjent, FE, Backend, SMS/Email |
+| 14–16 | Pacjent przepisuje kod z SMS-a, a system go sprawdza. Przy pierwszej rezerwacji powstaje „lekkie konto" (bez hasła) oraz osobna kartoteka pacjenta — podopiecznego można odróżnić od właściciela konta. | Pacjent, FE, Backend |
+| 17–19 | Jeśli SMS nie dotarł: pacjent klika „wyślij kod ponownie" i dostaje nowy kod. Liczba prób jest ograniczona (ochrona przed nadużyciami — te same zasady co przy logowaniu B1). | Pacjent, FE, Backend, SMS/Email |
+| 20–21 | Pacjent zaznacza wymagane zgody RODO (checkboxy), a system je zapisuje. | Pacjent, FE, Backend |
+| 22 | Bramka scoringowa (scoring gate, G7): system automatycznie sprawdza historię pacjenta (np. wcześniejsze nieobecności na wizytach). Wynik decyduje, czy rezerwacja pójdzie normalnie, czy z dodatkowym warunkiem: przedpłatą z góry albo akceptacją specjalisty. | Backend |
+| 23–25 | Wariant normalny (scoring w porządku): pacjent wybiera sposób zapłaty — online albo na miejscu w gabinecie — sprawdza podsumowanie i klika „rezerwuję". Interfejs zleca systemowi utworzenie rezerwacji. | Pacjent, FE, Backend |
+| 26–30 | Płatność na miejscu: wizyta jest potwierdzana od razu (stan confirmed). System generuje tokeny samoobsługi (specjalne linki, którymi pacjent później zmieni lub odwoła wizytę bez logowania), zleca w tle wysyłkę powiadomień, a pacjent dostaje e-mail + SMS z linkiem zarządzania i plikiem .ics (termin do wgrania do kalendarza). Na koniec ekran sukcesu (A7). | Backend, Joby/Kolejka, SMS/Email, FE |
+| 31 | Płatność online: rezerwacja przechodzi w stan oczekiwania na wpłatę (pending_payment). Pełny przebieg płatności opisuje osobny diagram [[a5-checkout-wariant-przedplata]] — po potwierdzeniu wpłaty (webhook G9) rezerwacja stanie się confirmed. | Backend |
+| 32–33 | Scenariusz brzegowy: jeśli 10-minutowa blokada terminu (TTL) wygaśnie w trakcie wypełniania formularza, pacjent widzi komunikat „czas minął" i wraca do wyboru terminu. | Backend, FE |
 
 ## Powiązane diagramy
 | ID | Diagram | Jak się łączy |
@@ -110,3 +139,8 @@ Główna ścieżka rezerwacji wizyty (checkout). Pacjent wybiera usługę i term
 | .ics | Plik z terminem wizyty do dodania do kalendarza (Google, Outlook itp.). |
 | Enqueue | Wstawienie zadania (np. wysyłki powiadomień) do kolejki wykonywanej w tle. |
 | pending_payment / pending_approval | Stany rezerwacji oczekującej odpowiednio na płatność online albo na akceptację specjalisty. |
+| draft / locked / confirmed | Kanoniczne stany rezerwacji: szkic (nic jeszcze nie zablokowane) → termin zablokowany na czas checkoutu → wizyta umówiona. Pełna lista stanów w CORE-STANY. |
+| Scoring | Wewnętrzna punktacja wiarygodności pacjenta (historia nieobecności i późnych odwołań), na której opiera się scoring gate. |
+| Kartoteka pacjenta (encja) | Osobny wpis w systemie o osobie, która przyjdzie na wizytę — może to być podopieczny inny niż właściciel konta. |
+| Webhook (G9) | Automatyczne powiadomienie od procesora płatności o zaksięgowanej wpłacie — przy płatności online to ono potwierdza rezerwację. |
+| Scenariusz brzegowy (edge case) | Rzadszy, ale przewidziany przebieg zdarzeń: termin zajęty w międzyczasie, kod SMS nie dochodzi, blokada wygasa w trakcie. |

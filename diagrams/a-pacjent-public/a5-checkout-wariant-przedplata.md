@@ -10,35 +10,35 @@ sequenceDiagram
     participant MSG as SMS/Email
     participant PAY as Procesor płatności
 
-    Note over P,API: kroki jak w [[a5-checkout]]<br/>aż do scoring gate (G7)
-    API->>API: scoring gate (G7): wymagana przedpłata
-    API-->>FE: info "wymagana przedpłata"
-    P->>FE: podsumowanie + klik "rezerwuję i płacę"
-    FE->>API: POST utworzenie rezerwacji
-    API->>API: locked -> pending_payment
-    API->>Q: timer auto-anulacji (~30 min, benchmark ZL)
-    API->>PAY: utworzenie payment intent (A6)
-    PAY-->>API: intent + URL płatności
-    API-->>FE: redirect / embed procesora (A6)
-    P->>PAY: autoryzacja płatności
-    alt płatność udana
-        PAY-->>FE: powrót: ekran wyniku (A6)
-        PAY->>API: webhook potwierdzenia (G9)
-        API->>API: pending_payment -> confirmed
-        API->>Q: anulowanie timera auto-anulacji
-        API->>API: generacja tokenów samoobsługi (A7)
-        API->>Q: enqueue G1 (powiadomienia)
-        Q->>MSG: email + SMS (token zarządzania) + .ics
-        FE-->>P: ekran sukcesu (A7)
-    else błąd płatności
-        PAY-->>FE: ekran błędu (A6)
-        FE-->>P: CTA "ponów płatność" (w oknie ~30 min)
-        P->>PAY: ponowna próba autoryzacji
-    else timeout okna płatności (~30 min)
-        Q->>API: auto-anulacja po timeout
-        API->>API: pending_payment -> cancelled_by_patient
-        API->>Q: zwolniony slot -> waitlista (G6)
-        Q->>MSG: powiadomienie pacjenta o anulacji
+    Note over P,API: wcześniejsze kroki identyczne jak w [[a5-checkout]]<br/>(usługa, termin, dane, kod SMS, zgody) — aż do scoring gate (G7)
+    API->>API: bramka scoringowa (scoring gate, G7) decyduje: wymagana przedpłata
+    API-->>FE: informuje pacjenta "rezerwacja wymaga przedpłaty online"
+    P->>FE: sprawdza podsumowanie rezerwacji i klika "rezerwuję i płacę"
+    FE->>API: zlecenie utworzenia rezerwacji
+    API->>API: rezerwacja czeka na wpłatę, stan: locked -> pending_payment
+    API->>Q: ustawia licznik auto-anulacji — ok. 30 minut na wpłatę (benchmark ZL)
+    API->>PAY: zakłada u procesora zlecenie płatności (payment intent, A6)
+    PAY-->>API: zwraca zlecenie i adres strony płatności
+    API-->>FE: kieruje pacjenta do zapłaty — przekierowanie lub okno wbudowane (A6)
+    P->>PAY: płaci — autoryzuje płatność u procesora (np. karta, BLIK)
+    alt płatność zakończona sukcesem
+        PAY-->>FE: odsyła pacjenta z powrotem na ekran wyniku płatności (A6)
+        PAY->>API: webhook — automatyczne potwierdzenie zaksięgowanej wpłaty (G9)
+        API->>API: potwierdza wizytę, stan: pending_payment -> confirmed
+        API->>Q: wyłącza licznik auto-anulacji (wpłata doszła na czas)
+        API->>API: generuje tokeny samoobsługi — linki do zarządzania wizytą (A7)
+        API->>Q: zleca w tle wysyłkę powiadomień (G1)
+        Q->>MSG: wysyła e-mail + SMS z linkiem zarządzania + plik .ics do kalendarza
+        FE-->>P: pokazuje ekran sukcesu "wizyta umówiona" (A7)
+    else płatność nie powiodła się (np. karta odrzucona, przerwana autoryzacja)
+        PAY-->>FE: odsyła pacjenta na ekran błędu płatności (A6)
+        FE-->>P: pokazuje przycisk "ponów płatność" (dopóki trwa okno ~30 min)
+        P->>PAY: ponawia próbę zapłaty u procesora
+    else pacjent nie zapłacił w ciągu ok. 30 minut (timeout okna płatności)
+        Q->>API: licznik minął — zgłasza konieczność automatycznej anulacji
+        API->>API: anuluje rezerwację, stan: pending_payment -> cancelled_by_patient
+        API->>Q: zwalnia termin i przekazuje go na waitlistę (G6)
+        Q->>MSG: wysyła pacjentowi powiadomienie o anulacji rezerwacji
     end
 ```
 
@@ -56,6 +56,32 @@ sequenceDiagram
 
 ## Co opisuje ten diagram
 Wariant rezerwacji, w którym system — na podstawie scoringu pacjenta — wymaga zapłaty z góry; diagram zawiera zarazem pełny przebieg płatności online (A6). Uczestniczą pacjent, system oraz zewnętrzny procesor płatności, a w tle kolejka zadań i powiadomienia. Flow zaczyna się od decyzji bramki scoringowej „wymagana przedpłata", a kończy potwierdzeniem rezerwacji po udanej płatności albo automatyczną anulacją i zwolnieniem terminu, gdy pacjent nie zapłaci w ciągu ok. 30 minut.
+
+## Aktorzy w tym flow
+
+| Rola | Kto to jest | Co robi w tym flow |
+|---|---|---|
+| **Pacjent** | użytkownik strony; u logopedów najczęściej rodzic rezerwujący wizytę dla dziecka (B7) | sprawdza podsumowanie, klika „rezerwuję i płacę", autoryzuje płatność u procesora, w razie błędu ponawia próbę |
+| **FE** (interfejs) | strona serwisu w przeglądarce pacjenta — to, co pacjent widzi na ekranie | pokazuje informację o wymaganej przedpłacie, kieruje do płatności, wyświetla ekran wyniku, błędu lub sukcesu |
+| **Backend** (system) | serwer platformy — część działająca po stronie serwisu, niewidoczna dla pacjenta | podejmuje decyzję bramki scoringowej, tworzy rezerwację, zakłada zlecenie płatności, odbiera webhook i zmienia stany rezerwacji |
+| **Joby/Kolejka** | zadania wykonywane w tle, poza główną „rozmową" pacjenta z systemem | odlicza okno ok. 30 minut na wpłatę, wykonuje automatyczną anulację, wysyła powiadomienia, przekazuje zwolniony termin na waitlistę |
+| **Procesor płatności** | zewnętrzna firma obsługująca płatności online (karty, BLIK itp.) | przyjmuje i autoryzuje wpłatę pacjenta, odsyła go na ekran wyniku, potwierdza wpłatę webhookiem (G9) |
+| **SMS/Email** | bramka powiadomień — usługa wysyłająca SMS-y i e-maile | dostarcza potwierdzenie z linkiem zarządzania i plikiem .ics albo powiadomienie o anulacji |
+
+## Objaśnienie kroków
+
+| Kroki (nr) | Co to znaczy w praktyce | Kto tu działa |
+|---|---|---|
+| 1–2 | Bramka scoringowa (G7) uznała, że pacjent — z powodu historii nieobecności — musi zapłacić z góry. Pacjent widzi informację, że rezerwacja wymaga przedpłaty online; płatność na miejscu jest w tym wariancie niedostępna. | Backend, FE |
+| 3–5 | Pacjent sprawdza podsumowanie i klika „rezerwuję i płacę". System tworzy rezerwację w stanie oczekiwania na wpłatę (pending_payment) — termin jest trzymany dla pacjenta, ale wizyta nie jest jeszcze potwierdzona. | Pacjent, FE, Backend |
+| 6 | System ustawia w tle licznik: pacjent ma ok. 30 minut na zapłatę (długość okna wzorowana na praktyce rynkowej — benchmark ZL). Jeśli w tym czasie wpłata nie dojdzie, rezerwacja anuluje się sama. | Backend, Joby/Kolejka |
+| 7–9 | System zakłada u zewnętrznego procesora płatności zlecenie (payment intent) i dostaje adres strony płatności. Pacjent zostaje przekierowany na stronę procesora albo widzi okno płatności wbudowane w serwis. | Backend, Procesor płatności, FE |
+| 10 | Pacjent płaci — autoryzuje płatność (np. podaje dane karty albo zatwierdza kod BLIK) bezpośrednio u procesora, poza naszym serwisem. | Pacjent, Procesor płatności |
+| 11–13 | Płatność udana: procesor odsyła pacjenta na ekran wyniku, a niezależnie od tego wysyła do systemu webhook — automatyczne potwierdzenie zaksięgowanej wpłaty (G9). Dopiero webhook (a nie sam powrót pacjenta na stronę) potwierdza wizytę: stan zmienia się na confirmed. | Procesor płatności, Backend, FE |
+| 14 | System wyłącza licznik auto-anulacji — wpłata doszła na czas, więc odliczanie nie jest już potrzebne. | Backend, Joby/Kolejka |
+| 15–18 | System generuje tokeny samoobsługi (linki, którymi pacjent później zmieni lub odwoła wizytę bez logowania) i zleca w tle powiadomienia: pacjent dostaje e-mail + SMS z linkiem zarządzania i plikiem .ics (termin do wgrania do kalendarza), a na ekranie widzi potwierdzenie „wizyta umówiona" (A7). | Backend, Joby/Kolejka, SMS/Email, FE |
+| 19–21 | Płatność nieudana (np. karta odrzucona, przerwana autoryzacja): pacjent widzi ekran błędu i przycisk „ponów płatność". Może próbować ponownie, dopóki trwa okno ok. 30 minut. | Procesor płatności, FE, Pacjent |
+| 22–25 | Timeout: pacjent nie zapłacił w ciągu ok. 30 minut. Licznik w tle uruchamia automatyczną anulację — rezerwacja przechodzi w cancelled_by_patient (kanon stanów nie ma osobnego stanu „anulowana przez system"), zwolniony termin trafia na waitlistę (G6), a pacjent dostaje powiadomienie o anulacji. | Joby/Kolejka, Backend, SMS/Email |
 
 ## Powiązane diagramy
 | ID | Diagram | Jak się łączy |
@@ -85,3 +111,10 @@ Wariant rezerwacji, w którym system — na podstawie scoringu pacjenta — wyma
 | Waitlista | Lista oczekujących, którzy dostają powiadomienie o zwolnionym terminie. |
 | Reconciliation | Okresowe uzgadnianie płatności między systemem a procesorem (poza zakresem tego diagramu). |
 | Benchmark ZL | Wzorowanie się na praktyce rynkowej (ZnanyLekarz) — stąd okno płatności ok. 30 minut. |
+| Autoryzacja płatności | Moment, w którym pacjent zatwierdza zapłatę u procesora (dane karty, kod BLIK, potwierdzenie w aplikacji banku). |
+| Token samoobsługi | Specjalny link, którym pacjent później zmieni lub odwoła wizytę bez logowania. |
+| .ics | Plik z terminem wizyty do dodania do kalendarza (Google, Outlook itp.). |
+| locked | Stan z wcześniejszej, wspólnej części checkoutu — termin zablokowany na 10 minut dla pacjenta (lock G5, TTL). |
+| confirmed / cancelled_by_patient | Kanoniczne stany końcowe tego wariantu: wizyta umówiona albo anulowana po stronie pacjenta (tu: brak wpłaty w terminie). |
+| Kolejka (joby) | Zadania wykonywane w tle: licznik auto-anulacji, wysyłka powiadomień, przekazanie terminu na waitlistę. |
+| Timeout | Upłynięcie limitu czasu — tu: koniec okna ok. 30 minut na wpłatę, po którym rezerwacja anuluje się automatycznie. |

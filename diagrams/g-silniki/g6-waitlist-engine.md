@@ -10,29 +10,29 @@ sequenceDiagram
     actor S as Specjalista
     participant MSG as SMS/Email
 
-    Note over API,Q: wpisy na waitlistę: zapis z A8/B4
-    API->>Q: event slot.released (B3/E5/E6)
-    Q->>Q: kolejka FIFO per specjalista/usługa
-    alt kolejka pusta
-        Q->>API: slot wraca do puli (A3/A4)
-    else jest oczekujący
-        Q->>MSG: powiadomienie pierwszego z kolejki
-        MSG-->>P: SMS/email z linkiem (B4)
-        Q->>Q: start okna 2 h
-        alt potwierdzenie w oknie 2 h
-            P->>FE: klik "potwierdź termin" (B4)
-            FE->>API: POST auto-book slotu
-            API->>API: rezerwacja -> confirmed
-            API->>Q: event booking.created + enqueue G1
-            Q->>MSG: potwierdzenie pacjenta (A7)
-            Q->>MSG: powiadomienie specjalisty
-            MSG-->>S: nowa wizyta z waitlisty
-        else brak reakcji w 2 h
-            Q->>Q: timeout okna 2 h
-            Q->>Q: kaskada: następny z kolejki (FIFO)
-            Q->>MSG: powiadomienie następnego pacjenta
-            Note over Q,MSG: pętla aż do wyczerpania FIFO
-            Q->>API: kolejka wyczerpana - slot do puli
+    Note over API,Q: pacjenci zapisali się wcześniej na listę oczekujących (waitlistę) w A8/B4
+    API->>Q: serwer publikuje event slot.released - zwolnił się termin (odwołanie B3/E5/E6)
+    Q->>Q: silnik sprawdza kolejkę oczekujących FIFO (kto pierwszy się zapisał) dla tego specjalisty i usługi
+    alt kolejka pusta - nikt nie czeka na ten termin
+        Q->>API: termin od razu wraca do publicznej puli wolnych terminów (A3/A4)
+    else w kolejce ktoś czeka
+        Q->>MSG: silnik zleca powiadomienie pierwszej osoby z kolejki
+        MSG-->>P: pacjent dostaje SMS/e-mail z linkiem do potwierdzenia terminu (B4)
+        Q->>Q: silnik uruchamia okno 2 godzin na odpowiedź pacjenta
+        alt pacjent potwierdza termin w ciągu 2 godzin
+            P->>FE: pacjent klika "potwierdź termin" w otrzymanej wiadomości (B4)
+            FE->>API: strona prosi serwer o automatyczną rezerwację terminu (POST auto-book)
+            API->>API: serwer tworzy rezerwację od razu w stanie confirmed (wizyta umówiona)
+            API->>Q: serwer publikuje event booking.created i kolejkuje powiadomienia (G1)
+            Q->>MSG: silnik zleca wysyłkę potwierdzenia rezerwacji dla pacjenta (A7)
+            Q->>MSG: silnik zleca powiadomienie specjalisty o nowej wizycie
+            MSG-->>S: specjalista dostaje wiadomość o nowej wizycie z waitlisty
+        else pacjent nie reaguje przez 2 godziny
+            Q->>Q: okno 2 godzin upływa bez odpowiedzi (timeout)
+            Q->>Q: kaskada - propozycja terminu przechodzi do następnej osoby z kolejki (FIFO)
+            Q->>MSG: silnik zleca powiadomienie kolejnego pacjenta z listy
+            Note over Q,MSG: pętla powtarza się, aż kolejka oczekujących się wyczerpie
+            Q->>API: kolejka wyczerpana - termin wraca do publicznej puli
         end
     end
 ```
@@ -49,6 +49,33 @@ sequenceDiagram
 ## Co opisuje ten diagram
 
 Diagram opisuje silnik listy oczekujących: co robi system, gdy zwolni się termin, na który ktoś czekał. Pacjenci zapisują się na waitlistę, gdy brakuje wolnych slotów; kiedy jakiś slot się zwalnia (np. przez odwołanie wizyty), system powiadamia SMS-em lub e-mailem pierwszą osobę z kolejki i daje jej 2 godziny na potwierdzenie. Uczestniczą pacjent, specjalista (dostaje informację o nowej wizycie) oraz system działający w tle. Flow kończy się automatyczną rezerwacją dla pacjenta z kolejki albo — gdy nikt nie zareaguje — powrotem terminu do publicznej puli.
+
+## Aktorzy w tym flow
+
+| Rola | Kto to jest | Co robi w tym flow |
+|---|---|---|
+| **Joby/Kolejka** | zadania działające w tle serwera — główny "aktor" tego silnika: całą kaskadę prowadzi automat, człowiek tylko wyzwala zdarzenia (odwołanie wizyty, kliknięcie linku) | prowadzi kolejkę oczekujących FIFO, pilnuje okna 2 godzin, przechodzi kaskadą do kolejnych osób, zleca powiadomienia i zwraca termin do puli |
+| **System** (Backend) | serwer platformy | publikuje event `slot.released` po zwolnieniu terminu, tworzy automatyczną rezerwację (auto-book) i publikuje event `booking.created` |
+| **Pacjent** | użytkownik strony (zwykle rodzic rezerwujący wizytę dla dziecka), zapisany wcześniej na waitlistę | dostaje propozycję zwolnionego terminu i potwierdza ją linkiem z wiadomości — albo nie reaguje i propozycja przechodzi dalej |
+| **Specjalista** | logopeda/lekarz — właściciel kalendarza, z którego zwolnił się termin | uczestniczy biernie: dostaje powiadomienie, że z waitlisty powstała u niego nowa wizyta |
+| **SMS/Email** | bramka powiadomień — system wysyłający wiadomości w imieniu platformy | dostarcza pacjentowi link do potwierdzenia terminu, a specjaliście informację o nowej wizycie |
+| **FE** | frontend — strona internetowa w przeglądarce pacjenta | przyjmuje kliknięcie "potwierdź termin" i przekazuje serwerowi prośbę o automatyczną rezerwację |
+
+## Objaśnienie kroków
+
+| Krok | Co to znaczy w praktyce | Kto tu działa |
+|---|---|---|
+| 1 | Gdzieś w systemie zwolnił się termin — odwołał go pacjent (B3) albo specjalista (E5/E6). Serwer publikuje event `slot.released` ("zwolnił się termin") — sygnał, na który czeka ten silnik. Serwer jest tu **publisherem** (nadawcą) eventu, a silnik waitlisty jego **konsumentem** (odbiorcą). | System |
+| 2 | Silnik zagląda do kolejki oczekujących prowadzonej w porządku **FIFO** (first in, first out — kto pierwszy się zapisał, ten pierwszy dostaje propozycję), osobnej dla każdego specjalisty i usługi. | Joby/Kolejka |
+| 3 | Jeśli nikt nie czeka — nie ma komu proponować, więc termin natychmiast wraca do publicznej puli wolnych terminów (widocznej w wyszukiwarce A3 i na profilu specjalisty A4). | Joby/Kolejka, System |
+| 4–5 | W kolejce ktoś czeka: silnik zleca bramce wysyłkę SMS-a/e-maila do pierwszej osoby. W wiadomości jest link, którym pacjent może potwierdzić termin (B4). | Joby/Kolejka, SMS/Email, Pacjent |
+| 6 | Rusza **okno 2 h** — od tej chwili pacjent ma dokładnie 2 godziny na potwierdzenie; po tym czasie propozycja przepada na rzecz następnej osoby z kolejki. | Joby/Kolejka |
+| 7–8 | Pacjent klika "potwierdź termin", a strona prosi serwer o **auto-book** — rezerwację tworzoną automatycznie, bez przechodzenia pełnego formularza checkoutu (A5). | Pacjent, FE |
+| 9–10 | Serwer tworzy rezerwację od razu w stanie `confirmed` (wizyta umówiona) i publikuje event `booking.created` ("powstała nowa rezerwacja"), który uruchamia silnik powiadomień G1. | System |
+| 11–13 | Silnik zleca dwie wiadomości: potwierdzenie rezerwacji dla pacjenta (takie samo jak po zwykłej rezerwacji, A7) i informację dla specjalisty, że z waitlisty powstała u niego nowa wizyta. | Joby/Kolejka, SMS/Email, Specjalista |
+| 14–15 | Pacjent nie zareagował w ciągu 2 godzin (**timeout**). Rusza **kaskada**: propozycja terminu automatycznie przechodzi do następnej osoby z kolejki, zgodnie z porządkiem FIFO. | Joby/Kolejka |
+| 16 | Silnik zleca powiadomienie kolejnego pacjenta — i cykl (wiadomość → okno 2 h → ewentualny timeout) powtarza się dla każdej następnej osoby z listy. | Joby/Kolejka, SMS/Email |
+| 17 | Gdy kolejka się wyczerpie i nikt nie potwierdził, termin wraca do publicznej puli — od tej pory może go zarezerwować każdy przez zwykły checkout. | Joby/Kolejka, System |
 
 ## Powiązane diagramy
 
@@ -84,3 +111,9 @@ Diagram opisuje silnik listy oczekujących: co robi system, gdy zwolni się term
 | Timeout | Upłynięcie limitu czasu (tu: okna 2 h) bez reakcji pacjenta. |
 | Pula publiczna | Wolne terminy widoczne dla wszystkich w wyszukiwarce i na profilu specjalisty. |
 | Flaga 2 | Otwarta decyzja projektowa o wariancie checkoutu (przedpłata vs akceptacja), pośrednio dotycząca auto-booku. |
+| Publisher / konsument eventu | Publisher to część systemu, która ogłasza zdarzenie (np. "zwolnił się termin"); konsument to silnik, który na to zdarzenie reaguje. |
+| G1 (notification engine) | Silnik powiadomień — wspólna "skrzynka nadawcza" platformy, przez którą wychodzą wszystkie SMS-y i e-maile (CORE-EVENTY). |
+| Backend / FE | Backend to serwer platformy (niewidoczny dla użytkownika); FE to strona internetowa w przeglądarce pacjenta. |
+| Joby/Kolejka | Zadania działające w tle serwera (timery, kolejki) — automat prowadzący ten silnik bez udziału człowieka. |
+| POST | Techniczna nazwa żądania, którym strona prosi serwer o wykonanie operacji (tu: automatyczną rezerwację terminu). |
+| `confirmed` | Stan kanoniczny "wizyta umówiona" — pełny cykl stanów rezerwacji opisuje CORE-STANY. |
