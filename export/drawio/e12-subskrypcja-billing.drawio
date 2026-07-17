@@ -1,0 +1,128 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e12-subskrypcja-billing" name="E12 — Subskrypcja / billing specjalisty">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E12 — Subskrypcja / billing specjalisty&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e12-subskrypcja-billing.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1000" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="480" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="SUB" value="Ekran subskrypcji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="140" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PLAN" value="Plan: free / płatne (C2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="LICZNIK" value="Licznik: free do DD.MM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="METODA" value="Metoda płatności" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FAKTURY" value="Faktury do pobrania" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PROMPT" value="Po okresie free: wybór planu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="140" y="420" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="560" y="90" width="480" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="START" value="Start okresu free: dzień 1 (C3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="140" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KONIEC" value="Okres free minął?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="160" y="180" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BILLING" value="Billing engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="320" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VAT" value="Faktury VAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="320" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="SUB" target="PLAN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="SUB" target="LICZNIK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="SUB" target="METODA">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="50" y="175" />
+              <mxPoint x="50" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.25;" edge="1" parent="1" source="SUB" target="FAKTURY">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="175" />
+              <mxPoint x="510" y="403" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.75;entryY=0;" edge="1" parent="1" source="START" target="LICZNIK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="START" target="KONIEC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed7" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="KONIEC" target="PROMPT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.25;entryX=1;entryY=0.5;" edge="1" parent="1" source="KONIEC" target="LICZNIK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="METODA" target="BILLING">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="480" />
+              <mxPoint x="545" y="480" />
+              <mxPoint x="545" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=1;entryY=0.5;" edge="1" parent="1" source="PROMPT" target="PLAN">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="BILLING" target="VAT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=1;entryY=0.75;" edge="1" parent="1" source="VAT" target="FAKTURY">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="490" />
+              <mxPoint x="530" y="490" />
+              <mxPoint x="530" y="428" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=0.75;entryY=0;" edge="1" parent="1" source="BILLING" target="PLAN">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="240" />
+              <mxPoint x="210" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ekran subskrypcji w panelu specjalisty: aktualny plan (na start darmowy), licznik &quot;free do DD.MM&quot; odliczany od dnia rejestracji, metoda płatności i faktury do pobrania. W tle billing engine nalicza abonament i wystawia faktury VAT, a gdy okres darmowy się kończy, specjalista widzi zachętę do wyboru płatnego planu. Dotyczy rozliczeń specjalisty z serwisem (B2B) — nie płatności pacjentów za wizyty." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="1000" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c2-cennik-b2b.md&lt;/td&gt;&lt;td&gt;plany free/płatne pochodzą z cennika B2B&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c3-rejestracja.md&lt;/td&gt;&lt;td&gt;okres free startuje w dniu rejestracji specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E1&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e1-dashboard.md&lt;/td&gt;&lt;td&gt;alert o statusie subskrypcji widoczny na dashboardzie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E11&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e11-ustawienia.md&lt;/td&gt;&lt;td&gt;dane do faktur pochodzą z ustawień specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F6&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f6-billing-admin.md&lt;/td&gt;&lt;td&gt;administracyjna strona billingu: subskrypcje, windykacja&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="820" width="1000" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;subskrypcja&lt;/td&gt;&lt;td&gt;abonament specjalisty za korzystanie z serwisu, rozliczany cyklicznie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;plan free&lt;/td&gt;&lt;td&gt;darmowy plan startowy, obowiązujący od dnia rejestracji przez określony czas&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;licznik free&lt;/td&gt;&lt;td&gt;widoczna od pierwszego dnia informacja &quot;free do DD.MM&quot; — do kiedy trwa okres darmowy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;billing engine&lt;/td&gt;&lt;td&gt;mechanizm systemu naliczający opłaty abonamentowe i pilnujący terminów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;faktura VAT&lt;/td&gt;&lt;td&gt;dokument księgowy wystawiany specjaliście za abonament, do pobrania z panelu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;metoda płatności&lt;/td&gt;&lt;td&gt;zapisany sposób opłacania abonamentu (np. karta)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B2B&lt;/td&gt;&lt;td&gt;rozliczenie firma-firma: specjalista płaci serwisowi, niezależnie od płatności pacjentów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;grace period&lt;/td&gt;&lt;td&gt;ewentualny okres łaski po końcu free, zanim system coś zablokuje — nierozstrzygnięte w mapie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;windykacja&lt;/td&gt;&lt;td&gt;dochodzenie zaległych płatności — obsługiwane po stronie admina (F6)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1090" width="1000" height="350" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

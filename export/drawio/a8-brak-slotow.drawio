@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="a8-brak-slotow" name="A8 — Brak slotów">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1020" pageHeight="1460" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;A8 — Brak slotów&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a8-brak-slotow.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="920" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="600" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="WEJSCIE" value="Brak slotów (z A3/A4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="210" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PODOBNI" value="Podobni specjaliści w okolicy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="40" y="150" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A4LINK" value="Profil podobnego (A4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="40" y="260" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POWIADOM" value="CTA: powiadom o wolnym terminie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="360" y="150" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KONTAKT" value="Potwierdzenie kanału kontaktu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="360" y="260" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OK" value="Komunikat: zapisano na listę" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="360" y="470" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="680" y="90" width="280" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="SIMILAR" value="Similar API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="50" y="150" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WPIS" value="Wpis do waitlisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="50" y="360" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="G6LINK" value="Waitlist engine (G6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="50" y="460" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="WEJSCIE" target="PODOBNI"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="SIMILAR" target="PODOBNI"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="klik w kartę" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="PODOBNI" target="A4LINK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="WEJSCIE" target="POWIADOM"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="POWIADOM" target="KONTAKT"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="KONTAKT" target="WPIS"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="WPIS" target="G6LINK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="WPIS" target="OK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ścieżka ratunkowa uruchamiana, gdy pacjent nie znajdzie wolnego terminu — z listy wyników (A3) albo z profilu specjalisty (A4). Serwis pokazuje wtedy podobnych specjalistów w okolicy oraz proponuje zapis na listę oczekujących („powiadom o wolnym terminie”). Flow kończy się przejściem na profil innego specjalisty albo wpisem na waitlistę, którą dalej obsługuje silnik G6 i ścieżka pacjenta B4." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="920" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Diagram&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;wejście: pusty stan lub karta bez wolnych slotów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;wejście: kalendarz bez terminów; wyjście: profil podobnego specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;ta sama zasada „numer telefonu = tożsamość” przy weryfikacji kontaktu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B1&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b1-logowanie.md&lt;/td&gt;&lt;td&gt;weryfikacja kanału kontaktu jak przy logowaniu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B4&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b4-waitlista.md&lt;/td&gt;&lt;td&gt;dalszy ciąg waitlisty po stronie pacjenta (oferta zwolnionego terminu)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;silnik waitlisty konsumuje wpis (FIFO, okno 2 h, kaskada)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="830" width="920" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Konkretny wolny termin wizyty w kalendarzu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Pusty stan&lt;/td&gt;&lt;td&gt;Ekran pokazywany, gdy wyszukiwanie nie zwróciło żadnych specjalistów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Podobni specjaliści&lt;/td&gt;&lt;td&gt;Propozycje innych specjalistów (ta sama usługa, najbliższa okolica) zamiast pustego ekranu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Similar API&lt;/td&gt;&lt;td&gt;Usługa systemowa dobierająca podobnych specjalistów do pokazania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CTA&lt;/td&gt;&lt;td&gt;Przycisk zachęcający do działania — tu „powiadom o wolnym terminie”.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kanał kontaktu&lt;/td&gt;&lt;td&gt;Zweryfikowany numer telefonu (lub e-mail), na który przyjdzie powiadomienie z waitlisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista oczekujących na zwolniony termin u danego specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FIFO, okno 2 h&lt;/td&gt;&lt;td&gt;Zasady waitlisty: kto pierwszy się zapisał, ten pierwszy dostaje propozycję i ma 2 godziny na reakcję.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1090" width="920" height="310" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

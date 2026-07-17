@@ -1,0 +1,258 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="g5-slot-lock" name="G5 — Slot lock (TTL 10 min)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;G5 — Slot lock (TTL 10 min)&lt;/b&gt;&lt;br&gt;źródło: diagrams/g-silniki/g5-slot-lock.md — diagram sekwencji" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1360" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actP" value="&lt;b&gt;Pacjent&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actP2" value="&lt;b&gt;Drugi pacjent&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actFE" value="&lt;b&gt;FE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actAPI" value="&lt;b&gt;Backend&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="930" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actQ" value="&lt;b&gt;Joby/Kolejka&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeP" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="120" as="sourcePoint" />
+            <mxPoint x="140" y="2120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeP2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="120" as="sourcePoint" />
+            <mxPoint x="430" y="2120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeFE" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="120" as="sourcePoint" />
+            <mxPoint x="720" y="2120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeAPI" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="120" as="sourcePoint" />
+            <mxPoint x="1010" y="2120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeQ" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="120" as="sourcePoint" />
+            <mxPoint x="1300" y="2120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" value="1: pacjent klika wolny termin i otwiera&lt;br&gt;formularz rezerwacji (checkout, A5)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="170" as="sourcePoint" />
+            <mxPoint x="720" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: strona prosi serwer o zablokowanie&lt;br&gt;wybranego terminu (POST lock slotu)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="240" as="sourcePoint" />
+            <mxPoint x="1010" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1" value="alt [termin wolny — blokada udaje się]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="110" y="280" width="1220" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" value="3: wyłączna blokada (lock) na 10 min (TTL)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="325" as="sourcePoint" />
+            <mxPoint x="1010" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1080" y="325" />
+              <mxPoint x="1080" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4: rezerwacja: draft (szkic) → locked" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="400" as="sourcePoint" />
+            <mxPoint x="1010" y="425" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1080" y="400" />
+              <mxPoint x="1080" y="425" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5: serwer ustawia timer w tle —&lt;br&gt;po 10 minutach zwolni blokadę" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="480" as="sourcePoint" />
+            <mxPoint x="1300" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6: checkout otwarty — pacjent widzi&lt;br&gt;odliczanie pozostałego czasu" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="565" as="sourcePoint" />
+            <mxPoint x="720" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="610" as="sourcePoint" />
+            <mxPoint x="1330" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el1" value="[else] termin zajęty lub już zablokowany przez kogoś innego" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="118" y="614" width="430" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m7" value="7: serwer odpowiada błędem&lt;br&gt;„termin niedostępny”" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="660" as="sourcePoint" />
+            <mxPoint x="720" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8: strona odsyła pacjenta do ponownego&lt;br&gt;wyboru terminu (A4/A8)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="730" as="sourcePoint" />
+            <mxPoint x="140" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n1" value="kolizja: drugi pacjent równolegle próbuje zarezerwować ten sam termin" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="530" y="805" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="m9" value="9: drugi pacjent wybiera ten sam termin&lt;br&gt;na profilu specjalisty (A4)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="880" as="sourcePoint" />
+            <mxPoint x="720" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10: strona prosi serwer o zablokowanie&lt;br&gt;tego samego terminu (POST lock slotu)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="950" as="sourcePoint" />
+            <mxPoint x="1010" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" value="11: serwer odmawia — blokada pierwszego&lt;br&gt;pacjenta wciąż trwa (pierwszy wygrywa)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1020" as="sourcePoint" />
+            <mxPoint x="720" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="12: drugi pacjent widzi „termin niedostępny”&lt;br&gt;i propozycje innych terminów" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1090" as="sourcePoint" />
+            <mxPoint x="430" y="1090" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f2" value="alt [pacjent domyka rezerwację, zanim minie 10 minut]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="110" y="1160" width="1220" height="925" as="geometry" />
+        </mxCell>
+        <mxCell id="m13" value="13: strona wysyła komplet danych rezerwacji&lt;br&gt;(POST utworzenie rezerwacji, A5)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1205" as="sourcePoint" />
+            <mxPoint x="1010" y="1205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m14" value="14: locked → pending_payment / pending_approval / confirmed (G7)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1275" as="sourcePoint" />
+            <mxPoint x="1010" y="1300" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1080" y="1275" />
+              <mxPoint x="1080" y="1300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m15" value="15: serwer odwołuje timer blokady —&lt;br&gt;nie jest już potrzebny" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1355" as="sourcePoint" />
+            <mxPoint x="1300" y="1355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="1425" as="sourcePoint" />
+            <mxPoint x="1330" y="1425" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el2" value="[else] pacjent porzuca checkout bez dokończenia" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="118" y="1429" width="340" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m16" value="16: pacjent zamyka lub opuszcza&lt;br&gt;stronę checkoutu" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1475" as="sourcePoint" />
+            <mxPoint x="720" y="1475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n2" value="strona nie wysyła sygnału o porzuceniu — blokada czeka do końca 10 minut (założenie)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="675" y="1545" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m17" value="17: timer zgłasza, że 10 minut (TTL)&lt;br&gt;upłynęło" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="1650" as="sourcePoint" />
+            <mxPoint x="1010" y="1650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m18" value="18: zwalnia blokadę — termin do puli (A3/A4)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1720" as="sourcePoint" />
+            <mxPoint x="1010" y="1745" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1080" y="1720" />
+              <mxPoint x="1080" y="1745" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="1790" as="sourcePoint" />
+            <mxPoint x="1330" y="1790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el3" value="[else] 10 minut mija, gdy pacjent wciąż wypełnia formularz" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="118" y="1794" width="420" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m19" value="19: timer zgłasza, że 10 minut (TTL)&lt;br&gt;upłynęło" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="1840" as="sourcePoint" />
+            <mxPoint x="1010" y="1840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m20" value="20: zwalnia blokadę — termin wraca do puli" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1910" as="sourcePoint" />
+            <mxPoint x="1010" y="1935" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1080" y="1910" />
+              <mxPoint x="1080" y="1935" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m21" value="21: komunikat „czas na rezerwację minął”" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1990" as="sourcePoint" />
+            <mxPoint x="720" y="1990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m22" value="22: powrót do ponownego wyboru terminu (A5)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="2045" as="sourcePoint" />
+            <mxPoint x="140" y="2045" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje mechanizm chwilowej blokady terminu (lock) na czas wypełniania rezerwacji. Gdy pacjent wchodzi w checkout, system blokuje wybrany slot na 10 minut, żeby nikt inny nie zarezerwował go w tym samym czasie — drugi pacjent próbujący wybrać ten sam termin dostaje komunikat o niedostępności. Uczestniczą pacjent (oraz ewentualny drugi, konkurujący pacjent) i system. Flow kończy się utworzeniem rezerwacji albo automatycznym zwolnieniem terminu z powrotem do puli, gdy czas minie lub pacjent porzuci checkout." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2170" width="1360" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;lock zakładany jest przy wejściu w checkout i tam pacjent domyka rezerwację&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;wybór slotu zaczyna się na profilu specjalisty; tam wraca pacjent po odmowie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;zwolniony slot wraca do puli widocznej na liście wyników&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A8&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a8-brak-slotow.md&lt;/td&gt;&lt;td&gt;gdy slot niedostępny, pacjent może trafić na ścieżkę „brak slotów”&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;rozgraniczenie: wygaśnięcie locka nie uruchamia waitlisty (brak slot.released)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;scoring gate decyduje, w jaki stan przechodzi rezerwacja po locku&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;stany draft → locked → pending_payment / pending_approval / confirmed pochodzą stąd&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-EVENTY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;kontekst eventu slot.released i pozostałych silników G&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2340" width="1360" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Pojedynczy wolny termin wizyty w kalendarzu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lock&lt;/td&gt;&lt;td&gt;Tymczasowa, wyłączna blokada slotu dla jednego pacjenta na czas wypełniania rezerwacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TTL&lt;/td&gt;&lt;td&gt;„Czas życia” blokady — tu 10 minut, po których lock wygasa automatycznie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Proces domykania rezerwacji: formularz danych pacjenta i ewentualna płatność (A5).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kolizja&lt;/td&gt;&lt;td&gt;Sytuacja, gdy dwóch pacjentów jednocześnie próbuje zarezerwować ten sam slot — wygrywa pierwszy.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;draft → locked&lt;/td&gt;&lt;td&gt;Przejście rezerwacji ze stanu roboczego do stanu z zablokowanym terminem.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pending_payment / pending_approval&lt;/td&gt;&lt;td&gt;Stany po locku: rezerwacja czeka na płatność albo na akceptację specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Timer&lt;/td&gt;&lt;td&gt;Zadanie w tle odliczające czas do wygaśnięcia locka.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Pula slotów&lt;/td&gt;&lt;td&gt;Wszystkie wolne terminy widoczne publicznie w wyszukiwarce i na profilu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring gate&lt;/td&gt;&lt;td&gt;Dodatkowy warunek z silnika G7, który pacjentom z historią no-show wymusza przedpłatę lub akceptację.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;POST&lt;/td&gt;&lt;td&gt;Techniczna nazwa żądania, którym strona prosi serwer o wykonanie operacji (np. założenie blokady, utworzenie rezerwacji).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE (frontend)&lt;/td&gt;&lt;td&gt;Strona internetowa działająca w przeglądarce pacjenta — to, co użytkownik widzi.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Backend&lt;/td&gt;&lt;td&gt;Serwer platformy — niewidoczna dla użytkownika część systemu, która podejmuje decyzje i przechowuje dane.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Joby/Kolejka&lt;/td&gt;&lt;td&gt;Zadania wykonywane w tle serwera (np. timery) — działają automatycznie, bez udziału człowieka.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;„Pierwszy wygrywa”&lt;/td&gt;&lt;td&gt;Zasada rozstrzygania kolizji: blokadę dostaje ten pacjent, którego prośba dotarła do serwera jako pierwsza.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;confirmed&lt;/td&gt;&lt;td&gt;Stan kanoniczny „wizyta umówiona” — pełny cykl stanów rezerwacji opisuje CORE-STANY.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2690" width="1360" height="540" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

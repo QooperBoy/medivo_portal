@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="core-weryfikacja-specjalisty" name="CORE-WERYFIKACJA — Cykl weryfikacji specjalisty (C3 → D1 → D3)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="2260" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;CORE-WERYFIKACJA — Cykl weryfikacji specjalisty (C3 → D1 → D3)&lt;/b&gt;&lt;br&gt;źródło: diagrams/00-core/00-weryfikacja-specjalisty.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="200" y="10" width="900" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="545" y="70" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sZarej" value="&lt;b&gt;zarejestrowany&lt;/b&gt;&lt;br&gt;konto + nr PWZ, format zwalidowany" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="390" y="140" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sAuto" value="&lt;b&gt;weryfikacja_auto&lt;/b&gt;&lt;br&gt;rejestr KRL/KIF, status na żywo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="390" y="310" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="Stan &quot;w trakcie&quot; (D2) — już od startu D1:&lt;br&gt;pełna edycja draftu profilu&lt;br&gt;(usługi, ceny, adresy multi, grafik)&lt;br&gt;+ konto demo, FAQ, status live + SLA" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="280" width="340" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="sReczna" value="&lt;b&gt;weryfikacja_reczna&lt;/b&gt;&lt;br&gt;kolejka F1, SLA do 24 h roboczych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="500" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sZwer" value="&lt;b&gt;zweryfikowany&lt;/b&gt;&lt;br&gt;profil draft, pełna edycja (D2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="500" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sOdrz" value="&lt;b&gt;odrzucony&lt;/b&gt;&lt;br&gt;powód widoczny dla specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="690" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sOpub" value="&lt;b&gt;opublikowany&lt;/b&gt;&lt;br&gt;profil publiczny — widoczny w A3/A4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="710" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="Go-live (D3) — sitemap update (G12)&lt;br&gt;+ mail powitalny (G1)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="990" y="700" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="endReject" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="215" y="870" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="endFinal" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="775" y="890" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="rejestracja (C3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="start" target="sZarej">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="start D1 — automat" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="sZarej" target="sAuto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="rejestr potwierdza PWZ" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="sAuto" target="sZwer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="brak potwierdzenia — fallback (F1)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="sAuto" target="sReczna">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="approve admina (F1)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sReczna" target="sZwer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="reject z powodem (F1)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="sReczna" target="sOdrz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="ponowne zgłoszenie po poprawie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sOdrz" target="sAuto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="25" y="735" />
+              <mxPoint x="25" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="brak ponownego zgłoszenia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;" edge="1" parent="1" source="sOdrz" target="endReject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="go-live 1 klik (D3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="sZwer" target="sOpub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;" edge="1" parent="1" source="sOpub" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legenda:&lt;/b&gt; niebieski = stan po stronie specjalisty (FE) · pomarańczowy = weryfikacja po stronie systemu i admina (BE)&lt;br&gt;czerwony = odrzucenie · zielony = profil opublikowany · podwójne kółko = stan końcowy" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="955" width="1180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="docOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje drogę specjalisty od założenia konta do publicznie widocznego profilu. Uczestniczą w niej specjalista (rejestruje się i podaje numer PWZ), system (automatycznie sprawdza numer w rejestrze zawodowym) oraz admin (ręcznie weryfikuje przypadki, których automat nie rozstrzygnął). Flow startuje przy rejestracji, a kończy się publikacją profilu widocznego dla pacjentów w wyszukiwarce albo odrzuceniem zgłoszenia z podanym powodem. Już w trakcie weryfikacji specjalista może przygotowywać swój profil w wersji roboczej." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1010" width="1180" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="docPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c3-rejestracja.md&lt;/td&gt;&lt;td&gt;rejestracja z numerem PWZ startuje cały cykl weryfikacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;automatyczne sprawdzenie PWZ w rejestrze KRL/KIF&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d2-stan-w-trakcie.md&lt;/td&gt;&lt;td&gt;edycja draftu profilu dostępna już w trakcie weryfikacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d3-go-live.md&lt;/td&gt;&lt;td&gt;publikacja profilu jednym kliknięciem po pozytywnej weryfikacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;ręczna kolejka admina jako fallback automatu (SLA do 24 h roboczych)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F5&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f5-uzytkownicy.md&lt;/td&gt;&lt;td&gt;ewentualne blokady konta po go-live obsługuje panel użytkowników&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;mail powitalny wysyłany po publikacji profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G12&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;aktualizacja sitemapy po go-live profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;opublikowany profil pojawia się na liście wyników wyszukiwania&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;opublikowany profil staje się publiczną stroną specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;po publikacji specjalista ustawia grafik — dalszy ciąg ścieżki E2E-3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E3&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e3-uslugi-ceny.md&lt;/td&gt;&lt;td&gt;konfiguracja usług i cen po go-live — dalszy ciąg ścieżki E2E-3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;opublikowany specjalista może przyjmować pierwsze rezerwacje&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1190" width="1180" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="docSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PWZ&lt;/td&gt;&lt;td&gt;Numer prawa wykonywania zawodu — potwierdza uprawnienia specjalisty do pracy z pacjentami.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;KRL/KIF&lt;/td&gt;&lt;td&gt;Publiczne rejestry zawodowe (logopedów/fizjoterapeutów), w których automat sprawdza numer PWZ.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OTP&lt;/td&gt;&lt;td&gt;Jednorazowy kod (SMS/email) potwierdzający numer telefonu przy rejestracji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fallback&lt;/td&gt;&lt;td&gt;Ścieżka zapasowa: gdy automat nie potwierdzi PWZ, sprawa trafia do ręcznej kolejki admina.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SLA&lt;/td&gt;&lt;td&gt;Obiecany maksymalny czas reakcji — tu do 24 godzin roboczych na ręczną weryfikację.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Draft profilu&lt;/td&gt;&lt;td&gt;Robocza, niepubliczna wersja profilu, którą specjalista może w pełni edytować przed publikacją.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Konto demo&lt;/td&gt;&lt;td&gt;Przykładowe dane w panelu, dzięki którym specjalista poznaje system jeszcze w trakcie weryfikacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Go-live&lt;/td&gt;&lt;td&gt;Publikacja profilu jednym kliknięciem — od tego momentu specjalista jest widoczny dla pacjentów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sitemap&lt;/td&gt;&lt;td&gt;Mapa strony dla wyszukiwarek, aktualizowana po publikacji, żeby Google szybciej znalazł nowy profil.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1740" width="1180" height="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

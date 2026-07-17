@@ -1,0 +1,217 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e6-tryb-urlop" name="E6 — Tryb urlop/choroba (operacja bulk)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="2350" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E6 — Tryb urlop/choroba (operacja bulk)&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e6-tryb-urlop.md — diagram sekwencji" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="1610" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actS" value="&lt;b&gt;Specjalista&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actFE" value="&lt;b&gt;FE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actAPI" value="&lt;b&gt;Backend&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actQ" value="&lt;b&gt;Joby/Kolejka&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="930" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actMSG" value="&lt;b&gt;SMS/Email&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actP" value="&lt;b&gt;Pacjent&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeS" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="120" as="sourcePoint" />
+            <mxPoint x="140" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeFE" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="120" as="sourcePoint" />
+            <mxPoint x="430" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeAPI" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="120" as="sourcePoint" />
+            <mxPoint x="720" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeQ" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="120" as="sourcePoint" />
+            <mxPoint x="1010" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeMSG" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="120" as="sourcePoint" />
+            <mxPoint x="1300" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeP" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="120" as="sourcePoint" />
+            <mxPoint x="1590" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" value="1: włącza tryb urlop/choroba" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="170" as="sourcePoint" />
+            <mxPoint x="430" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: podaje zakres dat" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="225" as="sourcePoint" />
+            <mxPoint x="430" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3: GET wizyty w zakresie" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="280" as="sourcePoint" />
+            <mxPoint x="720" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4: podgląd dotkniętych wizyt" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="335" as="sourcePoint" />
+            <mxPoint x="430" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1" value="alt [brak dotkniętych wizyt]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="370" width="1550" height="930" as="geometry" />
+        </mxCell>
+        <mxCell id="m5" value="5: potwierdza blokadę zakresu" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="415" as="sourcePoint" />
+            <mxPoint x="430" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6: POST blokada dostępności" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="470" as="sourcePoint" />
+            <mxPoint x="720" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7: grafik E2: zakres niedostępny" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="525" as="sourcePoint" />
+            <mxPoint x="720" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="525" />
+              <mxPoint x="790" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8: potwierdzenie blokady" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="595" as="sourcePoint" />
+            <mxPoint x="430" y="595" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="630" as="sourcePoint" />
+            <mxPoint x="1640" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el1" value="[else] są dotknięte wizyty" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="98" y="634" width="220" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m9" value="9: potwierdza operację bulk" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="680" as="sourcePoint" />
+            <mxPoint x="430" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10: POST bulk: blokada + odwołania" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="735" as="sourcePoint" />
+            <mxPoint x="720" y="735" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" value="11: grafik E2: zakres niedostępny" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="790" as="sourcePoint" />
+            <mxPoint x="720" y="815" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="790" />
+              <mxPoint x="790" y="815" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="12: każda wizyta:&lt;br&gt;confirmed → cancelled_by_specialist" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="860" as="sourcePoint" />
+            <mxPoint x="720" y="885" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="860" />
+              <mxPoint x="790" y="885" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="13: eventy booking.cancelled (bulk)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="945" as="sourcePoint" />
+            <mxPoint x="1010" y="945" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m14" value="14: oznacz pacjentów: priorytet 24 h" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1000" as="sourcePoint" />
+            <mxPoint x="720" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m15" value="15: hurtowe powiadomienia (G1, dedup)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1055" as="sourcePoint" />
+            <mxPoint x="1300" y="1055" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m16" value="16: odwołanie + priorytet 24 h&lt;br&gt;na nowy termin" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="1110" as="sourcePoint" />
+            <mxPoint x="1590" y="1110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m17" value="17: podsumowanie operacji bulk" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1180" as="sourcePoint" />
+            <mxPoint x="430" y="1180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="1215" as="sourcePoint" />
+            <mxPoint x="1640" y="1215" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el2" value="[else] specjalista rezygnuje" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="98" y="1219" width="240" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m18" value="18: anuluje — grafik bez zmian" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1265" as="sourcePoint" />
+            <mxPoint x="430" y="1265" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Pokazuje, co się dzieje, gdy specjalista bierze urlop lub choruje i musi zablokować cały zakres dat naraz (operacja hurtowa, tzw. bulk). Specjalista podaje zakres, system pokazuje podgląd wizyt, które ucierpią, i po potwierdzeniu blokuje grafik oraz odwołuje wszystkie te wizyty za jednym razem. Poszkodowani pacjenci dostają hurtowe powiadomienia SMS/email wraz z 24-godzinnym priorytetem na rezerwację nowego terminu; jeśli w zakresie nie ma żadnych wizyt, blokada zakłada się bez odwołań." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1410" width="1610" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;zakres dat staje się niedostępny w modelu grafiku&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E5&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e5-odwolanie-pojedyncze.md&lt;/td&gt;&lt;td&gt;nierozstrzygnięte: czy odwołania bulk wliczają się do licznika odwołań specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;hurtowe powiadomienia pacjentów wysyła notification engine (G1)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;sloty z urlopu NIE trafiają do waitlisty (są zablokowane, nie wolne)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;każda dotknięta wizyta: confirmed → cancelled_by_specialist wg kanonu&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1590" width="1610" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bulk&lt;/td&gt;&lt;td&gt;operacja hurtowa — jedna decyzja specjalisty działa naraz na wiele wizyt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;tryb urlop/choroba&lt;/td&gt;&lt;td&gt;funkcja panelu blokująca cały zakres dat w grafiku jednym ruchem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;blokada dostępności&lt;/td&gt;&lt;td&gt;oznaczenie zakresu dat jako niedostępnego — pacjenci nie mogą rezerwować terminów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;podgląd dotkniętych wizyt&lt;/td&gt;&lt;td&gt;lista wizyt, które zostaną odwołane, pokazywana specjaliście przed potwierdzeniem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;dedup&lt;/td&gt;&lt;td&gt;zabezpieczenie, by pacjent nie dostał wielu identycznych powiadomień przy operacji hurtowej&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;priorytet 24 h&lt;/td&gt;&lt;td&gt;pierwszeństwo poszkodowanego pacjenta w rezerwacji nowego terminu przez dobę od powiadomienia&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;licznik odwołań&lt;/td&gt;&lt;td&gt;licznik odwołanych wizyt specjalisty (dla urlopu bulk — kwestia nierozstrzygnięta)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;cancelled_by_specialist&lt;/td&gt;&lt;td&gt;stan wizyty odwołanej z winy/decyzji specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;waitlista&lt;/td&gt;&lt;td&gt;lista pacjentów czekających na wolne terminy — tu pomijana, bo sloty są zablokowane&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1880" width="1610" height="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

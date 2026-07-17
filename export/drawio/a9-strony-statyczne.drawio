@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="a9-strony-statyczne" name="A9 — Strony statyczne">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;A9 — Strony statyczne&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a9-strony-statyczne.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1020" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="560" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="NAV" value="Nawigacja / stopka" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="40" y="180" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CENNIK" value="/cennik" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="340" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JAK" value="/jak-dzialaja-wyniki" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="340" y="110" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="REGULAMIN" value="/regulamin" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="340" y="180" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PRYWATNOSC" value="/prywatnosc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="340" y="250" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POMOC" value="/pomoc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="340" y="320" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="680" y="90" width="380" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ZRODLO" value="Źródło treści" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="110" y="40" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HARDCODE" value="Hardcode w repo (start)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="170" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CMS" value="CMS (F7, później)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="200" y="170" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RENDER" value="Render treści statycznych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="110" y="290" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="P0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ZRODLO" target="HARDCODE"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="P1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ZRODLO" target="CMS"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="HARDCODE" target="RENDER"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="CMS" target="RENDER"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="RENDER" target="CENNIK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="RENDER" target="JAK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="RENDER" target="REGULAMIN"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="RENDER" target="PRYWATNOSC"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="RENDER" target="POMOC"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="NAV" target="CENNIK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="NAV" target="JAK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="NAV" target="REGULAMIN"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="NAV" target="PRYWATNOSC"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="NAV" target="POMOC"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Zbiór stałych stron informacyjnych serwisu: cennik, zasady działania wyników wyszukiwania, regulamin, polityka prywatności i pomoc. Pacjent trafia na nie z nawigacji lub stopki i po prostu czyta treść — flow nie kończy się żadną transakcją. Na start treści są wpisane na sztywno w kod, a docelowo będzie nimi zarządzał admin przez CMS (F7)." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="580" width="1020" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Diagram&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A2&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a2-wyszukiwanie.md&lt;/td&gt;&lt;td&gt;strona /jak-dzialaja-wyniki jest linkowana z wyszukiwania (wymóg Omnibus)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;/regulamin i /prywatnosc to podstawa prawna zgód z checkoutu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;/pomoc opisuje, jak odwołać lub zmienić wizytę&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B4&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b4-waitlista.md&lt;/td&gt;&lt;td&gt;/pomoc opisuje zasady działania waitlisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B9&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b9-rodo-self-service.md&lt;/td&gt;&lt;td&gt;/prywatnosc wiąże się z samoobsługą praw RODO&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c2-cennik-b2b.md&lt;/td&gt;&lt;td&gt;cennik B2B dla specjalistów to osobny flow, odrębny od /cennik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F7&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f7-cms-seo.md&lt;/td&gt;&lt;td&gt;docelowe źródło treści — CMS zarządzany przez admina&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="720" width="1020" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Strona statyczna&lt;/td&gt;&lt;td&gt;Strona o stałej, informacyjnej treści, bez interakcji (np. regulamin).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Hardcode&lt;/td&gt;&lt;td&gt;Treść wpisana na sztywno w kod aplikacji — najszybsze rozwiązanie na start.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CMS&lt;/td&gt;&lt;td&gt;System zarządzania treścią, dzięki któremu admin edytuje strony bez udziału programisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Render&lt;/td&gt;&lt;td&gt;Wygenerowanie i wyświetlenie treści strony użytkownikowi.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Omnibus&lt;/td&gt;&lt;td&gt;Dyrektywa UE wymagająca m.in. jawnego opisania zasad układania wyników — stąd strona /jak-dzialaja-wyniki.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RODO&lt;/td&gt;&lt;td&gt;Przepisy o ochronie danych osobowych — podstawa strony /prywatnosc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B2B&lt;/td&gt;&lt;td&gt;Oferta dla specjalistów/firm (płatny abonament), odrębna od bezpłatnego serwisu dla pacjentów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;P0 / P1&lt;/td&gt;&lt;td&gt;Priorytety wdrożenia: P0 = niezbędne na start, P1 = zaraz po starcie.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1020" width="1020" height="310" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

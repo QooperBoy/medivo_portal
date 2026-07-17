@@ -1,0 +1,169 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="f3-spory" name="F3 — Spory">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="2340" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;F3 — Spory (admin rozstrzyga: no-show, opinie, blokady)&lt;/b&gt;&lt;br&gt;źródło: diagrams/f-backoffice/f3-spory.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi admin" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="timer" value="TIMER SLA kolejki (wartość otwarta)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kolejka" value="Kolejka sporów" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="typ" value="Typ sporu" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="30" y="140" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tnoshow" value="No-show: sprzeciw pacjenta (B6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="topinia" value="Kwestionowana opinia" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="230" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tblokada" value="Odwołanie od blokady (F4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="320" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dowody" value="Stanowiska i dowody obu stron" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="320" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="decyzja" value="Rozstrzygnięcie" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="30" y="430" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uwzglednij" value="Uwzględnij" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="430" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="odrzuc" value="Odrzuć + powód" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="540" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="440" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ticketb6" value="Ticket z B6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ticketop" value="Zgłoszenie opinii (E8/F2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="130" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ticketbl" value="Wniosek po blokadzie (F4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="220" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="disputed" value="Rezerwacja: no_show → disputed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="blokg4" value="Spór otwarty: stop auto-approval (G4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="130" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cofnij" value="Cofnięcie sankcji scoringu (G7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="430" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zdejmij" value="Zdjęcie opinii z profilu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="520" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="odblokuj" value="Odblokowanie konta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="610" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="utrzymaj" value="Sankcja/decyzja utrzymana" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="700" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="msgs" value="Powiadomienia stron (G1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="610" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="audyt" value="Zapis decyzji + audyt (F10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="730" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ticketb6" target="disputed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="disputed" target="blokg4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.25;" edge="1" parent="1" source="ticketb6" target="kolejka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ticketop" target="kolejka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.75;" edge="1" parent="1" source="ticketbl" target="kolejka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="kolejka" target="timer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="kolejka" target="typ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="no-show" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="typ" target="tnoshow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="opinia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="typ" target="topinia">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="blokada" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="typ" target="tblokada">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.25;" edge="1" parent="1" source="tnoshow" target="dowody">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="topinia" target="dowody">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.75;" edge="1" parent="1" source="tblokada" target="dowody">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="dowody" target="decyzja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="uwzględnij" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="decyzja" target="uwzglednij">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="odrzuć" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="decyzja" target="odrzuc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="no-show" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="uwzglednij" target="cofnij">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="opinia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="uwzglednij" target="zdejmij">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="blokada" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="uwzglednij" target="odblokuj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="odrzuc" target="utrzymaj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="cofnij" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.25;" edge="1" parent="1" source="zdejmij" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="odblokuj" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="1" source="utrzymaj" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="msgs" target="audyt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelNotatki" value="&lt;b&gt;Notatki (założenia, edge case&#39;y)&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Priorytet: P1.&lt;br&gt;• Trzy typy sporów z mapy: (1) no-show „byłem/byłam&quot; z B6, (2) kwestionowane opinie (specjalista kwestionuje opublikowaną opinię — z E8/F2), (3) odwołania od blokad nałożonych w F4.&lt;br&gt;• Stany rezerwacji: przy sporze no-show wizyta przechodzi no_show → disputed (stany kanoniczne). Otwarty spór blokuje auto-approval G4 (Flaga 3 z mapy).&lt;br&gt;• SLA kolejki: mapa nie podaje wartości — timer zaznaczony, wartość otwarta (do S3).&lt;br&gt;• Uwzględnienie sporu no-show = cofnięcie sankcji scoringu (G7); mapa nie definiuje kanonicznego stanu rezerwacji PO rozstrzygnięciu sporu (disputed → ?) — założenie minimalne: decyzja żyje w tickecie, stan rezerwacji bez zmian; zgłoszone jako rozbieżność.&lt;br&gt;• Odrzucenie zawsze z powodem; obie strony dostają powiadomienie (G1); decyzja w audycie F10.&lt;br&gt;• Powiązania: B6, E7, E8, F2, F4, G4, G7, G1, F10, prompt #4." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#FFF9B2;strokeColor=#d6b656;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="930" width="880" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje, jak admin rozstrzyga spory między stronami marketplace&#39;u. Do kolejki trafiają trzy typy zgłoszeń: sprzeciw pacjenta wobec oznaczenia no-show („byłem/byłam na wizycie&quot;), opinia kwestionowana przez specjalistę oraz odwołanie od blokady nałożonej przez anty-abuse. Admin ogląda stanowiska i dowody obu stron, po czym uwzględnia spór (cofa sankcję scoringu, zdejmuje opinię z profilu albo odblokowuje konto) lub odrzuca go z podanym powodem. Obie strony dostają powiadomienie, a otwarty spór no-show wstrzymuje automatyczne zatwierdzenie wizyty." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1310" width="880" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B6&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b6-spor-no-show.md&lt;/td&gt;&lt;td&gt;sprzeciw pacjenta wobec no-show — źródło ticketów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E7&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e7-no-show.md&lt;/td&gt;&lt;td&gt;oznaczenie no-show przez specjalistę poprzedza spór&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;specjalista kwestionuje tam opublikowaną opinię&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F2&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f2-moderacja-opinii.md&lt;/td&gt;&lt;td&gt;zakwestionowana po publikacji opinia przechodzi z moderacji do sporu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F4&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f4-anty-abuse.md&lt;/td&gt;&lt;td&gt;odwołania od blokad nałożonych w anty-abuse&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G4&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g4-auto-approval.md&lt;/td&gt;&lt;td&gt;otwarty spór blokuje auto-approval wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;uwzględnienie sporu no-show cofa sankcję scoringu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienia obu stron o rozstrzygnięciu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;każde rozstrzygnięcie zapisywane w audycie&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1510" width="880" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Spór&lt;/td&gt;&lt;td&gt;Sprawa, w której jedna strona kwestionuje decyzję lub zdarzenie i prosi admina o rozstrzygnięcie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ticket&lt;/td&gt;&lt;td&gt;Pojedyncze zgłoszenie sporu czekające w kolejce na obsługę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;No-show&lt;/td&gt;&lt;td&gt;Sytuacja, gdy pacjent nie stawił się na umówioną wizytę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;disputed&lt;/td&gt;&lt;td&gt;Stan rezerwacji oznaczający, że no-show jest kwestionowany i sprawa czeka na rozstrzygnięcie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sankcja&lt;/td&gt;&lt;td&gt;Konsekwencja nałożona na pacjenta za no-show lub późne odwołanie (np. wymóg przedpłaty).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring&lt;/td&gt;&lt;td&gt;Wewnętrzna ocena wiarygodności pacjenta, na którą wpływają no-show i późne odwołania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Auto-approval&lt;/td&gt;&lt;td&gt;Automatyczne zatwierdzenie odbytej wizyty po 48 h, wstrzymywane na czas sporu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Blokada&lt;/td&gt;&lt;td&gt;Odcięcie użytkownikowi dostępu do konta lub rezerwacji, od którego można się odwołać.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SLA&lt;/td&gt;&lt;td&gt;Obiecany maksymalny czas obsługi kolejki (wartość jeszcze nieustalona).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audyt (audit log)&lt;/td&gt;&lt;td&gt;Trwały zapis decyzji: kto rozstrzygnął, kiedy i z jakim powodem.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1890" width="880" height="370" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

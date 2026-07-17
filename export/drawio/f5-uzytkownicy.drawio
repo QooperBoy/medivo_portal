@@ -1,0 +1,130 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="f5-uzytkownicy" name="F5 — Użytkownicy">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="2050" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;F5 — Użytkownicy (zarządzanie kontami, RODO, audyt dostępu)&lt;/b&gt;&lt;br&gt;źródło: diagrams/f-backoffice/f5-uzytkownicy.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi admin" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="730" as="geometry" />
+        </mxCell>
+        <mxCell id="szukaj" value="Wyszukiwarka użytkowników" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wyniki" value="Wyniki: pacjenci / specjaliści" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="130" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="podglad" value="Podgląd konta (minimalizacja danych)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="220" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="akcja" value="Akcja" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="310" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="blokada" value="Blokada konta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="440" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wniosek" value="Wniosek RODO (B9)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="440" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eksport" value="Eksport danych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="560" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="usun" value="Usunięcie konta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="650" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="440" height="730" as="geometry" />
+        </mxCell>
+        <mxCell id="usersapi" value="Users API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="audytp" value="KAŻDY podgląd → audit (F10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="220" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="blokenc" value="Flaga blokady + wygaszenie sesji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="440" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="exportjob" value="Job eksportu danych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="560" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="erasure" value="Erasure job (G11)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="650" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="audytz" value="Każda zmiana → audit (F10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="530" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="msgs" value="Powiadomienie użytkownika (G1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="650" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="szukaj" target="usersapi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.75;entryX=1;entryY=0.5;" edge="1" parent="1" source="usersapi" target="wyniki">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="wyniki" target="podglad">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="podglad" target="audytp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="podglad" target="akcja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed6" value="blokada" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="akcja" target="blokada">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed7" value="RODO" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="akcja" target="wniosek">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="blokada" target="blokenc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="eksport" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="wniosek" target="eksport">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed10" value="usunięcie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="wniosek" target="usun">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="eksport" target="exportjob">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="usun" target="erasure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="blokenc" target="audytz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="exportjob" target="audytz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.25;entryX=0;entryY=0.75;" edge="1" parent="1" source="erasure" target="audytz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.25;" edge="1" parent="1" source="blokenc" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="exportjob" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.75;" edge="1" parent="1" source="erasure" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelNotatki" value="&lt;b&gt;Notatki (założenia, edge case&#39;y)&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Priorytet: P0.&lt;br&gt;• Kluczowy wymóg mapy: podgląd konta ZAWSZE z audytem dostępu — każdy odczyt danych pacjenta (dane zdrowotne!) trafia do F10, niezależnie od tego, czy admin coś zmienił. Prezentacja danych adminowi z minimalizacją (S3 pkt 3).&lt;br&gt;• Obsługa wniosków RODO z B9: eksport danych (job) i usunięcie konta (erasure job G11); powiadomienie użytkownika o realizacji przez G1.&lt;br&gt;• Blokada konta: flaga + wygaszenie aktywnych sesji; odwołanie od blokady → F3.&lt;br&gt;• Założenie minimalne: mapa nie rozstrzyga, czy wniosek RODO złożony w B9 wymaga zawsze ręcznej obsługi w F5, czy bywa w pełni automatyczny — przyjęto: admin obsługuje/nadzoruje wniosek w F5.&lt;br&gt;• Powiązania: B9, G11, F3, F10, G1." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#FFF9B2;strokeColor=#d6b656;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="860" width="880" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje moduł zarządzania kontami użytkowników (pacjentów i specjalistów) w panelu admina. Admin wyszukuje konto i podgląda je z zachowaniem minimalizacji danych — a ponieważ w grę wchodzą dane zdrowotne, każdy sam podgląd jest zapisywany w audycie, nawet bez żadnej zmiany. Admin może zablokować konto (z wygaszeniem aktywnych sesji) albo obsłużyć wniosek RODO: eksport danych lub trwałe usunięcie konta. Użytkownik dostaje powiadomienie o każdej wykonanej akcji." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1180" width="880" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B9&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b9-rodo-self-service.md&lt;/td&gt;&lt;td&gt;stąd przychodzą wnioski RODO składane przez pacjenta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G11&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;erasure job RODO realizuje usunięcie danych&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F3&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f3-spory.md&lt;/td&gt;&lt;td&gt;odwołanie użytkownika od blokady konta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;każdy podgląd i każda zmiana konta logowane w audycie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienie użytkownika o blokadzie lub realizacji wniosku&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1370" width="880" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RODO&lt;/td&gt;&lt;td&gt;Przepisy o ochronie danych osobowych dające użytkownikowi m.in. prawo do kopii i usunięcia swoich danych.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Minimalizacja danych&lt;/td&gt;&lt;td&gt;Zasada pokazywania adminowi tylko tych danych, które są niezbędne do wykonania zadania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dane zdrowotne&lt;/td&gt;&lt;td&gt;Szczególnie chronione dane o zdrowiu pacjenta — każdy dostęp do nich musi być rejestrowany.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audyt dostępu&lt;/td&gt;&lt;td&gt;Zapis w logu każdego podglądu konta, nawet jeśli admin niczego nie zmienił.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Erasure job&lt;/td&gt;&lt;td&gt;Automatyczne zadanie systemowe trwale usuwające dane użytkownika po wniosku o usunięcie konta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Eksport danych&lt;/td&gt;&lt;td&gt;Przygotowanie dla użytkownika kopii wszystkich jego danych z serwisu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Blokada konta&lt;/td&gt;&lt;td&gt;Odebranie użytkownikowi dostępu do serwisu przez oznaczenie konta flagą blokady.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Wygaszenie sesji&lt;/td&gt;&lt;td&gt;Natychmiastowe wylogowanie użytkownika ze wszystkich urządzeń przy blokadzie.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1650" width="880" height="320" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

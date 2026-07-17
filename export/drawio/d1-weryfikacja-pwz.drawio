@@ -1,0 +1,269 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="d1-weryfikacja-pwz" name="D1 — Weryfikacja PWZ">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="3120" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;D1 — Weryfikacja PWZ&lt;/b&gt;&lt;br&gt;źródło: diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md — diagram sekwencji" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1680" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actS" value="&lt;b&gt;Specjalista&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actFE" value="&lt;b&gt;FE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actAPI" value="&lt;b&gt;Backend&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actQ" value="&lt;b&gt;Joby/Kolejka&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="930" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actREJ" value="&lt;b&gt;Rejestr KRL/KIF&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actADM" value="&lt;b&gt;Admin&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeS" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="120" as="sourcePoint" />
+            <mxPoint x="140" y="1920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeFE" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="120" as="sourcePoint" />
+            <mxPoint x="430" y="1920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeAPI" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="120" as="sourcePoint" />
+            <mxPoint x="720" y="1920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeQ" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="120" as="sourcePoint" />
+            <mxPoint x="1010" y="1920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeREJ" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="120" as="sourcePoint" />
+            <mxPoint x="1300" y="1920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeADM" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="120" as="sourcePoint" />
+            <mxPoint x="1590" y="1920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n0" value="flow startuje sam, automatycznie, zaraz po rejestracji specjalisty (C3)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="530" y="150" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="1: ustawia stan weryfikacji: weryfikacja_auto" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="230" as="sourcePoint" />
+            <mxPoint x="720" y="255" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="230" />
+              <mxPoint x="790" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: zleca w tle sprawdzenie PWZ w rejestrze" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="300" as="sourcePoint" />
+            <mxPoint x="1010" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fpar" value="par [specjalista śledzi status na żywo w panelu (D2)]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="340" width="1610" height="1550" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" value="3: otwiera panel onboardingu" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="390" as="sourcePoint" />
+            <mxPoint x="430" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4: pyta o status weryfikacji (GET)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="445" as="sourcePoint" />
+            <mxPoint x="720" y="445" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5: status + SLA „do 24 h roboczych”" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="500" as="sourcePoint" />
+            <mxPoint x="430" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dand" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="535" as="sourcePoint" />
+            <mxPoint x="1670" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eland" value="[and] równolegle automat weryfikacyjny pracuje w tle" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="68" y="539" width="380" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m6" value="6: zapytanie do rejestru o numer PWZ" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="590" as="sourcePoint" />
+            <mxPoint x="1300" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="falt1" value="alt [rejestr jednoznacznie potwierdza numer PWZ]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="625" width="1570" height="1235" as="geometry" />
+        </mxCell>
+        <mxCell id="m7" value="7: dane zgodne z rejestrem" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="680" as="sourcePoint" />
+            <mxPoint x="1010" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8: zmiana stanu: zweryfikowany" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="735" as="sourcePoint" />
+            <mxPoint x="720" y="735" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="9: panel pokazuje: zweryfikowany" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="790" as="sourcePoint" />
+            <mxPoint x="430" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n1" value="specjalista może publikować profil — dostępny go-live (D3)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="100" y="825" width="370" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="del1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="900" as="sourcePoint" />
+            <mxPoint x="1650" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ele1" value="[else] rejestr nie daje jednoznacznego dopasowania" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="88" y="904" width="380" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m10" value="10: brak potwierdzenia albo błąd rejestru" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="950" as="sourcePoint" />
+            <mxPoint x="1010" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" value="11: fallback do ręcznej kolejki admina (F1)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1005" as="sourcePoint" />
+            <mxPoint x="720" y="1005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="12: stan: weryfikacja_reczna + timer SLA" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1060" as="sourcePoint" />
+            <mxPoint x="720" y="1085" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="1060" />
+              <mxPoint x="790" y="1085" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="13: panel: weryfikacja ręczna w toku" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1130" as="sourcePoint" />
+            <mxPoint x="430" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m14" value="14: przegląda zgłoszenie (dane + dowody)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="1185" as="sourcePoint" />
+            <mxPoint x="720" y="1185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="falt2" value="alt [admin zatwierdza zgłoszenie — approve (F1)]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1220" width="1530" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="m15" value="15: klika approve — zatwierdza zgłoszenie" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="1275" as="sourcePoint" />
+            <mxPoint x="720" y="1275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m16" value="16: zmiana stanu: zweryfikowany" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1330" as="sourcePoint" />
+            <mxPoint x="720" y="1355" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="1330" />
+              <mxPoint x="790" y="1355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m17" value="17: panel pokazuje: zweryfikowany" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1400" as="sourcePoint" />
+            <mxPoint x="430" y="1400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n2" value="specjalista może publikować profil — dostępny go-live (D3)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="110" y="1435" width="350" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="del2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="1510" as="sourcePoint" />
+            <mxPoint x="1630" y="1510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ele2" value="[else] admin odrzuca zgłoszenie z powodem — reject (F1)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="108" y="1514" width="400" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m18" value="18: klika reject + wpisuje powód" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="1560" as="sourcePoint" />
+            <mxPoint x="720" y="1560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m19" value="19: zmiana stanu: odrzucony" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1615" as="sourcePoint" />
+            <mxPoint x="720" y="1640" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="1615" />
+              <mxPoint x="790" y="1640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m20" value="20: panel: odrzucony + powód odrzucenia" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1685" as="sourcePoint" />
+            <mxPoint x="430" y="1685" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m21" value="21: poprawia dane, zgłasza się ponownie" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1740" as="sourcePoint" />
+            <mxPoint x="430" y="1740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m22" value="22: restart weryfikacji od automatu (D1)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="1795" as="sourcePoint" />
+            <mxPoint x="720" y="1795" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje weryfikację numeru PWZ specjalisty, która startuje automatycznie zaraz po rejestracji (C3). Automat odpytuje oficjalny rejestr (KRL/KIF) — gdy dane się zgadzają, specjalista dostaje status „zweryfikowany&quot; i może opublikować profil (D3). Gdy rejestr nie daje jednoznacznej odpowiedzi, sprawę przejmuje admin w ręcznej kolejce (F1) i zatwierdza albo odrzuca zgłoszenie z podaniem powodu; po odrzuceniu specjalista może poprawić dane i zgłosić się ponownie. Przez cały czas specjalista widzi w panelu (D2) aktualny status weryfikacji wraz z obiecanym czasem realizacji („do 24 h roboczych&quot;)." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1970" width="1640" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c3-rejestracja.md&lt;/td&gt;&lt;td&gt;rejestracja specjalisty uruchamia ten flow automatycznie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d2-stan-w-trakcie.md&lt;/td&gt;&lt;td&gt;panel onboardingu pokazuje na żywo status weryfikacji z tego flow&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d3-go-live.md&lt;/td&gt;&lt;td&gt;pozytywny wynik weryfikacji odblokowuje publikację profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;fallback — ręczna kolejka admina z decyzją approve/reject i timerem SLA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-WERYFIKACJA&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-weryfikacja-specjalisty.md&lt;/td&gt;&lt;td&gt;kanoniczny cykl stanów weryfikacji, po którym porusza się ten flow&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2150" width="1640" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PWZ&lt;/td&gt;&lt;td&gt;Numer prawa wykonywania zawodu, potwierdzający uprawnienia specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;KRL/KIF&lt;/td&gt;&lt;td&gt;Oficjalne rejestry zawodowe, w których automat sprawdza numer PWZ.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Weryfikacja automatyczna&lt;/td&gt;&lt;td&gt;Sprawdzenie numeru PWZ przez system w rejestrze, bez udziału człowieka.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Weryfikacja ręczna&lt;/td&gt;&lt;td&gt;Sprawdzenie zgłoszenia przez admina, gdy automat nie dał jednoznacznego wyniku.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fallback&lt;/td&gt;&lt;td&gt;Awaryjne przekazanie sprawy z automatu do ręcznej kolejki admina (F1).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SLA&lt;/td&gt;&lt;td&gt;Obiecany maksymalny czas załatwienia sprawy — tutaj „do 24 h roboczych&quot;, pilnowany timerem.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Approve / reject&lt;/td&gt;&lt;td&gt;Decyzja admina: zatwierdzenie albo odrzucenie zgłoszenia z podaniem powodu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Status na żywo&lt;/td&gt;&lt;td&gt;Aktualny etap weryfikacji pokazywany na bieżąco w panelu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Go-live&lt;/td&gt;&lt;td&gt;Moment publikacji profilu specjalisty, możliwy dopiero po pozytywnej weryfikacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fork (wertykał)&lt;/td&gt;&lt;td&gt;Osobna odmiana serwisu dla innej branży (np. weterynaryjnej), korzystająca z innego rejestru.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Onboarding&lt;/td&gt;&lt;td&gt;Proces „wdrożenia&quot; nowego specjalisty na platformę: od rejestracji, przez weryfikację, po publikację profilu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Job (zadanie w tle)&lt;/td&gt;&lt;td&gt;Praca wykonywana automatycznie przez system poza widokiem użytkownika — tutaj odpytanie rejestru o numer PWZ.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;GET&lt;/td&gt;&lt;td&gt;Techniczny typ żądania przeglądarki do backendu służący do pobrania danych — tutaj: aktualnego statusu weryfikacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-WERYFIKACJA&lt;/td&gt;&lt;td&gt;Wspólny diagram z kanonicznymi nazwami stanów weryfikacji (weryfikacja_auto, weryfikacja_reczna, zweryfikowany, odrzucony), używanymi we wszystkich flow.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;par (ramka równoległości)&lt;/td&gt;&lt;td&gt;Oznaczenie na diagramie, że dwie ścieżki dzieją się jednocześnie: specjalista patrzy w panel, a automat pracuje w tle.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2460" width="1640" height="560" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

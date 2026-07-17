@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="c2-cennik-b2b" name="C2 — Cennik B2B">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1160" pageHeight="1860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;C2 — Cennik B2B&lt;/b&gt;&lt;br&gt;źródło: diagrams/cd-specjalista-onboarding/c2-cennik-b2b.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1080" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="700" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="wejscie" value="wejście: cennik B2B" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="40" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="plany" value="widok planów" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="130" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="free" value="plan Free — jedyny na start" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="90" y="230" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="paid" value="zapowiedź planów płatnych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="410" y="230" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="detale" value="zakres planu Free" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="90" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wkrotce" value="'wkrótce' — bez szczegółów" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="410" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dec" value="decyzja specjalisty" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="270" y="420" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cta" value="CTA: rejestracja — C3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="90" y="560" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="powrot" value="powrót na landing — C1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="410" y="560" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="780" y="90" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="static" value="strona statyczna — brak API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="30" y="50" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="wejscie" target="plany">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="plany" target="free">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="plany" target="paid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="free" target="detale">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="paid" target="wkrotce">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="detale" target="dec">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="wkrotce" target="dec">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="załóż konto" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec" target="cta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="wraca" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec" target="powrot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="wejscie" target="static">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje stronę z cennikiem dla specjalistów (oferta B2B). Specjalista trafia tu zwykle z landingu C1, ogląda jedyny dostępny na start plan Free oraz zapowiedź planów płatnych („wkrótce&quot;), po czym albo zakłada konto, albo wraca na landing. To strona czysto informacyjna — system nie wykonuje w tle żadnych operacji. Flow kończy się przejściem do rejestracji (C3) lub powrotem do C1." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="790" width="1020" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c1-landing-dla-specjalistow.md&lt;/td&gt;&lt;td&gt;wejście na cennik z landingu i możliwy powrót na landing&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c3-rejestracja.md&lt;/td&gt;&lt;td&gt;CTA cennika prowadzi do rejestracji specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki specjalisty — weryfikacja PWZ po rejestracji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d2-stan-w-trakcie.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki — onboarding w trakcie weryfikacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d3-go-live.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki — publikacja profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki po go-live — ustawienie grafiku&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E3&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e3-uslugi-ceny.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki po go-live — usługi i ceny&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E12&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e12-subskrypcja-billing.md&lt;/td&gt;&lt;td&gt;plan z cennika widoczny później w panelu jako subskrypcja (licznik „free do DD.MM&quot;)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F6&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f6-billing-admin.md&lt;/td&gt;&lt;td&gt;ten sam model subskrypcji rozliczany po stronie admina&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="970" width="1020" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B2B&lt;/td&gt;&lt;td&gt;Oferta dla specjalistów/firm (klient biznesowy), w odróżnieniu od części serwisu dla pacjentów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Cennik&lt;/td&gt;&lt;td&gt;Strona prezentująca dostępne plany abonamentowe i ich zakres.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Plan Free&lt;/td&gt;&lt;td&gt;Darmowy plan abonamentowy — jedyny dostępny na starcie serwisu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Plany płatne&lt;/td&gt;&lt;td&gt;Przyszłe, płatne warianty abonamentu; na razie tylko zapowiedź „wkrótce&quot;, bez szczegółów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Subskrypcja&lt;/td&gt;&lt;td&gt;Cykliczna opłata za korzystanie z serwisu przez specjalistę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CTA&lt;/td&gt;&lt;td&gt;Przycisk wzywający do działania (call to action), tutaj „załóż konto&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Strona statyczna&lt;/td&gt;&lt;td&gt;Strona o stałej treści, bez pobierania danych z systemu (brak API).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Billing&lt;/td&gt;&lt;td&gt;Rozliczenia i płatności za subskrypcję — widoczne dla specjalisty w E12, a dla admina w F6.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1400" width="1020" height="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

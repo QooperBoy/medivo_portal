@@ -1,0 +1,300 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e8-approval-opinie" name="E8 — Approval wizyt + opinie">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="3650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E8 — Approval wizyt + opinie&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e8-approval-opinie.md — diagram sekwencji" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1680" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actS" value="&lt;b&gt;Specjalista&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actFE" value="&lt;b&gt;FE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actAPI" value="&lt;b&gt;Backend&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actQ" value="&lt;b&gt;Joby/Kolejka&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="930" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actMSG" value="&lt;b&gt;SMS/Email&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actP" value="&lt;b&gt;Pacjent&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeS" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="120" as="sourcePoint" />
+            <mxPoint x="140" y="2430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeFE" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="120" as="sourcePoint" />
+            <mxPoint x="430" y="2430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeAPI" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="120" as="sourcePoint" />
+            <mxPoint x="720" y="2430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeQ" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="120" as="sourcePoint" />
+            <mxPoint x="1010" y="2430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeMSG" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="120" as="sourcePoint" />
+            <mxPoint x="1300" y="2430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeP" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="120" as="sourcePoint" />
+            <mxPoint x="1590" y="2430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" value="część 1 — potwierdzanie odbytych wizyt (approval wizyty, przycisk „odbyła się”)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=center;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="385" y="140" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="1: otwiera w panelu listę wizyt&lt;br&gt;czekających na potwierdzenie" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="210" as="sourcePoint" />
+            <mxPoint x="430" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: pobiera wizyty po terminie,&lt;br&gt;wciąż w stanie confirmed (GET)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="280" as="sourcePoint" />
+            <mxPoint x="720" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3: zwraca listę wizyt do potwierdzenia" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="350" as="sourcePoint" />
+            <mxPoint x="430" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1" value="alt [specjalista potwierdza, że wizyta faktycznie się odbyła]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="385" width="1560" height="1145" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" value="4: klika przycisk „odbyła się” przy wizycie" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="430" as="sourcePoint" />
+            <mxPoint x="430" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5: przekazuje potwierdzenie wizyty&lt;br&gt;do systemu (POST approval)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="485" as="sourcePoint" />
+            <mxPoint x="720" y="485" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6: zmienia stan wizyty: confirmed → completed (wizyta odbyta)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="555" as="sourcePoint" />
+            <mxPoint x="720" y="580" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="555" />
+              <mxPoint x="790" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7: uruchamia timer G3 — prośba o opinię&lt;br&gt;2 h po wizycie (review ask)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="650" as="sourcePoint" />
+            <mxPoint x="1010" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8: po 2 h zleca wysyłkę prośby o opinię&lt;br&gt;z tokenem-linkiem (B5)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="720" as="sourcePoint" />
+            <mxPoint x="1300" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="9: pacjent dostaje SMS/e-mail z linkiem&lt;br&gt;do wystawienia opinii" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="790" as="sourcePoint" />
+            <mxPoint x="1590" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="830" as="sourcePoint" />
+            <mxPoint x="1650" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el1" value="[else] specjalista oznacza, że pacjent się nie stawił (no-show)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="98" y="834" width="450" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m10" value="10: klika przycisk „nie stawił się”&lt;br&gt;przy wizycie" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="880" as="sourcePoint" />
+            <mxPoint x="430" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note2" value="dalszy przebieg oznaczenia nieobecności: [[e7-no-show]] (E7)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="385" y="950" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="1020" as="sourcePoint" />
+            <mxPoint x="1650" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el2" value="[else] specjalista nie robi nic — po 48 h działa automat" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="98" y="1024" width="410" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m11" value="11: odlicza timer auto-approvalu: 48 h po terminie wizyty (G4)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1070" as="sourcePoint" />
+            <mxPoint x="1010" y="1095" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1080" y="1070" />
+              <mxPoint x="1080" y="1095" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f2" value="alt [wizyta bez zgłoszonego no-show i bez otwartego sporu]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="1130" width="560" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="m12" value="12: automatycznie potwierdza wizytę&lt;br&gt;za specjalistę (auto-approval)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1175" as="sourcePoint" />
+            <mxPoint x="720" y="1175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="13: zmienia stan wizyty: confirmed → completed (wizyta odbyta)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1245" as="sourcePoint" />
+            <mxPoint x="720" y="1270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="1245" />
+              <mxPoint x="790" y="1270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m14" value="14: uruchamia timer G3 —&lt;br&gt;prośba o opinię (review ask)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1325" as="sourcePoint" />
+            <mxPoint x="1010" y="1325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="1395" as="sourcePoint" />
+            <mxPoint x="1200" y="1395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el3" value="[else] wizyta w stanie no_show lub disputed (spór)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="648" y="1399" width="365" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m15" value="15: auto-approval ZABLOKOWANY — sporna wizyta nie potwierdza się sama (Flaga 3)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1445" as="sourcePoint" />
+            <mxPoint x="1010" y="1470" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1080" y="1445" />
+              <mxPoint x="1080" y="1470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note3" value="część 2 — przegląd opinii pacjentów i odpowiedź specjalisty" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=center;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="385" y="1570" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="m16" value="16: otwiera w panelu listę opinii o sobie" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1650" as="sourcePoint" />
+            <mxPoint x="430" y="1650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m17" value="17: pobiera opinie z pipeline'u&lt;br&gt;opinii B5/F2 (GET)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="1705" as="sourcePoint" />
+            <mxPoint x="720" y="1705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m18" value="18: zwraca opinie wraz ze statusem&lt;br&gt;moderacji każdej z nich" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1775" as="sourcePoint" />
+            <mxPoint x="430" y="1775" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m19" value="19: wybiera gotowy wzorzec (szablon)&lt;br&gt;odpowiedzi na opinię" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1845" as="sourcePoint" />
+            <mxPoint x="430" y="1845" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m20" value="20: pokazuje podgląd odpowiedzi — szablon&lt;br&gt;bez danych zdrowotnych pacjenta" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="1915" as="sourcePoint" />
+            <mxPoint x="140" y="1915" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m21" value="21: zatwierdza i wysyła swoją odpowiedź" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1985" as="sourcePoint" />
+            <mxPoint x="430" y="1985" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m22" value="22: przekazuje odpowiedź na opinię&lt;br&gt;do zapisania (POST)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="2040" as="sourcePoint" />
+            <mxPoint x="720" y="2040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m23" value="23: automatycznie sprawdza, czy odpowiedź nie zawiera danych zdrowotnych" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="2110" as="sourcePoint" />
+            <mxPoint x="720" y="2135" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="2110" />
+              <mxPoint x="790" y="2135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f3" value="alt [walidacja przeszła — treść odpowiedzi jest bezpieczna]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="380" y="2170" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="m24" value="24: publikuje odpowiedź specjalisty&lt;br&gt;na profilu publicznym (A4)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="2215" as="sourcePoint" />
+            <mxPoint x="430" y="2215" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d4" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="2285" as="sourcePoint" />
+            <mxPoint x="820" y="2285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el4" value="[else] walidacja wykryła dane wrażliwe w odpowiedzi" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="388" y="2289" width="380" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m25" value="25: zwraca błąd — specjalista musi&lt;br&gt;poprawić treść odpowiedzi" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="2335" as="sourcePoint" />
+            <mxPoint x="430" y="2335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Dwuczęściowy flow w panelu specjalisty. Część 1: po terminie wizyty specjalista potwierdza, że wizyta się odbyła („odbyła się” — wtedy po 2 godzinach pacjent dostaje prośbę o opinię), oznacza no-show albo nie robi nic — wtedy po 48 godzinach system potwierdza wizytę automatycznie, chyba że jest ona oznaczona jako no-show lub sporna. Część 2: specjalista przegląda opinie pacjentów i odpowiada na nie z gotowych wzorców, a system pilnuje, by odpowiedź nie zawierała danych zdrowotnych, zanim opublikuje ją na profilu." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2490" width="1680" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E7&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e7-no-show.md&lt;/td&gt;&lt;td&gt;oznaczenie „nie stawił się” z tej samej listy przechodzi w flow no-show&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B5&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b5-wystawienie-opinii.md&lt;/td&gt;&lt;td&gt;pacjent wystawia opinię z linku otrzymanego po review ask&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F2&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f2-moderacja-opinii.md&lt;/td&gt;&lt;td&gt;opinie przechodzą moderację, zanim trafią do specjalisty i na profil&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;opublikowana odpowiedź specjalisty jest widoczna na profilu publicznym&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G3&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;review ask T+2 h — automatyczna prośba o opinię po potwierdzeniu wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G4&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g4-auto-approval.md&lt;/td&gt;&lt;td&gt;timer auto-approval T+48 h przy braku reakcji specjalisty (Flaga 3)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;przejście confirmed → completed wg kanonu stanów&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2660" width="1680" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;approval&lt;/td&gt;&lt;td&gt;potwierdzenie przez specjalistę, że wizyta faktycznie się odbyła&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;auto-approval&lt;/td&gt;&lt;td&gt;automatyczne potwierdzenie wizyty po 48 h, gdy specjalista nie zareagował&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;review ask&lt;/td&gt;&lt;td&gt;automatyczna prośba o opinię wysyłana pacjentowi 2 h po potwierdzeniu wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;opinia&lt;/td&gt;&lt;td&gt;ocena i komentarz pacjenta po odbytej wizycie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;moderacja&lt;/td&gt;&lt;td&gt;sprawdzenie opinii przez system/admina przed jej publikacją&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;wzorzec odpowiedzi&lt;/td&gt;&lt;td&gt;gotowy szablon odpowiedzi na opinię, bezpieczny pod kątem danych wrażliwych&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;dane zdrowotne&lt;/td&gt;&lt;td&gt;informacje o zdrowiu pacjenta, których nie wolno ujawniać w publicznej odpowiedzi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;completed&lt;/td&gt;&lt;td&gt;stan wizyty potwierdzonej jako odbyta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;no_show / disputed&lt;/td&gt;&lt;td&gt;stany (niestawienie się / spór), które blokują automatyczne potwierdzenie wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;token&lt;/td&gt;&lt;td&gt;link jednorazowy w SMS/emailu, którym pacjent wystawia opinię bez logowania&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;confirmed&lt;/td&gt;&lt;td&gt;stan wizyty umówionej, która czeka na rozstrzygnięcie: odbyła się, no-show albo auto-approval&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pipeline opinii&lt;/td&gt;&lt;td&gt;pełna droga opinii przez system: prośba o opinię (G3) → wystawienie przez pacjenta (B5) → moderacja (F2) → publikacja na profilu (A4)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;T+2 h / T+48 h&lt;/td&gt;&lt;td&gt;zapis „ile czasu po terminie wizyty”: prośba o opinię wychodzi 2 h po potwierdzeniu, auto-approval działa 48 h po wizycie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga 3&lt;/td&gt;&lt;td&gt;otwarta decyzja projektowa: auto-approval musi być zablokowany przy no_show i sporze&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;walidacja&lt;/td&gt;&lt;td&gt;automatyczne sprawdzenie treści odpowiedzi przez system przed publikacją&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;GET / POST&lt;/td&gt;&lt;td&gt;techniczne typy zapytań panelu do systemu: GET pobiera dane, POST zapisuje zmianę&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;status moderacji&lt;/td&gt;&lt;td&gt;etap, na którym jest opinia w pipeline: np. czeka na sprawdzenie, zaakceptowana, opublikowana&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2990" width="1680" height="560" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

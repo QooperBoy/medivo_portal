@@ -1,0 +1,160 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="f4-anty-abuse" name="F4 — Anty-abuse">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="2350" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;F4 — Anty-abuse (flagi, blokady, anulowanie serii)&lt;/b&gt;&lt;br&gt;źródło: diagrams/f-backoffice/f4-anty-abuse.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi admin" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="timer" value="TIMER SLA kolejki (wartość otwarta)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kolejka" value="Kolejka flag anty-abuse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="szczegoly" value="Szczegóły flagi + konto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="130" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="przeglad" value="Przegląd IP / device" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="220" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="seria" value="Wzorzec: seria rezerwacji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="220" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="decyzja" value="Akcja" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="30" y="440" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="blokuj" value="Blokada konta / numeru" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="440" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="anuluj" value="Anulowanie serii rezerwacji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="530" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zamknij" value="Brak naruszenia: zamknij flagę" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="620" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p0info" value="P0 min.: tylko ręczna blokada" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;dashed=1;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="620" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="440" height="870" as="geometry" />
+        </mxCell>
+        <mxCell id="g8" value="Fraud detection: wzorce (G8)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="limity" value="Limity per numer/IP/device (G8)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="Ticket od specjalisty (E13)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="130" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="blokenc" value="Blokada: konto, numer, IP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="440" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="odwolanie" value="Odwołanie od blokady → F3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="440" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bulk" value="Bulk cancel serii" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="560" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sloty" value="Zwolnione sloty do grafiku (E2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="560" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="msgs" value="Powiadomienia (G1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="680" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="potw" value="E13: specjalista potwierdza efekt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="680" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="audyt" value="Zapis akcji + audyt (F10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="790" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="limity" target="g8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.25;" edge="1" parent="1" source="g8" target="kolejka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.75;" edge="1" parent="1" source="e13" target="kolejka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="kolejka" target="timer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="kolejka" target="szczegoly">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="szczegoly" target="przeglad">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="szczegoly" target="seria">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="przeglad" target="decyzja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="seria" target="decyzja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed10" value="blokada" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="decyzja" target="blokuj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed11" value="seria" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="decyzja" target="anuluj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed12" value="czysto" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="decyzja" target="zamknij">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="p0info" target="blokuj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="blokuj" target="blokenc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="anuluj" target="bulk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bulk" target="sloty">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="bulk" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="blokenc" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="blokenc" target="odwolanie">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="msgs" target="potw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.25;" edge="1" parent="1" source="blokuj" target="audyt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="anuluj" target="audyt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="1" source="zamknij" target="audyt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelNotatki" value="&lt;b&gt;Notatki (założenia, edge case&#39;y)&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Priorytet: P0 min. = ręczna blokada (bez automatu G8); pełny moduł z flagami wzorców → P1 (G8 jest P1).&lt;br&gt;• Dwa źródła kolejki: auto-flagi z fraud detection G8 (wzorce multikont, limity per numer/IP/device) oraz ticket od specjalisty „podejrzewam blokowanie kalendarza&quot; → E13.&lt;br&gt;• Anulowanie serii: bulk cancel zwalnia sloty z powrotem do grafiku (E2); ścieżka E2E „Sabotaż slotów&quot;: seria → G8 flaga → F4 → anulowanie serii → E13 potwierdza.&lt;br&gt;• Mapa/CLAUDE.md nie definiują kanonicznego stanu rezerwacji dla anulowania przez ADMINA (są tylko cancelled_by_patient / cancelled_by_specialist) — zgłoszone jako rozbieżność; w diagramie neutralne „bulk cancel serii&quot;.&lt;br&gt;• Zablokowany użytkownik może się odwołać → F3 (odwołania od blokad).&lt;br&gt;• SLA kolejki: brak wartości w mapie — timer zaznaczony, wartość otwarta (do S3).&lt;br&gt;• Wszystkie akcje (blokada, anulowanie, zamknięcie) w audycie F10.&lt;br&gt;• Powiązania: E13, G8, F3, E2, G1, F10, prompt #4." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#FFF9B2;strokeColor=#d6b656;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1000" width="880" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje, jak admin reaguje na nadużycia — przede wszystkim sabotaż kalendarza specjalisty przez serię fikcyjnych rezerwacji blokujących terminy. Kolejkę zasilają automatyczne flagi z systemu wykrywania oszustw (wzorce zachowań, limity na numer telefonu, IP i urządzenie) oraz zgłoszenia od samych specjalistów. Admin analizuje flagę i konto, po czym blokuje konto lub numer, anuluje całą serię rezerwacji (zwolnione terminy wracają do grafiku) albo zamyka flagę jako bezzasadną. Zablokowany użytkownik może się odwołać w module sporów." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1370" width="880" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E13&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e13-zgloszenie-abuse.md&lt;/td&gt;&lt;td&gt;ticket specjalisty zasila kolejkę, a specjalista potwierdza efekt akcji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G8&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;fraud detection dostarcza auto-flagi i limity per numer/IP/device&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F3&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f3-spory.md&lt;/td&gt;&lt;td&gt;odwołanie zablokowanego użytkownika od blokady&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;anulowanie serii zwalnia sloty z powrotem do grafiku&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienia o blokadzie i anulowaniach&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;wszystkie akcje admina zapisywane w audycie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2E-5&lt;/td&gt;&lt;td&gt;diagrams/e2e/e2e-5-sabotaz-slotow.md&lt;/td&gt;&lt;td&gt;pełna ścieżka „sabotaż slotów&quot; przechodzi przez ten moduł&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1570" width="880" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Anty-abuse&lt;/td&gt;&lt;td&gt;Moduł do wykrywania i powstrzymywania nadużyć w serwisie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga&lt;/td&gt;&lt;td&gt;Automatyczne lub ręczne oznaczenie podejrzanej aktywności do sprawdzenia przez admina.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fraud detection&lt;/td&gt;&lt;td&gt;Automat wykrywający podejrzane wzorce, np. wiele rezerwacji z jednego urządzenia.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sabotaż slotów&lt;/td&gt;&lt;td&gt;Celowe blokowanie kalendarza specjalisty fikcyjnymi rezerwacjami.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Limit per numer/IP/device&lt;/td&gt;&lt;td&gt;Ograniczenie liczby rezerwacji z jednego numeru telefonu, adresu internetowego lub urządzenia.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Bulk cancel&lt;/td&gt;&lt;td&gt;Hurtowe anulowanie całej serii rezerwacji jedną akcją.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Pojedynczy wolny termin wizyty w grafiku specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ticket&lt;/td&gt;&lt;td&gt;Zgłoszenie od specjalisty czekające w kolejce na obsługę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Blokada&lt;/td&gt;&lt;td&gt;Odcięcie konta, numeru lub IP od możliwości rezerwowania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audyt (audit log)&lt;/td&gt;&lt;td&gt;Trwały zapis każdej akcji admina: kto, co i kiedy zrobił.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1900" width="880" height="370" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

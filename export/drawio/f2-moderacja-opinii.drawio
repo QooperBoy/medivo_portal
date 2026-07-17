@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="f2-moderacja-opinii" name="F2 — Moderacja opinii">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1080" pageHeight="2050" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;F2 — Moderacja opinii&lt;/b&gt;&lt;br&gt;źródło: diagrams/f-backoffice/f2-moderacja-opinii.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="50" y="15" width="980" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi admin" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="460" height="790" as="geometry" />
+        </mxCell>
+        <mxCell id="wflagi" value="Widok opinii z auto-flagą: podejrzane treści pokazywane w pierwszej kolejności" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="60" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wcalosc" value="Widok pozostałych opinii: bez flag, w zwykłej kolejności zgłoszeń" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="170" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kolejka" value="Kolejka opinii czekających na decyzję admina" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="170" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="timer" value="Timer SLA kolejki: maksymalny czas obsługi (wartość jeszcze nieustalona)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="300" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="szczegoly" value="Admin czyta pełną treść opinii wraz z kontekstem wizyty, której dotyczy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="300" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="decyzja" value="Decyzja admina: opublikować czy odrzucić?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="140" y="420" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="zatwierdz" value="Zatwierdź — opinia przechodzi do publikacji na profilu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="560" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="odrzuc" value="Odrzuć — opinia nie zostanie opublikowana; admin podaje powód" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="560" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="historia" value="Historia wszystkich decyzji moderacyjnych widoczna w module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="690" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="560" y="90" width="460" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="nowa" value="Nowa opinia wystawiona przez pacjenta jednorazowym tokenem po wizycie (B5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="60" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="autofiltr" value="Auto-filtr treści: automat skanuje opinię pod kątem podejrzanych treści" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="60" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="publikacja" value="Publikacja opinii na publicznym profilu specjalisty (A4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="560" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="status" value="Pacjent widzi aktualny status moderacji swojej opinii (B5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="690" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="odpowiedz" value="Specjalista może odpowiedzieć na opublikowaną opinię (E8)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="690" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="audyt" value="System zapisuje decyzję w audycie: kto, kiedy, z jakim powodem (F10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="130" y="800" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="nowa" target="autofiltr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="auto-flaga: treść podejrzana" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="autofiltr" target="wflagi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="brak zastrzeżeń automatu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="autofiltr" target="wcalosc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="wflagi" target="kolejka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="wcalosc" target="kolejka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="kolejka" target="timer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="kolejka" target="szczegoly">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="szczegoly" target="decyzja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="zatwierdź (approve)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="decyzja" target="zatwierdz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="odrzuć (reject)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="decyzja" target="odrzuc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="zatwierdz" target="publikacja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="odrzuc" target="status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="publikacja" target="status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="publikacja" target="odpowiedz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="zatwierdz" target="historia">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="odrzuc" target="historia">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="historia" target="audyt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje, jak admin moderuje opinie pacjentów, zanim pojawią się publicznie. Każda nowa opinia (wystawiona przez pacjenta po wizycie) przechodzi przez auto-filtr treści i trafia do kolejki moderacji — podejrzane opinie są oznaczane flagą i pokazywane w pierwszej kolejności. Admin zatwierdza opinię, która wtedy trafia na publiczny profil specjalisty (specjalista może na nią odpowiedzieć), albo odrzuca ją z podanym powodem. Pacjent przez cały czas widzi status moderacji swojej opinii." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1030" width="980" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B5&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b5-wystawienie-opinii.md&lt;/td&gt;&lt;td&gt;źródło opinii; pacjent widzi tam status moderacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;zatwierdzona opinia jest publikowana na profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;specjalista odpowiada na opublikowaną opinię&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F3&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f3-spory.md&lt;/td&gt;&lt;td&gt;opinia zakwestionowana po publikacji trafia do sporów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;decyzje moderacyjne zapisywane w audycie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G3&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;prośba o opinię (review ask T+2 h) rozpoczyna pipeline opinii&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G4&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g4-auto-approval.md&lt;/td&gt;&lt;td&gt;auto-approval wizyty poprzedza wystawienie opinii w pipeline&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1220" width="980" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Moderacja&lt;/td&gt;&lt;td&gt;Ręczne sprawdzenie opinii przez admina przed jej publikacją.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Auto-filtr treści&lt;/td&gt;&lt;td&gt;Automat, który wstępnie skanuje opinię i oznacza podejrzane treści.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Auto-flaga&lt;/td&gt;&lt;td&gt;Oznaczenie nadane przez auto-filtr, które wypycha opinię na początek kolejki.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Token&lt;/td&gt;&lt;td&gt;Jednorazowy link/klucz, dzięki któremu opinię może wystawić tylko pacjent po odbytej wizycie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kolejka moderacji&lt;/td&gt;&lt;td&gt;Lista opinii czekających na decyzję admina.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SLA&lt;/td&gt;&lt;td&gt;Obiecany maksymalny czas obsługi kolejki (wartość jeszcze nieustalona).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Publikacja&lt;/td&gt;&lt;td&gt;Udostępnienie zatwierdzonej opinii na publicznym profilu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Spór&lt;/td&gt;&lt;td&gt;Procedura, w której specjalista kwestionuje już opublikowaną opinię.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audyt (audit log)&lt;/td&gt;&lt;td&gt;Trwały zapis każdej decyzji moderacyjnej: kto, kiedy, z jakim powodem.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Zatwierdź / Odrzuć (approve/reject)&lt;/td&gt;&lt;td&gt;Dwie możliwe decyzje admina: zatwierdzenie kieruje opinię do publikacji na profilu, odrzucenie blokuje publikację i wymaga podania powodu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kontekst wizyty&lt;/td&gt;&lt;td&gt;Informacje o wizycie, której dotyczy opinia (u kogo, kiedy, jaka usługa) — pomagają adminowi ocenić wiarygodność treści.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Historia decyzji&lt;/td&gt;&lt;td&gt;Lista wcześniejszych decyzji moderacyjnych w module — punkt odniesienia dla spójnych ocen podobnych przypadków.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Badge wiarygodności&lt;/td&gt;&lt;td&gt;Oznaczenie przy opublikowanej opinii na profilu informujące, że pochodzi od pacjenta po faktycznie odbytej wizycie.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1540" width="980" height="450" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

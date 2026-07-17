@@ -1,0 +1,270 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="a5-checkout-wariant-przedplata" name="A5 — Checkout: wariant przedpłaty (+ pełne A6)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="3160" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;A5 — Checkout: wariant przedpłaty (scoring gate) + pełne A6 płatność online&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md — diagram sekwencji" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1660" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actP" value="&lt;b&gt;Pacjent&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actFE" value="&lt;b&gt;FE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actAPI" value="&lt;b&gt;Backend&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actQ" value="&lt;b&gt;Joby/Kolejka&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="930" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actMSG" value="&lt;b&gt;SMS/Email&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actPAY" value="&lt;b&gt;Procesor płatności&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeP" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="120" as="sourcePoint" />
+            <mxPoint x="140" y="1780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeFE" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="120" as="sourcePoint" />
+            <mxPoint x="430" y="1780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeAPI" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="120" as="sourcePoint" />
+            <mxPoint x="720" y="1780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeQ" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="120" as="sourcePoint" />
+            <mxPoint x="1010" y="1780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeMSG" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="120" as="sourcePoint" />
+            <mxPoint x="1300" y="1780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifePAY" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="120" as="sourcePoint" />
+            <mxPoint x="1590" y="1780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note0" value="wcześniejsze kroki identyczne jak w [[a5-checkout]]&lt;br&gt;(usługa, termin, dane, kod SMS, zgody)&lt;br&gt;— aż do scoring gate (G7)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="240" y="135" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="1: scoring gate (G7): wymagana przedpłata" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="225" as="sourcePoint" />
+            <mxPoint x="720" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="225" />
+              <mxPoint x="790" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: „rezerwacja wymaga przedpłaty online”" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="305" as="sourcePoint" />
+            <mxPoint x="430" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3: podsumowanie + klik „rezerwuję i płacę”" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="360" as="sourcePoint" />
+            <mxPoint x="430" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4: POST utworzenie rezerwacji" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="415" as="sourcePoint" />
+            <mxPoint x="720" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5: locked → pending_payment" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="455" as="sourcePoint" />
+            <mxPoint x="720" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="455" />
+              <mxPoint x="790" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6: timer auto-anulacji ~30 min na wpłatę" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="535" as="sourcePoint" />
+            <mxPoint x="1010" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7: payment intent — zlecenie płatności (A6)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="590" as="sourcePoint" />
+            <mxPoint x="1590" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8: zwraca zlecenie i adres strony płatności" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="645" as="sourcePoint" />
+            <mxPoint x="720" y="645" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="9: przekierowanie / okno płatności (A6)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="700" as="sourcePoint" />
+            <mxPoint x="430" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10: płaci u procesora (np. karta, BLIK)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="755" as="sourcePoint" />
+            <mxPoint x="1590" y="755" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1" value="alt [płatność zakończona sukcesem]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="790" width="1570" height="940" as="geometry" />
+        </mxCell>
+        <mxCell id="m11" value="11: powrót na ekran wyniku płatności (A6)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="835" as="sourcePoint" />
+            <mxPoint x="430" y="835" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="12: webhook potwierdzenia wpłaty (G9)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="890" as="sourcePoint" />
+            <mxPoint x="720" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="13: pending_payment → confirmed" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="930" as="sourcePoint" />
+            <mxPoint x="720" y="955" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="930" />
+              <mxPoint x="790" y="955" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m14" value="14: wyłącza timer auto-anulacji" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1010" as="sourcePoint" />
+            <mxPoint x="1010" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m15" value="15: tokeny samoobsługi (A7)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1050" as="sourcePoint" />
+            <mxPoint x="720" y="1075" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="1050" />
+              <mxPoint x="790" y="1075" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m16" value="16: enqueue powiadomień (G1)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1130" as="sourcePoint" />
+            <mxPoint x="1010" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m17" value="17: e-mail + SMS (link zarządzania) + .ics" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1185" as="sourcePoint" />
+            <mxPoint x="1300" y="1185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m18" value="18: ekran sukcesu „wizyta umówiona” (A7)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="1240" as="sourcePoint" />
+            <mxPoint x="140" y="1240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="1275" as="sourcePoint" />
+            <mxPoint x="1660" y="1275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el1" value="[else] płatność nie powiodła się (np. karta odrzucona)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="98" y="1279" width="400" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m19" value="19: ekran błędu płatności (A6)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="1325" as="sourcePoint" />
+            <mxPoint x="430" y="1325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m20" value="20: przycisk „ponów płatność” (~30 min)" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="1380" as="sourcePoint" />
+            <mxPoint x="140" y="1380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m21" value="21: ponawia próbę zapłaty u procesora" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="1435" as="sourcePoint" />
+            <mxPoint x="1590" y="1435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="1470" as="sourcePoint" />
+            <mxPoint x="1660" y="1470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el2" value="[else] pacjent nie zapłacił w ~30 min (timeout)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="98" y="1474" width="360" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m22" value="22: licznik minął — auto-anulacja" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1520" as="sourcePoint" />
+            <mxPoint x="720" y="1520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m23" value="23: pending_payment → cancelled_by_patient" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1560" as="sourcePoint" />
+            <mxPoint x="720" y="1585" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="1560" />
+              <mxPoint x="790" y="1585" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m24" value="24: zwalnia slot → waitlista (G6)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1640" as="sourcePoint" />
+            <mxPoint x="1010" y="1640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m25" value="25: SMS/e-mail o anulacji rezerwacji" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1695" as="sourcePoint" />
+            <mxPoint x="1300" y="1695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Wariant rezerwacji, w którym system — na podstawie scoringu pacjenta — wymaga zapłaty z góry; diagram zawiera zarazem pełny przebieg płatności online (A6). Uczestniczą pacjent, system oraz zewnętrzny procesor płatności, a w tle kolejka zadań i powiadomienia. Flow zaczyna się od decyzji bramki scoringowej „wymagana przedpłata&quot;, a kończy potwierdzeniem rezerwacji po udanej płatności albo automatyczną anulacją i zwolnieniem terminu, gdy pacjent nie zapłaci w ciągu ok. 30 minut." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1840" width="1660" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;stany kanoniczne: pending_payment → confirmed / cancelled_by_patient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;wspólne kroki początkowe (lock, B7, OTP, zgody) aż do scoring gate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (akceptacja)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md&lt;/td&gt;&lt;td&gt;alternatywna sankcja gate'u; fallback, gdyby POC ruszył bez płatności online&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;ekran sukcesu i tokeny samoobsługi po potwierdzeniu płatności&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B7&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b7-pacjent-podopieczny.md&lt;/td&gt;&lt;td&gt;krok „dla kogo wizyta&quot; we wcześniejszej, wspólnej części flow&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienia po potwierdzeniu lub anulacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G5&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g5-slot-lock.md&lt;/td&gt;&lt;td&gt;pending_payment przejmuje slot po wygaśnięciu locka (TTL 10 min)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;slot zwolniony po timeoucie płatności trafia na waitlistę&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;źródło decyzji o przymusowej przedpłacie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G9&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;webhook procesora płatności potwierdza wpłatę&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2030" width="1660" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate przedpłaty&lt;/td&gt;&lt;td&gt;Wymóg zapłaty z góry nałożony przez system na pacjentów o obniżonym scoringu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring&lt;/td&gt;&lt;td&gt;Automatyczna ocena wiarygodności pacjenta na podstawie jego historii (np. odwołań, nieobecności).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Procesor płatności&lt;/td&gt;&lt;td&gt;Zewnętrzna firma obsługująca płatności online (karty, BLIK itp.).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Payment intent&lt;/td&gt;&lt;td&gt;Zlecenie płatności utworzone u procesora, zanim pacjent przejdzie do zapłaty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Redirect / embed&lt;/td&gt;&lt;td&gt;Sposób pokazania płatności: przekierowanie na stronę procesora albo okno wbudowane w serwis.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Webhook&lt;/td&gt;&lt;td&gt;Automatyczne powiadomienie wysyłane przez procesora do systemu, że płatność się powiodła.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Timer auto-anulacji&lt;/td&gt;&lt;td&gt;Odliczanie ok. 30 minut; jeśli płatność nie dojdzie, system sam anuluje rezerwację.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pending_payment&lt;/td&gt;&lt;td&gt;Stan rezerwacji oczekującej na płatność, który trzyma slot dla pacjenta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista oczekujących, którzy dostają powiadomienie o zwolnionym terminie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Reconciliation&lt;/td&gt;&lt;td&gt;Okresowe uzgadnianie płatności między systemem a procesorem (poza zakresem tego diagramu).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Benchmark ZL&lt;/td&gt;&lt;td&gt;Wzorowanie się na praktyce rynkowej (ZnanyLekarz) — stąd okno płatności ok. 30 minut.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Autoryzacja płatności&lt;/td&gt;&lt;td&gt;Moment, w którym pacjent zatwierdza zapłatę u procesora (dane karty, kod BLIK, potwierdzenie w aplikacji banku).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Token samoobsługi&lt;/td&gt;&lt;td&gt;Specjalny link, którym pacjent później zmieni lub odwoła wizytę bez logowania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;.ics&lt;/td&gt;&lt;td&gt;Plik z terminem wizyty do dodania do kalendarza (Google, Outlook itp.).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;locked&lt;/td&gt;&lt;td&gt;Stan z wcześniejszej, wspólnej części checkoutu — termin zablokowany na 10 minut dla pacjenta (lock G5, TTL).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;confirmed / cancelled_by_patient&lt;/td&gt;&lt;td&gt;Kanoniczne stany końcowe tego wariantu: wizyta umówiona albo anulowana po stronie pacjenta (tu: brak wpłaty w terminie).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kolejka (joby)&lt;/td&gt;&lt;td&gt;Zadania wykonywane w tle: licznik auto-anulacji, wysyłka powiadomień, przekazanie terminu na waitlistę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Timeout&lt;/td&gt;&lt;td&gt;Upłynięcie limitu czasu — tu: koniec okna ok. 30 minut na wpłatę, po którym rezerwacja anuluje się automatycznie.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2450" width="1660" height="610" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

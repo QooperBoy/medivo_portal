@@ -1,0 +1,118 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="b7-pacjent-podopieczny" name="B7 — Pacjent ≠ rezerwujący (podopieczny)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;B7 — Pacjent ≠ rezerwujący (podopieczny)&lt;/b&gt;&lt;br&gt;źródło: diagrams/b-pacjent-konto/b7-pacjent-podopieczny.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="980" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="700" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="KROK" value="Krok formularza rezerwacji (checkout A5): dla kogo jest wizyta?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="140" y="50" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WYBOR" value="Rezerwujący wybiera: wizyta dla mnie, dla dziecka czy dla innej osoby?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="160" y="160" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ZAPISANI" value="Czy podopieczny jest już zapisany z wcześniejszej rezerwacji?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="30" y="300" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="JA" value="Pacjentem jest sam rezerwujący — używane są jego własne dane" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="480" y="300" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MINIPROFIL" value="Rezerwujący wypełnia mini-profil dziecka: tylko imię i wiek" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="440" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WYBORZAP" value="Rezerwujący wybiera podopiecznego z listy wcześniej zapisanych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="440" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="INNA" value="Rezerwujący wypełnia mini-profil innej, dorosłej osoby" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="480" y="440" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGODA" value="Rezerwujący zaznacza checkbox: jestem opiekunem i wyrażam zgodę na podanie danych dziecka" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="560" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="DALEJ" value="Przejście do kolejnego kroku checkoutu: dane i zgody (A5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="680" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="800" y="90" width="240" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="ENCJAJA" value="System zapisuje, że pacjentem jest ta sama osoba co rezerwujący" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="50" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGODAZAPIS" value="System zapisuje udzieloną zgodę opiekuna (dowód na przyszłość)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="170" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RODO" value="System stosuje zasadę RODO: zapisuje tylko niezbędne minimum danych dziecka" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENCJAP" value="System tworzy osobny wpis (encję) podopiecznego w bazie danych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="410" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LINKKONTO" value="System wiąże wpis podopiecznego z kontem rezerwującego — do ponownego użycia" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="530" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="KROK" target="WYBOR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="wizyta dla mnie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="WYBOR" target="JA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="wizyta dla dziecka" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="WYBOR" target="ZAPISANI">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="wizyta dla innej osoby" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="WYBOR" target="INNA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="JA" target="ENCJAJA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ENCJAJA" target="DALEJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="tak — jest już na liście" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="ZAPISANI" target="WYBORZAP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="nie — pierwsza rezerwacja" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ZAPISANI" target="MINIPROFIL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="WYBORZAP" target="DALEJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="MINIPROFIL" target="ZGODA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ZGODA" target="ZGODAZAPIS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ZGODAZAPIS" target="RODO">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="RODO" target="ENCJAP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="INNA" target="ENCJAP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ENCJAP" target="LINKKONTO">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="LINKKONTO" target="DALEJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje krok rezerwacji &quot;dla kogo jest wizyta&quot;. Osoba rezerwująca może umówić wizytę dla siebie, dla dziecka lub dla innej osoby — u logopedów najczęściej rezerwuje rodzic, a pacjentem jest dziecko. Dla dziecka tworzony jest mini-profil (imię, wiek) z zaznaczeniem zgody opiekuna; system zapisuje podopiecznego jako osobny wpis powiązany z kontem rezerwującego, gotowy do użycia przy kolejnych rezerwacjach. Flow uruchamia się w trakcie checkoutu i kończy przejściem do danych i zgód." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="920" width="980" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;ten flow jest krokiem checkoutu &quot;dla kogo?&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B8&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b8-formularz-przedwizytowy.md&lt;/td&gt;&lt;td&gt;ankieta przedwizytowa dotyczy danych podopiecznego&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B9&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b9-rodo-self-service.md&lt;/td&gt;&lt;td&gt;usunięcie konta obejmuje też encje podopiecznych&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;rezerwacja dla podopiecznego przechodzi te same stany&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="980" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Podopieczny&lt;/td&gt;&lt;td&gt;Osoba, dla której umawiana jest wizyta, ale która sama nie rezerwuje (np. dziecko).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Rezerwujący (booker)&lt;/td&gt;&lt;td&gt;Osoba, która dokonuje rezerwacji i ma konto — niekoniecznie ta sama, która przyjdzie na wizytę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Encja&lt;/td&gt;&lt;td&gt;Osobny wpis w bazie danych — podopieczny nie jest &quot;dopiskiem&quot; do konta, tylko własnym rekordem.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Mini-profil&lt;/td&gt;&lt;td&gt;Minimalny zestaw danych podopiecznego: imię i wiek/rok urodzenia.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Zgoda opiekuna&lt;/td&gt;&lt;td&gt;Potwierdzenie (checkbox), że dane dziecka podaje jego opiekun prawny.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Minimalizacja danych&lt;/td&gt;&lt;td&gt;Zasada RODO: zbieramy tylko te dane, które są naprawdę potrzebne.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RODO&lt;/td&gt;&lt;td&gt;Przepisy o ochronie danych osobowych, szczególnie restrykcyjne wobec danych dzieci.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fork wertykalny&lt;/td&gt;&lt;td&gt;Kopia platformy dla innej branży (np. weterynarii) — ta sama mechanika podopiecznego obsłuży wtedy zwierzę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lekkie konto&lt;/td&gt;&lt;td&gt;Konto pacjenta tworzone automatycznie przy pierwszej rezerwacji, bez klasycznej rejestracji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Wieloetapowy formularz rezerwacji wizyty — od kliknięcia terminu do potwierdzenia (opisany w A5); ten flow jest jednym z jego kroków.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkbox&lt;/td&gt;&lt;td&gt;Pole do zaznaczenia w formularzu (&quot;ptaszek&quot;) — tutaj służy do potwierdzenia zgody opiekuna.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Encja podopiecznego&lt;/td&gt;&lt;td&gt;Własny wpis podopiecznego w bazie danych, powiązany z kontem rezerwującego i wielokrotnego użytku przy kolejnych rezerwacjach.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE / BE&lt;/td&gt;&lt;td&gt;Podział diagramu: FE (lewa część) to ekrany, które widzi rezerwujący; BE (prawa) to działania systemu &quot;pod spodem&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1340" width="980" height="460" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

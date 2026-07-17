@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="a3-lista-wynikow" name="A3 — Lista wyników">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1160" pageHeight="1950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;A3 — Lista wyników&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a3-lista-wynikow.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="1040" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="680" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="LISTA" value="Lista specjalistów znalezionych w wyszukiwaniu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="50" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PAGINACJA" value="Przechodzenie między kolejnymi stronami listy (paginacja)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="460" y="50" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CZY" value="Czy wyszukiwanie zwróciło jakieś wyniki?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="260" y="180" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KARTA" value="Karta specjalisty: zdjęcie, badge „PWZ zweryfikowany”, średnia ocena" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="320" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUSTY" value="Pusty stan: komunikat o braku wyników" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="460" y="320" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ADRES" value="Adres gabinetu i odległość od szukanej lokalizacji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="440" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SLOTY" value="3–5 najbliższych wolnych terminów widocznych wprost na karcie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="440" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A4LINK" value="Pełny profil specjalisty (A4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="460" y="440" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A5LINK" value="Start rezerwacji wybranego terminu — checkout (A5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="570" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A8LINK" value="Ścieżka „brak terminów”: podobni specjaliści + waitlista (A8)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="300" y="570" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="760" y="90" width="300" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="GRAFIKI" value="Aktualne grafiki specjalistów — źródło terminów na żywo (E2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="60" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AVAIL" value="Availability batch API: jedno zbiorcze zapytanie o wolne terminy dla całej strony wyników" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="180" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="LISTA" target="CZY">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="tak — są pasujący specjaliści" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="CZY" target="KARTA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="nie — lista jest pusta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="CZY" target="PUSTY">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="KARTA" target="ADRES">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="KARTA" target="SLOTY">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="GRAFIKI" target="AVAIL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="AVAIL" target="SLOTY">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="klik w kartę specjalisty" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="KARTA" target="A4LINK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="klik w wolny termin" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="SLOTY" target="A5LINK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="karta bez wolnych terminów" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="SLOTY" target="A8LINK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="PUSTY" target="A8LINK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.25;entryX=0;entryY=0.25;" edge="1" parent="1" source="LISTA" target="PAGINACJA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="kolejna strona listy" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.75;entryX=1;entryY=0.75;" edge="1" parent="1" source="PAGINACJA" target="LISTA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Pokazuje listę specjalistów po wyszukiwaniu: każda karta zawiera zdjęcie, potwierdzenie uprawnień (badge PWZ), ocenę, adres z odległością oraz kilka najbliższych wolnych terminów. W tle system na bieżąco pobiera dostępność z grafików specjalistów. Kliknięcie w kartę prowadzi do profilu (A4), kliknięcie w termin — prosto do rezerwacji (A5), a brak wyników lub wolnych terminów — do ścieżki „podobni + waitlista&quot; (A8)." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="900" width="1040" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;klik w kartę specjalisty otwiera jego profil&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;klik w inline slot prowadzi wprost do checkoutu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A8&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a8-brak-slotow.md&lt;/td&gt;&lt;td&gt;pusty stan lub karta bez wolnych slotów kieruje do „podobni + waitlista&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;sloty inline liczone na żywo z grafików specjalistów&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1070" width="1040" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Konkretny wolny termin wizyty w kalendarzu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Inline sloty&lt;/td&gt;&lt;td&gt;3–5 najbliższych wolnych terminów pokazanych bezpośrednio na karcie wyniku.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Badge PWZ&lt;/td&gt;&lt;td&gt;Oznaczenie potwierdzające, że numer prawa wykonywania zawodu specjalisty został zweryfikowany.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Availability batch API&lt;/td&gt;&lt;td&gt;Jedno zbiorcze zapytanie do systemu, które pobiera dostępność wszystkich specjalistów z całej strony wyników naraz.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Live z grafików&lt;/td&gt;&lt;td&gt;Terminy pochodzą prosto z aktualnych kalendarzy specjalistów, bez opóźnienia.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Paginacja&lt;/td&gt;&lt;td&gt;Podział długiej listy wyników na kolejne strony.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Pusty stan&lt;/td&gt;&lt;td&gt;Ekran pokazywany, gdy wyszukiwanie nie zwróciło żadnych wyników.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Cold start&lt;/td&gt;&lt;td&gt;Sytuacja startowa, gdy w serwisie jest jeszcze mało specjalistów i lista mogłaby wyglądać na martwą.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PWZ&lt;/td&gt;&lt;td&gt;Prawo wykonywania zawodu — numer potwierdzający uprawnienia specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Proces rezerwacji od kliknięcia terminu do potwierdzenia — wieloetapowy formularz opisany w A5.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista oczekujących pacjentów, którym system proponuje zwolniony termin.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Karta (wyniku)&lt;/td&gt;&lt;td&gt;Pojedynczy „kafelek&quot; na liście — skrócona wizytówka jednego specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE (frontend)&lt;/td&gt;&lt;td&gt;Interfejs — to, co użytkownik widzi i klika w przeglądarce.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;BE (backend)&lt;/td&gt;&lt;td&gt;Serwer platformy — część systemu działająca „pod spodem&quot;, niewidoczna dla użytkownika.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;API&lt;/td&gt;&lt;td&gt;Usługa serwerowa, z którą interfejs rozmawia automatycznie (wysyła zapytanie, dostaje dane).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4, A5, A8, E2&lt;/td&gt;&lt;td&gt;Identyfikatory innych flowów z mapy projektu — każdy ma własny diagram (A4: profil, A5: checkout, A8: brak slotów, E2: grafik specjalisty).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1310" width="1040" height="540" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

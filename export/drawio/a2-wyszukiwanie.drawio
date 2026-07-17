@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="a2-wyszukiwanie" name="A2 — Wyszukiwanie">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1140" pageHeight="1580" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;A2 — Wyszukiwanie&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a2-wyszukiwanie.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="1020" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="720" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="START" value="Pacjent otwiera ekran wyszukiwania specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="260" y="50" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="POLE" value="Pole wyszukiwania: nazwa usługi albo imię i nazwisko specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="160" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TOGGLE" value="Przełącznik formy wizyty: online albo stacjonarnie w gabinecie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="260" y="160" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LOKAL" value="Pole lokalizacji: miasto lub dzielnica" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="500" y="160" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SZUKAJ" value="Pacjent klika przycisk „Szukaj”" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="260" y="280" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FILTRY" value="Filtry zawężające wyniki: najbliższy termin, cena, płeć, język" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="500" y="300" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SORT" value="Wybór kolejności wyników na liście (sortowanie)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="500" y="420" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WYNIKI" value="Lista znalezionych specjalistów (A3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="260" y="420" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OMNIBUS" value="Publiczna strona „Jak działają wyniki” z opisem zasad rankingu (A9)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="420" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="800" y="90" width="280" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="GEO" value="Geokodowanie: zamiana nazwy miasta/dzielnicy na współrzędne geograficzne" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="50" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SEARCH" value="Search API: przeszukanie indeksu specjalistów wg zapytania" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="170" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RANK" value="Ułożenie wyników w kolejności wg jawnych, opublikowanych reguł" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="START" target="POLE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="START" target="TOGGLE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="START" target="LOKAL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="POLE" target="SZUKAJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="TOGGLE" target="SZUKAJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="LOKAL" target="SZUKAJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.25;entryX=0;entryY=0.75;" edge="1" parent="1" source="SZUKAJ" target="SEARCH">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="LOKAL" target="GEO">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="GEO" target="SEARCH">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="SEARCH" target="RANK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="RANK" target="WYNIKI">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="zmiana filtra —&lt;br&gt;nowe zapytanie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="FILTRY" target="SEARCH">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="zmiana sortowania —&lt;br&gt;nowe zapytanie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=1;" edge="1" parent="1" source="SORT" target="SEARCH">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="wymóg jawności zasad&lt;br&gt;(dyrektywa Omnibus)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="RANK" target="OMNIBUS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Opisuje ekran wyszukiwania, na którym pacjent określa, czego szuka: usługę lub specjalistę, miasto albo dzielnicę, formę wizyty (online lub stacjonarnie) oraz dodatkowe filtry i sortowanie. Po kliknięciu „Szukaj&quot; system zamienia lokalizację na współrzędne, przeszukuje indeks specjalistów i układa wyniki według jawnych reguł. Flow kończy się wyświetleniem listy wyników (A3); zasady układania wyników są publicznie opisane na osobnej stronie (A9)." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="660" width="1040" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;wyniki wyszukiwania trafiają na listę wyników&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A9&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a9-strony-statyczne.md&lt;/td&gt;&lt;td&gt;strona /jak-dzialaja-wyniki jawnie opisuje zasady rankingu (Omnibus)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="840" width="1040" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Filtr&lt;/td&gt;&lt;td&gt;Zawężenie wyników, np. po najbliższym terminie, cenie, płci lub języku specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sortowanie&lt;/td&gt;&lt;td&gt;Zmiana kolejności wyników na liście według wybranego kryterium.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Toggle online/stacjonarnie&lt;/td&gt;&lt;td&gt;Przełącznik wyboru formy wizyty: zdalnej albo w gabinecie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Geokodowanie&lt;/td&gt;&lt;td&gt;Zamiana nazwy miasta lub dzielnicy na współrzędne geograficzne, potrzebne do liczenia odległości.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Search API&lt;/td&gt;&lt;td&gt;Usługa systemowa, która przyjmuje zapytanie i przeszukuje bazę specjalistów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Indeks&lt;/td&gt;&lt;td&gt;Specjalnie przygotowana baza danych umożliwiająca szybkie wyszukiwanie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ranking&lt;/td&gt;&lt;td&gt;Kolejność wyników ustalana według jawnych, publicznie opisanych reguł.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Omnibus&lt;/td&gt;&lt;td&gt;Unijna dyrektywa wymagająca m.in. ujawnienia zasad układania wyników wyszukiwania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE (frontend)&lt;/td&gt;&lt;td&gt;Interfejs — to, co użytkownik widzi i klika w przeglądarce.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;BE (backend)&lt;/td&gt;&lt;td&gt;Serwer platformy — część systemu działająca „pod spodem&quot;, niewidoczna dla użytkownika.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;API&lt;/td&gt;&lt;td&gt;Usługa serwerowa, z którą interfejs rozmawia automatycznie (wysyła zapytanie, dostaje dane).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3, A9&lt;/td&gt;&lt;td&gt;Identyfikatory innych flowów z mapy projektu — każdy ma własny diagram (A3: lista wyników, A9: strony statyczne).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Online / stacjonarnie&lt;/td&gt;&lt;td&gt;Dwie formy wizyty: zdalna (np. przez wideorozmowę) albo osobista w gabinecie specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1030" width="1040" height="450" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

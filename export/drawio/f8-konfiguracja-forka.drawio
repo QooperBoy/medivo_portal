@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="f8-konfiguracja-forka" name="F8 — Konfiguracja forka">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1060" pageHeight="1780" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;F8 — Konfiguracja forka&lt;/b&gt;&lt;br&gt;źródło: diagrams/f-backoffice/f8-konfiguracja-forka.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="940" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi admin" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="460" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="etap" value="Etap wdrożenia" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="150" y="50" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p1ui" value="P1: UI konfiguracji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="180" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p0plik" value="P0: plik konfiguracyjny" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="260" y="180" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="slownik" value="Słownik usług wertykalu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="290" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="brand" value="Brand: nazwa, logo, domena" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="290" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zrodlo" value="Źródło weryfikacji (rejestr)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="380" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="paramy" value="Parametry: progi scoringu, X h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="380" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zapisz" value="Zapisz zmiany" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="480" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="560" y="90" width="440" height="660" as="geometry" />
+        </mxCell>
+        <mxCell id="config" value="Config per fork (wersjonowany)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="180" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prop" value="Propagacja do modułów" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="180" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e3x" value="Słownik → usługi i ceny (E3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="270" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d1x" value="Rejestr → weryfikacja (D1/F1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="360" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g7x" value="Progi → scoring (G7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="450" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="b3x" value="X h → polityka odwołań (B3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="540" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="walidacja" value="Walidacja konfiguracji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="480" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="audyt" value="Zapis zmian + audyt (F10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="570" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="P0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="etap" target="p0plik">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="P1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="etap" target="p1ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p0plik" target="config">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1ui" target="slownik">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1ui" target="brand">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1ui" target="zrodlo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1ui" target="paramy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="slownik" target="zapisz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.25;" edge="1" parent="1" source="brand" target="zapisz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="zrodlo" target="zapisz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="paramy" target="zapisz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.75;" edge="1" parent="1" source="zapisz" target="walidacja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="walidacja" target="config">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="config" target="prop">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="prop" target="e3x">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="prop" target="d1x">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=1;entryY=0.5;" edge="1" parent="1" source="prop" target="g7x">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.25;entryX=0;entryY=0.5;" edge="1" parent="1" source="prop" target="b3x">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="config" target="audyt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje, jak admin konfiguruje pojedynczy fork serwisu, czyli jego wydanie dla konkretnego wertykalu (branży). Na starcie (etap P0) konfiguracja to plik w repozytorium; docelowo (etap P1) admin edytuje ją w interfejsie: słownik usług, brand (nazwa, logo, domena), źródło weryfikacji uprawnień oraz parametry, takie jak progi scoringu i okno X h polityki odwołań. Zapisane zmiany są walidowane, wersjonowane i propagowane do modułów, które z nich korzystają — od cennika specjalisty po silnik scoringu." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="800" width="940" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E3&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e3-uslugi-ceny.md&lt;/td&gt;&lt;td&gt;słownik usług wertykalu zasila usługi i ceny specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;konfiguracja wskazuje rejestr sprawdzany przez automat weryfikacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;to samo źródło weryfikacji obowiązuje w ręcznej kolejce&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;progi scoringu pochodzą z konfiguracji forka&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;okno X h polityki odwołań ustawiane w konfiguracji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E5&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e5-odwolanie-pojedyncze.md&lt;/td&gt;&lt;td&gt;ta sama polityka odwołań obowiązuje po stronie specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;progi scoringu sterują gate'em w checkoucie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;zmiany konfiguracji zapisywane w audycie&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="980" width="940" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fork&lt;/td&gt;&lt;td&gt;Osobna kopia serwisu dla innej branży, zbudowana na wspólnym rdzeniu (repo-matce).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Wertykal&lt;/td&gt;&lt;td&gt;Branża/specjalizacja obsługiwana przez dany fork (np. logopedzi, weterynarze).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Konfiguracja (config)&lt;/td&gt;&lt;td&gt;Zestaw ustawień odróżniających fork od innych: usługi, brand, rejestry, parametry.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Słownik usług&lt;/td&gt;&lt;td&gt;Lista usług dostępnych w danym wertykalu, z której specjaliści wybierają swoją ofertę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Brand&lt;/td&gt;&lt;td&gt;Nazwa, logo i domena, pod którymi działa dany fork.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Źródło weryfikacji&lt;/td&gt;&lt;td&gt;Rejestr zawodowy (np. KRL/KIF), w którym automat sprawdza uprawnienia specjalistów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Próg scoringu&lt;/td&gt;&lt;td&gt;Granica oceny wiarygodności pacjenta, od której serwis wymaga np. przedpłaty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Polityka odwołań (X h)&lt;/td&gt;&lt;td&gt;Ile godzin przed wizytą pacjent może ją bezkarnie odwołać.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Propagacja&lt;/td&gt;&lt;td&gt;Rozesłanie zapisanej konfiguracji do wszystkich modułów, które z niej korzystają.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Wersjonowanie&lt;/td&gt;&lt;td&gt;Przechowywanie historii zmian konfiguracji z możliwością powrotu do wcześniejszej wersji.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1330" width="940" height="370" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

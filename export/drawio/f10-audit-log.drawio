@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="f10-audit-log" name="F10 — Audit log">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="2100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;F10 — Audit log (centralny dziennik audytowy Back Office&#39;u)&lt;/b&gt;&lt;br&gt;źródło: diagrams/f-backoffice/f10-audit-log.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi admin" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="etap" value="Etap wdrożenia" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="40" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="brakui" value="P0: brak UI (tylko zapis)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="170" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="viewer" value="P1: viewer audytu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="170" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="filtry" value="Filtry: kto / co / kiedy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="280" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wpis" value="Szczegóły wpisu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="390" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zdrow" value="Oznaczenie: dane zdrowotne" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="500" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="440" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="zrodla" value="Źródła: F1–F9, B9, podglądy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zapis" value="P0: zapis append-only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="meta" value="Kto, co, kiedy, kontekst" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="170" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="retencja" value="Retencja RODO (G11)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="170" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="selfaudit" value="Odczyt viewera też audytowany" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="390" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="zrodla" target="zapis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="zapis" target="meta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="zapis" target="retencja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed4" value="P0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="etap" target="brakui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed5" value="P1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="etap" target="viewer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.25;" edge="1" parent="1" source="zapis" target="viewer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="viewer" target="filtry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="filtry" target="wpis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="wpis" target="zdrow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="viewer" target="selfaudit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelNotatki" value="&lt;b&gt;Notatki (założenia, edge case&#39;y)&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Priorytet: P0 zapis → P1 viewer (wprost z mapy). W P0 nie ma UI — dostęp do logu np. bezpośrednio w bazie (S3: „co w P0 może być SQL-em&quot;).&lt;br&gt;• Zakres zapisu: kto co WIDZIAŁ i kto co ZMIENIŁ — dane zdrowotne pacjentów wymagają logowania samych odczytów (kluczowy konsument: podgląd konta w F5).&lt;br&gt;• Źródła wpisów: decyzje F1–F4, podglądy i akcje F5, billing F6, zmiany treści F7, konfiguracji F8, ról F9 oraz wnioski RODO z B9.&lt;br&gt;• Log append-only (bez edycji/usuwania wpisów przez adminów) — założenie minimalne, mapa nie precyzuje; retencja wpisów wg jobów RODO G11.&lt;br&gt;• Odczyt logu przez viewer sam też jest audytowany (założenie minimalne — spójność z zasadą „każdy dostęp do danych logowany&quot;).&lt;br&gt;• Powiązania: F1–F9 (źródła), B9, G11, S3 pkt 3." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#FFF9B2;strokeColor=#d6b656;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="710" width="880" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje centralny dziennik audytowy Back Office&#39;u. System dopisuje (bez możliwości edycji i usuwania — append-only) wpis o każdej akcji i każdym podglądzie danych z modułów F1–F9 oraz o wnioskach RODO: kto, co, kiedy i w jakim kontekście. Na starcie (etap P0) istnieje sam zapis bez interfejsu; docelowo (etap P1) admin przegląda log w viewerze z filtrami, przy czym samo przeglądanie logu również jest audytowane. Czas przechowywania wpisów wyznaczają joby RODO." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1050" width="880" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;decyzje weryfikacji PWZ są źródłem wpisów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F2&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f2-moderacja-opinii.md&lt;/td&gt;&lt;td&gt;decyzje moderacji opinii są źródłem wpisów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F3&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f3-spory.md&lt;/td&gt;&lt;td&gt;rozstrzygnięcia sporów są źródłem wpisów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F4&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f4-anty-abuse.md&lt;/td&gt;&lt;td&gt;blokady i anulowania serii są źródłem wpisów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F5&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f5-uzytkownicy.md&lt;/td&gt;&lt;td&gt;podglądy i zmiany kont są źródłem wpisów — kluczowy konsument audytu odczytów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F6&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f6-billing-admin.md&lt;/td&gt;&lt;td&gt;akcje billingowe (monity, eskalacje) są źródłem wpisów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F7&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f7-cms-seo.md&lt;/td&gt;&lt;td&gt;zmiany treści CMS są źródłem wpisów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F8&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f8-konfiguracja-forka.md&lt;/td&gt;&lt;td&gt;zmiany konfiguracji forka są źródłem wpisów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F9&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f9-rbac-wertykale.md&lt;/td&gt;&lt;td&gt;zmiany ról adminów są źródłem wpisów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B9&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b9-rodo-self-service.md&lt;/td&gt;&lt;td&gt;wnioski RODO pacjentów trafiają do logu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G11&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;joby RODO wyznaczają retencję wpisów&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1250" width="880" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audit log (audyt)&lt;/td&gt;&lt;td&gt;Dziennik rejestrujący, kto, co i kiedy zrobił lub obejrzał w systemie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Append-only&lt;/td&gt;&lt;td&gt;Tryb „tylko dopisywanie&quot;: wpisów nie da się edytować ani usuwać, co czyni log wiarygodnym dowodem.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Wpis audytowy&lt;/td&gt;&lt;td&gt;Pojedynczy rekord logu z metadanymi: kto, co, kiedy i w jakim kontekście.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audyt odczytów&lt;/td&gt;&lt;td&gt;Logowanie samego przeglądania danych, nie tylko ich zmian — wymagane przy danych zdrowotnych.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Viewer&lt;/td&gt;&lt;td&gt;Interfejs (etap P1) do przeglądania i filtrowania wpisów logu; jego użycie też jest logowane.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Retencja&lt;/td&gt;&lt;td&gt;Ustalony czas przechowywania wpisów, po którym są usuwane zgodnie z RODO.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RODO&lt;/td&gt;&lt;td&gt;Przepisy o ochronie danych osobowych, które wymuszają m.in. rozliczalność dostępu i ograniczenie przechowywania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dane zdrowotne&lt;/td&gt;&lt;td&gt;Szczególnie chronione dane pacjentów — główny powód logowania każdego dostępu.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1690" width="880" height="320" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

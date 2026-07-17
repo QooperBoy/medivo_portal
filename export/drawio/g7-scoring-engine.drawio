@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="g7-scoring-engine" name="G7 — Scoring engine (event-driven)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="2400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;G7 — Scoring engine (event-driven)&lt;/b&gt;&lt;br&gt;źródło: diagrams/g-silniki/g7-scoring-engine.md — flowchart FE/BE" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="760" height="940" as="geometry" />
+        </mxCell>
+        <mxCell id="EV1" value="event booking.cancelled_late — pacjent odwołał wizytę za późno (B3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EV2" value="event visit.no_show — pacjent nie pojawił się na wizycie (E7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="270" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EV3" value="admin uznał spór pacjenta — nieobecność cofnięta (F3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="520" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="COR" value="korekta: licznik przewinień pacjenta zmniejsza się" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="520" y="160" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CNT" value="licznik przewinień pacjenta (no-show i późne odwołania)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="270" y="290" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P0N" value="wersja minimalna na start (P0): tylko prosty licznik no-show" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;dashed=1;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="520" y="420" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TH" value="czy licznik przekroczył próg ustawiony w konfiguracji? (F8)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="330" y="440" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SAN0" value="bez sankcji — system tylko zapamiętuje zdarzenie w liczniku" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="590" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LV" value="które to z kolei przekroczenie progu?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="330" y="610" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SAN1" value="sankcja poziom 1: ostrzeżenie dla pacjenta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="520" y="610" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="SAN2" value="sankcja poziom 2: dodatkowa bariera (gate) przy kolejnej rezerwacji (A5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="520" y="720" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SAN3" value="sankcja poziom 3: blokada konta pacjenta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="520" y="840" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="860" y="90" width="460" height="980" as="geometry" />
+        </mxCell>
+        <mxCell id="FE4" value="panel specjalisty E4: wskaźnik no-show przy pacjencie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="120" y="270" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FE1" value="pacjent widzi komunikat o nałożonej sankcji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="120" y="520" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FE5" value="pacjent może kliknąć „byłem na wizycie” (B6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="120" y="640" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FE2" value="checkout A5: wymagana przedpłata online" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="120" y="760" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FE3" value="checkout A5: wymagana ręczna akceptacja specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="120" y="880" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="EV1" target="CNT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="EV2" target="CNT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="EV3" target="COR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="COR" target="CNT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;endArrow=none;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="CNT" target="P0N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="CNT" target="TH">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" edge="1" parent="1" source="CNT" target="FE4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="nie — licznik poniżej progu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="TH" target="SAN0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="tak — próg przekroczony" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="TH" target="LV">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="pierwsze przekroczenie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="LV" target="SAN1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="drugie przekroczenie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="LV" target="SAN2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="trzecie i kolejne (założenie)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="LV" target="SAN3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="SAN1" target="FE1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="odwołanie od blokady: F3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.8;" edge="1" parent="1" source="SAN3" target="FE1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="Flaga 2: wymagana przedpłata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" edge="1" parent="1" source="SAN2" target="FE2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="Flaga 2: wymagana akceptacja" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="SAN2" target="FE3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="FE1" target="FE5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="otwiera spór do admina (F3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="FE5" target="EV3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje silnik scoringu — mechanizm, który w tle zlicza „przewinienia” pacjenta: nieodbyte wizyty (no-show) i zbyt późne odwołania. Uruchamiają go zdarzenia z innych flow (późne odwołanie, oznaczenie no-show, rozstrzygnięcie sporu), a po przekroczeniu progów system nakłada rosnące sankcje: od ostrzeżenia, przez wymóg przedpłaty lub akceptacji przy kolejnej rezerwacji, po blokadę konta. Uczestniczą pacjent (odczuwa sankcje i może się od nich odwołać), specjalista (widzi wskaźnik no-show pacjenta) oraz admin (rozstrzyga spory i odwołania). Silnik działa w sposób ciągły — licznik rośnie i maleje wraz z kolejnymi zdarzeniami, więc flow nie ma jednego punktu końcowego." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1120" width="1320" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-EVENTY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;eventy wejściowe booking.cancelled_late i visit.no_show pochodzą z katalogu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;zbyt późne odwołanie wizyty emituje booking.cancelled_late&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E7&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e7-no-show.md&lt;/td&gt;&lt;td&gt;oznaczenie no-show przez specjalistę emituje visit.no_show&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B6&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b6-spor-no-show.md&lt;/td&gt;&lt;td&gt;przycisk „byłem/byłam” pozwala pacjentowi zakwestionować no-show i otworzyć spór&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F3&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f3-spory.md&lt;/td&gt;&lt;td&gt;uznany spór koryguje licznik w dół; tu też odwołania od blokady konta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F8&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f8-konfiguracja-forka.md&lt;/td&gt;&lt;td&gt;progi scoringu są konfigurowane per fork w ustawieniach platformy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;wskaźnik no-show pacjenta widoczny u specjalisty przy rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;gate poziomu 2 działa w checkoucie rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (przedpłata)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;wariant sankcji poziomu 2: wymagana przedpłata (Flaga 2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (akceptacja)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md&lt;/td&gt;&lt;td&gt;wariant sankcji poziomu 2: wymagana akceptacja specjalisty (Flaga 2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G4&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g4-auto-approval.md&lt;/td&gt;&lt;td&gt;auto-approval jest blokowany dla wizyt no_show/disputed, których wynik zasila scoring&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G8&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;fraud detection to pokrewny silnik anty-nadużyciowy z katalogu eventów&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1300" width="1320" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring&lt;/td&gt;&lt;td&gt;Zliczanie zachowań pacjenta (no-show, późne odwołania), na podstawie którego system nakłada sankcje.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Event-driven&lt;/td&gt;&lt;td&gt;Sposób działania silnika: reaguje na zdarzenia (eventy) z innych części systemu, a nie na harmonogram.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Event booking.cancelled_late&lt;/td&gt;&lt;td&gt;Komunikat systemowy o odwołaniu wizyty zbyt późno przed terminem.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Event visit.no_show&lt;/td&gt;&lt;td&gt;Komunikat systemowy, że pacjent nie stawił się na wizycie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Licznik&lt;/td&gt;&lt;td&gt;Suma zdarzeń no-show i późnych odwołań przypisana do konkretnego pacjenta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Próg&lt;/td&gt;&lt;td&gt;Wartość licznika, po której przekroczeniu włącza się sankcja; konfigurowany w F8.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sankcje progresywne&lt;/td&gt;&lt;td&gt;Kary rosnące z każdym przekroczeniem progu: ostrzeżenie → gate w checkoucie → blokada konta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate (w A5)&lt;/td&gt;&lt;td&gt;Dodatkowa bariera przy rezerwacji: wymagana przedpłata albo akceptacja specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Przedpłata&lt;/td&gt;&lt;td&gt;Płatność z góry wymagana od pacjenta z historią no-show.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Korekta licznika&lt;/td&gt;&lt;td&gt;Obniżenie licznika (i ewentualne cofnięcie sankcji) po uznaniu sporu pacjenta w F3.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fork&lt;/td&gt;&lt;td&gt;Osobna kopia platformy dla innego wertykału lub rynku, z własną konfiguracją progów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga 2&lt;/td&gt;&lt;td&gt;Otwarta decyzja projektowa: gate to przedpłata czy akceptacja specjalisty (obecnie oba warianty).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;No-show&lt;/td&gt;&lt;td&gt;Nieobecność pacjenta na umówionej wizycie bez wcześniejszego odwołania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Publisher / konsument eventu&lt;/td&gt;&lt;td&gt;Publisher to flow, który ogłasza zdarzenie (np. odwołanie B3); konsument to silnik, który na nie reaguje (tu: scoring).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;P0 / P1&lt;/td&gt;&lt;td&gt;Priorytety wdrożenia: P0 = minimalny zakres na start platformy, P1 = pełna wersja w kolejnym etapie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ticket&lt;/td&gt;&lt;td&gt;Zgłoszenie sprawy do rozstrzygnięcia przez admina w back office (tu: spór o no-show trafiający do F3).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Blokada konta&lt;/td&gt;&lt;td&gt;Najwyższa sankcja: pacjent traci możliwość rezerwowania wizyt do czasu decyzji admina po odwołaniu (F3).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE / BE&lt;/td&gt;&lt;td&gt;Podział diagramu: FE = to, co użytkownik widzi na stronie; BE = automatyka serwera działająca „pod spodem”.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1750" width="1320" height="590" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

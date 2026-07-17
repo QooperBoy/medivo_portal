@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="c1-landing-dla-specjalistow" name="C1 — Landing /dla-specjalistow">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1160" pageHeight="2150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;C1 — Landing /dla-specjalistow&lt;/b&gt;&lt;br&gt;źródło: diagrams/cd-specjalista-onboarding/c1-landing-dla-specjalistow.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1080" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="700" height="880" as="geometry" />
+        </mxCell>
+        <mxCell id="wejscie" value="wejście: /dla-specjalistow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="40" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hero" value="value prop dla specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="130" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oferta" value="oferta: 0 zł przez 6 mies." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="220" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oferta2" value="potem od X zł/mies." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="310" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="social" value="social proof" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="400" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="faq" value="FAQ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="490" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dec" value="co dalej?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="270" y="580" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cta" value="CTA: rejestracja" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="710" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="linkcennik" value="link: cennik B2B" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="710" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="exit" value="opuszcza stronę" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="480" y="710" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="doc3" value="rejestracja — C3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="800" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="doc2" value="cennik — C2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="800" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="780" y="90" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="static" value="strona statyczna — brak API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="30" y="50" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="wejscie" target="hero">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="hero" target="oferta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="oferta" target="oferta2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="oferta2" target="social">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="social" target="faq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="faq" target="dec">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="załóż konto" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec" target="cta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="szczegóły oferty" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec" target="linkcennik">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="wyjście" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec" target="exit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="cta" target="doc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="linkcennik" target="doc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="wejscie" target="static">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ten diagram pokazuje stronę marketingową /dla-specjalistow — pierwszy kontakt logopedy (specjalisty) z serwisem. Specjalista trafia na nią np. z wyszukiwarki lub reklamy, przegląda ofertę („0 zł przez 6 mies.&quot;), opinie innych i FAQ, a następnie decyduje, co dalej: zakłada konto, przechodzi do cennika albo opuszcza stronę. Po stronie systemu nic się nie dzieje — to zwykła strona statyczna bez logiki. Flow kończy się przejściem do rejestracji (C3), do cennika (C2) lub wyjściem ze strony." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1020" width="1020" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c2-cennik-b2b.md&lt;/td&gt;&lt;td&gt;landing linkuje do szczegółów cennika B2B&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c3-rejestracja.md&lt;/td&gt;&lt;td&gt;główne CTA landingu prowadzi do rejestracji specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki specjalisty — weryfikacja PWZ po rejestracji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d2-stan-w-trakcie.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki — onboarding w trakcie weryfikacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d3-go-live.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki — publikacja profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki po go-live — ustawienie grafiku&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E3&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e3-uslugi-ceny.md&lt;/td&gt;&lt;td&gt;dalszy ciąg ścieżki po go-live — usługi i ceny&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E12&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e12-subskrypcja-billing.md&lt;/td&gt;&lt;td&gt;oferta z landingu odpowiada modelowi subskrypcji widocznemu w panelu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F6&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f6-billing-admin.md&lt;/td&gt;&lt;td&gt;ten sam model subskrypcji rozliczany po stronie admina&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F7&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f7-cms-seo.md&lt;/td&gt;&lt;td&gt;docelowo (P1) treść landingu zarządzana przez CMS&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1200" width="1020" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Landing&lt;/td&gt;&lt;td&gt;Strona docelowa, na którą trafia specjalista z reklamy lub wyszukiwarki, mająca zachęcić go do założenia konta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Value prop&lt;/td&gt;&lt;td&gt;Propozycja wartości — krótkie wyjaśnienie, co specjalista zyskuje dzięki serwisowi.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Social proof&lt;/td&gt;&lt;td&gt;Opinie i przykłady innych użytkowników, które budują zaufanie do serwisu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CTA&lt;/td&gt;&lt;td&gt;Przycisk wzywający do działania (call to action), tutaj „załóż konto&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B2B&lt;/td&gt;&lt;td&gt;Oferta skierowana do specjalistów/firm (klient biznesowy), a nie do pacjentów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FAQ&lt;/td&gt;&lt;td&gt;Sekcja najczęściej zadawanych pytań wraz z odpowiedziami.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Strona statyczna&lt;/td&gt;&lt;td&gt;Strona o stałej treści, która nie pobiera danych z systemu (brak API).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CMS&lt;/td&gt;&lt;td&gt;System zarządzania treścią — docelowo pozwoli edytować teksty landingu bez programisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Subskrypcja&lt;/td&gt;&lt;td&gt;Cykliczna opłata za korzystanie z serwisu („od X zł/mies.&quot; po darmowym okresie).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1660" width="1020" height="400" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

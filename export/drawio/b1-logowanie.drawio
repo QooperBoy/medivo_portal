@@ -1,0 +1,151 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="b1-logowanie" name="B1 — Logowanie">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="2070" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;B1 — Logowanie (bez haseł: kod SMS lub magic link)&lt;/b&gt;&lt;br&gt;źródło: diagrams/b-pacjent-konto/b1-logowanie.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="920" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="Ekran logowania — bez haseł" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="50" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="metoda" value="Metoda: telefon czy email?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="140" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="numer" value="Podanie numeru telefonu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="280" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="smskod" value="SMS z kodem OTP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="370" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wpiszkod" value="Wpisanie kodu OTP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="460" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bladkod" value="Błędny kod — ponów" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="550" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="email" value="Podanie adresu email" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="660" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="maillink" value="Email z magic linkiem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="750" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="klik" value="Klik w magic link" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="840" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="linkwygasl" value="Link wygasł — wyślij nowy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="930" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bladlimit" value="Komunikat: za dużo prób" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="1020" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zalogowany" value="Zalogowany — Moje wizyty B2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="1110" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="540" y="90" width="420" height="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="rlotp" value="Rate limiting OK?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="130" y="270" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="otpsvc" value="OTP service: generacja kodu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="110" y="400" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="weryfikacja" value="Kod poprawny?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="130" y="490" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rlmail" value="Rate limiting OK?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="130" y="650" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="magicsvc" value="Generacja magic linku" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="110" y="780" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="walidacja" value="Link ważny — TTL?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="130" y="870" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sesja" value="Utworzenie sesji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="110" y="1020" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="start" target="metoda">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="telefon" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="metoda" target="numer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="email" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.25;" edge="1" parent="1" source="metoda" target="email">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="numer" target="rlotp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="rlotp" target="otpsvc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.3;" edge="1" parent="1" source="rlotp" target="bladlimit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="otpsvc" target="smskod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="smskod" target="wpiszkod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="wpiszkod" target="weryfikacja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.25;entryX=1;entryY=0.5;" edge="1" parent="1" source="weryfikacja" target="sesja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="weryfikacja" target="bladkod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="bladkod" target="wpiszkod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="email" target="rlmail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="rlmail" target="magicsvc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=1;entryY=0.7;" edge="1" parent="1" source="rlmail" target="bladlimit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="magicsvc" target="maillink">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="maillink" target="klik">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="klik" target="walidacja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="walidacja" target="sesja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.75;entryX=1;entryY=0.5;" edge="1" parent="1" source="walidacja" target="linkwygasl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="1" source="linkwygasl" target="email">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="sesja" target="zalogowany">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje, jak pacjent loguje się do swojego konta — bez hasła. Pacjent wybiera metodę: numer telefonu (dostaje jednorazowy kod SMS) albo email (dostaje link logujący). System po cichu sprawdza limity prób oraz poprawność kodu lub ważność linku, a po sukcesie tworzy sesję i przenosi pacjenta na ekran &quot;Moje wizyty&quot;. Uczestniczą tu tylko pacjent i system." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1310" width="920" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;ten sam OTP przy 1. rezerwacji tworzy lekkie konto&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B2&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b2-moje-wizyty.md&lt;/td&gt;&lt;td&gt;ekran docelowy po udanym logowaniu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;logowanie jako awaryjna ścieżka przy nieważnym tokenie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G8&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;fraud detection pilnuje limitów prób per numer/IP/urządzenie&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1480" width="920" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Logowanie bez haseł&lt;/td&gt;&lt;td&gt;Pacjent nie ma hasła — tożsamość potwierdza jednorazowym kodem SMS lub linkiem z emaila.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OTP&lt;/td&gt;&lt;td&gt;Jednorazowy kod (np. z SMS-a), który działa tylko raz i przez krótki czas.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Magic link&lt;/td&gt;&lt;td&gt;Link logujący wysyłany na email — jedno kliknięcie zastępuje wpisywanie hasła.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Rate limiting&lt;/td&gt;&lt;td&gt;Ograniczenie liczby prób (wysyłek kodów, błędnych wpisań), chroniące przed nadużyciami.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TTL&lt;/td&gt;&lt;td&gt;Czas ważności — po jego upływie kod lub link przestaje działać.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sesja&lt;/td&gt;&lt;td&gt;Zapamiętane przez system zalogowanie, dzięki któremu pacjent nie musi potwierdzać tożsamości przy każdym kroku.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1720" width="920" height="270" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

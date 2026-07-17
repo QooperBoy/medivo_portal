@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="f6-billing-admin" name="F6 — Billing admin">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;F6 — Billing admin&lt;/b&gt;&lt;br&gt;źródło: diagrams/f-backoffice/f6-billing-admin.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi admin" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="660" as="geometry" />
+        </mxCell>
+        <mxCell id="lista" value="Lista subskrypcji" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="50" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="szczegoly" value="Plan, status, licznik free" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="faktury" value="Faktury VAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="timer" value="TIMER: terminy płatności" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="230" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="windykacja" value="Kolejka windykacji: zaległości" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="320" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="akcja" value="Akcja" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="30" y="320" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="monit" value="Wyślij monit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="450" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eskalacja" value="Eskalacja windykacji (skutek otwarty)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="560" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="440" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="engine" value="Billing engine (E12)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="50" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="invoice" value="Generator faktur VAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dunning" value="Dunning job: wykrywa zaległości" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="230" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="alertbe" value="Status subskrypcji → alert E1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="230" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="msgs" value="Monity email (G1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="450" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="audyt" value="Zapis akcji + audyt (F10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="560" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="engine" target="lista">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="lista" target="szczegoly">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="engine" target="invoice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="invoice" target="faktury">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.25;entryX=1;entryY=0.5;" edge="1" parent="1" source="dunning" target="timer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.75;entryX=1;entryY=0.5;" edge="1" parent="1" source="dunning" target="windykacja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="windykacja" target="akcja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="monit" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="akcja" target="monit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="eskalacja" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="akcja" target="eskalacja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="monit" target="msgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="dunning" target="alertbe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.25;" edge="1" parent="1" source="monit" target="audyt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="eskalacja" target="audyt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje administracyjną stronę rozliczeń ze specjalistami. Admin przegląda listę subskrypcji, ich plany, liczniki okresu darmowego i faktury VAT. System (dunning job) automatycznie wykrywa zaległości płatnicze i buduje z nich kolejkę windykacji — admin wysyła monity e-mail, a w razie potrzeby eskaluje sprawę (skutek eskalacji nie jest jeszcze rozstrzygnięty w mapie). Zaległość podbija też alert na dashboardzie specjalisty." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="800" width="880" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E12&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e12-subskrypcja-billing.md&lt;/td&gt;&lt;td&gt;strona specjalisty tego samego billingu: plan, płatności, faktury, licznik free&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E1&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e1-dashboard.md&lt;/td&gt;&lt;td&gt;status subskrypcji wyświetla alert na dashboardzie specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c2-cennik-b2b.md&lt;/td&gt;&lt;td&gt;cennik B2B definiuje plany subskrypcji widoczne w module&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;monity wysyłane e-mailem przez notification engine&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;akcje admina (monit, eskalacja) zapisywane w audycie&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="980" width="880" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Subskrypcja&lt;/td&gt;&lt;td&gt;Płatny abonament specjalisty za korzystanie z serwisu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Billing&lt;/td&gt;&lt;td&gt;Całość rozliczeń: plany, płatności, faktury i pilnowanie terminów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Faktura VAT&lt;/td&gt;&lt;td&gt;Dokument sprzedaży wystawiany specjaliście automatycznie przez system.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Licznik free&lt;/td&gt;&lt;td&gt;Odliczanie, ile darmowego okresu próbnego zostało specjaliście.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windykacja&lt;/td&gt;&lt;td&gt;Proces upominania się o zaległe płatności.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dunning job&lt;/td&gt;&lt;td&gt;Automat, który cyklicznie sprawdza terminy płatności i wykrywa zaległości.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Monit&lt;/td&gt;&lt;td&gt;Wiadomość przypominająca specjaliście o zaległej płatności.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Eskalacja&lt;/td&gt;&lt;td&gt;Kolejny, ostrzejszy krok windykacji, gdy monity nie działają (skutek jeszcze nieustalony).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audyt (audit log)&lt;/td&gt;&lt;td&gt;Trwały zapis akcji admina: kto, co i kiedy zrobił.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1250" width="880" height="340" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

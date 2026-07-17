@@ -1,0 +1,121 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="b9-rodo-self-service" name="B9 — RODO self-service">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1320" pageHeight="1720" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;B9 — RODO self-service&lt;/b&gt;&lt;br&gt;źródło: diagrams/b-pacjent-konto/b9-rodo-self-service.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="1200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="700" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="USTAW" value="Ustawienia konta: sekcja RODO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="50" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AKCJA" value="Eksport / usunięcie / zgody?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="260" y="150" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="EKSPORT" value="Żądanie eksportu danych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="LINKP" value="Link do pobrania paczki" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="400" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="USUN" value="Żądanie usunięcia konta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="REAUTH" value="Potwierdzenie OTP — B1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="400" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ODMOWA" value="Komunikat: aktywne rezerwacje" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="510" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="USUNIETE" value="Potwierdzenie: konto usunięte" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="620" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGODY" value="Lista zgód: przegląd, zmiana" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="480" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZAPISANO" value="Potwierdzenie zapisu zgód" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="480" y="400" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="800" y="90" width="460" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="EXPORTJOB" value="Job: paczka danych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="50" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AKTYWNE" value="Aktywne rezerwacje?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="30" y="160" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ERASURE" value="Erasure job — G11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="REJESTR" value="Rejestr zgód — G11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="410" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AUDIT" value="Audit log — F10" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="410" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="USTAW" target="AKCJA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="eksport" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="AKCJA" target="EKSPORT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="usunięcie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="AKCJA" target="USUN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="zgody" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="AKCJA" target="ZGODY">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="EKSPORT" target="EXPORTJOB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="EXPORTJOB" target="LINKP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="USUN" target="REAUTH">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="REAUTH" target="AKTYWNE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=0.75;entryX=1;entryY=0.5;" edge="1" parent="1" source="AKTYWNE" target="ODMOWA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="AKTYWNE" target="ERASURE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ERASURE" target="USUNIETE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="ZGODY" target="REJESTR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="REJESTR" target="ZAPISANO">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.75;entryY=0;" edge="1" parent="1" source="EXPORTJOB" target="AUDIT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.25;entryY=0;" edge="1" parent="1" source="ERASURE" target="AUDIT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="REJESTR" target="AUDIT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje samoobsługę RODO w ustawieniach konta pacjenta: trzy akcje — eksport danych, usunięcie konta i zarządzanie zgodami. Eksport uruchamia przygotowanie paczki danych do pobrania; usunięcie konta wymaga potwierdzenia kodem OTP i jest odmawiane, dopóki pacjent ma aktywne rezerwacje; zmiany zgód trafiają do rejestru. Wszystko wykonuje system automatycznie, a każda operacja zostaje zapisana w logu audytowym." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="860" width="1200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G11&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;joby RODO: erasure job i rejestr zgód&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;każda operacja RODO logowana w audit logu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F5&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f5-uzytkownicy.md&lt;/td&gt;&lt;td&gt;admin obsługuje wnioski RODO poza samoobsługą&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B1&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b1-logowanie.md&lt;/td&gt;&lt;td&gt;re-auth OTP przed usunięciem konta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B7&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b7-pacjent-podopieczny.md&lt;/td&gt;&lt;td&gt;usunięcie konta obejmuje też encje podopiecznych&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B10&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b10-preferencje-powiadomien.md&lt;/td&gt;&lt;td&gt;zgody marketingowe to podzbiór rejestru zgód&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;zarządzane zgody pochodzą m.in. z checkoutu&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1010" width="1200" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RODO&lt;/td&gt;&lt;td&gt;Przepisy o ochronie danych osobowych, dające m.in. prawo do kopii i usunięcia swoich danych.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Self-service&lt;/td&gt;&lt;td&gt;Samoobsługa — pacjent załatwia sprawy RODO sam z poziomu konta, bez pisania do obsługi.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Eksport danych&lt;/td&gt;&lt;td&gt;Wygenerowanie paczki ze wszystkimi danymi pacjenta (konto, podopieczni, rezerwacje) do pobrania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Erasure job&lt;/td&gt;&lt;td&gt;Automatyczne zadanie systemu, które faktycznie usuwa dane po zatwierdzeniu żądania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Rejestr zgód&lt;/td&gt;&lt;td&gt;Ewidencja wszystkich zgód pacjenta wraz z historią ich zmian.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Re-auth (OTP)&lt;/td&gt;&lt;td&gt;Ponowne potwierdzenie tożsamości kodem SMS przed nieodwracalną operacją.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audit log&lt;/td&gt;&lt;td&gt;Rejestr operacji na danych — kto, co i kiedy zrobił, na potrzeby kontroli.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Retencja&lt;/td&gt;&lt;td&gt;Prawny obowiązek przechowywania części danych (np. rozliczeń) mimo żądania usunięcia.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1330" width="1200" height="320" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

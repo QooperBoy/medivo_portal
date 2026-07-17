@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e4-rezerwacje" name="E4 — Rezerwacje (lista, szczegóły, akceptacja, wizyty offline)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E4 — Rezerwacje (lista, szczegóły, akceptacja, wizyty offline)&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e4-rezerwacje.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="1120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="560" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="WIDOK" value="Lista lub kalendarz wszystkich rezerwacji specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="170" y="40" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="SZCZ" value="Szczegóły wizyty: tylko minimalne dane pacjenta (RODO)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="15" y="170" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PENDLIST" value="Lista rezerwacji czekających na ręczną akceptację specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="305" y="170" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WSK" value="Wskaźnik no-show: jak często pacjent nie przychodził na wizyty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="15" y="300" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DEC" value="Czy specjalista akceptuje tę rezerwację?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="345" y="300" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AKCJE" value="Akcje przy wizycie: odwołaj/przesuń (E5), oznacz nieobecność (E7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="15" y="430" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AKC" value="Decyzja: akceptuję rezerwację" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="305" y="460" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ODRZ" value="Decyzja: odrzucam rezerwację" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="305" y="580" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RECZNE" value="Ręczne dopisanie wizyty umówionej poza serwisem (offline)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="15" y="570" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="90" width="560" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="BOOKAPI" value="Bookings API — dostarcza dane rezerwacji z systemu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="60" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="G7S" value="Silnik scoringu G7: historia nieobecności pacjenta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="300" y="170" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ST1" value="Zmiana stanu: pending_approval -&gt; confirmed (wizyta potwierdzona)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="300" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ST2" value="Zmiana stanu: pending_approval -&gt; cancelled_by_specialist (odrzucona)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="300" y="430" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="POW" value="Powiadomienie pacjenta SMS/e-mail o decyzji (G1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="560" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WAIT" value="Zwolniony termin system proponuje osobom z waitlisty (G6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="300" y="560" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OFF" value="Zapis wizyty offline od razu w stanie confirmed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="700" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E2M" value="Wizyta zajmuje slot w modelu dostępności (E2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="300" y="700" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="BOOKAPI" target="WIDOK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="WIDOK" target="SZCZ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="WIDOK" target="PENDLIST">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="WIDOK" target="RECZNE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="SZCZ" target="WSK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="G7S" target="WSK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="SZCZ" target="AKCJE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="PENDLIST" target="DEC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="DEC" target="AKC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="DEC" target="ODRZ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="AKC" target="ST1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ST1" target="POW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ODRZ" target="ST2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ST2" target="WAIT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.75;entryX=1;entryY=0.5;" edge="1" parent="1" source="ST2" target="POW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="RECZNE" target="OFF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="OFF" target="E2M">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.25;entryX=0.25;entryY=1;" edge="1" parent="1" source="OFF" target="BOOKAPI">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Centralny ekran pracy specjalisty z rezerwacjami: lista lub kalendarz wizyt, szczegóły pojedynczej wizyty (z minimalnymi danymi pacjenta i wskaźnikiem jego historii no-show) oraz akcje — odwołanie, oznaczenie „nie stawił się”. Gdy system wymusił ręczną akceptację rezerwacji, specjalista widzi tu prośby o akceptację i decyduje: potwierdzić czy odrzucić (odrzucony slot wraca na waitlistę, pacjent dostaje powiadomienie). Specjalista może też ręcznie dopisać wizytę umówioną poza serwisem (offline), która od razu zajmuje slot w grafiku." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="940" width="1120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md&lt;/td&gt;&lt;td&gt;prośby o akceptację pochodzą z wariantu checkoutu z akceptacją specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;wizyty (w tym offline) zajmują sloty w modelu dostępności&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E5&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e5-odwolanie-pojedyncze.md&lt;/td&gt;&lt;td&gt;akcja „odwołaj/przesuń” ze szczegółów wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E7&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e7-no-show.md&lt;/td&gt;&lt;td&gt;akcja „nie stawił się” ze szczegółów wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;approval wizyty po terminie („odbyła się”)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B5&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b5-wystawienie-opinii.md&lt;/td&gt;&lt;td&gt;Flaga 4: czy wizyta dopisana ręcznie uprawnia pacjenta do opinii&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B8&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b8-formularz-przedwizytowy.md&lt;/td&gt;&lt;td&gt;odpowiedzi formularza przedwizytowego widoczne w szczegółach wizyty (P2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienia pacjenta o akceptacji/odrzuceniu wysyła notification engine&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;slot zwolniony po odrzuceniu trafia do silnika waitlisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;scoring dostarcza wskaźnik no-show pacjenta i wymusza wariant akceptacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;przejścia pending_approval → confirmed / cancelled_by_specialist wg kanonu stanów&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1130" width="1120" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;rezerwacja&lt;/td&gt;&lt;td&gt;umówiona przez pacjenta wizyta, widoczna na liście lub w kalendarzu specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pending_approval&lt;/td&gt;&lt;td&gt;stan rezerwacji czekającej na ręczną decyzję specjalisty (akceptuj/odrzuć)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;confirmed&lt;/td&gt;&lt;td&gt;stan rezerwacji potwierdzonej — wizyta dojdzie do skutku, slot jest zajęty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;akceptacja (approval)&lt;/td&gt;&lt;td&gt;ręczne zatwierdzenie rezerwacji przez specjalistę, wymagane tylko przy pacjentach z gorszą historią&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;wizyta offline&lt;/td&gt;&lt;td&gt;wizyta umówiona poza serwisem i dopisana ręcznie przez specjalistę&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;wskaźnik no-show&lt;/td&gt;&lt;td&gt;informacja przy pacjencie, jak często wcześniej nie stawiał się na wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;scoring&lt;/td&gt;&lt;td&gt;mechanizm oceniający wiarygodność pacjenta na podstawie jego historii&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;waitlista&lt;/td&gt;&lt;td&gt;lista oczekujących pacjentów, którym system proponuje zwolnione sloty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;dane minimalne&lt;/td&gt;&lt;td&gt;tylko niezbędne dane pacjenta pokazywane specjaliście (zasada minimalizacji RODO)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;slot&lt;/td&gt;&lt;td&gt;pojedynczy termin wizyty w grafiku specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;cancelled_by_specialist&lt;/td&gt;&lt;td&gt;stan rezerwacji odwołanej (tu: odrzuconej) przez specjalistę — kanon stanów nie ma osobnego stanu „odrzucona”&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;scoring gate&lt;/td&gt;&lt;td&gt;wymóg nałożony w checkoucie na pacjenta z gorszą historią: przedpłata albo ręczna akceptacja specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Bookings API&lt;/td&gt;&lt;td&gt;usługa systemu przechowująca rezerwacje — panel z niej czyta listę wizyt i do niej zapisuje nowe&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;timeout akceptacji&lt;/td&gt;&lt;td&gt;brak decyzji specjalisty przez ok. 24 h — prośba o akceptację wygasa (założenie, patrz wariant A5)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE („FE — widzi user”)&lt;/td&gt;&lt;td&gt;część systemu widoczna dla użytkownika: ekrany i przyciski w przeglądarce&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;BE („BE — pod spodem”)&lt;/td&gt;&lt;td&gt;część systemu niewidoczna dla użytkownika: serwery, obliczenia i baza danych&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1570" width="1120" height="550" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

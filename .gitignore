@@ -1,2 +1,7 @@
 ﻿.tmp/
 
+
+# tymczasowe pliki draw.io (autosave/backup)
+*.drawio.bkp
+# lokalne ustawienia Claude Code
+.claude/settings.local.json

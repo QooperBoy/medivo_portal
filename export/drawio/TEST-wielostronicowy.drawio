@@ -1,0 +1,690 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="spis-tresci" name="00 — Spis treści (TEST)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;TEST wariantu A — jeden plik draw.io, wiele stron, klikalne przejścia&lt;/b&gt;&lt;br&gt;3 diagramy: E2E-1 → A5 → CORE-STANY" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="730" height="50" as="geometry" />
+        </mxCell>
+        <UserObject label="🔗 &lt;b&gt;E2E-1&lt;/b&gt;&lt;br&gt;Pacjent nowy&lt;br&gt;(happy path)" link="data:page/id,e2e-1-pacjent-nowy" id="tileE2E">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;strokeWidth=2;" vertex="1" parent="1">
+            <mxGeometry x="60" y="130" width="220" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="🔗 &lt;b&gt;A5&lt;/b&gt;&lt;br&gt;Checkout rezerwacji&lt;br&gt;(wariant normalny)" link="data:page/id,a5-checkout" id="tileA5">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;strokeWidth=2;" vertex="1" parent="1">
+            <mxGeometry x="315" y="130" width="220" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="🔗 &lt;b&gt;CORE-STANY&lt;/b&gt;&lt;br&gt;Cykl życia rezerwacji&lt;br&gt;(stany kanoniczne)" link="data:page/id,core-stany-rezerwacji" id="tileCore">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;strokeWidth=2;" vertex="1" parent="1">
+            <mxGeometry x="570" y="130" width="220" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="arrow1" value="A5 to węzeł ścieżki E2E-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="tileE2E" target="tileA5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" value="A5 używa stanów z CORE" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="tileA5" target="tileCore">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelJak" value="&lt;b&gt;Jak działają klikalne bloki (oznaczone 🔗)&lt;/b&gt;&lt;br&gt;&lt;br&gt;• &lt;b&gt;W edytorze draw.io&lt;/b&gt; (aplikacja / diagrams.net): najedź na blok z 🔗 — pojawi się dymek z linkiem; kliknij go albo użyj &lt;b&gt;Alt+klik&lt;/b&gt; na bloku, żeby przejść na docelową stronę.&lt;br&gt;• &lt;b&gt;W trybie podglądu&lt;/b&gt; (lightbox — np. Extras → Preview albo udostępniony diagram): wystarczy &lt;b&gt;zwykły klik&lt;/b&gt; w blok.&lt;br&gt;• Strony (zakładki na dole okna) to poszczególne diagramy — linki mają postać &quot;data:page/id,…&quot;, więc działają bez internetu i po przeniesieniu pliku.&lt;br&gt;&lt;br&gt;&lt;b&gt;Co jest podlinkowane w tym teście:&lt;/b&gt;&lt;br&gt;• spis → wszystkie 3 diagramy (kafelki powyżej),&lt;br&gt;• E2E-1: blok &quot;A5 checkout&quot; → strona A5,&lt;br&gt;• A5: przycisk &quot;CORE-STANY&quot; oraz strzałka kroku 26 &quot;locked → confirmed&quot; → strona CORE-STANY,&lt;br&gt;• CORE-STANY: stany &quot;draft&quot; i &quot;locked&quot; → strona A5,&lt;br&gt;• każda strona ma przycisk &quot;🏠 Spis&quot; wracający tutaj.&lt;br&gt;&lt;br&gt;W pełnej wersji tak samo podlinkowane będą wszystkie ~60 diagramów (każdy blok z ID innego flow = link do jego strony)." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="270" width="730" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="e2e-1-pacjent-nowy" name="E2E-1 — Pacjent nowy (happy path)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="🏠 Spis" link="data:page/id,spis-tresci" id="navSpis">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+            <mxGeometry x="20" y="20" width="80" height="28" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="title" value="&lt;b&gt;E2E-1 — Pacjent nowy (happy path)&lt;/b&gt;&lt;br&gt;źródło: diagrams/e2e/e2e-1-pacjent-nowy.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="110" y="20" width="880" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nA1" value="&lt;b&gt;A1&lt;/b&gt;&lt;br&gt;wejście SEO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA2" value="&lt;b&gt;A2&lt;/b&gt;&lt;br&gt;wyszukiwanie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="270" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA3" value="&lt;b&gt;A3&lt;/b&gt;&lt;br&gt;lista wyników" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA4" value="&lt;b&gt;A4&lt;/b&gt;&lt;br&gt;profil specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;A5&lt;/b&gt;&lt;br&gt;checkout rezerwacji 🔗" link="data:page/id,a5-checkout" id="nA5">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;strokeWidth=2;" vertex="1" parent="1">
+            <mxGeometry x="840" y="100" width="140" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="nB7" value="&lt;b&gt;B7&lt;/b&gt;&lt;br&gt;dla kogo: dziecko" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="185" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nD1" value="&lt;b&gt;płatność?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="255" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nA6" value="&lt;b&gt;A6&lt;/b&gt;&lt;br&gt;płatność online" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="280" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7" value="&lt;b&gt;A7&lt;/b&gt;&lt;br&gt;potwierdzenie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="280" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nG2" value="&lt;b&gt;G2&lt;/b&gt;&lt;br&gt;przypomnienie T-24h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="140" y="280" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nW" value="wizyta" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="495" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nE8" value="&lt;b&gt;E8&lt;/b&gt;&lt;br&gt;approval wizyty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nG3" value="&lt;b&gt;G3&lt;/b&gt;&lt;br&gt;review ask T+2h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="420" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nB5" value="&lt;b&gt;B5&lt;/b&gt;&lt;br&gt;wystawienie opinii" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="590" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nF2" value="&lt;b&gt;F2&lt;/b&gt;&lt;br&gt;moderacja opinii" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nPUB" value="publikacja opinii" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="930" y="495" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA1" target="nA2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA2" target="nA3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA3" target="nA4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA4" target="nA5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed5" value="krok wewnątrz A5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.25;entryY=1;" edge="1" parent="1" source="nB7" target="nA5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="nA5" target="nD1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed7" value="wariant przedpłaty&lt;br&gt;(Flaga 2)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="nD1" target="nA6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="nA6" target="nA7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="płatność na miejscu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="nD1" target="nA7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="400" />
+              <mxPoint x="430" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="nA7" target="nG2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="nG2" target="nW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nW" target="nE8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nE8" target="nG3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nG3" target="nB5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nB5" target="nF2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nF2" target="nPUB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legenda:&lt;/b&gt; niebieski = flow pacjenta · pomarańczowy = silniki/panel (BE) · szara elipsa = zdarzenie (nie flow) · przerywane = opcjonalny wariant przedpłaty (Flaga 2) · 🔗 = klikalny blok (test: tylko A5)" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="580" width="940" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="panel1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Najważniejsza ścieżka w serwisie: nowy pacjent trafia z wyszukiwarki Google, znajduje logopedę, rezerwuje wizytę (opcjonalnie płacąc online), przychodzi na wizytę, a po niej wystawia opinię, która po moderacji trafia na profil specjalisty. Uczestniczą pacjent, specjalista (zatwierdza odbytą wizytę), admin (moderuje opinię) i system (przypomnienie przed wizytą, prośba o opinię po niej). Flow zaczyna się od wejścia z wyszukiwarki, a kończy publikacją opinii. Każdy węzeł to osobny, szczegółowy diagram." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="640" width="880" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panel2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A1&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a1-wejscie-seo.md&lt;/td&gt;&lt;td&gt;start ścieżki z wyszukiwarki&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A2&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a2-wyszukiwanie.md&lt;/td&gt;&lt;td&gt;wyszukiwanie po mieście/usłudze&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;wybór specjalisty z listy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;przegląd profilu i terminów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;checkout — serce ścieżki&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A6&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;opcjonalna płatność online (Flaga 2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (wariant akceptacji)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md&lt;/td&gt;&lt;td&gt;alternatywa: akceptacja specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;potwierdzenie, tokeny samoobsługi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B7&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b7-pacjent-podopieczny.md&lt;/td&gt;&lt;td&gt;krok &quot;dla kogo&quot; wewnątrz A5&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G2&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;przypomnienie T−24 h przed wizytą&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;zatwierdzenie odbytej wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G3&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;prośba o opinię T+2 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G9&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;webhooki płatności (przedpłata)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B5&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b5-wystawienie-opinii.md&lt;/td&gt;&lt;td&gt;opinia tokenem z prośby&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F2&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f2-moderacja-opinii.md&lt;/td&gt;&lt;td&gt;moderacja przed publikacją&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;stany rezerwacji po drodze&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="810" width="880" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="panel3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SEO&lt;/td&gt;&lt;td&gt;Widoczność w bezpłatnych wynikach Google — główne źródło nowych pacjentów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Kilkukrokowy proces rezerwacji terminu (wybór slotu, dane, zgody, ewentualna płatność).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Przedpłata&lt;/td&gt;&lt;td&gt;Opcjonalna płatność online z góry za wizytę (wariant Flagi 2).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Płatność na miejscu&lt;/td&gt;&lt;td&gt;Ścieżka bez płatności online — pacjent płaci dopiero w gabinecie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga 2&lt;/td&gt;&lt;td&gt;Otwarta decyzja projektowa: przedpłata online albo rezerwacja za akceptacją specjalisty — dokumentowane są oba warianty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Reminder T−24 h&lt;/td&gt;&lt;td&gt;Automatyczne przypomnienie SMS/email wysyłane dobę przed wizytą.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Approval wizyty&lt;/td&gt;&lt;td&gt;Potwierdzenie przez specjalistę, że wizyta się odbyła — dopiero to odblokowuje opinię.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Review ask T+2 h&lt;/td&gt;&lt;td&gt;Automatyczna prośba o opinię wysyłana 2 godziny po zatwierdzeniu wizyty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Moderacja&lt;/td&gt;&lt;td&gt;Sprawdzenie treści opinii przez admina przed jej publikacją.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Podopieczny&lt;/td&gt;&lt;td&gt;Osoba, dla której robiona jest rezerwacja (u logopedów zwykle dziecko), inna niż osoba rezerwująca.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Stany kanoniczne&lt;/td&gt;&lt;td&gt;Kolejne etapy życia rezerwacji (draft → locked → confirmed → completed) wspólne dla całego systemu.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="1380" width="880" height="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="a5-checkout" name="A5 — Checkout rezerwacji (wariant normalny)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="3400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="🏠 Spis" link="data:page/id,spis-tresci" id="navSpis">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+            <mxGeometry x="20" y="15" width="90" height="26" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="⬅ E2E-1" link="data:page/id,e2e-1-pacjent-nowy" id="navE2E">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+            <mxGeometry x="20" y="47" width="90" height="26" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="🔗 CORE-STANY — stany rezerwacji" link="data:page/id,core-stany-rezerwacji" id="lnkCore">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+            <mxGeometry x="720" y="47" width="220" height="26" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="title" value="&lt;b&gt;A5 — Checkout rezerwacji (wariant normalny)&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a5-checkout.md — diagram sekwencji" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actP" value="&lt;b&gt;Pacjent&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actFE" value="&lt;b&gt;FE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="220" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actAPI" value="&lt;b&gt;Backend&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actQ" value="&lt;b&gt;Joby/Kolejka&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actMSG" value="&lt;b&gt;SMS/Email&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeP" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="120" as="sourcePoint" />
+            <mxPoint x="120" y="2180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeFE" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="120" as="sourcePoint" />
+            <mxPoint x="280" y="2180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeAPI" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="120" as="sourcePoint" />
+            <mxPoint x="440" y="2180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeQ" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="120" as="sourcePoint" />
+            <mxPoint x="600" y="2180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeMSG" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="120" as="sourcePoint" />
+            <mxPoint x="760" y="2180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1" value="alt [slot wolny]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=10;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="270" width="500" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="opt [dziecko lub inna osoba (B7)]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=10;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="550" width="320" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" value="alt [kod dochodzi]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=10;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="70" y="795" width="750" height="295" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" value="alt [scoring OK — wariant normalny]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=10;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1250" width="780" height="765" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" value="alt [płatność na miejscu]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=10;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1395" width="560" height="405" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" value="opt [lock wygasł w trakcie (TTL 10 min)]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=10;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2045" width="440" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="375" as="sourcePoint" />
+            <mxPoint x="580" y="375" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el1" value="[else] slot zajęty w międzyczasie" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="88" y="378" width="220" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="945" as="sourcePoint" />
+            <mxPoint x="820" y="945" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el2" value="[else] OTP nie dochodzi" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="78" y="948" width="200" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="1645" as="sourcePoint" />
+            <mxPoint x="810" y="1645" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el3" value="[else] płatność online (skrót A6)" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="258" y="1648" width="220" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="1815" as="sourcePoint" />
+            <mxPoint x="840" y="1815" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el4" value="[else] gate: wymagana przedpłata" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="68" y="1818" width="220" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="1915" as="sourcePoint" />
+            <mxPoint x="840" y="1915" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el5" value="[else] gate: wymagana akceptacja specjalisty" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="68" y="1918" width="280" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" value="pełny flow płatności: [[a5-checkout-wariant-przedplata]] — po webhooku G9: confirmed + A7" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="1735" width="280" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="dalszy flow: [[a5-checkout-wariant-przedplata]]" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="1855" width="280" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="dalszy flow: [[a5-checkout-wariant-akceptacja]]" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="1955" width="280" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="1: wybór usługi (cena)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="160" as="sourcePoint" />
+            <mxPoint x="280" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: wybór slotu (z A4)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="200" as="sourcePoint" />
+            <mxPoint x="280" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3: POST lock slotu (G5)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="240" as="sourcePoint" />
+            <mxPoint x="440" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4: lock TTL 10 min,&lt;br&gt;draft → locked" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="300" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="300" />
+              <mxPoint x="510" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5: checkout otwarty" style="html=1;fontSize=10;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="355" as="sourcePoint" />
+            <mxPoint x="280" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6: błąd „slot niedostępny”" style="html=1;fontSize=10;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="420" as="sourcePoint" />
+            <mxPoint x="280" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7: powrót do wyboru slotu (A4/A8)" style="html=1;fontSize=10;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="460" as="sourcePoint" />
+            <mxPoint x="120" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8: dla kogo: ja / dziecko / inna osoba" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="520" as="sourcePoint" />
+            <mxPoint x="280" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="9: mini-profil podopiecznego" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="585" as="sourcePoint" />
+            <mxPoint x="280" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10: zgoda opiekuna (RODO dane dziecka)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="625" as="sourcePoint" />
+            <mxPoint x="280" y="625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" value="11: dane rezerwującego (numer = tożsamość)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="685" as="sourcePoint" />
+            <mxPoint x="280" y="685" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="12: POST wysyłka OTP" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="725" as="sourcePoint" />
+            <mxPoint x="440" y="725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="13: SMS z kodem OTP" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="765" as="sourcePoint" />
+            <mxPoint x="760" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m14" value="14: wpisanie kodu OTP" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="825" as="sourcePoint" />
+            <mxPoint x="280" y="825" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m15" value="15: POST weryfikacja OTP" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="865" as="sourcePoint" />
+            <mxPoint x="440" y="865" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m16" value="16: lekkie konto +&lt;br&gt;osobna encja pacjenta" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="895" as="sourcePoint" />
+            <mxPoint x="440" y="915" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="895" />
+              <mxPoint x="510" y="915" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m17" value="17: klik „wyślij ponownie”" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="990" as="sourcePoint" />
+            <mxPoint x="280" y="990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m18" value="18: retry OTP (limit prób, B1)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="1030" as="sourcePoint" />
+            <mxPoint x="440" y="1030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m19" value="19: ponowny SMS z kodem" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="1070" as="sourcePoint" />
+            <mxPoint x="760" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m20" value="20: zgody RODO (checkboxy)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1130" as="sourcePoint" />
+            <mxPoint x="280" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m21" value="21: POST zapis zgód" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="1170" as="sourcePoint" />
+            <mxPoint x="440" y="1170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m22" value="22: scoring gate (G7)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="1200" as="sourcePoint" />
+            <mxPoint x="440" y="1220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="1200" />
+              <mxPoint x="510" y="1220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m23" value="23: wybór: płatność online / na miejscu" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1285" as="sourcePoint" />
+            <mxPoint x="280" y="1285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m24" value="24: podsumowanie + klik „rezerwuję”" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1325" as="sourcePoint" />
+            <mxPoint x="280" y="1325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m25" value="25: POST utworzenie rezerwacji" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="1365" as="sourcePoint" />
+            <mxPoint x="440" y="1365" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="🔗 26: locked → confirmed&lt;br&gt;(klik: CORE-STANY)" link="data:page/id,core-stany-rezerwacji" id="m26">
+          <mxCell style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="440" y="1425" as="sourcePoint" />
+              <mxPoint x="440" y="1445" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="510" y="1425" />
+                <mxPoint x="510" y="1445" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <mxCell id="m27" value="27: generacja tokenów&lt;br&gt;samoobsługi (A7)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="1475" as="sourcePoint" />
+            <mxPoint x="440" y="1495" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="1475" />
+              <mxPoint x="510" y="1495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m28" value="28: enqueue G1 (powiadomienia)" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="1535" as="sourcePoint" />
+            <mxPoint x="600" y="1535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m29" value="29: email + SMS&lt;br&gt;(token zarządzania) + .ics" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="1575" as="sourcePoint" />
+            <mxPoint x="760" y="1575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m30" value="30: ekran sukcesu (A7)" style="html=1;fontSize=10;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="1620" as="sourcePoint" />
+            <mxPoint x="280" y="1620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m31" value="31: locked → pending_payment" style="html=1;fontSize=10;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="1695" as="sourcePoint" />
+            <mxPoint x="440" y="1715" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="1695" />
+              <mxPoint x="510" y="1715" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m32" value="32: komunikat „czas na rezerwację minął”" style="html=1;fontSize=10;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="2080" as="sourcePoint" />
+            <mxPoint x="280" y="2080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m33" value="33: powrót do wyboru slotu" style="html=1;fontSize=10;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="2120" as="sourcePoint" />
+            <mxPoint x="120" y="2120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Główna ścieżka rezerwacji wizyty (checkout). Pacjent wybiera usługę i termin, system blokuje termin na 10 minut, pacjent podaje, dla kogo jest wizyta, potwierdza swój numer telefonu kodem SMS i akceptuje zgody. Następnie system automatycznie ocenia wiarygodność pacjenta (scoring) i — w wariancie normalnym — pozwala dokończyć rezerwację z płatnością na miejscu albo online. Flow kończy się ekranem potwierdzenia (A7) albo przejściem do jednego z wariantów sankcyjnych: przedpłaty lub akceptacji specjalisty." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="2210" width="880" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;używa kanonicznych stanów rezerwacji (draft → locked → … → confirmed)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;źródło wybranego slotu; powrót przy zajętym slocie lub wygasłym locku&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (przedpłata)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;dalszy flow, gdy scoring gate wymaga przedpłaty; zawiera pełne A6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (akceptacja)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md&lt;/td&gt;&lt;td&gt;dalszy flow, gdy scoring gate wymaga akceptacji specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A6&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;pełny przebieg płatności online (tu potraktowany skrótowo)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;ekran sukcesu i tokeny samoobsługi po przejściu do confirmed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A8&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a8-brak-slotow.md&lt;/td&gt;&lt;td&gt;powrót, gdy slot został zajęty w międzyczasie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B1&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b1-logowanie.md&lt;/td&gt;&lt;td&gt;te same zasady OTP: limit prób i rate limiting&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B7&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b7-pacjent-podopieczny.md&lt;/td&gt;&lt;td&gt;rezerwacja dla dziecka/innej osoby — mini-profil podopiecznego&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;wysyłka powiadomień (email + SMS) po potwierdzeniu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G5&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g5-slot-lock.md&lt;/td&gt;&lt;td&gt;mechanizm locka slotu z TTL 10 min&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;scoring gate decyduje o wariancie checkoutu&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="2390" width="880" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Proces finalizowania rezerwacji — od wyboru terminu do potwierdzenia wizyty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Konkretny wolny termin wizyty w kalendarzu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lock&lt;/td&gt;&lt;td&gt;Czasowa blokada wybranego terminu, żeby nikt inny nie zajął go w trakcie rezerwacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TTL&lt;/td&gt;&lt;td&gt;Czas życia blokady — tu 10 minut, po których lock wygasa.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OTP&lt;/td&gt;&lt;td&gt;Jednorazowy kod SMS potwierdzający, że numer telefonu należy do rezerwującego.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring gate&lt;/td&gt;&lt;td&gt;Automatyczna bramka oceniająca wiarygodność pacjenta i decydująca, czy wymagać przedpłaty albo akceptacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lekkie konto&lt;/td&gt;&lt;td&gt;Konto tworzone automatycznie przy pierwszej rezerwacji, bez hasła — tożsamością jest numer telefonu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Token samoobsługi&lt;/td&gt;&lt;td&gt;Specjalny link, którym pacjent później zmieni lub odwoła wizytę bez logowania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RODO&lt;/td&gt;&lt;td&gt;Przepisy o ochronie danych osobowych; wymagają zgód, szczególnie na dane dziecka.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;.ics&lt;/td&gt;&lt;td&gt;Plik z terminem wizyty do dodania do kalendarza (Google, Outlook itp.).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Enqueue&lt;/td&gt;&lt;td&gt;Wstawienie zadania (np. wysyłki powiadomień) do kolejki wykonywanej w tle.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pending_payment / pending_approval&lt;/td&gt;&lt;td&gt;Stany rezerwacji oczekującej odpowiednio na płatność online albo na akceptację specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="2880" width="880" height="470" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="core-stany-rezerwacji" name="CORE-STANY — cykl życia rezerwacji">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="4300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="🏠 Spis" link="data:page/id,spis-tresci" id="navSpis">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+            <mxGeometry x="20" y="10" width="90" height="26" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="title" value="&lt;b&gt;CORE-STANY — Cykl życia rezerwacji (stany kanoniczne)&lt;/b&gt;&lt;br&gt;źródło: diagrams/00-core/00-stany-rezerwacji.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="485" y="70" width="30" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;draft&lt;/b&gt;&lt;br&gt;SZKIC REZERWACJI — pacjent wypełnia formularz,&lt;br&gt;termin NIE jest jeszcze zablokowany&lt;br&gt;(ktoś szybszy wciąż może go zająć)&lt;br&gt;&lt;i&gt;🔗 klik → checkout A5&lt;/i&gt;" link="data:page/id,a5-checkout" id="draft">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;strokeWidth=2;" vertex="1" parent="1">
+            <mxGeometry x="330" y="140" width="340" height="100" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="endAbandon" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="30" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;locked&lt;/b&gt;&lt;br&gt;TERMIN ZABLOKOWANY NA 10 MINUT —&lt;br&gt;tylko ten pacjent może dokończyć rezerwację,&lt;br&gt;dla innych termin jest w tym czasie niedostępny&lt;br&gt;&lt;i&gt;🔗 klik → checkout A5&lt;/i&gt;" link="data:page/id,a5-checkout" id="locked">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;strokeWidth=2;" vertex="1" parent="1">
+            <mxGeometry x="330" y="300" width="340" height="110" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="pendingPayment" value="&lt;b&gt;pending_payment&lt;/b&gt;&lt;br&gt;CZEKA NA PŁATNOŚĆ ONLINE (A6) —&lt;br&gt;rezerwacja wstępna, stanie się wiążąca&lt;br&gt;dopiero po zaksięgowaniu wpłaty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="500" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="pendingApproval" value="&lt;b&gt;pending_approval&lt;/b&gt;&lt;br&gt;CZEKA NA DECYZJĘ SPECJALISTY (E4) —&lt;br&gt;specjalista ręcznie zatwierdza pacjentów,&lt;br&gt;którym system nie ufa automatycznie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="630" y="500" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="confirmed" value="&lt;b&gt;confirmed&lt;/b&gt;&lt;br&gt;WIZYTA UMÓWIONA —&lt;br&gt;obie strony mają potwierdzenie (A7),&lt;br&gt;dzień przed wizytą wychodzi przypomnienie (G2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="690" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="flaga3" value="Flaga 3 — automat G4 (uznanie wizyty po 48 h) jest ZABLOKOWANY, gdy wizyta ma zgłoszony no_show lub otwarty spór" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=10;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="700" y="680" width="260" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="cancelledByPatient" value="&lt;b&gt;cancelled_by_patient&lt;/b&gt;&lt;br&gt;ODWOŁANA PRZEZ PACJENTA —&lt;br&gt;w dozwolonym czasie (bez konsekwencji)&lt;br&gt;albo za późno (kara w scoringu, G7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="880" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cancelledBySpecialist" value="&lt;b&gt;cancelled_by_specialist&lt;/b&gt;&lt;br&gt;ODWOŁANA PRZEZ SPECJALISTĘ —&lt;br&gt;pojedynczo (E5) albo hurtowo,&lt;br&gt;np. z powodu urlopu lub choroby (E6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="630" y="880" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="completed" value="&lt;b&gt;completed&lt;/b&gt;&lt;br&gt;WIZYTA ODBYTA —&lt;br&gt;pacjent może wystawić opinię (B5),&lt;br&gt;2 h po wizycie system wysyła prośbę o opinię (G3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1060" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="noShow" value="&lt;b&gt;no_show&lt;/b&gt;&lt;br&gt;PACJENT NIE POJAWIŁ SIĘ NA WIZYCIE —&lt;br&gt;system nalicza sankcje w scoringu (G7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1060" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="disputed" value="&lt;b&gt;disputed&lt;/b&gt;&lt;br&gt;SPÓR O NIEOBECNOŚĆ —&lt;br&gt;pacjent kwestionuje oznaczenie no-show,&lt;br&gt;sprawę rozstrzyga admin platformy (F3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1240" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="endFinal" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1380" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="pacjent klika wybrany termin i wchodzi w checkout (A5)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="start" target="draft">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="pacjent przechodzi dalej — system blokuje termin (G5)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="draft" target="locked">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="pacjent porzuca formularz — rezerwacja znika bez śladu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="draft" target="endAbandon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="10 minut minęło bez dokończenia — termin wraca do sprzedaży" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="locked" target="endAbandon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="pacjent z historią nieobecności — system wymaga przedpłaty" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="locked" target="pendingPayment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="pacjent z historią nieobecności — system wymaga zgody specjalisty" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="locked" target="pendingApproval">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="zwykły pacjent, płatność na miejscu — potwierdzenie od razu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="locked" target="confirmed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="procesor płatności potwierdza wpłatę (webhook, G9)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="pendingPayment" target="confirmed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="brak wpłaty przez ok. 30 minut — system sam anuluje (A6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="pendingPayment" target="cancelledByPatient">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="specjalista akceptuje rezerwację (E4)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="pendingApproval" target="confirmed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="specjalista odrzuca rezerwację (E4)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="pendingApproval" target="cancelledBySpecialist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="pacjent odwołuje w dozwolonym czasie (B3) lub za późno — kara w scoringu (G7)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="confirmed" target="cancelledByPatient">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="specjalista odwołuje wizytę (E5, E6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="confirmed" target="cancelledBySpecialist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="specjalista potwierdza, że wizyta się odbyła (E8) / automat uznaje wizytę po 48 h (G4)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="confirmed" target="completed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="specjalista zgłasza, że pacjent nie przyszedł (E7)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="confirmed" target="noShow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" value="pacjent protestuje „byłem na wizycie&quot; (B6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="noShow" target="disputed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" value="admin przyznaje rację pacjentowi — wizyta uznana za odbytą (F3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="disputed" target="completed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="admin odrzuca spór — nieobecność zostaje (F3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.75;" edge="1" parent="1" source="disputed" target="noShow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="koniec — rezerwacja zamknięta pozytywnie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="completed" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="zwolniony termin wraca do sprzedaży lub na waitlistę (G6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="cancelledByPatient" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="zwolniony termin wraca do sprzedaży lub na waitlistę (G6)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="cancelledBySpecialist" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="koniec — nieobecność zapisana w historii pacjenta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="noShow" target="endFinal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legenda:&lt;/b&gt; niebieski = stan aktywny · pomarańczowy = oczekiwanie · czerwony = anulacja/no-show · zielony = zakończona · podwójne kółko = stan końcowy · 🔗 = klikalny blok (test: draft i locked → strona A5)" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1450" width="880" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="docOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ten diagram pokazuje pełny cykl życia pojedynczej rezerwacji wizyty — od momentu, gdy pacjent wchodzi w proces rezerwacji, aż po jej zakończenie. Każdy prostokąt to jeden &lt;b&gt;stan&lt;/b&gt;, w którym rezerwacja może się znajdować (zawsze dokładnie w jednym naraz), a każda strzałka to &lt;b&gt;zdarzenie&lt;/b&gt;, które przenosi ją do kolejnego stanu — z opisem, kto lub co je wywołuje. Flow uruchamia się przy wejściu w checkout, a kończy w jednym ze stanów końcowych: wizyta odbyta, odwołana przez którąś ze stron albo nieobecność pacjenta. To diagram-fundament — wszystkie pozostałe flowy rezerwacyjne używają dokładnie tych nazw stanów." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1490" width="880" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="docAktorzy" value="&lt;b&gt;Aktorzy w tym flow&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Rola&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Kto to jest&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Co robi w tym flow&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Pacjent&lt;/b&gt; (użytkownik)&lt;/td&gt;&lt;td&gt;osoba korzystająca ze strony; u logopedów najczęściej rodzic rezerwujący wizytę dla dziecka (B7)&lt;/td&gt;&lt;td&gt;rozpoczyna rezerwację, wpłaca przedpłatę (gdy wymagana), odwołuje wizytę (B3), może zakwestionować oznaczoną nieobecność (B6)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Specjalista&lt;/b&gt; (logopeda / lekarz)&lt;/td&gt;&lt;td&gt;usługodawca przyjmujący wizyty, właściciel kalendarza&lt;/td&gt;&lt;td&gt;akceptuje lub odrzuca rezerwacje warunkowe (E4), odwołuje wizyty (E5, E6), potwierdza że wizyta się odbyła (E8), zgłasza nieobecność pacjenta (E7)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Admin&lt;/b&gt; (operator platformy)&lt;/td&gt;&lt;td&gt;zespół prowadzący serwis — back office; rozstrzyga sprawy sporne&lt;/td&gt;&lt;td&gt;rozpatruje spory o nieobecność i wydaje decyzję (F3)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;System&lt;/b&gt; (automaty platformy)&lt;/td&gt;&lt;td&gt;joby, timery i silniki działające bez udziału człowieka&lt;/td&gt;&lt;td&gt;blokuje termin na 10 min (G5), anuluje rezerwację po braku wpłaty (A6), uznaje wizytę po 48 h (G4), wysyła powiadomienia i przypomnienia (G1, G2, G3), nalicza scoring (G7), zarządza waitlistą (G6)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1670" width="880" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="docBloki" value="&lt;b&gt;Objaśnienie bloków — stan po stanie&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Blok&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Co to znaczy w praktyce&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Kto tu działa&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[*] (czarna kropka u góry)&lt;/td&gt;&lt;td&gt;Punkt startu — moment, w którym rezerwacja zaczyna istnieć. Wszystko przed nią (szukanie specjalisty, przeglądanie profilu) to inne flowy (A1–A4).&lt;/td&gt;&lt;td&gt;—&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;draft&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Pacjent kliknął konkretny termin i otworzył formularz rezerwacji (checkout). To dopiero szkic: system niczego nie blokuje, termin cały czas jest widoczny dla innych, a porzucenie formularza nie zostawia śladu.&lt;/td&gt;&lt;td&gt;Pacjent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;locked&lt;/b&gt;&lt;/td&gt;&lt;td&gt;System zablokował wybrany termin na 10 minut wyłącznie dla tego pacjenta — nikt inny nie może go w tym czasie zarezerwować. Bez dokończenia w 10 minut blokada wygasa i termin wraca do sprzedaży.&lt;/td&gt;&lt;td&gt;Pacjent, System (G5)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;pending_payment&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Rezerwacja wstępnie złożona, ale system zażądał przedpłaty online (scoring gate). Potwierdzenie dopiero po zaksięgowaniu wpłaty; brak wpłaty przez ok. 30 minut = auto-anulacja.&lt;/td&gt;&lt;td&gt;Pacjent, Procesor płatności, System (A6, G9)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;pending_approval&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Rezerwacja wymaga ręcznej zgody specjalisty (drugi wariant scoring gate — np. gdy platforma działa bez płatności online). Specjalista widzi prośbę w panelu i akceptuje ją albo odrzuca.&lt;/td&gt;&lt;td&gt;Specjalista (E4)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;confirmed&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Wizyta umówiona — stan docelowy szczęśliwej ścieżki. Obie strony dostały potwierdzenie, dzień przed wizytą system wysyła przypomnienie; stąd wizyta może się odbyć, zostać odwołana albo zakończyć nieobecnością.&lt;/td&gt;&lt;td&gt;Pacjent, Specjalista, System (A7, G2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;completed&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Wizyta się odbyła — potwierdził to specjalista ręcznie albo automat po 48 h. Dopiero ten stan odblokowuje pacjentowi wystawienie opinii — opinie pochodzą tylko od osób, które naprawdę były na wizycie.&lt;/td&gt;&lt;td&gt;Specjalista (E8) lub System (G4)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;cancelled_by_patient&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Pacjent odwołał wizytę — w dozwolonym czasie (bez konsekwencji) albo za późno (liczy się do scoringu). Tu trafia też rezerwacja, za którą pacjent nie zapłacił w terminie.&lt;/td&gt;&lt;td&gt;Pacjent (B3), System&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;cancelled_by_specialist&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Specjalista odwołał wizytę — pojedynczo (E5) albo hurtowo, np. z powodu urlopu lub choroby (E6). Platforma liczy takie odwołania, bo częste odwoływanie psuje doświadczenie pacjentów.&lt;/td&gt;&lt;td&gt;Specjalista (E5, E6)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;no_show&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Specjalista zgłosił, że pacjent nie pojawił się na wizycie bez odwołania. System nalicza punkty karne (scoring) — przy kolejnej rezerwacji może być wymagana przedpłata lub zgoda specjalisty.&lt;/td&gt;&lt;td&gt;Specjalista (E7), System (G7)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;disputed&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Pacjent nie zgadza się z oznaczeniem nieobecności („byłem na wizycie&quot;) i otworzył spór. Uznanie racji pacjenta zamienia stan na completed, odrzucenie sporu przywraca no_show.&lt;/td&gt;&lt;td&gt;Pacjent (B6), Admin (F3)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[*] (czarna kropka na dole)&lt;/td&gt;&lt;td&gt;Punkt końca — rezerwacja przestaje być aktywna. Termin wraca do sprzedaży albo system proponuje go osobom z waitlisty (G6).&lt;/td&gt;&lt;td&gt;—&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="2010" width="880" height="860" as="geometry" />
+        </mxCell>
+        <mxCell id="docPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;wejście w checkout — draft + lock slotu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A6&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;płatność domyka pending_payment; timeout ~30 min = auto-anulacja&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;po confirmed: potwierdzenie + tokeny samoobsługi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;zwolniony slot wraca na listę wyników&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;zwolniony slot znów widoczny na profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;odwołanie pacjenta → cancelled_by_patient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B5&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b5-wystawienie-opinii.md&lt;/td&gt;&lt;td&gt;completed odblokowuje opinię&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B6&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b6-spor-no-show.md&lt;/td&gt;&lt;td&gt;spór pacjenta „byłem&quot; → disputed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;akceptacja/odrzucenie rozstrzyga pending_approval&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E5&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e5-odwolanie-pojedyncze.md&lt;/td&gt;&lt;td&gt;odwołanie specjalisty → cancelled_by_specialist&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E6&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e6-tryb-urlop.md&lt;/td&gt;&lt;td&gt;hurtowe odwołania → cancelled_by_specialist&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E7&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e7-no-show.md&lt;/td&gt;&lt;td&gt;oznaczenie nieobecności → no_show&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;ręczny approval wizyty → completed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F3&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f3-spory.md&lt;/td&gt;&lt;td&gt;rozstrzygnięcie sporu: completed albo no_show&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienia SMS/email przy przejściach&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G2&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;przypomnienie T−24 h tylko w confirmed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G3&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;prośba o opinię T+2 h po completed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G4&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g4-auto-approval.md&lt;/td&gt;&lt;td&gt;auto-approval T+48 h → completed (Flaga 3)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G5&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g5-slot-lock.md&lt;/td&gt;&lt;td&gt;lock slotu z TTL 10 min → locked&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;zwolniony slot → kaskada waitlisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;późne odwołania i no-show → scoring&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G9&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;webhook płatności potwierdza pending_payment&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="2890" width="880" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="docSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Stan kanoniczny&lt;/td&gt;&lt;td&gt;Ustalona, wspólna dla całego projektu nazwa etapu życia rezerwacji (np. confirmed, no_show), używana we wszystkich diagramach.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Proces rezerwacji od kliknięcia terminu do potwierdzenia — wieloetapowy formularz (wybór usługi, dane, weryfikacja SMS, płatność). Opisany w A5.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Konkretny termin wizyty w kalendarzu specjalisty, który pacjent może zarezerwować.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Lock&lt;/td&gt;&lt;td&gt;Tymczasowa blokada slotu na czas checkoutu, żeby dwie osoby nie zarezerwowały tego samego terminu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TTL&lt;/td&gt;&lt;td&gt;„Time to live&quot; — czas życia blokady; po 10 minutach bez dokończenia rezerwacji slot automatycznie wraca do puli.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring&lt;/td&gt;&lt;td&gt;Wewnętrzna punktacja wiarygodności pacjenta prowadzona przez system: nieobecności i późne odwołania obniżają ocenę, co skutkuje sankcjami.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring gate&lt;/td&gt;&lt;td&gt;Dodatkowy warunek w checkoucie (przedpłata albo akceptacja specjalisty) nakładany na pacjentów z historią nieobecności.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Webhook&lt;/td&gt;&lt;td&gt;Automatyczne powiadomienie od procesora płatności, że wpłata doszła — potwierdza rezerwację bez udziału człowieka.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;No-show&lt;/td&gt;&lt;td&gt;Sytuacja, w której pacjent nie pojawia się na umówionej wizycie bez odwołania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Auto-approval&lt;/td&gt;&lt;td&gt;Automatyczne uznanie wizyty za odbytą 48 godzin po jej terminie, jeśli specjalista nie zrobił tego ręcznie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista oczekujących pacjentów, którym system proponuje zwolniony termin.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Spór (disputed)&lt;/td&gt;&lt;td&gt;Zgłoszenie pacjenta kwestionujące oznaczenie nieobecności, rozstrzygane przez admina.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Event&lt;/td&gt;&lt;td&gt;Zdarzenie domenowe (np. booking.cancelled_late) emitowane przy przejściu między stanami, uruchamiające automatyczne silniki systemu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga&lt;/td&gt;&lt;td&gt;Otwarta decyzja projektowa oznaczona numerem (Flaga 2: płatności online w POC, Flaga 3: blokada auto-approvalu) — opisana w mapie flowów.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="3590" width="880" height="640" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

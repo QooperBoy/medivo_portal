@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="b8-formularz-przedwizytowy" name="B8 — Formularz przedwizytowy">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;B8 — Formularz przedwizytowy&lt;/b&gt;&lt;br&gt;źródło: diagrams/b-pacjent-konto/b8-formularz-przedwizytowy.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="980" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="460" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="LINKA" value="Link do ankiety — email/konto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="50" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ANKIETA" value="Ankieta: wywiad logopedyczny dziecka" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="160" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WYSLIJ" value="Wysłanie odpowiedzi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="280" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="BRAK" value="Niewypełniona — wizyta bez ankiety" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="280" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="DZIEKI" value="Potwierdzenie wypełnienia" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="400" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="580" y="90" width="460" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="TRIGGER" value="Rezerwacja confirmed — A7" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="130" y="50" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PIERWSZA" value="Pierwsza wizyta u specjalisty?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="140" y="160" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ENGINE" value="Forms engine: szablon ankiety" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="SKIP" value="Bez ankiety — kolejna wizyta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZAPIS" value="Zapis odpowiedzi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="410" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E4W" value="Odpowiedzi widoczne w E4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="520" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="TRIGGER" target="PIERWSZA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="PIERWSZA" target="ENGINE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="PIERWSZA" target="SKIP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ENGINE" target="LINKA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="LINKA" target="ANKIETA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="wypełnia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ANKIETA" target="WYSLIJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="brak reakcji" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ANKIETA" target="BRAK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="WYSLIJ" target="ZAPIS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ZAPIS" target="E4W">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ZAPIS" target="DZIEKI">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram opisuje ankietę przedwizytową — wywiad logopedyczny o dziecku. Po potwierdzeniu rezerwacji system sprawdza, czy to pierwsza wizyta u danego specjalisty; jeśli tak, wysyła pacjentowi (rodzicowi) link do ankiety. Wypełnione odpowiedzi zapisują się i są widoczne dla specjalisty w jego panelu przed wizytą. Brak wypełnienia nie blokuje wizyty — odbywa się ona wtedy bez ankiety." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="980" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;trigger: ankieta wysyłana po potwierdzeniu rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B7&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b7-pacjent-podopieczny.md&lt;/td&gt;&lt;td&gt;ankieta dotyczy danych podopiecznego (dziecka)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;odpowiedzi widoczne dla specjalisty przy rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;notification engine doręcza link do ankiety&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;dostęp do odpowiedzi (dane zdrowotne) powinien być audytowany&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B2&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b2-moje-wizyty.md&lt;/td&gt;&lt;td&gt;ankieta dostępna także z konta pacjenta&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="920" width="980" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ankieta przedwizytowa&lt;/td&gt;&lt;td&gt;Formularz wypełniany przed pierwszą wizytą, żeby specjalista znał kontekst pacjenta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Wywiad logopedyczny&lt;/td&gt;&lt;td&gt;Zestaw pytań o rozwój mowy i zdrowie dziecka, zbierany przed terapią.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Forms engine&lt;/td&gt;&lt;td&gt;Mechanizm systemu, który buduje ankietę z gotowego szablonu pytań.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Szablon per wertykal&lt;/td&gt;&lt;td&gt;Inny zestaw pytań dla każdej branży platformy (logopedzi, inne specjalizacje).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;confirmed&lt;/td&gt;&lt;td&gt;Stan rezerwacji &quot;potwierdzona&quot; — dopiero wtedy wysyłana jest ankieta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dane zdrowotne&lt;/td&gt;&lt;td&gt;Szczególnie chronione prawem informacje o zdrowiu (tu: dziecka) — wymagają ostrożności i audytu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audit log&lt;/td&gt;&lt;td&gt;Rejestr, kto i kiedy miał dostęp do danych — ślad na potrzeby kontroli.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1220" width="980" height="290" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

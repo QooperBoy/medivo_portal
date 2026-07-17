@@ -1,0 +1,115 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="c3-rejestracja" name="C3 — Rejestracja specjalisty">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1160" pageHeight="2060" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;C3 — Rejestracja specjalisty&lt;/b&gt;&lt;br&gt;źródło: diagrams/cd-specjalista-onboarding/c3-rejestracja.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1080" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="460" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="wejscie" value="wejście z C1/C2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="40" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="form" value="formularz: email, telefon, PWZ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="130" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="submit" value="wysłanie formularza" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="220" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bladpwz" value="błąd: niepoprawny format PWZ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="310" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="otpekran" value="ekran: wpisz kod OTP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="420" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kod" value="wpisanie kodu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="510" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="retry" value="'wyślij ponownie' — limit prób" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="610" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sukces" value="konto utworzone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="720" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dalej" value="status weryfikacji — D1/D2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="810" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="600" y="90" width="460" height="770" as="geometry" />
+        </mxCell>
+        <mxCell id="walid" value="format PWZ poprawny?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="150" y="200" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="otpsend" value="wysyłka OTP SMS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="140" y="340" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="otpcheck" value="kod OTP poprawny?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="150" y="450" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="konto" value="utworzenie konta specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="140" y="590" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="startd1" value="start procesu D1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="140" y="680" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="wejscie" target="form">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="form" target="submit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="submit" target="walid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="walid" target="bladpwz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bladpwz" target="form">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="walid" target="otpsend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="otpsend" target="otpekran">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="otpekran" target="kod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="kod" target="otpcheck">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="nie lub wygasł" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="otpcheck" target="retry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="retry" target="otpsend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="otpcheck" target="konto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="konto" target="startd1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="startd1" target="sukces">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="sukces" target="dalej">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Diagram pokazuje rejestrację specjalisty w serwisie. Specjalista wypełnia formularz (e-mail, telefon, numer PWZ), a system sprawdza poprawność formatu numeru PWZ i potwierdza numer telefonu jednorazowym kodem SMS (OTP). Po poprawnym wpisaniu kodu powstaje konto specjalisty i automatycznie rusza weryfikacja uprawnień w rejestrze (D1), a specjalista trafia do panelu w stanie „w trakcie&quot; (D2). Flow kończy się utworzonym kontem i widocznym statusem weryfikacji." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1030" width="1020" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c1-landing-dla-specjalistow.md&lt;/td&gt;&lt;td&gt;wejście do formularza rejestracji z landingu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c2-cennik-b2b.md&lt;/td&gt;&lt;td&gt;wejście do formularza rejestracji z cennika B2B&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;po utworzeniu konta automatycznie startuje weryfikacja PWZ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d2-stan-w-trakcie.md&lt;/td&gt;&lt;td&gt;po rejestracji specjalista ląduje w panelu w stanie „w trakcie&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;merytoryczną weryfikację przy niepewności automatu przejmuje ręczna kolejka admina&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B1&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b1-logowanie.md&lt;/td&gt;&lt;td&gt;limit prób OTP przyjęty przez analogię do logowania pacjenta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-WERYFIKACJA&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-weryfikacja-specjalisty.md&lt;/td&gt;&lt;td&gt;nowe konto wchodzi w stany cyklu weryfikacji (zarejestrowany → weryfikacja_auto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1210" width="1020" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PWZ&lt;/td&gt;&lt;td&gt;Numer prawa wykonywania zawodu, potwierdzający uprawnienia specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OTP&lt;/td&gt;&lt;td&gt;Jednorazowy kod wysyłany SMS-em, którym specjalista potwierdza swój numer telefonu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Walidacja formatu PWZ&lt;/td&gt;&lt;td&gt;Sprawdzenie, czy wpisany numer „wygląda poprawnie&quot; (długość, znaki) — bez sprawdzania w rejestrze.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Weryfikacja w rejestrze&lt;/td&gt;&lt;td&gt;Właściwe, merytoryczne sprawdzenie numeru PWZ w oficjalnym rejestrze — robi to dopiero flow D1.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;KRL/KIF&lt;/td&gt;&lt;td&gt;Oficjalne rejestry zawodowe, w których automat sprawdza numer PWZ specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Limit prób (rate limiting)&lt;/td&gt;&lt;td&gt;Ograniczenie liczby ponownych wysyłek i wpisań kodu OTP, chroniące przed nadużyciami.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Stan weryfikacji&lt;/td&gt;&lt;td&gt;Etap, na którym znajduje się konto specjalisty (np. zarejestrowany, weryfikacja_auto), wg cyklu CORE-WERYFIKACJA.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fallback&lt;/td&gt;&lt;td&gt;Ścieżka awaryjna — gdy automat nie potwierdzi PWZ, sprawę przejmuje człowiek (kolejka F1).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1590" width="1020" height="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

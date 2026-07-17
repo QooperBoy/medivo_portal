@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e10-statystyki" name="E10 — Statystyki specjalisty">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E10 — Statystyki specjalisty&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e10-statystyki.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1000" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="480" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="STATY" value="Ekran statystyk" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="140" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WYSW" value="Wyświetlenia profilu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KONW" value="Konwersja: profil -&gt; rezerwacja" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NSR" value="No-show rate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="140" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="560" y="90" width="480" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="EVP" value="Eventy: odsłony profilu (A4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EVR" value="Eventy: rezerwacje (A5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EVN" value="Eventy: visit.no_show (E7/G7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="135" y="170" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PIPE" value="Analytics pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="135" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AGREG" value="Agregacje per specjalista" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="135" y="410" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EVP" target="PIPE">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="175" />
+              <mxPoint x="570" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="EVR" target="PIPE">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="175" />
+              <mxPoint x="1030" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="EVN" target="PIPE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="PIPE" target="AGREG">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="AGREG" target="STATY">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="525" />
+              <mxPoint x="540" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="STATY" target="WYSW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="STATY" target="KONW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="STATY" target="NSR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ekran statystyk w panelu specjalisty, dostępny w każdej chwili. System zbiera zdarzenia z serwisu — odsłony profilu, dokonane rezerwacje i niestawienia się pacjentów — przetwarza je w tle i pokazuje specjaliście trzy metryki: ile razy oglądano jego profil, jaka część odwiedzin kończy się rezerwacją (konwersja) oraz jak często jego pacjenci nie przychodzą na wizyty (no-show rate). To ekran wyłącznie do odczytu — niczego się tu nie zmienia." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="630" width="1000" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A1&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a1-wejscie-seo.md&lt;/td&gt;&lt;td&gt;analytics odsłon startuje od wejść z SEO/direct&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;odsłony profilu są źródłem metryki wyświetleń i początkiem konwersji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;dokonane rezerwacje domykają metrykę konwersji profil → rezerwacja&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E7&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e7-no-show.md&lt;/td&gt;&lt;td&gt;oznaczenia &quot;nie stawił się&quot; generują eventy do no-show rate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;eventy visit.no_show to wspólne źródło danych ze scoringiem&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="800" width="1000" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;statystyki&lt;/td&gt;&lt;td&gt;zestaw liczb pokazujących specjaliście, jak radzi sobie jego profil i praktyka&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;wyświetlenia profilu&lt;/td&gt;&lt;td&gt;liczba odsłon publicznego profilu specjalisty przez odwiedzających&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;konwersja&lt;/td&gt;&lt;td&gt;odsetek odwiedzin profilu, które zakończyły się rezerwacją wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;no-show rate&lt;/td&gt;&lt;td&gt;odsetek wizyt, na które pacjenci danego specjalisty się nie stawili&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;event&lt;/td&gt;&lt;td&gt;pojedyncze zdarzenie rejestrowane przez system (odsłona, rezerwacja, no-show)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;analytics pipeline&lt;/td&gt;&lt;td&gt;mechanizm zbierający zdarzenia i przetwarzający je na czytelne metryki&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;agregacja&lt;/td&gt;&lt;td&gt;zsumowanie wielu pojedynczych zdarzeń w liczby per specjalista&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;batch&lt;/td&gt;&lt;td&gt;przetwarzanie danych partiami co jakiś czas, a nie natychmiast po każdym zdarzeniu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;lejek&lt;/td&gt;&lt;td&gt;ścieżka użytkownika od wyszukiwania przez profil do rezerwacji, mierzona etapami&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1070" width="1000" height="350" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

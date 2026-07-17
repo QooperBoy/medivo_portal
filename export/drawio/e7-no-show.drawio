@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e7-no-show" name="E7 — No-show (oznaczenie „nie stawił się”)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E7 — No-show (oznaczenie &quot;nie stawił się&quot;)&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e7-no-show.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="440" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="SZCZ" value="Wizyta po terminie na liście rezerwacji (E4) lub do potwierdzenia (E8)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="60" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BTN" value="Przycisk: pacjent nie stawił się na wizycie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="170" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="POTW" value="Okno potwierdzenia: czy na pewno oznaczyć nieobecność?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="270" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="INFO" value="Wizyta widoczna w panelu ze statusem no_show (nieobecność)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="380" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="530" y="90" width="700" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="STAN" value="Zmiana stanu wizyty: confirmed -&gt; no_show" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EVENT" value="System emituje zdarzenie visit.no_show" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="170" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="G7L" value="Silnik scoringu G7 dolicza nieobecność do licznika pacjenta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="POWIAD" value="Powiadomienie pacjenta o oznaczeniu nieobecności (G1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLOKG4" value="Blokada automatycznego uznania wizyty po 48 h (G4, Flaga 3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="480" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PROG" value="Czy pacjent osiągnął próg liczby nieobecności?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="420" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SPOR" value="Przycisk byłem/byłam w powiadomieniu otwiera spór (B6) dla admina (F3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="420" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SANKCJE" value="Sankcje progresywne: przy kolejnej rezerwacji przedpłata lub akceptacja (gate w A5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="570" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BRAK" value="Bez sankcji — nieobecność tylko zapisana w liczniku" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="570" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="SZCZ" target="BTN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="BTN" target="POTW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.25;" edge="1" parent="1" source="POTW" target="STAN">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="385" />
+              <mxPoint x="510" y="163" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.75;entryX=1;entryY=0.5;" edge="1" parent="1" source="STAN" target="INFO">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="495" y="188" />
+              <mxPoint x="495" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="STAN" target="EVENT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="EVENT" target="G7L">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="EVENT" target="POWIAD">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="EVENT" target="BLOKG4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="G7L" target="PROG">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed10" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="PROG" target="SANKCJE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed11" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="PROG" target="BRAK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="POWIAD" target="SPOR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Pokazuje, co się dzieje, gdy pacjent nie przyszedł na wizytę i specjalista oznacza ją przyciskiem &quot;nie stawił się&quot;. System zmienia stan wizyty na no_show, dolicza zdarzenie do licznika pacjenta w scoringu i — jeśli pacjent przekroczył próg — włącza sankcje (np. wymóg przedpłaty przy kolejnych rezerwacjach). Pacjent dostaje powiadomienie z przyciskiem &quot;byłem/byłam&quot;, którym może otworzyć spór rozstrzygany przez administratora; wizyta w stanie no_show lub spornym nie może zostać automatycznie potwierdzona jako odbyta." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="800" width="1190" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;przycisk &quot;nie stawił się&quot; dostępny przy wizycie po terminie na liście rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;to samo oznaczenie dostępne z listy wizyt do potwierdzenia&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;sankcja = gate (przedpłata lub akceptacja) w checkoucie pacjenta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B6&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b6-spor-no-show.md&lt;/td&gt;&lt;td&gt;przycisk &quot;byłem/byłam&quot; w powiadomieniu otwiera spór pacjenta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F3&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f3-spory.md&lt;/td&gt;&lt;td&gt;spór trafia do kolejki rozstrzyganej przez admina&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F8&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f8-konfiguracja-forka.md&lt;/td&gt;&lt;td&gt;progi sankcji konfigurowane per fork&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienie pacjenta o oznaczeniu wysyła notification engine (G1)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G3&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;brak prośby o opinię (G3) — wizyta się nie odbyła&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G4&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g4-auto-approval.md&lt;/td&gt;&lt;td&gt;stan no_show blokuje auto-approval T+48 h (Flaga 3)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;event visit.no_show zasila licznik i progi w scoringu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;przejścia confirmed → no_show oraz disputed wg kanonu stanów&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="970" width="1190" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;no-show&lt;/td&gt;&lt;td&gt;sytuacja, w której pacjent nie stawił się na umówioną wizytę bez odwołania&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;event visit.no_show&lt;/td&gt;&lt;td&gt;wewnętrzny sygnał systemu o niestawieniu się, uruchamiający scoring i powiadomienia&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;scoring&lt;/td&gt;&lt;td&gt;mechanizm zliczający historię pacjenta (m.in. no-show) i oceniający jego wiarygodność&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;próg sankcji&lt;/td&gt;&lt;td&gt;liczba no-show, po której system zaczyna stosować obostrzenia wobec pacjenta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sankcje progresywne&lt;/td&gt;&lt;td&gt;obostrzenia rosnące z każdym kolejnym no-show: najpierw tylko licznik, potem gate w checkoucie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;gate&lt;/td&gt;&lt;td&gt;dodatkowy warunek przy rezerwacji dla pacjenta z historią no-show: przedpłata lub akceptacja specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;auto-approval&lt;/td&gt;&lt;td&gt;automatyczne potwierdzenie po 48 h, że wizyta się odbyła — zablokowane przy no_show i sporze&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;spór&lt;/td&gt;&lt;td&gt;zakwestionowanie oznaczenia przez pacjenta (&quot;byłem/byłam&quot;), rozstrzygane przez admina&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;disputed&lt;/td&gt;&lt;td&gt;stan wizyty na czas trwania sporu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;fork&lt;/td&gt;&lt;td&gt;osobna instancja serwisu dla innej branży, z własnymi progami sankcji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;licznik no-show&lt;/td&gt;&lt;td&gt;prowadzona przez scoring liczba nieobecności pacjenta; źródło wskaźnika no-show w E4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;checkout (A5)&lt;/td&gt;&lt;td&gt;proces rezerwacji wizyty przez pacjenta — tam właśnie działa gate nałożony przez sankcje&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga 2&lt;/td&gt;&lt;td&gt;otwarta decyzja projektowa: czy sankcją jest przedpłata online, czy akceptacja specjalisty (oba warianty udokumentowane)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga 3&lt;/td&gt;&lt;td&gt;otwarta decyzja projektowa: auto-approval po 48 h musi być zablokowany przy no_show i sporze&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE (&quot;FE — widzi user&quot;)&lt;/td&gt;&lt;td&gt;część systemu widoczna dla użytkownika: ekrany i przyciski w przeglądarce&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;BE (&quot;BE — pod spodem&quot;)&lt;/td&gt;&lt;td&gt;część systemu niewidoczna dla użytkownika: serwery, obliczenia i baza danych&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1400" width="1190" height="540" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

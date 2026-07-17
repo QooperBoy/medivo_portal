@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="a7-potwierdzenie" name="A7 — Potwierdzenie rezerwacji">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;A7 — Potwierdzenie rezerwacji&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a7-potwierdzenie.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="460" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="WEJSCIE" value="Rezerwacja osiąga stan confirmed — wizyta właśnie została umówiona (A5/A6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="120" y="50" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="SUKCES" value="Ekran sukcesu: potwierdzenie rezerwacji na stronie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="170" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ICSFE" value="Pobranie pliku .ics — dodanie wizyty do własnego kalendarza" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EMAIL" value="E-mail z potwierdzeniem wizyty i załączonym plikiem .ics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="410" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SMS" value="SMS z linkiem do zarządzania wizytą (token samoobsługi)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="240" y="410" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="B3LINK" value="Samoobsługowa zmiana lub odwołanie wizyty przez link z tokenem (B3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="130" y="530" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="560" y="90" width="320" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="TOKENY" value="Wygenerowanie tokenów samoobsługi — bezpiecznych linków działających bez logowania" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="50" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ICSGEN" value="Wygenerowanie pliku .ics z terminem wizyty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="170" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENQUEUE" value="Zlecenie wysyłki powiadomień do kolejki silnika G1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="40" y="280" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="WEJSCIE" target="SUKCES">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="WEJSCIE" target="TOKENY">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="TOKENY" target="ENQUEUE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ICSGEN" target="ENQUEUE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ICSGEN" target="ICSFE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="SUKCES" target="ICSFE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ENQUEUE" target="EMAIL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ENQUEUE" target="SMS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="pacjent klika link w SMS-ie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="SMS" target="B3LINK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="pacjent klika link w e-mailu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="EMAIL" target="B3LINK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Pokazuje moment tuż po skutecznej rezerwacji: pacjent widzi ekran sukcesu i może pobrać plik z terminem do swojego kalendarza, a system w tle generuje tokeny samoobsługi i wysyła e-mail z potwierdzeniem oraz SMS ze specjalnym linkiem do zarządzania wizytą. Uczestniczą pacjent i system powiadomień. Flow zaczyna się, gdy rezerwacja osiąga stan „confirmed&quot; (z A5 lub po płatności online A6), a kończy dostarczeniem potwierdzeń i przekazaniem pacjentowi linku do zmiany lub odwołania wizyty (B3)." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="770" width="880" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;źródło stanu confirmed: płatność na miejscu lub akceptacja specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A6&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;dojście do confirmed przez płatność online (webhook)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;link z tokenem z SMS/e-maila prowadzi do zmiany/odwołania wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;notification engine faktycznie wysyła e-mail i SMS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G2&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;dalej działa harmonogram przypomnień T−24 h przed wizytą&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="950" width="880" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;confirmed&lt;/td&gt;&lt;td&gt;Stan rezerwacji ostatecznie potwierdzonej — wizyta jest umówiona.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Token samoobsługi&lt;/td&gt;&lt;td&gt;Specjalny link, którym pacjent zarządza wizytą (zmiana, odwołanie) bez logowania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TTL / single-use&lt;/td&gt;&lt;td&gt;Możliwe parametry tokenu: ograniczona ważność w czasie lub jednorazowe użycie (decyzja jeszcze otwarta).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Link zarządzania&lt;/td&gt;&lt;td&gt;Adres w SMS/e-mailu prowadzący do samoobsługowej zmiany lub odwołania wizyty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;.ics&lt;/td&gt;&lt;td&gt;Plik z terminem wizyty, który dodaje wydarzenie do kalendarza pacjenta (Google, Outlook itp.).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Enqueue&lt;/td&gt;&lt;td&gt;Wstawienie wysyłki powiadomień do kolejki zadań wykonywanych w tle.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Notification engine&lt;/td&gt;&lt;td&gt;Silnik systemowy (G1), który obsługuje wysyłkę e-maili i SMS-ów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Przypomnienie T−24 h&lt;/td&gt;&lt;td&gt;Automatyczne przypomnienie o wizycie wysyłane dobę przed terminem (G2).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kolejka (zadań)&lt;/td&gt;&lt;td&gt;Lista zadań do wykonania w tle — serwer dokłada zadanie, a automat wykonuje je po kolei, nie blokując pacjenta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ekran sukcesu&lt;/td&gt;&lt;td&gt;Strona pokazywana zaraz po udanej rezerwacji, z podsumowaniem wizyty i pobraniem pliku .ics.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE (frontend)&lt;/td&gt;&lt;td&gt;Interfejs — to, co użytkownik widzi i klika w przeglądarce.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;BE (backend)&lt;/td&gt;&lt;td&gt;Serwer platformy — część systemu działająca „pod spodem&quot;, niewidoczna dla użytkownika.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5, A6, B3, G1, G2&lt;/td&gt;&lt;td&gt;Identyfikatory innych flowów z mapy projektu — każdy ma własny diagram (A5/A6: warianty checkoutu, B3: odwołanie tokenem, G1: powiadomienia, G2: przypomnienia).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1220" width="880" height="460" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

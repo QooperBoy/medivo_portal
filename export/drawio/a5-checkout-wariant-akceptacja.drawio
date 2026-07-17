@@ -1,0 +1,250 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="a5-checkout-wariant-akceptacja" name="A5 — Checkout: wariant akceptacji specjalisty">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="2920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;A5 — Checkout: wariant akceptacji specjalisty (scoring gate)&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md — diagram sekwencji" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1660" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actP" value="&lt;b&gt;Pacjent&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actFE" value="&lt;b&gt;FE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actAPI" value="&lt;b&gt;Backend&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actQ" value="&lt;b&gt;Joby/Kolejka&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="930" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actS" value="&lt;b&gt;Specjalista&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actMSG" value="&lt;b&gt;SMS/Email&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="80" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeP" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="120" as="sourcePoint" />
+            <mxPoint x="140" y="1580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeFE" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="120" as="sourcePoint" />
+            <mxPoint x="430" y="1580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeAPI" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="120" as="sourcePoint" />
+            <mxPoint x="720" y="1580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeQ" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="120" as="sourcePoint" />
+            <mxPoint x="1010" y="1580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeS" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="120" as="sourcePoint" />
+            <mxPoint x="1300" y="1580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeMSG" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1590" y="120" as="sourcePoint" />
+            <mxPoint x="1590" y="1580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note0" value="wcześniejsze kroki identyczne jak w [[a5-checkout]]&lt;br&gt;(usługa, termin, dane, kod SMS, zgody)&lt;br&gt;— aż do scoring gate (G7)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=#d6b656;fontSize=11;align=left;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="240" y="135" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="1: scoring gate (G7): wymagana akceptacja" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="225" as="sourcePoint" />
+            <mxPoint x="720" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="225" />
+              <mxPoint x="790" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: „rezerwacja wymaga akceptacji”" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="305" as="sourcePoint" />
+            <mxPoint x="430" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3: klik „wyślij prośbę o wizytę”" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="360" as="sourcePoint" />
+            <mxPoint x="430" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4: POST utworzenie rezerwacji" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="415" as="sourcePoint" />
+            <mxPoint x="720" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5: locked → pending_approval" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="455" as="sourcePoint" />
+            <mxPoint x="720" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="455" />
+              <mxPoint x="790" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6: enqueue powiadomienia specjalisty (G1)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="535" as="sourcePoint" />
+            <mxPoint x="1010" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7: SMS/e-mail do specjalisty o prośbie" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="590" as="sourcePoint" />
+            <mxPoint x="1590" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8: ekran „czekamy na akceptację specjalisty”" style="html=1;fontSize=11;endArrow=open;endFill=0;dashed=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="645" as="sourcePoint" />
+            <mxPoint x="430" y="645" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1" value="alt [specjalista akceptuje prośbę]" style="rounded=0;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacing=6;fontSize=11;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="685" width="1030" height="840" as="geometry" />
+        </mxCell>
+        <mxCell id="m9" value="9: akceptacja w panelu specjalisty (E4)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="730" as="sourcePoint" />
+            <mxPoint x="720" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10: pending_approval → confirmed" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="770" as="sourcePoint" />
+            <mxPoint x="720" y="795" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="770" />
+              <mxPoint x="790" y="795" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" value="11: tokeny samoobsługi (A7)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="835" as="sourcePoint" />
+            <mxPoint x="720" y="860" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="835" />
+              <mxPoint x="790" y="860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="12: enqueue powiadomień pacjenta (G1)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="915" as="sourcePoint" />
+            <mxPoint x="1010" y="915" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="13: potwierdzenie + link zarządzania + .ics" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="970" as="sourcePoint" />
+            <mxPoint x="1590" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="1005" as="sourcePoint" />
+            <mxPoint x="1670" y="1005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el1" value="[else] specjalista odrzuca prośbę" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="648" y="1009" width="260" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m14" value="14: odrzucenie w panelu specjalisty (E4)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="1055" as="sourcePoint" />
+            <mxPoint x="720" y="1055" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m15" value="15: anulacja: cancelled_by_specialist" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1095" as="sourcePoint" />
+            <mxPoint x="720" y="1120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="1095" />
+              <mxPoint x="790" y="1120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m16" value="16: zwalnia slot → waitlista (G6)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1175" as="sourcePoint" />
+            <mxPoint x="1010" y="1175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m17" value="17: powiadomienie pacjenta o odrzuceniu" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1230" as="sourcePoint" />
+            <mxPoint x="1590" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="1265" as="sourcePoint" />
+            <mxPoint x="1670" y="1265" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="el2" value="[else] brak reakcji — mija limit 24 h" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="648" y="1269" width="280" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="m18" value="18: upływ limitu 24 h na akceptację" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1315" as="sourcePoint" />
+            <mxPoint x="720" y="1315" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m19" value="19: anulacja: cancelled_by_specialist" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1355" as="sourcePoint" />
+            <mxPoint x="720" y="1380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="1355" />
+              <mxPoint x="790" y="1380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m20" value="20: zwalnia slot → waitlista (G6)" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="1435" as="sourcePoint" />
+            <mxPoint x="1010" y="1435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m21" value="21: informacja o anulacji z braku reakcji" style="html=1;fontSize=11;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1490" as="sourcePoint" />
+            <mxPoint x="1590" y="1490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Wariant rezerwacji, w którym system — na podstawie scoringu pacjenta — wymaga, aby specjalista ręcznie zaakceptował prośbę o wizytę. Uczestniczą pacjent, specjalista (działający w swoim panelu) oraz system wysyłający powiadomienia. Flow zaczyna się od decyzji bramki scoringowej „wymagana akceptacja&quot;, a kończy potwierdzeniem wizyty po akceptacji albo anulacją i zwolnieniem terminu, gdy specjalista odrzuci prośbę lub nie zareaguje w ciągu 24 godzin." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1640" width="1660" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Plik&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;stany kanoniczne: pending_approval → confirmed / cancelled_by_specialist&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;wspólne kroki początkowe (lock, B7, OTP, zgody) aż do scoring gate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (przedpłata)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;alternatywna sankcja gate'u (przedpłata), którą ten wariant zastępuje bez płatności online&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;po akceptacji pełne potwierdzenie: tokeny, email + SMS, .ics&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A8&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a8-brak-slotow.md&lt;/td&gt;&lt;td&gt;wzorzec „podobni specjaliści&quot; po odrzuceniu (tu świadomie pominięty)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;analogiczny mechanizm zwalniania slotu na waitlistę&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B7&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b7-pacjent-podopieczny.md&lt;/td&gt;&lt;td&gt;krok „dla kogo wizyta&quot; we wcześniejszej, wspólnej części flow&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;specjalista akceptuje lub odrzuca prośbę w panelu rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E5&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e5-odwolanie-pojedyncze.md&lt;/td&gt;&lt;td&gt;analogia: zwalnianie slotu i propozycje alternatyw dla pacjenta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienia do specjalisty (prośba) i pacjenta (wynik)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G5&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g5-slot-lock.md&lt;/td&gt;&lt;td&gt;lock slotu we wcześniejszych, wspólnych krokach checkoutu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;slot zwolniony po odrzuceniu/timeoucie trafia na waitlistę&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;źródło decyzji o wymaganej ręcznej akceptacji&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1820" width="1660" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;Pojęcie&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring gate&lt;/td&gt;&lt;td&gt;Automatyczna bramka oceniająca wiarygodność pacjenta; tu skutkuje wymogiem ręcznej akceptacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pending_approval&lt;/td&gt;&lt;td&gt;Stan rezerwacji czekającej na decyzję specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Akceptacja / odrzucenie&lt;/td&gt;&lt;td&gt;Decyzja specjalisty w panelu, czy przyjmuje prośbę o wizytę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Timeout&lt;/td&gt;&lt;td&gt;Limit czasu na reakcję specjalisty (założone 24 h); po jego upływie rezerwacja anuluje się sama.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;cancelled_by_specialist&lt;/td&gt;&lt;td&gt;Stan rezerwacji anulowanej po stronie specjalisty (odrzucenie lub brak reakcji).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista oczekujących powiadamianych o zwolnionym terminie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Token samoobsługi&lt;/td&gt;&lt;td&gt;Link dla pacjenta do zarządzania wizytą bez logowania, generowany po akceptacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;.ics&lt;/td&gt;&lt;td&gt;Plik z terminem wizyty do dodania do kalendarza pacjenta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fallback&lt;/td&gt;&lt;td&gt;Rozwiązanie zapasowe — ten wariant zastępuje przedpłatę, gdyby serwis ruszył bez płatności online.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring&lt;/td&gt;&lt;td&gt;Wewnętrzna punktacja wiarygodności pacjenta (historia nieobecności i późnych odwołań) — źródło decyzji bramki.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;locked&lt;/td&gt;&lt;td&gt;Stan z wcześniejszej, wspólnej części checkoutu — termin zablokowany na 10 minut dla pacjenta (lock G5, TTL).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;confirmed&lt;/td&gt;&lt;td&gt;Kanoniczny stan „wizyta umówiona&quot; — osiągany tu po akceptacji specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Panel specjalisty (E4)&lt;/td&gt;&lt;td&gt;Miejsce w serwisie, w którym specjalista zarządza rezerwacjami — tam akceptuje lub odrzuca prośby o wizytę.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kolejka (joby)&lt;/td&gt;&lt;td&gt;Zadania wykonywane w tle: powiadomienia, pilnowanie limitu czasu na decyzję, przekazanie terminu na waitlistę.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2320" width="1660" height="500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,226 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="00-katalog-eventow" name="CORE-EVENTY — Katalog eventów domenowych (silniki G1–G13)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="4160" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;CORE-EVENTY — Katalog eventów domenowych (silniki G1–G13)&lt;/b&gt;&lt;br&gt;źródło: diagrams/00-core/00-katalog-eventow.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="frameREZ" value="Domena: rezerwacje" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=top;align=left;fontStyle=1;fontSize=13;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="1250" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="frameOPI" value="Domena: wizyty i opinie" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=top;align=left;fontStyle=1;fontSize=13;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="830" width="1250" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="framePAYD" value="Domena: płatności (Flaga 2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=top;align=left;fontStyle=1;fontSize=13;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1360" width="1250" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="frameROPS" value="Domena: RODO / SEO" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=top;align=left;fontStyle=1;fontSize=13;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1670" width="1250" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_A5" value="A5: pacjent ukończył checkout - powstała rezerwacja" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="140" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_E56" value="E5/E6: specjalista odwołuje wizytę (pojedynczo lub hurtowo, np. urlop)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="250" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_B3" value="B3: pacjent odwołuje wizytę linkiem z wiadomości" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="360" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_E7" value="E7: specjalista zgłasza nieobecność pacjenta (no-show)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="580" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_CREATED" value="booking.created" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="145" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_CANC" value="booking.cancelled" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="255" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_LATE" value="booking.cancelled_late" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="365" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_SLOT" value="slot.released — robocza" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="475" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_NOSHOW" value="visit.no_show" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="585" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G2" value="G2: przypomnienie o wizycie 24 h przed terminem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="130" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G1" value="G1: silnik powiadomień - wysyłka SMS/e-mail (retry, dedup, opt-out)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="240" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G10" value="G10: dwustronna synchronizacja z kalendarzem Google" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="350" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G8" value="G8: wykrywanie nadużyć (multikonta, podejrzane serie rezerwacji)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="460" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G7" value="G7: silnik scoringu - zlicza no-show i późne odwołania" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="570" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G6" value="G6: silnik waitlisty - kaskada propozycji zwolnionego terminu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="680" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_MSG" value="skutek: SMS/e-mail do pacjenta i specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="240" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_GATE" value="skutek: dodatkowa bariera (gate) w checkoucie (A5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="420" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_E4" value="skutek: wskaźnik no-show pacjenta w panelu specjalisty (E4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="530" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_F4" value="skutek: podejrzane konta trafiają do przeglądu admina (F4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="640" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G4" value="G4: automat uznaje wizytę za odbytą 48 h po terminie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="870" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_E8" value="E8: specjalista ręcznie potwierdza, że wizyta się odbyła" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1000" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_B6" value="B6: pacjent otwiera spór o oznaczoną nieobecność ('byłem')" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1110" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_F2" value="F2: admin moderuje i zatwierdza opinię pacjenta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1220" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_APPR" value="visit.approved — robocza" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="930" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_DISP" value="dispute.opened — robocza" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1115" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_REVOK" value="review.approved" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1225" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G3" value="G3: prośba o opinię 2 h po odbytej wizycie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="980" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_F3" value="skutek: zgłoszenie sporu trafia do rozstrzygnięcia przez admina (F3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="1110" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_OPUB" value="skutek: opinia pojawia się publicznie na profilu specjalisty (A4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="1220" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_PAY" value="procesor płatności - zewnętrzny operator wysyłający webhooki" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1410" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_A6T" value="A6: job anuluje rezerwację po ok. 30 min bez wpłaty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1520" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_PAYOK" value="payment.succeeded — robocza" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1415" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_PAYRF" value="payment.refunded — robocza" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1525" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G9" value="G9: obsługa webhooków płatności (potwierdzenia wpłat, zwroty)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1460" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_RECON" value="skutek: reconciliation - uzgadnianie wpłat z rezerwacjami" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="1460" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_B9" value="B9: pacjent wnioskuje o usunięcie konta lub eksport danych" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1720" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_F5" value="F5: admin obsługuje wniosek RODO użytkownika" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1830" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_A5Z" value="A5: pacjent zaznacza zgody RODO w checkoucie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1940" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PUB_D3" value="D3: profil specjalisty startuje publicznie (go-live)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="2050" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_ERAS" value="rodo.erasure_requested — robocza" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1775" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_CONS" value="consent.recorded — robocza" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1945" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EV_PROF" value="profile.published — robocza" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="2055" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G11" value="G11: joby RODO (usuwanie danych, rejestr zgód, retencja logów)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1855" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ENG_G12" value="G12: joby SEO (dane dla wyszukiwarek)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="2050" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_AUD" value="skutek: zapis operacji na danych w audit logu (F10)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="1855" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EFF_SMAP" value="skutek: odświeżenie sitemapy i danych schema.org dla Google" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="2050" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_A5" target="EV_CREATED"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="automatyczna rezerwacja z waitlisty (auto-book, B4)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ENG_G6" target="EV_CREATED"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="wpłata potwierdza rezerwację: pending_payment -&gt; confirmed" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ENG_G9" target="EV_CREATED"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_CREATED" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="planuje przypomnienie na 24 h przed wizytą" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_CREATED" target="ENG_G2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="ustawia timer 48 h po terminie wizyty" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_CREATED" target="ENG_G4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="analiza wzorców i limitów rezerwacji" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_CREATED" target="ENG_G8"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_CREATED" target="ENG_G10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" value="odwołanie w dozwolonym czasie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_B3" target="EV_CANC"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" value="odwołanie za późno (po dozwolonym czasie)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_B3" target="EV_LATE"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_E56" target="EV_CANC"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_A6T" target="EV_CANC"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.25;" edge="1" parent="1" source="EV_CANC" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.25;" edge="1" parent="1" source="EV_CANC" target="ENG_G10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_CANC" target="EV_SLOT"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_LATE" target="ENG_G7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="1" source="EV_LATE" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="EV_LATE" target="EV_SLOT"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_SLOT" target="ENG_G6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e20" value="powiadomienie oczekującego, okno 2 h na potwierdzenie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ENG_G6" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_E7" target="EV_NOSHOW"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="1" source="EV_NOSHOW" target="ENG_G7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e23" value="blokuje automatyczne uznanie wizyty (Flaga 3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="1" source="EV_NOSHOW" target="ENG_G4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e24" value="komunikat o sankcji dla pacjenta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=1;entryY=0.75;" edge="1" parent="1" source="EV_NOSHOW" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e25" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ENG_G1" target="EFF_MSG"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e26" value="wysyłka przypomnienia 24 h przed wizytą" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ENG_G2" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ENG_G7" target="EFF_GATE"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e28" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ENG_G7" target="EFF_E4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e29" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ENG_G8" target="EFF_F4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_E8" target="EV_APPR"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e31" value="po 48 h, jeśli nic nie blokuje (Flaga 3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ENG_G4" target="EV_APPR"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e32" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_APPR" target="ENG_G3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e33" value="wysyłka prośby o opinię z tokenem (B5)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ENG_G3" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e34" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_B6" target="EV_DISP"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e35" value="otwarty spór blokuje automatyczne uznanie (Flaga 3)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=1;" edge="1" parent="1" source="EV_DISP" target="ENG_G4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e36" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_DISP" target="EFF_F3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e37" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_F2" target="EV_REVOK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e38" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_REVOK" target="EFF_OPUB"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e39" value="powiadomienie specjalisty o nowej opinii" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=1;" edge="1" parent="1" source="EV_REVOK" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_PAY" target="EV_PAYOK"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e41" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_PAY" target="EV_PAYRF"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e42" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.25;" edge="1" parent="1" source="EV_PAYOK" target="ENG_G9"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e43" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="1" source="EV_PAYRF" target="ENG_G9"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e44" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ENG_G9" target="EFF_RECON"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e45" value="powiadomienia o wpłacie lub zwrocie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ENG_G9" target="ENG_G1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e46" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_B9" target="EV_ERAS"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e47" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_F5" target="EV_ERAS"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e48" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_ERAS" target="ENG_G11"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e49" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_A5Z" target="EV_CONS"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e50" value="zapis do rejestru zgód" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_CONS" target="ENG_G11"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e51" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ENG_G11" target="EFF_AUD"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e52" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="PUB_D3" target="EV_PROF"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e53" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EV_PROF" target="ENG_G12"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e54" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ENG_G12" target="EFF_SMAP"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;To zbiorcza mapa „układu nerwowego” systemu: pokazuje, jakie zdarzenia (eventy) powstają w wyniku działań pacjentów, specjalistów i adminów oraz które automatyczne silniki na nie reagują — wysyłką powiadomień, naliczaniem sankcji, obsługą płatności, jobami RODO czy odświeżaniem danych dla wyszukiwarek. Diagram nie ma jednego początku ani końca — działa jak katalog: każde zdarzenie (np. utworzenie lub odwołanie rezerwacji) uruchamia własną kaskadę automatycznych skutków. Dokumentuje też silniki G1–G3 i G8–G13, które nie mają osobnych diagramów." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2210" width="1250" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Diagram&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CORE-STANY&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-stany-rezerwacji.md&lt;/td&gt;&lt;td&gt;eventy z katalogu odpowiadają przejściom między stanami rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;ukończony checkout publikuje booking.created; zgody RODO zapisuje consent.recorded&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A6&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-przedplata.md&lt;/td&gt;&lt;td&gt;timeout płatności publikuje booking.cancelled; pełny flow płatności i webhooków&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5 (wariant akceptacji)&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout-wariant-akceptacja.md&lt;/td&gt;&lt;td&gt;fallback sankcji scoringu, gdy płatności online są wyłączone (Flaga 2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;booking.created zasila wysyłkę potwierdzenia przez G1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;zatwierdzona opinia (review.approved) jest publikowana na profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;odwołanie pacjenta publikuje booking.cancelled lub booking.cancelled_late&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B4&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b4-waitlista.md&lt;/td&gt;&lt;td&gt;auto-book z waitlisty (G6) tworzy nowy booking.created&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B5&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b5-wystawienie-opinii.md&lt;/td&gt;&lt;td&gt;G3 wysyła prośbę o opinię z jednorazowym tokenem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B6&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b6-spor-no-show.md&lt;/td&gt;&lt;td&gt;otwarcie sporu publikuje dispute.opened i blokuje G4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B9&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b9-rodo-self-service.md&lt;/td&gt;&lt;td&gt;wniosek o usunięcie konta/eksport publikuje rodo.erasure_requested&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B10&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b10-preferencje-powiadomien.md&lt;/td&gt;&lt;td&gt;opt-out z preferencji respektowany przez notification engine (G1)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d3-go-live.md&lt;/td&gt;&lt;td&gt;go-live profilu publikuje profile.published dla SEO jobów (G12)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;scoring (G7) zasila wskaźnik no-show pacjenta widoczny przy rezerwacjach&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E5&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e5-odwolanie-pojedyncze.md&lt;/td&gt;&lt;td&gt;odwołanie specjalisty publikuje booking.cancelled&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E6&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e6-tryb-urlop.md&lt;/td&gt;&lt;td&gt;hurtowe odwołania (urlop) publikują booking.cancelled&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E7&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e7-no-show.md&lt;/td&gt;&lt;td&gt;oznaczenie nieobecności publikuje visit.no_show&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;ręczny approval wizyty publikuje visit.approved i startuje timer G3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F2&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f2-moderacja-opinii.md&lt;/td&gt;&lt;td&gt;moderacja publikuje review.approved i skutkuje publikacją opinii&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F3&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f3-spory.md&lt;/td&gt;&lt;td&gt;dispute.opened tworzy ticket sporu do rozstrzygnięcia&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F4&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f4-anty-abuse.md&lt;/td&gt;&lt;td&gt;flagi fraud detection (G8) trafiają do kolejki przeglądu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F5&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f5-uzytkownicy.md&lt;/td&gt;&lt;td&gt;wnioski RODO obsługiwane przez admina publikują rodo.erasure_requested&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F10&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f10-audit-log.md&lt;/td&gt;&lt;td&gt;joby RODO (G11) zapisują operacje na danych w audit logu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G4&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g4-auto-approval.md&lt;/td&gt;&lt;td&gt;auto-approval T+48 h publikuje visit.approved; blokowany przez no-show/spór (Flaga 3)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G5&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g5-slot-lock.md&lt;/td&gt;&lt;td&gt;lock slotu jest timerowy i nie publikuje eventów domenowych (założenie)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;slot.released uruchamia kaskadę waitlisty z oknem 2 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;booking.cancelled_late i visit.no_show zasilają scoring i gate w checkoucie&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2420" width="1250" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Event (zdarzenie domenowe)&lt;/td&gt;&lt;td&gt;Sygnał „coś się stało” (np. booking.created), na który automatycznie reagują inne części systemu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Publisher&lt;/td&gt;&lt;td&gt;Flow lub system zewnętrzny, który emituje zdarzenie (np. checkout publikuje booking.created).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Silnik (konsument)&lt;/td&gt;&lt;td&gt;Automatyczny proces backendowy reagujący na zdarzenie — np. wysyłka powiadomień czy naliczanie sankcji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Webhook&lt;/td&gt;&lt;td&gt;Sygnał od zewnętrznego procesora płatności o wyniku transakcji (wpłata, zwrot).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Reconciliation&lt;/td&gt;&lt;td&gt;Uzgadnianie płatności — porównanie wpłat u procesora z rezerwacjami w systemie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Scoring&lt;/td&gt;&lt;td&gt;Punktowa ocena wiarygodności pacjenta budowana z nieobecności i późnych odwołań.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista oczekujących, którym system automatycznie proponuje zwolnione terminy.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Opt-out&lt;/td&gt;&lt;td&gt;Rezygnacja użytkownika z danego kanału powiadomień, respektowana przez silnik wysyłki.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RODO&lt;/td&gt;&lt;td&gt;Przepisy o ochronie danych osobowych — stąd joby usuwania danych, rejestr zgód i retencja logów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sitemap / schema.org&lt;/td&gt;&lt;td&gt;Dane dla wyszukiwarek odświeżane po publikacji profilu, żeby poprawić widoczność w Google.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Audit log&lt;/td&gt;&lt;td&gt;Trwały zapis operacji na danych wrażliwych, prowadzony do celów kontroli.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Nazwa robocza&lt;/td&gt;&lt;td&gt;Event, którego nazwy mapa projektu nie definiuje — zaproponowany tymczasowo i zgłoszony w rozbieżnościach.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Retry&lt;/td&gt;&lt;td&gt;Automatyczne ponawianie nieudanej operacji (np. wysyłki SMS-a), aż się powiedzie albo wyczerpie się limit prób.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dedup (deduplikacja)&lt;/td&gt;&lt;td&gt;Ochrona przed podwójnym wykonaniem tej samej operacji — np. wysłaniem dwóch identycznych wiadomości, gdy event dotrze do silnika powtórnie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Idempotencja&lt;/td&gt;&lt;td&gt;Cecha operacji, którą można bezpiecznie powtórzyć bez podwójnego skutku — fundament mechanizmów retry i dedup przy przetwarzaniu eventów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FIFO&lt;/td&gt;&lt;td&gt;„First in, first out” — kolejka obsługiwana w kolejności zapisów: kto pierwszy się zapisał, ten pierwszy dostaje propozycję.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kaskada&lt;/td&gt;&lt;td&gt;Automatyczne przechodzenie propozycji terminu do kolejnych osób z kolejki, gdy poprzednia nie zareaguje (G6).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Okno 2 h&lt;/td&gt;&lt;td&gt;Czas, jaki osoba z waitlisty ma na potwierdzenie zaproponowanego terminu, zanim propozycja przejdzie dalej (G6).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate&lt;/td&gt;&lt;td&gt;Dodatkowa bariera w checkoucie (przedpłata albo akceptacja specjalisty) nakładana przez scoring (G7).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Sankcje progresywne&lt;/td&gt;&lt;td&gt;Kary rosnące z kolejnymi przewinieniami pacjenta: ostrzeżenie, gate w checkoucie, blokada konta (G7).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Próg scoringu&lt;/td&gt;&lt;td&gt;Wartość licznika przewinień, po której przekroczeniu włącza się sankcja; konfigurowana przez operatora (F8).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;No-show&lt;/td&gt;&lt;td&gt;Nieobecność pacjenta na umówionej wizycie bez wcześniejszego odwołania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Job / timer / scheduler&lt;/td&gt;&lt;td&gt;Zadanie wykonywane w tle serwera: timer odlicza czas od zdarzenia, scheduler planuje wykonanie na konkretny moment.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;T−24 h / T+2 h / T+48 h&lt;/td&gt;&lt;td&gt;Zapis czasu względem terminu wizyty (T): 24 godziny przed nią, 2 godziny po niej, 48 godzin po niej.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;P0 / P1 / P2&lt;/td&gt;&lt;td&gt;Priorytety wdrożenia silników: P0 = niezbędne na start platformy, P1/P2 = kolejne etapy rozwoju.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Flaga 2 / Flaga 3&lt;/td&gt;&lt;td&gt;Otwarte decyzje projektowe: Flaga 2 — czy platforma startuje z płatnościami online; Flaga 3 — blokada automatycznego uznania wizyty przy no-show lub sporze.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Retencja&lt;/td&gt;&lt;td&gt;Ograniczony czas przechowywania danych (np. logów z adresami IP), po którym system automatycznie je usuwa.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3270" width="1250" height="820" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

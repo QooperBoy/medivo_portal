@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e9-eksport-ics" name="E9 — Eksport .ics (feed kalendarza)">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E9 — Eksport .ics (feed kalendarza)&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e9-eksport-ics.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="ekran" value="Ekran eksportu kalendarza" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="50" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="regen" value="Unieważnij / nowy token" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gener" value="Generuj URL feedu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="urlbox" value="Tokenizowany URL do skopiowania" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="230" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="instr" value="Instrukcja: Google / Apple" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="320" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kal" value="Kalendarz Google/Apple specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="110" y="430" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="440" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="token" value="Token feedu per specjalista" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="book" value="Rezerwacje z bookings API (E4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="320" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="feed" value="Endpoint feedu (GET po tokenie)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="430" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="genics" value="Generator .ics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="430" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ekran" target="gener">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ekran" target="regen">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="gener" target="token">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="regen" target="token">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="token" target="urlbox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="urlbox" target="instr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="cykliczne pobranie" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="kal" target="feed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="feed" target="genics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="book" target="genics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="plik .ics" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="genics" target="kal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Pokazuje, jak specjalista podłącza swoje wizyty z serwisu do prywatnego kalendarza Google lub Apple. W panelu generuje specjalny, tokenizowany adres URL i wkleja go do swojego kalendarza według instrukcji; od tej pory kalendarz sam cyklicznie pobiera plik .ics z aktualnymi wizytami. Przepływ działa tylko w jedną stronę (odczyt) — a gdyby adres wyciekł, specjalista może unieważnić token i wygenerować nowy." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="640" width="880" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;feed czyta ten sam model dostępności/grafiku co reszta systemu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;wizyty do pliku .ics pochodzą z bookings API&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G10&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;sync dwukierunkowy z kalendarzem to osobny, przyszły silnik G10&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="820" width="880" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;.ics&lt;/td&gt;&lt;td&gt;standardowy format pliku kalendarza, rozumiany przez Google Calendar i Apple Calendar&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;feed kalendarza&lt;/td&gt;&lt;td&gt;adres, spod którego zewnętrzny kalendarz cyklicznie pobiera aktualną listę wizyt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;tokenizowany URL&lt;/td&gt;&lt;td&gt;adres feedu zawierający tajny, losowy klucz — tylko kto zna adres, ten widzi wizyty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;token&lt;/td&gt;&lt;td&gt;tajny klucz w adresie feedu, pełniący rolę jedynego &quot;hasła&quot; dostępu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unieważnienie tokenu&lt;/td&gt;&lt;td&gt;wyłączenie starego adresu feedu (np. po wycieku) i wygenerowanie nowego&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;read-only&lt;/td&gt;&lt;td&gt;dostęp tylko do odczytu — kalendarz zewnętrzny nie może niczego zmienić w serwisie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sync dwukierunkowy&lt;/td&gt;&lt;td&gt;przyszła pełna synchronizacja w obie strony (zmiany w Google widoczne w serwisie) — silnik G10&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;minimalizacja danych&lt;/td&gt;&lt;td&gt;zasada, by plik .ics zawierał tylko niezbędne informacje o wizycie i pacjencie&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1050" width="880" height="340" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e2e-2-zmiana-terminu" name="E2E-2 — Pacjent zmienia termin">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E2E-2 — Pacjent zmienia termin&lt;/b&gt;&lt;br&gt;źródło: diagrams/e2e/e2e-2-zmiana-terminu.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="110" y="20" width="880" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7" value="&lt;b&gt;A7&lt;/b&gt;&lt;br&gt;link zarządzania (SMS/email)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nB3" value="&lt;b&gt;B3&lt;/b&gt;&lt;br&gt;zmiana/odwołanie tokenem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="270" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nG6" value="&lt;b&gt;G6&lt;/b&gt;&lt;br&gt;waitlist engine FIFO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nB4" value="&lt;b&gt;B4&lt;/b&gt;&lt;br&gt;inny pacjent przejmuje slot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="880" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nA7" target="nB3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="zwolniony slot" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="nB3" target="nG6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="powiadomienie + okno 2 h" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="nG6" target="nB4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="&lt;b&gt;Notatki (1/2)&lt;/b&gt;&lt;br&gt;• Wyjątek od konwencji: bez subgraph FE/BE — węzły to całe flowy (kompozycja ścieżki), nie kroki FE/BE.&lt;br&gt;• Punkt startu: pacjent klika link z tokenem samoobsługi wysłany w A7 (SMS/email), bez logowania.&lt;br&gt;• B3: walidacja tokenu (TTL, zweryfikowany kanał), polityka X h; odwołanie po terminie → event booking.cancelled_late → G7 (poza tą ścieżką, patrz b3-odwolanie-tokenem)." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF9B2;strokeColor=#d6b656;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="380" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="&lt;b&gt;Notatki (2/2)&lt;/b&gt;&lt;br&gt;• G6: FIFO, okno 2 h na potwierdzenie/auto-book; brak potwierdzenia → kaskada do następnego z listy (patrz g6-waitlist-engine).&lt;br&gt;• Koniec ścieżki wg mapy: slot przejmuje INNY pacjent z waitlisty (B4) — dwóch różnych pacjentów w jednej ścieżce.&lt;br&gt;• Diagramy składowe: a7-potwierdzenie, b3-odwolanie-tokenem, g6-waitlist-engine, b4-waitlista." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF9B2;strokeColor=#d6b656;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="210" width="380" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legenda:&lt;/b&gt; niebieski = flow pacjenta · pomarańczowy = silnik (BE) · dwóch różnych pacjentów w ścieżce:&lt;br&gt;jeden zwalnia slot (A7 → B3), drugi przejmuje go z waitlisty (G6 → B4)" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="980" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="panel1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ścieżka zmiany terminu wizyty: pacjent klika link z SMS-a lub emaila (bez logowania), odwołuje albo przesuwa wizytę, a system natychmiast proponuje zwolniony termin osobom z listy oczekujących — po kolei, aż ktoś go przejmie. W ścieżce występuje dwóch różnych pacjentów (jeden zwalnia slot, drugi go przejmuje) oraz system, który obsługuje waitlistę automatycznie. Flow zaczyna się od kliknięcia linku z potwierdzenia rezerwacji, a kończy przejęciem terminu przez innego pacjenta." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="110" y="460" width="880" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panel2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A7&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a7-potwierdzenie.md&lt;/td&gt;&lt;td&gt;źródło linku z tokenem samoobsługi (SMS/email po rezerwacji)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;zmiana lub odwołanie wizyty tokenem, bez logowania&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G6&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g6-waitlist-engine.md&lt;/td&gt;&lt;td&gt;zwolniony slot trafia do kaskady waitlisty (FIFO, okno 2 h)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B4&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b4-waitlista.md&lt;/td&gt;&lt;td&gt;inny pacjent z waitlisty potwierdza i przejmuje slot&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G7&lt;/td&gt;&lt;td&gt;diagrams/g-silniki/g7-scoring-engine.md&lt;/td&gt;&lt;td&gt;odwołanie po terminie (booking.cancelled_late) zasila scoring sankcji&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="110" y="640" width="880" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="panel3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Token samoobsługi&lt;/td&gt;&lt;td&gt;Unikalny link z potwierdzenia (SMS/email), który pozwala zarządzać wizytą bez logowania.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TTL&lt;/td&gt;&lt;td&gt;Ograniczony czas ważności tokenu lub propozycji — po jego upływie link/oferta wygasa.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Konkretny termin wizyty w kalendarzu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista pacjentów czekających na zwolnienie się terminu u danego specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FIFO&lt;/td&gt;&lt;td&gt;Kolejność obsługi listy: kto pierwszy się zapisał, ten pierwszy dostaje propozycję terminu.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Okno 2 h&lt;/td&gt;&lt;td&gt;Czas, jaki pacjent z waitlisty ma na potwierdzenie propozycji, zanim slot trafi do następnej osoby.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Kaskada&lt;/td&gt;&lt;td&gt;Automatyczne przechodzenie propozycji slotu do kolejnych osób z listy, gdy poprzednia nie odpowie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Polityka X h&lt;/td&gt;&lt;td&gt;Reguła określająca, do ilu godzin przed wizytą można ją odwołać bez konsekwencji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;booking.cancelled_late&lt;/td&gt;&lt;td&gt;Zdarzenie oznaczające odwołanie po dozwolonym terminie — obniża scoring pacjenta.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Auto-book&lt;/td&gt;&lt;td&gt;Automatyczna rezerwacja zwolnionego slotu dla pacjenta z waitlisty po jego potwierdzeniu.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="110" y="910" width="880" height="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

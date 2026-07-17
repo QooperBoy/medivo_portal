@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e15-placowka-zespol" name="E15 — Placówka / zespół">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1560" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E15 — Placówka / zespół&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e15-placowka-zespol.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="15" width="880" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="420" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="konto" value="Konto placówki" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="120" y="50" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zespol" value="Lista specjalistów zespołu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="150" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="multi" value="Widok multi-kalendarz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="150" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dodaj" value="Dodaj specjalistę do zespołu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="260" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zastep" value="Wyznacz specjalistę zastępczego" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="220" y="370" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="440" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="mkal" value="Multi-kalendarz: grafiki E2 zespołu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="50" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rbac" value="RBAC: role placówka / specjalista" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="160" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="weryf" value="Weryfikacja PWZ nowego (D1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="270" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="przen" value="Przepisanie wizyt na zastępcę" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="270" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pow" value="Powiadomienie pacjentów (G1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="240" y="380" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="konto" target="zespol">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="konto" target="multi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="zespol" target="dodaj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="zespol" target="zastep">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="270" />
+              <mxPoint x="250" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" edge="1" parent="1" source="dodaj" target="rbac">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="360" />
+              <mxPoint x="480" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="dodaj" target="weryf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="mkal" target="multi">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="170" />
+              <mxPoint x="490" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="zastep" target="przen">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="490" />
+              <mxPoint x="740" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="przen" target="pow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Panel dla placówki (np. poradni zatrudniającej kilku logopedów), która zarządza zespołem specjalistów z jednego konta. Placówka dodaje nowych specjalistów (każdy przechodzi własną weryfikację PWZ), ogląda grafiki całego zespołu w widoku multi-kalendarza i — gdy któryś specjalista jest nieobecny — wyznacza zastępcę, na którego system przepisuje wizyty. Pacjenci przepisanych wizyt dostają powiadomienie i mogą odwołać wizytę, jeśli zmiana im nie odpowiada." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="620" width="880" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c3-rejestracja.md&lt;/td&gt;&lt;td&gt;dodanie specjalisty do zespołu to wariant rejestracji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;każdy nowy członek zespołu przechodzi własną weryfikację PWZ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;weryfikacja członków zespołu przechodzi przez kolejkę admina&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;multi-kalendarz to widok grafików E2 całego zespołu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E6&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e6-tryb-urlop.md&lt;/td&gt;&lt;td&gt;zastępca to alternatywa dla trybu urlop (odwołań bulk) w placówkach&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B3&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b3-odwolanie-tokenem.md&lt;/td&gt;&lt;td&gt;pacjent przepisanej wizyty może ją odwołać tokenem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G1&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;powiadomienia pacjentów o zastępstwie wysyła notification engine (G1)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F9&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f9-rbac-wertykale.md&lt;/td&gt;&lt;td&gt;RBAC adminów to odrębny mechanizm od ról placówka/specjalista&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="790" width="880" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;placówka&lt;/td&gt;&lt;td&gt;firma/poradnia zatrudniająca wielu specjalistów, zarządzająca nimi z jednego konta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;zespół&lt;/td&gt;&lt;td&gt;lista specjalistów przypisanych do konta placówki&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RBAC&lt;/td&gt;&lt;td&gt;system ról i uprawnień — rozdziela, co może konto placówki, a co pojedynczy specjalista&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;multi-kalendarz&lt;/td&gt;&lt;td&gt;widok grafików wszystkich członków zespołu obok siebie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PWZ&lt;/td&gt;&lt;td&gt;numer prawa wykonywania zawodu — każdy dodany specjalista jest weryfikowany osobno&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;specjalista zastępczy&lt;/td&gt;&lt;td&gt;członek zespołu przejmujący wizyty nieobecnego specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;przepisanie wizyt&lt;/td&gt;&lt;td&gt;przeniesienie umówionych wizyt na zastępcę zamiast ich odwoływania&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;token odwołania&lt;/td&gt;&lt;td&gt;link w powiadomieniu, którym pacjent może odwołać przepisaną wizytę bez logowania&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1140" width="880" height="320" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

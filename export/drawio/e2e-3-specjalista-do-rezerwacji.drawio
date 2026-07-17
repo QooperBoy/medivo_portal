@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e2e-3-specjalista-do-rezerwacji" name="E2E-3 — Specjalista: od landingu do 1. rezerwacji">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E2E-3 — Specjalista: od landingu do 1. rezerwacji&lt;/b&gt;&lt;br&gt;źródło: diagrams/e2e/e2e-3-specjalista-do-rezerwacji.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="110" y="20" width="880" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nC1" value="&lt;b&gt;C1&lt;/b&gt;&lt;br&gt;landing dla specjalistów" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nC3" value="&lt;b&gt;C3&lt;/b&gt;&lt;br&gt;rejestracja + nr PWZ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="265" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nD1" value="&lt;b&gt;D1&lt;/b&gt;&lt;br&gt;weryfikacja PWZ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="470" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nD2" value="&lt;b&gt;D2&lt;/b&gt;&lt;br&gt;edycja profilu (draft)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="675" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nD3" value="&lt;b&gt;D3&lt;/b&gt;&lt;br&gt;go-live (1 klik)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="880" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nF1" value="&lt;b&gt;F1&lt;/b&gt;&lt;br&gt;ręczna kolejka admina" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="210" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nE2" value="&lt;b&gt;E2&lt;/b&gt;&lt;br&gt;grafik i dostępność" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="360" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nE3" value="&lt;b&gt;E3&lt;/b&gt;&lt;br&gt;usługi i ceny" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="290" y="360" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nVIS" value="widoczny w A3/A4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="360" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nE4" value="&lt;b&gt;E4&lt;/b&gt;&lt;br&gt;pierwsza rezerwacja" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="750" y="360" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nC1" target="nC3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nC3" target="nD1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="fallback automatu" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;dashed=1;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="nF1" target="nD1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nD1" target="nD2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nD2" target="nD3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="nD3" target="nE2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="320" />
+              <mxPoint x="140" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nE2" target="nE3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nE3" target="nVIS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;" edge="1" parent="1" source="nVIS" target="nE4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="&lt;b&gt;Notatki (1/2)&lt;/b&gt;&lt;br&gt;• Wyjątek od konwencji: bez subgraph FE/BE — węzły to całe flowy (kompozycja ścieżki), nie kroki FE/BE.&lt;br&gt;• &quot;D1 (F1)&quot; z mapy: weryfikacja PWZ to automat (rejestr KRL/KIF); F1 = fallback do ręcznej kolejki admina (SLA 24 h robocze) — stąd przerywana krawędź i obrys.&lt;br&gt;• D2 (&quot;stan w trakcie&quot;) biegnie równolegle do weryfikacji — pełna edycja draftu profilu jeszcze przed decyzją; kolejność na diagramie wg sekwencji z mapy." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF9B2;strokeColor=#d6b656;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="460" width="380" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="&lt;b&gt;Notatki (2/2)&lt;/b&gt;&lt;br&gt;• VIS = &quot;widoczny w A3/A4&quot; to efekt publikacji (sloty z E2 zasilają availability API listy wyników i profilu), nie osobny flow.&lt;br&gt;• E4 = pierwsza rezerwacja pojawia się w panelu specjalisty (lista/kalendarz).&lt;br&gt;• Diagramy składowe: c1-landing-dla-specjalistow, c3-rejestracja, d1-weryfikacja-pwz, f1-kolejka-weryfikacji-pwz, d2-stan-w-trakcie, d3-go-live, e2-grafik-dostepnosc, e3-uslugi-ceny, a3-lista-wynikow, a4-profil-specjalisty, e4-rezerwacje." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF9B2;strokeColor=#d6b656;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="460" width="380" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legenda:&lt;/b&gt; niebieski = onboarding specjalisty (C/D) · pomarańczowy = panel specjalisty / kolejka admina (E, F)&lt;br&gt;szara elipsa = efekt publikacji (nie flow) · przerywane = ręczny fallback weryfikacji u admina (F1)" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="650" width="980" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="panel1" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Droga specjalisty od pierwszego kontaktu z serwisem do pierwszej przyjętej rezerwacji: strona marketingowa, rejestracja z numerem PWZ, weryfikacja uprawnień (automatyczna, z ręcznym zapasem u admina), uzupełnienie profilu, publikacja jednym kliknięciem, a potem ustawienie grafiku i cennika — aż profil staje się widoczny dla pacjentów i wpada pierwsza rezerwacja. Uczestniczą specjalista, system weryfikujący oraz (w razie potrzeby) admin. Flow kończy się pierwszą rezerwacją widoczną w panelu specjalisty." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="110" y="700" width="880" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="panel2" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c1-landing-dla-specjalistow.md&lt;/td&gt;&lt;td&gt;start ścieżki — landing marketingowy dla specjalistów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/c3-rejestracja.md&lt;/td&gt;&lt;td&gt;rejestracja konta z numerem PWZ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;automatyczna weryfikacja PWZ w rejestrze KRL/KIF&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;ręczny fallback weryfikacji w kolejce admina (SLA 24 h robocze)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d2-stan-w-trakcie.md&lt;/td&gt;&lt;td&gt;edycja draftu profilu równolegle do trwającej weryfikacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D3&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d3-go-live.md&lt;/td&gt;&lt;td&gt;publikacja profilu jednym kliknięciem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;ustawiony grafik zasila pulę wolnych slotów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E3&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e3-uslugi-ceny.md&lt;/td&gt;&lt;td&gt;konfiguracja usług i cen widocznych dla pacjentów&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;opublikowany profil ze slotami pojawia się na liście wyników&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;publiczny profil z dostępnymi terminami do rezerwacji&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E4&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e4-rezerwacje.md&lt;/td&gt;&lt;td&gt;pierwsza rezerwacja pojawia się w panelu specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="110" y="880" width="880" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="panel3" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PWZ&lt;/td&gt;&lt;td&gt;Numer prawa wykonywania zawodu, potwierdzający uprawnienia specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;KRL/KIF&lt;/td&gt;&lt;td&gt;Rejestry zawodowe, w których system automatycznie sprawdza numer PWZ.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Fallback&lt;/td&gt;&lt;td&gt;Ścieżka zapasowa: gdy automat nie potwierdzi PWZ, weryfikację robi ręcznie admin.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SLA&lt;/td&gt;&lt;td&gt;Obiecany maksymalny czas ręcznej weryfikacji — 24 godziny robocze.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Draft&lt;/td&gt;&lt;td&gt;Robocza, niewidoczna publicznie wersja profilu, edytowana już w trakcie weryfikacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Go-live&lt;/td&gt;&lt;td&gt;Publikacja profilu jednym kliknięciem po pozytywnej weryfikacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Grafik / dostępność&lt;/td&gt;&lt;td&gt;Godziny pracy specjalisty, z których system wylicza wolne terminy do rezerwacji.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Availability API&lt;/td&gt;&lt;td&gt;Mechanizm serwujący wolne terminy na listę wyników i profil publiczny.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Pojedynczy wolny termin, który pacjent może zarezerwować.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="110" y="1310" width="880" height="350" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

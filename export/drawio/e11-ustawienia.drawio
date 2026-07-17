@@ -1,0 +1,123 @@
+<mxfile host="app.diagrams.net" agent="claude-flows" version="24.0.0">
+  <diagram id="e11-ustawienia" name="E11 — Ustawienia specjalisty">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;E11 — Ustawienia specjalisty&lt;/b&gt;&lt;br&gt;źródło: diagrams/e-panel/e11-ustawienia.md" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="15" width="1000" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" value="FE — widzi user" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="480" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="UST" value="Ustawienia" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="140" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="DANE" value="Dane specjalisty" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ADRESY" value="Adresy — multi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZDJ" value="Zdjęcia" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="20" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FAKT" value="Dane do faktur" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" vertex="1" parent="feBox">
+          <mxGeometry x="250" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" value="BE — pod spodem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="560" y="90" width="480" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="PROF" value="Profile API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="140" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="UPLOAD" value="Upload i przechowywanie zdjęć" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E2Z" value="Adresy -&gt; grafik per adres (E2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E12Z" value="Dane do faktur -&gt; billing (E12)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="20" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="A4Z" value="Zasila profil publiczny (A4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="beBox">
+          <mxGeometry x="250" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ed1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="UST" target="DANE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="UST" target="ADRESY">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="UST" target="ZDJ">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="50" y="175" />
+              <mxPoint x="50" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.25;" edge="1" parent="1" source="UST" target="FAKT">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="175" />
+              <mxPoint x="510" y="403" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=0;entryX=0;entryY=0.25;" edge="1" parent="1" source="DANE" target="PROF">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="240" />
+              <mxPoint x="545" y="240" />
+              <mxPoint x="545" y="163" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ADRESY" target="PROF">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="295" />
+              <mxPoint x="540" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="ZDJ" target="UPLOAD">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="470" />
+              <mxPoint x="545" y="470" />
+              <mxPoint x="545" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=0.25;entryY=1;" edge="1" parent="1" source="UPLOAD" target="PROF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="FAKT" target="E12Z">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.25;entryX=1;entryY=0.5;" edge="1" parent="1" source="PROF" target="A4Z">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="163" />
+              <mxPoint x="1030" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="PROF" target="E2Z">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ekran ustawień w panelu specjalisty: edycja danych osobowych i opisu, zarządzanie wieloma adresami gabinetów, wgrywanie zdjęć oraz uzupełnianie danych do faktur. Zmiany zapisuje system i rozprowadza dalej: dane i zdjęcia trafiają na publiczny profil, adresy wpływają na grafik (osobne godziny pracy per adres), a dane do faktur zasilają billing. To flow uruchamiany przez samego specjalistę, kiedy chce coś zaktualizować." style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="530" width="1000" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d2-stan-w-trakcie.md&lt;/td&gt;&lt;td&gt;te same encje profilu co draft z onboardingu; adresy multi jak w D2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A4&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a4-profil-specjalisty.md&lt;/td&gt;&lt;td&gt;dane, adresy i zdjęcia zasilają profil publiczny&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A2&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a2-wyszukiwanie.md&lt;/td&gt;&lt;td&gt;adresy wpływają na wyszukiwanie po dystansie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;adresy wpływają na mapę i dystans na liście wyników&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;zmiana adresów zmienia godziny pracy per adres w grafiku&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E12&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e12-subskrypcja-billing.md&lt;/td&gt;&lt;td&gt;dane do faktur zasilają billing i faktury VAT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;założenie: zmiana bio/zdjęć nie wymaga ponownej weryfikacji (D1 dotyczy PWZ)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;jak wyżej — kolejka weryfikacji dotyczy PWZ, nie treści profilu&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="700" width="1000" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ustawienia&lt;/td&gt;&lt;td&gt;ekran panelu, na którym specjalista edytuje swoje dane, adresy, zdjęcia i dane do faktur&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;adresy multi&lt;/td&gt;&lt;td&gt;możliwość podania kilku miejsc przyjęć (gabinetów), każde z własnymi godzinami pracy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;upload&lt;/td&gt;&lt;td&gt;wgranie pliku (tu: zdjęcia) do systemu, który go przechowuje&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;profil publiczny&lt;/td&gt;&lt;td&gt;strona specjalisty widoczna dla pacjentów w wyszukiwarce serwisu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;dane do faktur&lt;/td&gt;&lt;td&gt;dane firmowe specjalisty potrzebne do wystawiania faktur VAT za abonament&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;profile API&lt;/td&gt;&lt;td&gt;usługa systemu przechowująca i udostępniająca dane profilu specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;draft profilu&lt;/td&gt;&lt;td&gt;robocza wersja profilu tworzona podczas onboardingu, zanim profil stanie się publiczny&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PWZ&lt;/td&gt;&lt;td&gt;numer prawa wykonywania zawodu — weryfikowany przy rejestracji, niezależnie od treści profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;moderacja&lt;/td&gt;&lt;td&gt;sprawdzanie treści przez administrację; założenie: zmiany bio/zdjęć jej nie wymagają&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1050" width="1000" height="350" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

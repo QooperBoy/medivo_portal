@@ -1,0 +1,120 @@
+<mxfile host="Electron" agent="claude-flows">
+  <diagram id="a4-profil-specjalisty" name="A4 — Profil specjalisty">
+    <mxGraphModel dx="977" dy="893" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1160" pageHeight="2150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" value="&lt;b&gt;A4 — Profil specjalisty&lt;/b&gt;&lt;br&gt;źródło: diagrams/a-pacjent-public/a4-profil-specjalisty.md" vertex="1">
+          <mxGeometry height="50" width="1040" x="60" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="feBox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#2d7dd2;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" value="FE — widzi user" vertex="1">
+          <mxGeometry height="660" width="680" x="40" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="PROFIL" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" value="Publiczny profil specjalisty — jego wizytówka w serwisie" vertex="1">
+          <mxGeometry height="60" width="200" x="240" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="BIO" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" value="Bio: opis specjalisty, doświadczenie, specjalizacje" vertex="1">
+          <mxGeometry height="60" width="200" x="20" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="BADGE" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" value="Badge „PWZ zweryfikowany” — uprawnienia potwierdzone przez serwis" vertex="1">
+          <mxGeometry height="60" width="200" x="240" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ADRESY" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" value="Adresy gabinetów z mapą dojazdu" vertex="1">
+          <mxGeometry height="60" width="200" x="460" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="USLUGI" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" value="Lista usług z cenami" vertex="1">
+          <mxGeometry height="50" width="200" x="20" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="OPINIE" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" value="Opinie pacjentów z badge&#39;em wiarygodności" vertex="1">
+          <mxGeometry height="60" width="200" x="240" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="KALENDARZ" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" value="Pełny kalendarz wolnych terminów specjalisty" vertex="1">
+          <mxGeometry height="60" width="200" x="460" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="ODPOW" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7dd2;fontSize=11;" value="Odpowiedzi specjalisty na opinie pacjentów" vertex="1">
+          <mxGeometry height="60" width="200" x="240" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="SLOT" parent="feBox" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Czy jest wolny termin?" vertex="1">
+          <mxGeometry height="80" width="160" x="480" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="A5LINK" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;" value="Start rezerwacji wybranego terminu — checkout (A5)" vertex="1">
+          <mxGeometry height="60" width="200" x="240" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="A8LINK" parent="feBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;" value="Ścieżka „brak terminów”: podobni specjaliści + waitlista (A8)" vertex="1">
+          <mxGeometry height="60" width="200" x="460" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="beBox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdf2e8;strokeColor=#d79b00;container=1;collapsible=0;verticalAlign=top;fontStyle=1;fontSize=13;" value="BE — pod spodem" vertex="1">
+          <mxGeometry height="600" width="300" x="760" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="PROFAPI" parent="beBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" value="Profile API: serwer dostarcza dane profilu" vertex="1">
+          <mxGeometry height="60" width="220" x="40" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="SCHEMA" parent="beBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" value="Znaczniki schema.org profilu — dane strukturalne dla Google" vertex="1">
+          <mxGeometry height="70" width="220" x="40" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="AVAILAPI" parent="beBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" value="Availability API: wolne terminy na żywo z grafiku specjalisty (E2)" vertex="1">
+          <mxGeometry height="70" width="220" x="40" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="REVAPI" parent="beBox" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;" value="Reviews API: serwer dostarcza opublikowane opinie" vertex="1">
+          <mxGeometry height="60" width="220" x="40" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="PROFAPI" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.25;" target="PROFIL" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="SCHEMA" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="PROFIL" value="widoczność w Google (SEO)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="PROFIL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.75;entryX=0.5;entryY=0;" target="BIO" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="PROFIL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="BADGE" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="PROFIL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.75;entryX=0.5;entryY=0;" target="ADRESY" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="PROFIL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.25;entryX=0;entryY=0.5;" target="USLUGI" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="PROFIL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=0;entryY=0.25;" target="OPINIE" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="PROFIL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.75;exitY=1;entryX=0;entryY=0.25;" target="KALENDARZ" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="REVAPI" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.75;" target="OPINIE" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="615" />
+              <mxPoint x="490" y="425" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="OPINIE" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="ODPOW" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="AVAILAPI" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="KALENDARZ" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="KALENDARZ" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="SLOT" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="SLOT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" target="A5LINK" value="tak — pacjent wybiera termin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="SLOT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="A8LINK" value="nie — brak wolnych terminów">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="panelOpis" parent="1" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" value="&lt;b&gt;Co opisuje ten diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;Przedstawia publiczny profil specjalisty — wizytówkę z bio, potwierdzeniem uprawnień (badge PWZ), adresami na mapie, usługami z cenami, pełnym kalendarzem oraz opiniami pacjentów wraz z odpowiedziami specjalisty. Pacjent trafia tu z listy wyników albo bezpośrednio z Google. Flow kończy się wyborem wolnego terminu i przejściem do rezerwacji (A5) albo — gdy terminów brak — przejściem do ścieżki „podobni + waitlista&quot; (A8)." vertex="1">
+          <mxGeometry height="140" width="1040" x="60" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="panelPowiazane" parent="1" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" value="&lt;b&gt;Powiązane diagramy&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Plik&lt;/th&gt;&lt;th&gt;Jak się łączy&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A1&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a1-wejscie-seo.md&lt;/td&gt;&lt;td&gt;wejście na profil bezpośrednio z SEO (URL /{imie-nazwisko}/{miasto})&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A3&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a3-lista-wynikow.md&lt;/td&gt;&lt;td&gt;wejście na profil z karty na liście wyników&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A5&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a5-checkout.md&lt;/td&gt;&lt;td&gt;wybór wolnego slotu uruchamia checkout&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A8&lt;/td&gt;&lt;td&gt;diagrams/a-pacjent-public/a8-brak-slotow.md&lt;/td&gt;&lt;td&gt;brak wolnych terminów kieruje do „podobni + waitlista&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d1-weryfikacja-pwz.md&lt;/td&gt;&lt;td&gt;weryfikacja PWZ jest źródłem badge&#39;a na profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f1-kolejka-weryfikacji-pwz.md&lt;/td&gt;&lt;td&gt;admin zatwierdza weryfikację, od której zależy badge&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;td&gt;diagrams/cd-specjalista-onboarding/d2-stan-w-trakcie.md&lt;/td&gt;&lt;td&gt;adresy (multi) uzupełniane podczas onboardingu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E11&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e11-ustawienia.md&lt;/td&gt;&lt;td&gt;adresy zarządzane później w ustawieniach specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E3&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e3-uslugi-ceny.md&lt;/td&gt;&lt;td&gt;usługi i ceny na profilu pochodzą z panelu specjalisty&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E2&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e2-grafik-dostepnosc.md&lt;/td&gt;&lt;td&gt;kalendarz na profilu liczony live z modelu dostępności&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;B5&lt;/td&gt;&lt;td&gt;diagrams/b-pacjent-konto/b5-wystawienie-opinii.md&lt;/td&gt;&lt;td&gt;początek pipeline&#39;u opinii — pacjent wystawia opinię&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;F2&lt;/td&gt;&lt;td&gt;diagrams/f-backoffice/f2-moderacja-opinii.md&lt;/td&gt;&lt;td&gt;moderacja opinii przed publikacją na profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;E8&lt;/td&gt;&lt;td&gt;diagrams/e-panel/e8-approval-opinie.md&lt;/td&gt;&lt;td&gt;odpowiedzi specjalisty na opinie widoczne na profilu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;G12&lt;/td&gt;&lt;td&gt;diagrams/00-core/00-katalog-eventow.md&lt;/td&gt;&lt;td&gt;SEO joby odświeżają schema.org profilu&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="480" width="1040" x="60" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="panelSlownik" parent="1" style="text;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;overflow=fill;" value="&lt;b&gt;Słownik&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;4&quot; style=&quot;border-collapse:collapse;width:100%&quot;&gt;&lt;tr&gt;&lt;th&gt;Pojęcie&lt;/th&gt;&lt;th&gt;Wyjaśnienie&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;PWZ&lt;/td&gt;&lt;td&gt;Prawo wykonywania zawodu — numer potwierdzający uprawnienia specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Badge „PWZ zweryfikowany&quot;&lt;/td&gt;&lt;td&gt;Znaczek na profilu informujący, że uprawnienia specjalisty sprawdził serwis.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Badge wiarygodności opinii&lt;/td&gt;&lt;td&gt;Oznaczenie, że opinia pochodzi od pacjenta po faktycznie odbytej wizycie.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;td&gt;Konkretny wolny termin wizyty w kalendarzu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Availability API&lt;/td&gt;&lt;td&gt;Usługa podająca aktualną dostępność terminów z grafiku specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Reviews API&lt;/td&gt;&lt;td&gt;Usługa dostarczająca na profil opublikowane opinie pacjentów.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Pipeline opinii&lt;/td&gt;&lt;td&gt;Droga opinii od wystawienia przez pacjenta, przez moderację, do publikacji i odpowiedzi specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Schema.org&lt;/td&gt;&lt;td&gt;Znaczniki w kodzie strony pomagające Google zrozumieć profil (np. pokazać ocenę w wynikach).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SEO&lt;/td&gt;&lt;td&gt;Działania, dzięki którym profil jest widoczny w Google pod własnym adresem.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Bio&lt;/td&gt;&lt;td&gt;Opis specjalisty na profilu: doświadczenie, specjalizacje, sposób pracy.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Proces rezerwacji od kliknięcia terminu do potwierdzenia — wieloetapowy formularz opisany w A5.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Waitlista&lt;/td&gt;&lt;td&gt;Lista oczekujących pacjentów, którym system proponuje zwolniony termin.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Profile API&lt;/td&gt;&lt;td&gt;Usługa serwerowa dostarczająca na stronę dane profilu specjalisty.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FE (frontend)&lt;/td&gt;&lt;td&gt;Interfejs — to, co użytkownik widzi i klika w przeglądarce.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;BE (backend)&lt;/td&gt;&lt;td&gt;Serwer platformy — część systemu działająca „pod spodem&quot;, niewidoczna dla użytkownika.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;A1, A3, A5, A8, E2, G12&lt;/td&gt;&lt;td&gt;Identyfikatory innych flowów z mapy projektu — każdy ma własny diagram (A1: wejście z SEO, A3: lista wyników, A5: checkout, A8: brak slotów, E2: grafik, G12: joby SEO).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="540" width="1040" x="60" y="1480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
